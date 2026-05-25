@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de" data-screen-label="Über uns">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000E1E" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://ki-kandidat.de/about.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Über uns · KI-Kandidat.de" />
+<meta property="og:description" content="Wir bauen die Recruiting-Plattform für den DACH-Mittelstand. 95 Mitarbeiter, 4 Standorte, 1 Million Fachkräfte in der Cloud." />
+<meta property="og:url" content="https://ki-kandidat.de/about.html" />
+<meta property="og:image" content="https://ki-kandidat.de/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Über uns · KI-Kandidat.de" />
+<meta name="twitter:description" content="Wir bauen die Recruiting-Plattform für den DACH-Mittelstand. 95 Mitarbeiter, 4 Standorte, 1 Million Fachkräfte in der Cloud." />
+<title>Über uns · KI-Kandidat.de</title>
+<meta name="description" content="Wir bauen die Recruiting-Plattform für den DACH-Mittelstand. 95 Mitarbeiter, 4 Standorte, 1.000.000 Fachkräfte in der Cloud — gegründet 2018." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/tokens.css" />
+<link rel="stylesheet" href="styles/components.css" />
+<style>
+  .breadcrumb { font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted); letter-spacing: 0.05em; padding: 24px 0 0; }
+  .breadcrumb a { color: var(--fg-muted); }
+  .breadcrumb .sep { color: var(--fg-dim); margin: 0 10px; }
+
+  .ab-hero { padding: 32px 0 64px; }
+  .ab-hero h1 { font-family: var(--font-display); font-size: clamp(48px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.04em; font-weight: 700; }
+  .ab-hero h1 em { font-style: normal; color: var(--accent); }
+  .ab-hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: end; }
+
+  /* Manifesto */
+  .manifesto { padding: 64px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .manifesto p { font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 44px); line-height: 1.25; letter-spacing: -0.02em; max-width: 22ch; font-weight: 500; }
+  .manifesto p span { color: var(--accent); }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ''; position: absolute; left: 4px; top: 0; bottom: 0; width: 1px; background: var(--line); }
+  .tl-item { position: relative; padding: 0 0 48px 32px; }
+  .tl-item::before { content: ''; position: absolute; left: -24px; top: 8px; width: 9px; height: 9px; background: var(--accent); border-radius: 999px; box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--accent-soft); }
+  .tl-year { font-family: var(--font-mono); font-size: 13px; color: var(--accent); letter-spacing: 0.1em; }
+  .tl-title { font-family: var(--font-display); font-size: 24px; font-weight: 600; margin-top: 4px; letter-spacing: -0.02em; }
+  .tl-desc { color: var(--fg-muted); margin-top: 8px; max-width: 60ch; line-height: 1.6; }
+
+  /* Team */
+  .team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-xl); overflow: hidden; }
+  .person { background: var(--bg-elev); padding: 28px; }
+  .person .av { width: 64px; height: 64px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: var(--bg); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 22px; margin-bottom: 20px; }
+  .person .name { font-family: var(--font-display); font-size: 18px; font-weight: 600; }
+  .person .role { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
+  .person .bio { font-size: 13px; color: var(--fg-muted); line-height: 1.55; margin-top: 12px; }
+
+  /* Values */
+  .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .value { padding: 32px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg-elev); }
+  .value .num { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.1em; }
+  .value .t { font-family: var(--font-display); font-size: 22px; font-weight: 600; margin-top: 12px; letter-spacing: -0.02em; }
+  .value .d { color: var(--fg-muted); font-size: 14px; line-height: 1.6; margin-top: 12px; }
+
+  /* Locations */
+  .locations { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-xl); overflow: hidden; }
+  .loc { background: var(--bg-elev); padding: 32px; }
+  .loc .city { font-family: var(--font-display); font-size: 22px; font-weight: 600; }
+  .loc .addr { color: var(--fg-muted); font-size: 13px; line-height: 1.6; margin-top: 12px; }
+  .loc .head { font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.08em; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+
+  @media (max-width: 920px){ .ab-hero-grid, .values { grid-template-columns:1fr; gap:32px; } .team, .locations { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 600px){ .team, .locations { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+<div id="nav-mount"></div>
+
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">HOME</a><span class="sep">/</span><span style="color:var(--accent)">ÜBER UNS</span></div>
+</div>
+
+<section class="ab-hero">
+  <div class="container">
+    <div class="ab-hero-grid">
+      <div>
+        <span class="eyebrow">Wir sind KI-Kandidat.de</span>
+        <h1 style="margin-top:24px">Wir bauen das<br><em>Recruiting</em><br>von morgen.</h1>
+      </div>
+      <div>
+        <p class="lead">
+          KI-Kandidat.de wurde von erfahrenen Personalern gegründet, die klassisches Recruiting selbst als zu langsam und zu teuer erlebt haben.
+          Heute sind wir ein wachsendes Team an vier Standorten und begleiten mittelständische Unternehmen in der DACH-Region bei moderner, digitaler Mitarbeitergewinnung.
+        </p>
+        <div style="display:flex;gap:14px;margin-top:32px">
+          <a href="karriere.html" class="btn btn-primary btn-arrow">Bei uns arbeiten</a>
+          <a href="kontakt.html" class="btn btn-ghost">Kontakt</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Manifesto / mission -->
+<section class="manifesto" data-screen-label="Manifesto">
+  <div class="container">
+    <p>
+      Wir glauben: <span>kein Mittelständler</span> sollte gute Stellen wegen schlechtem Recruiting unbesetzt lassen.
+      Deshalb bauen wir das, was Konzerne intern haben — und stellen es allen zur Verfügung.
+    </p>
+  </div>
+</section>
+
+<!-- Numbers -->
+<section data-screen-label="Numbers">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat reveal"><span class="num">2018</span><span class="lbl">Gegründet · München</span></div>
+      <div class="stat reveal"><span class="num">95</span><span class="lbl">Mitarbeiter im Team</span></div>
+      <div class="stat reveal"><span class="num">4</span><span class="lbl">Standorte in DACH</span></div>
+      <div class="stat reveal"><span class="num">1M+</span><span class="lbl">Profile in der Cloud</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section data-screen-label="Timeline">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Geschichte</span>
+        <h2 class="h2" style="margin-top:16px">Sechs Jahre,<br>drei Plattform-Generationen.</h2>
+      </div>
+      <p class="lead">Von der Recruiting-Boutique zum KI-First-Plattform-Anbieter — hier sind die Stationen, die uns geprägt haben.</p>
+    </div>
+
+    <div class="timeline reveal" style="margin-top:48px">
+      <div class="tl-item">
+        <div class="tl-year">2018 · Q2</div>
+        <h3 class="tl-title">Gründung in München</h3>
+        <p class="tl-desc">Drei ehemalige Personalleiter aus dem Mittelstand bündeln Erfahrungen und gründen KI-Kandidat.de. Erstes Projekt: ein Maschinenbauer mit unbesetzter SPS-Stelle nach 14 Monaten erfolgloser Suche.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2019 · Q4</div>
+        <h3 class="tl-title">Erste 100 Kunden</h3>
+        <p class="tl-desc">Wir wachsen organisch von Empfehlung zu Empfehlung. 14 Mitarbeiter, Talent-Cloud mit 80.000 Profilen, Schwerpunkt Bau und Industrie in Süddeutschland.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021 · Q1</div>
+        <h3 class="tl-title">KI-Matching live</h3>
+        <p class="tl-desc">Erstes proprietäres Matching-Modell. Time-to-Hire fällt von 86 auf 38 Tage. Office in Hamburg eröffnet, Team wächst auf 38 Mitarbeiter.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023 · Q2</div>
+        <h3 class="tl-title">Sellcruiting-Modul goes live</h3>
+        <p class="tl-desc">Automatisierte Bewerberprozesse ergänzen die menschlichen Recruiter. Kandidaten-Erstkontakt in unter 60 Sekunden. Expansion nach Wien und Zürich.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2025 · Q3</div>
+        <h3 class="tl-title">1.000.000 Profile</h3>
+        <p class="tl-desc">Die Talent-Cloud überschreitet die Millionen-Grenze — strukturiert, DSGVO-konform, tagesaktuell. Über 2.000 führende Unternehmen im DACH-Raum vertrauen KI-Kandidat.de.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026 · heute</div>
+        <h3 class="tl-title">Plattform v.2026</h3>
+        <p class="tl-desc">Drei integrierte Module — Talent-Cloud, KI-Matching, Sellcruiting. 95 Mitarbeiter, 4 Standorte, Spezialist für Software-Recruiting im DACH-Mittelstand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section data-screen-label="Values">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Werte</span>
+        <h2 class="h2" style="margin-top:16px">Wonach<br>wir handeln.</h2>
+      </div>
+      <p class="lead">Drei Prinzipien, die unsere Arbeit von der klassischen Recruiting-Branche unterscheiden — und an denen Sie uns messen können.</p>
+    </div>
+
+    <div class="values reveal">
+      <div class="value">
+        <div class="num">01</div>
+        <div class="t">Ehrlich vor Erfolg</div>
+        <div class="d">Wenn unsere Cloud zeigt, dass die Stelle in Ihrer Region nicht besetzbar ist, sagen wir es vorher — und nehmen den Auftrag nicht an. Lieber kein Projekt als ein gescheitertes Projekt.</div>
+      </div>
+      <div class="value">
+        <div class="num">02</div>
+        <div class="t">Daten vor Bauchgefühl</div>
+        <div class="d">Jede Empfehlung, die Sie von uns bekommen, basiert auf 100+ Datenpunkten. Wir glauben nicht an „Bauchentscheidungen" — wir glauben an Cultural-Fit-Scores und Wechseltrigger.</div>
+      </div>
+      <div class="value">
+        <div class="num">03</div>
+        <div class="t">Mensch vor Maschine</div>
+        <div class="d">Unsere KI macht das Filtern und Vorqualifizieren in Sekunden. Den letzten Schritt — das Gespräch mit dem Kandidaten — übernimmt immer ein Mensch. Punkt.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section data-screen-label="Team">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Führungsteam</span>
+        <h2 class="h2" style="margin-top:16px">Die Menschen<br>hinter KI-Kandidat.de.</h2>
+      </div>
+      <p class="lead">Sieben Köpfe verantworten die operative Führung — alle mit langjähriger Mittelstands-Erfahrung im DACH-Raum.</p>
+    </div>
+
+    <div class="team reveal">
+      <div class="person"><div class="av">DM</div><div class="name">Dr. Markus Hofer</div><div class="role">CEO &amp; Co-Founder</div><p class="bio">Ehem. Personalleiter im Maschinenbau. Promotion zu Wechselverhalten von Fachkräften. Treibt Strategie und KI-Roadmap.</p></div>
+      <div class="person"><div class="av">SK</div><div class="name">Sandra Kühne</div><div class="role">CTO &amp; Co-Founder</div><p class="bio">15 Jahre HR-Tech, davor Engineering-Lead bei einem deutschen SaaS-Anbieter. Verantwortlich für Talent-Cloud und Matching-Engine.</p></div>
+      <div class="person"><div class="av">TR</div><div class="name">Thomas Reichel</div><div class="role">CRO &amp; Co-Founder</div><p class="bio">20+ Jahre Vertrieb in Personaldienstleistung. Baut die Sellcruiting-Methodik und führt das Recruiter-Team mit 60 Mitarbeitern.</p></div>
+      <div class="person"><div class="av">AB</div><div class="name">Anna Brandt</div><div class="role">VP Customer Success</div><p class="bio">Verantwortet die langfristige Betreuung unserer wachsenden Kundenbasis. Zuvor Geschäftsführung einer mittelständischen HR-Beratung.</p></div>
+      <div class="person"><div class="av">JV</div><div class="name">Jonas Vetter</div><div class="role">Head of Data &amp; AI</div><p class="bio">PhD Computational Linguistics, ehem. Research Engineer. Entwickelt unsere Matching-Modelle und Wechseltrigger-Erkennung.</p></div>
+      <div class="person"><div class="av">LM</div><div class="name">Lisa Mertens</div><div class="role">Head of Brand</div><p class="bio">Aufbau der Marke KI-Kandidat.de. Davor Markenführung für führende Mittelständler. Schwerpunkt Employer Branding für unsere Kunden.</p></div>
+      <div class="person"><div class="av">PE</div><div class="name">Peter Eberle</div><div class="role">Head of Operations · CH/AT</div><p class="bio">Verantwortet die Standorte Wien und Zürich. 18 Jahre Recruiting-Erfahrung im DACH-Raum, Spezialist für Schweizer Mittelstand.</p></div>
+      <div class="person"><div class="av">RH</div><div class="name">Rebecca Hoff</div><div class="role">Head of People</div><p class="bio">Verantwortet unser eigenes Recruiting (wir leben, was wir verkaufen). Skaliert das Team von 95 auf geplante 160 in 2027.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Locations -->
+<section data-screen-label="Locations">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Standorte</span>
+        <h2 class="h2" style="margin-top:16px">Vier Büros<br>im DACH-Raum.</h2>
+      </div>
+      <p class="lead">Wir sitzen nah bei unseren Kunden — und unsere Recruiter kennen die regionalen Arbeits­märkte aus eigener Anschauung.</p>
+    </div>
+
+    <div class="locations reveal">
+      <div class="loc">
+        <div class="city">München</div>
+        <div class="addr">Maximilianstraße 14<br>80539 München<br>Deutschland</div>
+        <div class="head">HEADQUARTERS · 38 MA</div>
+      </div>
+      <div class="loc">
+        <div class="city">Hamburg</div>
+        <div class="addr">Neuer Wall 50<br>20354 Hamburg<br>Deutschland</div>
+        <div class="head">NORTH OFFICE · 24 MA</div>
+      </div>
+      <div class="loc">
+        <div class="city">Wien</div>
+        <div class="addr">Kärntner Ring 12<br>1010 Wien<br>Österreich</div>
+        <div class="head">AT OFFICE · 18 MA</div>
+      </div>
+      <div class="loc">
+        <div class="city">Zürich</div>
+        <div class="addr">Bahnhofstrasse 28<br>8001 Zürich<br>Schweiz</div>
+        <div class="head">CH OFFICE · 15 MA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="CTA">
+  <div class="container">
+    <div class="final-cta reveal">
+      <h2 class="h-display" style="font-size:clamp(36px,5vw,64px)">Lust, mit uns zu arbeiten?</h2>
+      <p class="lead" style="margin:24px auto 0;text-align:center">Als Kunde oder als Mitarbeiter — wir freuen uns über jeden, der unser Recruiting der nächsten Generation mit aufbaut.</p>
+      <div style="display:flex;gap:14px;justify-content:center;margin-top:32px;flex-wrap:wrap">
+        <a href="kontakt.html" class="btn btn-primary btn-arrow">Demo anfragen</a>
+        <a href="karriere.html" class="btn btn-ghost btn-arrow">Karriere bei uns</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script>window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"dark","accent":"cyan","density":"comfortable","headline_variant":"A"}/*EDITMODE-END*/;</script>
+<script>
+(function(){
+  if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') return;
+  function injectScript(src, attrs) { var el = document.createElement('script'); el.src = src; for (var k in attrs) el[k] = attrs[k]; document.body.appendChild(el); }
+  injectScript('https://unpkg.com/react@18.3.1/umd/react.development.js', { integrity: 'sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L', crossOrigin: 'anonymous' });
+  injectScript('https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js', { integrity: 'sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm', crossOrigin: 'anonymous' });
+  injectScript('https://unpkg.com/@babel/standalone@7.29.0/babel.min.js', { integrity: 'sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y', crossOrigin: 'anonymous' });
+  window.addEventListener('load', function() {
+    var p = document.createElement('script'); p.type = 'text/babel'; p.src = 'tweaks-panel.jsx'; document.body.appendChild(p);
+    var a = document.createElement('script'); a.type = 'text/babel'; a.src = 'js/tweaks-app.jsx'; document.body.appendChild(a);
+  });
+})();
+</script>
+<script src="js/chrome.js" defer></script>
+<script>document.addEventListener('DOMContentLoaded', function() { if (window.RG) RG.mountChrome('about'); });</script>
+</body>
+</html>

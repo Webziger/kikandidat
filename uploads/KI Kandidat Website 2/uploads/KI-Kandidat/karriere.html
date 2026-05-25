@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="de" data-screen-label="Karriere">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000E1E" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://ki-kandidat.de/karriere.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Karriere · KI-Kandidat.de" />
+<meta property="og:description" content="Werde Teil von KI-Kandidat — wir bauen das Recruiting der Zukunft. Offene Stellen in München, Berlin, Hamburg, Wien." />
+<meta property="og:url" content="https://ki-kandidat.de/karriere.html" />
+<meta property="og:image" content="https://ki-kandidat.de/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Karriere · KI-Kandidat.de" />
+<meta name="twitter:description" content="Werde Teil von KI-Kandidat — wir bauen das Recruiting der Zukunft. Offene Stellen in München, Berlin, Hamburg, Wien." />
+<title>Karriere · KI-Kandidat.de</title>
+<meta name="description" content="Wir suchen Recruiter, Engineers, Sales und Customer-Success für unsere Standorte München, Hamburg, Wien, Zürich. 18 offene Stellen." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/tokens.css" />
+<link rel="stylesheet" href="styles/components.css" />
+<style>
+  .breadcrumb { font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted); letter-spacing: 0.05em; padding: 24px 0 0; }
+  .breadcrumb a { color: var(--fg-muted); }
+  .breadcrumb .sep { color: var(--fg-dim); margin: 0 10px; }
+
+  .ka-hero { padding: 32px 0 48px; }
+  .ka-hero h1 { font-family: var(--font-display); font-size: clamp(48px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.04em; font-weight: 700; }
+  .ka-hero h1 em { font-style: normal; color: var(--accent); }
+  .ka-hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: end; }
+
+  /* Filters */
+  .ka-filter { display: flex; gap: 8px; flex-wrap: wrap; padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); align-items: center; }
+  .ka-filter-label { font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.1em; padding-right: 16px; }
+  .chip { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: transparent; font-size: 12px; font-family: var(--font-mono); letter-spacing: 0.05em; color: var(--fg-muted); cursor: pointer; transition: all 160ms; }
+  .chip:hover { color: var(--fg); border-color: var(--line-strong); }
+  .chip.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+  /* Job rows */
+  .jobs { display: grid; grid-template-columns: 1fr; gap: 0; }
+  .job { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 60px; gap: 24px; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--line); cursor: pointer; transition: background 150ms; }
+  .job:hover { background: var(--bg-elev); padding-left: 16px; padding-right: 16px; margin-left: -16px; margin-right: -16px; }
+  .job-title { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
+  .job-team { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
+  .job-meta { font-family: var(--font-mono); font-size: 13px; color: var(--fg-muted); }
+  .job-arrow { font-size: 22px; color: var(--fg-dim); text-align: right; }
+  .job:hover .job-arrow { color: var(--accent); }
+
+  /* Why us */
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .why { padding: 32px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg-elev); }
+  .why .num { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.1em; }
+  .why .t { font-family: var(--font-display); font-size: 22px; font-weight: 600; margin-top: 12px; letter-spacing: -0.02em; }
+  .why .d { color: var(--fg-muted); font-size: 14px; line-height: 1.6; margin-top: 12px; }
+
+  /* Benefits grid */
+  .benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-xl); overflow: hidden; }
+  .benefit { background: var(--bg-elev); padding: 28px; }
+  .benefit .b-num { font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.1em; }
+  .benefit .b-t { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin-top: 12px; }
+  .benefit .b-d { color: var(--fg-muted); font-size: 13px; margin-top: 8px; line-height: 1.5; }
+
+  /* Process */
+  .proc-stages { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; counter-reset: ps; }
+  .ps { padding: 24px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--bg-elev); position: relative; }
+  .ps::before { content: counter(ps, decimal-leading-zero); counter-increment: ps; font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.1em; }
+  .ps .t { font-family: var(--font-display); font-size: 17px; font-weight: 600; margin-top: 8px; letter-spacing: -0.01em; }
+  .ps .d { font-size: 12px; color: var(--fg-muted); margin-top: 8px; line-height: 1.5; }
+
+  @media (max-width: 920px){ .ka-hero-grid, .why-grid { grid-template-columns:1fr; gap:32px; } .benefits { grid-template-columns: repeat(2,1fr); } .proc-stages { grid-template-columns: 1fr 1fr; } .job { grid-template-columns: 1fr; gap: 8px; } .job-arrow { display: none; } }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+<div id="nav-mount"></div>
+
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">HOME</a><span class="sep">/</span><span style="color:var(--accent)">KARRIERE</span></div>
+</div>
+
+<section class="ka-hero">
+  <div class="container">
+    <div class="ka-hero-grid">
+      <div>
+        <span class="eyebrow">Open Positions · 18</span>
+        <h1 style="margin-top:24px">Wir bauen<br>das beste<br><em>Recruiting-Team</em><br>der DACH-Region.</h1>
+      </div>
+      <div>
+        <p class="lead">Wir wachsen. 18 offene Stellen über Engineering, Recruiting, Sales und Customer-Success. Hybrid oder remote, an einem unserer vier Standorte. Keine Anzeigen-Schalter — wir suchen Menschen, die Recruiting neu denken.</p>
+        <div style="display:flex;gap:14px;margin-top:32px">
+          <a href="#jobs" class="btn btn-primary btn-arrow">Stellen ansehen</a>
+          <a href="#process" class="btn btn-ghost">Unser Prozess</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why us -->
+<section data-screen-label="Why us">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Warum wir</span>
+        <h2 class="h2" style="margin-top:16px">Drei Gründe,<br>die den Unterschied machen.</h2>
+      </div>
+      <p class="lead">Wir sind kein klassischer Personaldienstleister, kein klassisches SaaS und auch keine Agentur — sondern eine eigenständige Kategorie. Das prägt, wie wir arbeiten.</p>
+    </div>
+
+    <div class="why-grid reveal">
+      <div class="why">
+        <div class="num">01</div>
+        <div class="t">Tech &amp; Mensch — kein Trade-off</div>
+        <div class="d">Wir glauben an KI, die Recruiter besser macht — nicht ersetzt. Bei uns arbeiten Engineers und Recruiter Tisch an Tisch. Sie bauen Tools für die Menschen, die sie täglich benutzen.</div>
+      </div>
+      <div class="why">
+        <div class="num">02</div>
+        <div class="t">Echtes Mittelstands-Mandat</div>
+        <div class="d">Sie arbeiten nicht für anonyme Konzern-HR, sondern für mittelständische Unternehmer mit Gesicht. Sie sehen die Wirkung Ihrer Arbeit — und Sie kennen die Menschen, denen Sie helfen.</div>
+      </div>
+      <div class="why">
+        <div class="num">03</div>
+        <div class="t">Nachhaltig profitabel · bootstrap</div>
+        <div class="d">Wir sind seit Jahr 2 profitabel und haben kein VC-Geld genommen. Keine Hire-and-Burn-Kultur, keine fragilen Wachstumsziele. Wir bauen ein Unternehmen, das in 20 Jahren noch existiert.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Open jobs -->
+<section id="jobs" data-screen-label="Open jobs">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Offene Stellen</span>
+        <h2 class="h2" style="margin-top:16px">Aktuell suchen wir<br>diese 18 Menschen.</h2>
+      </div>
+      <p class="lead">Auf alle ausgeschriebenen Stellen können Sie sich auch initiativ bewerben — wir lesen jede Bewerbung persönlich.</p>
+    </div>
+
+    <div class="ka-filter reveal">
+      <span class="ka-filter-label">FILTER</span>
+      <button class="chip active" data-f="all">Alle · 18</button>
+      <button class="chip" data-f="eng">Engineering · 5</button>
+      <button class="chip" data-f="rec">Recruiting · 7</button>
+      <button class="chip" data-f="sales">Sales · 3</button>
+      <button class="chip" data-f="cs">Customer Success · 3</button>
+    </div>
+
+    <div class="jobs reveal" id="jobsList">
+      <a class="job" data-team="eng">
+        <div>
+          <div class="job-title">Senior Backend Engineer (Go / Postgres)</div>
+          <div class="job-team">Engineering</div>
+        </div>
+        <div class="job-meta">München · Hybrid</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">85–110 k €</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="eng">
+        <div>
+          <div class="job-title">ML Engineer · Matching-Modelle</div>
+          <div class="job-team">Engineering · AI</div>
+        </div>
+        <div class="job-meta">München / Remote</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">90–120 k €</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="eng">
+        <div>
+          <div class="job-title">Senior Frontend Engineer (React / TS)</div>
+          <div class="job-team">Engineering</div>
+        </div>
+        <div class="job-meta">Hamburg / Remote</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">80–100 k €</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="eng">
+        <div>
+          <div class="job-title">Data Engineer · Talent-Cloud Pipelines</div>
+          <div class="job-team">Engineering · Data</div>
+        </div>
+        <div class="job-meta">München · Hybrid</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">75–95 k €</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="eng">
+        <div>
+          <div class="job-title">Engineering Manager · Platform</div>
+          <div class="job-team">Engineering</div>
+        </div>
+        <div class="job-meta">München · Hybrid</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">110–140 k €</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="rec">
+        <div>
+          <div class="job-title">Senior Recruiter · Bau / Industrie</div>
+          <div class="job-team">Recruiting</div>
+        </div>
+        <div class="job-meta">München · Hybrid</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">62–78 k €</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="rec">
+        <div>
+          <div class="job-title">Recruiter · Pflege &amp; Gesundheit</div>
+          <div class="job-team">Recruiting</div>
+        </div>
+        <div class="job-meta">Hamburg · Hybrid</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">52–68 k €</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="rec">
+        <div>
+          <div class="job-title">Recruiter · IT &amp; Tech</div>
+          <div class="job-team">Recruiting</div>
+        </div>
+        <div class="job-meta">Wien · Onsite</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">€ 55–72 k</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="rec">
+        <div>
+          <div class="job-title">Junior Recruiter · Industrie</div>
+          <div class="job-team">Recruiting · Junior</div>
+        </div>
+        <div class="job-meta">München / Hamburg</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">42–52 k €</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="rec">
+        <div>
+          <div class="job-title">Recruiter · Logistik &amp; Transport</div>
+          <div class="job-team">Recruiting</div>
+        </div>
+        <div class="job-meta">Hamburg · Hybrid</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">52–68 k €</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="rec">
+        <div>
+          <div class="job-title">Recruiter · Schweizer Mittelstand</div>
+          <div class="job-team">Recruiting · CH</div>
+        </div>
+        <div class="job-meta">Zürich · Onsite</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">CHF 95–115 k</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="rec">
+        <div>
+          <div class="job-title">Recruiting Team Lead · Wien</div>
+          <div class="job-team">Recruiting · Lead</div>
+        </div>
+        <div class="job-meta">Wien · Onsite</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">€ 85–110 k</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="sales">
+        <div>
+          <div class="job-title">Account Executive · Mittelstand</div>
+          <div class="job-team">Sales</div>
+        </div>
+        <div class="job-meta">München / Remote</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">75–95 k € + variabel</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="sales">
+        <div>
+          <div class="job-title">SDR · Outbound &amp; Demand Gen</div>
+          <div class="job-team">Sales · Junior</div>
+        </div>
+        <div class="job-meta">München · Hybrid</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">48–58 k € + variabel</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="sales">
+        <div>
+          <div class="job-title">Enterprise Account Executive</div>
+          <div class="job-team">Sales · Senior</div>
+        </div>
+        <div class="job-meta">München / Hamburg</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">95–125 k € + variabel</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="cs">
+        <div>
+          <div class="job-title">Customer Success Manager</div>
+          <div class="job-team">Customer Success</div>
+        </div>
+        <div class="job-meta">München / Hamburg</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">62–78 k €</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="cs">
+        <div>
+          <div class="job-title">Implementation Lead · Onboarding</div>
+          <div class="job-team">Customer Success</div>
+        </div>
+        <div class="job-meta">München · Hybrid</div>
+        <div class="job-meta">Vollzeit</div>
+        <div class="job-meta">68–82 k €</div>
+        <div class="job-arrow">→</div>
+      </a>
+      <a class="job" data-team="cs">
+        <div>
+          <div class="job-title">Working Student · Customer Success</div>
+          <div class="job-team">Customer Success · Studentisch</div>
+        </div>
+        <div class="job-meta">München / Remote</div>
+        <div class="job-meta">20 h/Woche</div>
+        <div class="job-meta">18 € / h</div>
+        <div class="job-arrow">→</div>
+      </a>
+    </div>
+
+    <p style="text-align:center;margin-top:32px;color:var(--fg-muted);font-size:14px">Nichts Passendes dabei? <a href="kontakt.html" style="color:var(--accent)">Initiativ-Bewerbung →</a></p>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section data-screen-label="Benefits">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Was wir bieten</span>
+        <h2 class="h2" style="margin-top:16px">Acht Dinge,<br>die wir versprechen.</h2>
+      </div>
+      <p class="lead">Keine Tischkicker-Werbung, keine Obstkörbe. Nur, was wirklich zählt — und was wir seit 2018 konsequent halten.</p>
+    </div>
+
+    <div class="benefits reveal">
+      <div class="benefit"><div class="b-num">01</div><div class="b-t">Faire, transparente Gehälter</div><div class="b-d">Bandbreiten in der Anzeige. Im Interview kein Pokern um 2 k €.</div></div>
+      <div class="benefit"><div class="b-num">02</div><div class="b-t">30 Tage Urlaub</div><div class="b-d">Plus zusätzlich frei zwischen Weihnachten und Neujahr.</div></div>
+      <div class="benefit"><div class="b-num">03</div><div class="b-t">Hybrid · 2 Tage Office</div><div class="b-d">Wir treffen uns am Dienstag und Mittwoch. Rest frei wählbar.</div></div>
+      <div class="benefit"><div class="b-num">04</div><div class="b-t">Sabbatical nach 3 Jahren</div><div class="b-d">Bis zu 3 Monate, mit Rückkehr-Garantie auf gleicher Position.</div></div>
+      <div class="benefit"><div class="b-num">05</div><div class="b-t">Lernbudget · 2.500 € / Jahr</div><div class="b-d">Konferenzen, Bücher, Coaching. Sie entscheiden.</div></div>
+      <div class="benefit"><div class="b-num">06</div><div class="b-t">Bahncard 100 oder Mobilitätsbudget</div><div class="b-d">Klimaschonend und flexibel. Auch privat nutzbar.</div></div>
+      <div class="benefit"><div class="b-num">07</div><div class="b-t">Betriebliche Altersvorsorge</div><div class="b-d">25 % vom Gehalt zuschuss­bar, voll arbeitgeber­finanziert ab 5 %.</div></div>
+      <div class="benefit"><div class="b-num">08</div><div class="b-t">Mitarbeiter-Aktien</div><div class="b-d">Equity-Programm für alle Festangestellten ab dem 2. Jahr.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Hiring process -->
+<section id="process" data-screen-label="Process">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Bewerbungs-Prozess</span>
+        <h2 class="h2" style="margin-top:16px">Fünf Schritte.<br>Maximal 14 Tage.</h2>
+      </div>
+      <p class="lead">Wir wissen, wie nervig lange Recruiting-Prozesse sind — wir machen es schließlich beruflich. Deshalb ist unser Prozess kurz, transparent und respektvoll.</p>
+    </div>
+
+    <div class="proc-stages reveal" style="margin-top:48px">
+      <div class="ps"><div class="t">Bewerbung</div><div class="d">Online-Formular oder per E-Mail. CV reicht — kein Anschreiben Pflicht.</div></div>
+      <div class="ps"><div class="t">Screening-Call</div><div class="d">30 min mit People-Team. Gegenseitiges Kennenlernen, Erwartungen klären.</div></div>
+      <div class="ps"><div class="t">Fach-Interview</div><div class="d">60 min mit Hiring-Manager und Team. Konkrete Cases, kein Hirn­akrobatik-Quiz.</div></div>
+      <div class="ps"><div class="t">Probe-Tag (bezahlt)</div><div class="d">Sie arbeiten einen Tag mit dem Team. Kein „Take-home" am Wochenende.</div></div>
+      <div class="ps"><div class="t">Angebot · 48 h</div><div class="d">Schriftliches Angebot innerhalb von 48 h nach Probe-Tag. Kein Zerren.</div></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="CTA">
+  <div class="container">
+    <div class="final-cta reveal">
+      <h2 class="h-display" style="font-size:clamp(36px,5vw,64px)">Klingt gut?<br><em style="color:var(--accent);font-style:normal">Lass uns reden.</em></h2>
+      <p class="lead" style="margin:24px auto 0;text-align:center">Auch wenn keine Stelle 100 % passt — wir freuen uns über Initiativ-Bewerbungen. Wir lesen jede einzelne.</p>
+      <div style="display:flex;gap:14px;justify-content:center;margin-top:32px;flex-wrap:wrap">
+        <a href="kontakt.html" class="btn btn-primary btn-arrow">Bewerbung schicken</a>
+        <a href="about.html" class="btn btn-ghost btn-arrow">Mehr über uns</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script>window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"dark","accent":"cyan","density":"comfortable","headline_variant":"A"}/*EDITMODE-END*/;</script>
+<!-- Dev-only: React + Babel for Tweaks panel (localhost only) -->
+<script>
+(function(){
+  if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') return;
+  function injectScript(src, attrs) {
+    var el = document.createElement('script');
+    el.src = src;
+    for (var k in attrs) el[k] = attrs[k];
+    document.body.appendChild(el);
+  }
+  injectScript('https://unpkg.com/react@18.3.1/umd/react.development.js', { integrity: 'sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L', crossOrigin: 'anonymous' });
+  injectScript('https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js', { integrity: 'sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm', crossOrigin: 'anonymous' });
+  injectScript('https://unpkg.com/@babel/standalone@7.29.0/babel.min.js', { integrity: 'sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y', crossOrigin: 'anonymous' });
+  window.addEventListener('load', function() {
+    var p = document.createElement('script'); p.type = 'text/babel'; p.src = 'tweaks-panel.jsx'; document.body.appendChild(p);
+    var a = document.createElement('script'); a.type = 'text/babel'; a.src = 'js/tweaks-app.jsx'; document.body.appendChild(a);
+  });
+})();
+</script>
+<script src="js/chrome.js" defer></script>
+<script>
+  RG.mountChrome('career');
+  // Filter
+  document.querySelectorAll('.chip').forEach(c => {
+    c.addEventListener('click', () => {
+      document.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+      c.classList.add('active');
+      const f = c.dataset.f;
+      document.querySelectorAll('.job').forEach(j => {
+        j.style.display = (f === 'all' || j.dataset.team === f) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

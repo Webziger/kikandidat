@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ki-kandidat",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "http-server", "/Users/dennis/Downloads/KI-Kandidat", "-p", "8766", "-c-1"],
+      "port": 8766
+    }
+  ]
+}

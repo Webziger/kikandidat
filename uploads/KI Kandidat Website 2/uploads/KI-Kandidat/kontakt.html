@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de" data-screen-label="Kontakt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000E1E" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://ki-kandidat.de/kontakt.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Kontakt · KI-Kandidat.de" />
+<meta property="og:description" content="Kostenfreies Erstgespräch — 30 Minuten, unverbindlich. Antwort innerhalb von 4 Stunden, werktags." />
+<meta property="og:url" content="https://ki-kandidat.de/kontakt.html" />
+<meta property="og:image" content="https://ki-kandidat.de/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Kontakt · KI-Kandidat.de" />
+<meta name="twitter:description" content="Kostenfreies Erstgespräch — 30 Minuten, unverbindlich. Antwort innerhalb von 4 Stunden, werktags." />
+<title>Kontakt · KI-Kandidat.de</title>
+<meta name="description" content="30-min Erstgespräch mit unserem Team. Antwort innerhalb 24h. Telefon, E-Mail, Termin-Tool — wie es Ihnen passt." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/tokens.css" />
+<link rel="stylesheet" href="styles/components.css" />
+<style>
+  .breadcrumb { font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted); letter-spacing: 0.05em; padding: 24px 0 0; }
+  .breadcrumb a { color: var(--fg-muted); }
+  .breadcrumb .sep { color: var(--fg-dim); margin: 0 10px; }
+
+  .ko-hero { padding: 32px 0 var(--s-9); }
+  .ko-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .ko-hero h1 { font-family: var(--font-display); font-size: clamp(48px, 6vw, 80px); line-height: 1; letter-spacing: -0.04em; font-weight: 700; }
+  .ko-hero h1 em { font-style: normal; color: var(--accent); }
+
+  /* Form */
+  .form-card { background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--r-xl); padding: 40px; box-shadow: 0 30px 60px -30px rgba(0,0,0,0.4); }
+  .form-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+  .form-row.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-row.two > * { display: flex; flex-direction: column; gap: 6px; }
+  .form-label { font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.1em; text-transform: uppercase; }
+  .form-input, .form-select, .form-textarea {
+    background: var(--bg-elev-2); border: 1px solid var(--line); border-radius: var(--r-md); padding: 14px 16px;
+    font-family: inherit; font-size: 15px; color: var(--fg); transition: border-color 150ms, background 150ms;
+    width: 100%;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--accent); background: var(--bg); }
+  .form-textarea { min-height: 120px; resize: vertical; font-family: inherit; }
+  .form-help { font-size: 12px; color: var(--fg-muted); margin-top: 8px; }
+  .form-foot { display: flex; gap: 16px; align-items: center; justify-content: space-between; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+
+  /* Right column info */
+  .info-block { padding-bottom: 32px; margin-bottom: 32px; border-bottom: 1px solid var(--line); }
+  .info-block:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .info-eyebrow { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; }
+  .info-h { font-family: var(--font-display); font-size: 24px; font-weight: 600; margin-top: 8px; letter-spacing: -0.02em; }
+  .info-d { color: var(--fg-muted); margin-top: 8px; line-height: 1.6; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+  .info-card { padding: 18px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--bg-elev); }
+  .info-card .l { font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.08em; }
+  .info-card .v { font-family: var(--font-display); font-size: 18px; margin-top: 6px; font-weight: 600; }
+
+  /* Team contact */
+  .contacts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-xl); overflow: hidden; }
+  .contact { background: var(--bg-elev); padding: 28px; display: flex; gap: 16px; align-items: flex-start; }
+  .contact .av { width: 56px; height: 56px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: var(--bg); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 18px; flex-shrink: 0; }
+  .contact .name { font-family: var(--font-display); font-weight: 600; font-size: 18px; }
+  .contact .role { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
+  .contact .meta { color: var(--fg-muted); font-size: 13px; margin-top: 12px; line-height: 1.6; }
+
+  @media (max-width: 920px){ .ko-hero-grid, .info-grid, .contacts { grid-template-columns: 1fr; } .form-row.two { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+<div id="nav-mount"></div>
+
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">HOME</a><span class="sep">/</span><span style="color:var(--accent)">KONTAKT</span></div>
+</div>
+
+<section class="ko-hero">
+  <div class="container">
+    <div class="ko-hero-grid">
+      <!-- Left: form -->
+      <div>
+        <span class="eyebrow">30 min · unverbindlich</span>
+        <h1 style="margin-top:24px">Lassen Sie<br>uns sprechen.</h1>
+        <p class="lead" style="margin-top:24px;max-width:48ch">Erzählen Sie uns kurz von Ihrer Situation. Wir prüfen das Matching-Potenzial in unserer Talent-Cloud und melden uns innerhalb von 24h mit einem Terminvorschlag.</p>
+
+        <div class="form-card" style="margin-top:32px">
+          <form>
+            <div class="form-row two">
+              <div>
+                <label class="form-label">Vorname</label>
+                <input class="form-input" type="text" placeholder="Max" required />
+              </div>
+              <div>
+                <label class="form-label">Nachname</label>
+                <input class="form-input" type="text" placeholder="Mustermann" required />
+              </div>
+            </div>
+
+            <div class="form-row two">
+              <div>
+                <label class="form-label">Unternehmen</label>
+                <input class="form-input" type="text" placeholder="Mustermann GmbH" required />
+              </div>
+              <div>
+                <label class="form-label">Mitarbeiter</label>
+                <select class="form-select">
+                  <option>1–10</option>
+                  <option>11–50</option>
+                  <option selected>51–250</option>
+                  <option>251–1.000</option>
+                  <option>1.000+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row two">
+              <div>
+                <label class="form-label">E-Mail (geschäftlich)</label>
+                <input class="form-input" type="email" placeholder="max@mustermann.de" required />
+              </div>
+              <div>
+                <label class="form-label">Telefon</label>
+                <input class="form-input" type="tel" placeholder="+49 ..." />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">Branche</label>
+              <select class="form-select">
+                <option>Bau</option>
+                <option>Handwerk</option>
+                <option>Industrie &amp; Produktion</option>
+                <option>IT &amp; Tech</option>
+                <option>Pflege &amp; Gesundheit</option>
+                <option>Logistik &amp; Transport</option>
+                <option>Handel &amp; Automotive</option>
+                <option>Finanzen &amp; Versicherung</option>
+                <option>Energie &amp; Umwelt</option>
+                <option>Hotellerie &amp; Gastro</option>
+                <option>Beratung &amp; Recht</option>
+                <option>Immobilien</option>
+                <option>Andere</option>
+              </select>
+            </div>
+
+            <div class="form-row two">
+              <div>
+                <label class="form-label">Offene Stelle(n)</label>
+                <input class="form-input" type="text" placeholder="z. B. SPS-Programmierer" required />
+              </div>
+              <div>
+                <label class="form-label">Region</label>
+                <input class="form-input" type="text" placeholder="z. B. Stuttgart · 60 km" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">Was ist Ihre größte Herausforderung im Recruiting?</label>
+              <textarea class="form-textarea" placeholder="Erzählen Sie uns, was bei Ihnen gerade nicht funktioniert..."></textarea>
+            </div>
+
+            <div class="form-foot">
+              <span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:0.08em">DSGVO ✓ · KEINE WEITERGABE AN DRITTE</span>
+              <button type="button" class="btn btn-primary btn-arrow" onclick="alert('Demo: Formular-Submission. In Live-Version würde dies an unser CRM gehen.')">Anfrage senden</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right: info -->
+      <div>
+        <div class="info-block">
+          <span class="info-eyebrow">Antwortzeit</span>
+          <div class="info-h">Wir melden uns &lt; 24 h zurück.</div>
+          <p class="info-d">An Werktagen meist innerhalb von 4 Stunden. Wir lesen jede Anfrage persönlich — keine automatischen Mails.</p>
+        </div>
+
+        <div class="info-block">
+          <span class="info-eyebrow">Direkt-Kontakt</span>
+          <div class="info-h">Lieber telefonieren?</div>
+          <div class="info-grid">
+            <div class="info-card"><div class="l">TELEFON</div><div class="v">+49 89 4146 9870</div></div>
+            <div class="info-card"><div class="l">E-MAIL</div><div class="v">hello@ki-kandidat.de</div></div>
+            <div class="info-card"><div class="l">CALENDLY</div><div class="v">/ki-kandidat/30min</div></div>
+            <div class="info-card"><div class="l">LINKEDIN</div><div class="v">@recruit-germany</div></div>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <span class="info-eyebrow">Vor Ort</span>
+          <div class="info-h">Vier Standorte im DACH-Raum</div>
+          <div class="info-grid" style="margin-top:16px">
+            <div class="info-card"><div class="l">MÜNCHEN · HQ</div><div class="v">Maximilianstr. 14</div><div style="font-size:13px;color:var(--fg-muted);margin-top:6px">80539 München</div></div>
+            <div class="info-card"><div class="l">HAMBURG</div><div class="v">Neuer Wall 50</div><div style="font-size:13px;color:var(--fg-muted);margin-top:6px">20354 Hamburg</div></div>
+            <div class="info-card"><div class="l">WIEN</div><div class="v">Kärntner Ring 12</div><div style="font-size:13px;color:var(--fg-muted);margin-top:6px">1010 Wien</div></div>
+            <div class="info-card"><div class="l">ZÜRICH</div><div class="v">Bahnhofstrasse 28</div><div style="font-size:13px;color:var(--fg-muted);margin-top:6px">8001 Zürich</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Direct contacts -->
+<section data-screen-label="Direct contacts">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Direkt zum Spezialisten</span>
+        <h2 class="h2" style="margin-top:16px">Sprechen Sie direkt<br>mit dem Team-Lead Ihrer Branche.</h2>
+      </div>
+      <p class="lead">Wer schon konkret weiß, was er sucht, kann den Standard-Funnel überspringen. Hier sind unsere Branchen-Leads — direkt erreichbar.</p>
+    </div>
+
+    <div class="contacts reveal">
+      <div class="contact">
+        <div class="av">SK</div>
+        <div>
+          <div class="name">Sandra Köhler</div>
+          <div class="role">Lead · Bau / Industrie</div>
+          <div class="meta">+49 89 4146 9871<br>sandra.koehler@ki-kandidat.de</div>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="av">MR</div>
+        <div>
+          <div class="name">Michael Reuter</div>
+          <div class="role">Lead · IT &amp; Tech</div>
+          <div class="meta">+49 89 4146 9872<br>michael.reuter@ki-kandidat.de</div>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="av">JK</div>
+        <div>
+          <div class="name">Julia Krämer</div>
+          <div class="role">Lead · Pflege &amp; Gesundheit</div>
+          <div class="meta">+49 40 5598 2310<br>julia.kraemer@ki-kandidat.de</div>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="av">PE</div>
+        <div>
+          <div class="name">Peter Eberle</div>
+          <div class="role">Lead · DACH (CH/AT)</div>
+          <div class="meta">+41 44 226 7700<br>peter.eberle@ki-kandidat.ch</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script>window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"dark","accent":"cyan","density":"comfortable","headline_variant":"A"}/*EDITMODE-END*/;</script>
+<!-- Dev-only: React + Babel for Tweaks panel (localhost only) -->
+<script>
+(function(){
+  if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') return;
+  function injectScript(src, attrs) {
+    var el = document.createElement('script');
+    el.src = src;
+    for (var k in attrs) el[k] = attrs[k];
+    document.body.appendChild(el);
+  }
+  injectScript('https://unpkg.com/react@18.3.1/umd/react.development.js', { integrity: 'sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L', crossOrigin: 'anonymous' });
+  injectScript('https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js', { integrity: 'sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm', crossOrigin: 'anonymous' });
+  injectScript('https://unpkg.com/@babel/standalone@7.29.0/babel.min.js', { integrity: 'sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y', crossOrigin: 'anonymous' });
+  window.addEventListener('load', function() {
+    var p = document.createElement('script'); p.type = 'text/babel'; p.src = 'tweaks-panel.jsx'; document.body.appendChild(p);
+    var a = document.createElement('script'); a.type = 'text/babel'; a.src = 'js/tweaks-app.jsx'; document.body.appendChild(a);
+  });
+})();
+</script>
+<script src="js/chrome.js" defer></script>
+<script>RG.mountChrome('contact');</script>
+</body>
+</html>

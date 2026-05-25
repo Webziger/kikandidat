@@ -1,0 +1,914 @@
+/* ============================================================
+   KI-Kandidat.de — Design Refresh 2026
+   Amber·Ivory·Bricolage — Premium Recruiting Intelligence
+   ============================================================ */
+
+/* ── 1. TOKEN OVERRIDES ─────────────────────────────────── */
+:root {
+  --bg:          #F5F1E8;
+  --bg-elev:     #FFFFFF;
+  --bg-elev-2:   #ECE7DA;
+  --line:        rgba(10,15,28,0.08);
+  --line-strong: rgba(10,15,28,0.16);
+
+  --fg:          #0A0F1C;
+  --fg-muted:    #3A4860;
+  --fg-dim:      #677080;
+
+  /* Amber — primärer Brand-Akzent */
+  --accent:       #B8720F;
+  --accent-2:     #935C0A;
+  --accent-soft:  rgba(184,114,15,0.08);
+  --accent-glow:  rgba(184,114,15,0.26);
+
+  /* Blau — KI / Tech */
+  --accent-blue:      #1D50C8;
+  --accent-blue-soft: rgba(29,80,200,0.08);
+  --accent-blue-glow: rgba(29,80,200,0.24);
+
+  --success: #0B9456;
+  --warning: #B8720F;
+
+  --font-display: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans:    "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --r-sm:   8px;
+  --r-md:   14px;
+  --r-lg:   22px;
+  --r-xl:   32px;
+  --r-2xl:  48px;
+  --r-pill: 999px;
+
+  --shadow-sm: 0 1px 4px rgba(6,12,24,0.05), 0 0 0 1px rgba(6,12,24,0.04);
+  --shadow-md: 0 4px 24px rgba(6,12,24,0.08), 0 0 0 1px rgba(6,12,24,0.04);
+  --shadow-lg: 0 8px 48px rgba(6,12,24,0.12), 0 0 0 1px rgba(6,12,24,0.05);
+  --shadow-xl: 0 20px 72px rgba(6,12,24,0.18), 0 0 0 1px rgba(6,12,24,0.06);
+
+  --dark-bg: #070D1B;
+}
+
+/* ── 2. BODY ────────────────────────────────────────────── */
+body { background: var(--bg) !important; }
+::selection { background: var(--accent); color: #fff; }
+
+/* ── 3. TYPOGRAFIE ─────────────────────────────────────── */
+.h-display, h1, h2, h3, h4,
+.h1, .h2, .h3 {
+  font-family: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif !important;
+}
+.h-display {
+  font-size: clamp(44px, 7vw, 98px) !important;
+  line-height: 0.91 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.038em !important;
+}
+.h2 {
+  font-size: clamp(30px, 3.8vw, 52px) !important;
+  font-weight: 700 !important;
+}
+.h3 { font-weight: 600 !important; }
+
+/* Kursive em → Amber */
+h1 em, .h-display em {
+  font-style: italic !important;
+  color: var(--accent) !important;
+  -webkit-text-fill-color: var(--accent) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  text-decoration: none !important;
+}
+h1 em::after { display: none !important; }
+
+.lead { line-height: 1.76 !important; }
+
+/* ── 4. EYEBROW → Amber ─────────────────────────────────── */
+.eyebrow { color: var(--accent) !important; }
+.eyebrow::before {
+  background: var(--accent) !important;
+  box-shadow: 0 0 12px var(--accent-glow), 0 0 5px var(--accent) !important;
+}
+
+/* ── 5. NAV ─────────────────────────────────────────────── */
+.nav {
+  background: rgba(245,241,232,0.90) !important;
+  border-color: rgba(10,15,28,0.09) !important;
+  box-shadow: 0 4px 28px rgba(6,12,24,0.07), 0 1px 0 rgba(255,255,255,0.55) inset !important;
+}
+.nav-cta .btn-primary,
+.nav-cta .btn-primary:link {
+  background: linear-gradient(135deg, #D4881E 0%, #B8720F 60%, #935C0A 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 18px rgba(184,114,15,0.32) !important;
+}
+.nav-cta .btn-primary:hover {
+  box-shadow: 0 6px 28px rgba(184,114,15,0.48) !important;
+}
+
+/* ── 6. ALLE BUTTONS ────────────────────────────────────── */
+.btn-primary {
+  background: linear-gradient(135deg, #D4881E 0%, #B8720F 55%, #935C0A 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 0 0 1px rgba(184,114,15,0.25), 0 4px 20px -4px rgba(184,114,15,0.48), inset 0 1px 0 rgba(255,255,255,0.15) !important;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #B8720F 0%, #935C0A 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 0 1px rgba(147,92,10,0.40), 0 8px 32px -8px rgba(184,114,15,0.55) !important;
+}
+.btn-ghost { border-color: var(--line-strong) !important; color: var(--fg) !important; }
+.btn-ghost:hover {
+  background: rgba(184,114,15,0.05) !important;
+  border-color: rgba(184,114,15,0.35) !important;
+}
+
+/* ── 7. CARDS ───────────────────────────────────────────── */
+.card {
+  border-radius: var(--r-lg) !important;
+  background: var(--bg-elev) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: var(--shadow-md) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition: transform 0.32s cubic-bezier(0.16,1,0.3,1), box-shadow 0.32s ease, border-color 0.22s ease !important;
+}
+.card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--shadow-xl) !important;
+  border-color: rgba(184,114,15,0.22) !important;
+}
+
+/* ── 8. TESTIMONIALS ────────────────────────────────────── */
+.testimonial {
+  border-radius: var(--r-lg) !important;
+  background: var(--bg-elev) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: var(--shadow-md) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.testimonial:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--shadow-xl) !important;
+}
+.testimonial .quote { color: var(--fg) !important; }
+.testimonial .quote::before { color: var(--accent) !important; }
+.testimonial .metric .v { color: var(--accent) !important; }
+.testimonial .footer-row { border-color: var(--line) !important; }
+
+/* ── 9. STATS BAR ───────────────────────────────────────── */
+.stat .num .unit { color: var(--accent) !important; }
+.stat:hover { background: rgba(184,114,15,0.03) !important; }
+
+/* ── 10. HERO ───────────────────────────────────────────── */
+.hero {
+  background: #0A0F1C !important;
+}
+.hero .h-display { color: #F5F1E8 !important; }
+.hero .lead { color: rgba(245,241,232,0.72) !important; }
+.hero-trust-item .num { color: #F5F1E8 !important; }
+.hero-trust-item .lbl { color: rgba(245,241,232,0.50) !important; }
+.hero-photo-grad {
+  background:
+    linear-gradient(110deg,
+      rgba(7,13,27,0.96) 0%,
+      rgba(7,13,27,0.82) 38%,
+      rgba(7,13,27,0.40) 66%,
+      rgba(7,13,27,0.60) 100%),
+    linear-gradient(180deg, rgba(7,13,27,0.10) 40%, rgba(7,13,27,0.95) 100%) !important;
+}
+/* Hero live badge */
+.hero-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,241,232,0.07);
+  border: 1px solid rgba(245,241,232,0.14);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(245,241,232,0.75);
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(8px);
+}
+.dot-live {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  display: inline-block;
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+@keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+
+/* ── 11. SECTION-PHOTO-BACKGROUNDS ─────────────────────── */
+/* Jede Dark-Section bekommt ein subtiles Foto-Layer */
+.section-pillars-bg {
+  position: relative;
+  isolation: isolate;
+}
+.section-pillars-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=60&fit=crop&auto=format') center/cover;
+  opacity: 0.04;
+  mix-blend-mode: screen;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.section-process-bg {
+  position: relative;
+  isolation: isolate;
+}
+.section-process-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=60&fit=crop&auto=format') center/cover;
+  opacity: 0.05;
+  mix-blend-mode: screen;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ── 12. PAIN GRID / GLOW CARDS ─────────────────────────── */
+.glow-card {
+  border-radius: var(--r-lg) !important;
+  border: 1px solid rgba(255,255,255,0.07) !important;
+}
+.glow-card-inner { border-radius: calc(var(--r-lg) - 1px) !important; }
+.glow-card .h3 {
+  background: linear-gradient(135deg, #F5F1E8 0%, #E8C88C 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+.glow-card::before {
+  background: radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),
+    rgba(184,114,15,0.12), transparent 40%) !important;
+}
+
+/* ── 13. BRANCHEN GRID — Fotos permanent sichtbar ────────── */
+.industry-tile { border-radius: 0 !important; }
+.industry-tile::before { opacity: 1 !important; }
+.industry-tile::after {
+  background: linear-gradient(160deg, rgba(4,10,24,0.72) 0%, rgba(4,10,24,0.30) 50%, rgba(4,10,24,0.80) 100%) !important;
+  opacity: 1 !important;
+}
+.industry-tile:hover::after {
+  background: linear-gradient(160deg, rgba(4,10,24,0.52) 0%, rgba(4,10,24,0.15) 50%, rgba(184,114,15,0.50) 100%) !important;
+}
+.industry-tile:hover {
+  border-color: rgba(184,114,15,0.50) !important;
+  box-shadow: 0 20px 48px rgba(0,0,0,0.55), 0 0 24px rgba(184,114,15,0.22) !important;
+}
+.industry-tile .name { color: #F5F1E8 !important; }
+.industry-tile .num  { color: rgba(245,241,232,0.45) !important; }
+.industry-tile .arrow { color: rgba(245,241,232,0.40) !important; }
+.industry-tile:hover .arrow { color: #D4881E !important; }
+
+/* ── 14. PILLARS ─────────────────────────────────────────── */
+.pillar-inner {
+  border-radius: 38px !important;
+  background: #FFFFFF !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+.pillar-inner h2.pillar-title .accent,
+.pillar .accent {
+  background: linear-gradient(135deg, #D4881E 0%, #B8720F 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+.pillar-tag {
+  background: var(--accent-soft) !important;
+  border-color: rgba(184,114,15,0.20) !important;
+  color: var(--accent) !important;
+}
+
+/* ── 15. KI SECTION — bleibt dunkel, KI=Blau ────────────── */
+.ki-section { background: linear-gradient(180deg, #06101E 0%, #04080F 50%, #06101E 100%) !important; }
+.ki-section::before {
+  background: radial-gradient(ellipse, rgba(29,80,200,0.08) 0%, transparent 70%) !important;
+}
+.ls-bar-fill { background: linear-gradient(90deg, #1D50C8, #3B6FE8) !important; }
+.ls-row.scoring .ls-bar-fill { background: linear-gradient(90deg, #93C5FD, #1D50C8) !important; }
+.ls-pct { color: #3B6FE8 !important; }
+.match-score-badge .v {
+  background: linear-gradient(135deg, #93C5FD, #3B6FE8, #1D50C8) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+.match-tag.primary { background: rgba(29,80,200,0.12) !important; border-color: rgba(29,80,200,0.35) !important; color: #93C5FD !important; }
+
+/* ── 16. MOSAIC / BERATER SECTION ───────────────────────── */
+.mosaic-section .btn-primary,
+.berater-section .btn-primary {
+  background: linear-gradient(135deg, #D4881E 0%, #B8720F 60%, #935C0A 100%) !important;
+  color: #fff !important;
+}
+
+/* ── 17. GUARANTEE / SEAL ───────────────────────────────── */
+.seal-center .big { color: var(--accent) !important; }
+.guarantee {
+  background: radial-gradient(700px 350px at 80% 0%, rgba(184,114,15,0.06) 0%, transparent 60%), var(--bg-elev) !important;
+}
+
+/* ── 18. FAQ ─────────────────────────────────────────────── */
+.faq-q:hover { color: var(--accent) !important; }
+.faq-q .ico { color: var(--accent) !important; }
+
+/* ── 19. COMPARE TABLE ──────────────────────────────────── */
+.compare-row .col-us {
+  background: rgba(184,114,15,0.04) !important;
+}
+
+/* ── 20. STEPPER — aktiver Schritt ─────────────────────── */
+.steps li.active {
+  background: var(--accent-soft) !important;
+  border-left-color: var(--accent) !important;
+  color: var(--fg) !important;
+}
+.steps li.active .step-num { color: var(--accent) !important; }
+
+/* ── 21. LOGO WALL ──────────────────────────────────────── */
+.logo-wall { background: var(--bg) !important; }
+.logo-cell:hover { color: var(--accent) !important; }
+
+/* ── 22. FOOTER ─────────────────────────────────────────── */
+.footer { background: #07091A !important; }
+
+/* ── 23. PULSE DOT ──────────────────────────────────────── */
+.pulse-dot { color: var(--accent) !important; }
+
+/* ── 24. SCROLLBAR ──────────────────────────────────────── */
+::-webkit-scrollbar-thumb { background: rgba(184,114,15,0.20) !important; }
+::-webkit-scrollbar-thumb:hover { background: rgba(184,114,15,0.40) !important; }
+
+/* ── 25. FOCUS-VISIBLE ──────────────────────────────────── */
+:focus-visible { outline-color: var(--accent) !important; }
+.btn:focus-visible { box-shadow: 0 0 0 4px rgba(184,114,15,0.28) !important; }
+
+/* ── 26. TRUST / DSGVO ──────────────────────────────────── */
+.trust-badge {
+  background: rgba(184,114,15,0.06) !important;
+  border-color: rgba(184,114,15,0.22) !important;
+  color: var(--accent) !important;
+}
+.trust-badge .check { color: var(--success) !important; }
+
+/* ── 27. BRANCHE HERO-PAGES ─────────────────────────────── */
+.br-eyebrow-row,
+.ab-eyebrow-row,
+.ko-eyebrow-row,
+.ka-hero-live {
+  border-color: rgba(184,114,15,0.28) !important;
+  background: rgba(184,114,15,0.07) !important;
+  color: var(--accent) !important;
+}
+.br-eyebrow-row .pulse,
+.ab-eyebrow-row .pulse,
+.ka-hero-live .pulse {
+  background: var(--accent) !important;
+  box-shadow: 0 0 10px var(--accent-glow) !important;
+}
+/* Ko — grüne Eyebrow bleibt grün (passt thematisch) */
+.ko-eyebrow-row {
+  border-color: rgba(13,148,86,0.32) !important;
+  background: rgba(13,148,86,0.07) !important;
+  color: #0D9456 !important;
+}
+.ko-eyebrow-row .pulse {
+  background: #0D9456 !important;
+  box-shadow: 0 0 10px rgba(13,148,86,0.50) !important;
+}
+
+.br-hl em, .ab-hero h1 em, .ko-hl em, .ka-hl em {
+  background: linear-gradient(135deg, #D4881E 0%, #B8720F 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-style: italic !important;
+}
+
+/* Subpage CTA-Buttons */
+.br-hero-ctas .btn-primary,
+.ab-hero-ctas .btn-primary,
+.ko-form-submit,
+.ka-hero-ctas .btn-primary {
+  background: linear-gradient(135deg, #D4881E 0%, #B8720F 60%, #935C0A 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 20px rgba(184,114,15,0.36) !important;
+}
+.br-hero-ctas .btn-primary:hover,
+.ab-hero-ctas .btn-primary:hover,
+.ko-form-submit:hover,
+.ka-hero-ctas .btn-primary:hover {
+  box-shadow: 0 8px 32px rgba(184,114,15,0.52) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ── 28. PHOTO SECTIONS — Breite Hintergrundfotos ─────────── */
+/* Jede Seite: Berater-Section bekommt immer ein Foto */
+.berater-bg-photo {
+  filter: saturate(0.25) brightness(0.40) !important;
+}
+/* Schöne Showcase-Section Bilder immer einblenden */
+.sc-bg-slide { filter: brightness(0.42) saturate(0.38) !important; }
+.sc-bg-slide.active { opacity: 1 !important; }
+
+/* ── 29. BRANCHE-SEITEN HERO — mehr Photo ────────────────── */
+.br-hero-bg img { opacity: 0.38 !important; }
+.ab-hero-bg img { opacity: 0.34 !important; }
+.ko-hero-bg img { opacity: 0.32 !important; }
+.ka-hero-bg img { opacity: 0.38 !important; }
+
+/* ── 30. SECTION-PHOTO OVERLAYS (neue Sections mit Foto) ─── */
+/* Pain-Section */
+.section-pain-bg {
+  position: relative;
+  isolation: isolate;
+  background: var(--dark-bg) !important;
+}
+.section-pain-bg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=60&auto=format&fit=crop') center/cover;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── 31. NEUE SECTION-TRENNELEMENTE ─────────────────────── */
+/* Zwischen hellen und dunklen Sections */
+.section-divider-photo {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+.section-divider-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: brightness(0.55) saturate(0.42);
+}
+.section-divider-photo::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, var(--dark-bg) 0%, transparent 30%, transparent 70%, var(--bg) 100%);
+  pointer-events: none;
+}
+
+/* ── 32. BLOG/MOSAIC SECTION ─────────────────────────────── */
+.mosaic-section {
+  background: linear-gradient(160deg, #08101E 0%, #0A1420 50%, #060C18 100%) !important;
+}
+
+/* ── 33. FINAL CTA ───────────────────────────────────────── */
+.final-cta {
+  background:
+    radial-gradient(700px 350px at 50% 0%, rgba(184,114,15,0.08) 0%, transparent 70%),
+    var(--bg-elev) !important;
+}
+
+/* ── 34. HOVER-GLOW auf Pillar/Cards ────────────────────── */
+.pillar::before {
+  background: radial-gradient(800px circle at var(--mouse-x,50%) var(--mouse-y,50%),
+    rgba(184,114,15,0.06), transparent 40%) !important;
+}
+
+/* ── 35. BERATER-CARD ────────────────────────────────────── */
+.berater-card { border-color: rgba(255,255,255,0.12) !important; }
+.berater-list .k { color: #D4881E !important; }
+.berater-card .role-label { color: #D4881E !important; }
+.berater-card .quote { border-left-color: #D4881E !important; }
+.berater-card .action-dot { background: var(--success) !important; box-shadow: 0 0 10px var(--success) !important; }
+
+/* ── 36. TRUST SECTION ───────────────────────────────────── */
+.trust-section {
+  background: linear-gradient(180deg, #050B18 0%, #03070E 50%, #050B18 100%) !important;
+}
+
+/* ── 37. BRANCHE-DETAIL PAGES: Sektion-BG ───────────────── */
+.branche-page-body { background: var(--bg) !important; }
+
+/* ── 38. KARIERE: Dept Tiles ─────────────────────────────── */
+.ka-dept-tile {
+  border-color: rgba(184,114,15,0.15) !important;
+}
+.ka-dept-tile:hover { border-color: rgba(184,114,15,0.42) !important; }
+
+/* ── 39. KONTAKT: Form ───────────────────────────────────── */
+.ko-form-field:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(184,114,15,0.16) !important;
+}
+
+/* ── 40. RESPONSIVE ─────────────────────────────────────── */
+/* ── MOSAIC: Fallback wenn Bilder nicht laden → kein Schwarz ─ */
+/* Mosaic-Fallback — kein !important auf background-image damit JS-Inline-Styles greifen */
+.mosaic-tile {
+  background: #0A1220;
+}
+.tile-bg {
+  background-color: #0A1220;
+}
+
+
+
+/* ============================================================
+   SECTION PHOTO BACKGROUNDS — Alle Sections mit Fotos
+   ============================================================ */
+
+/* ── QUELLEN / ORBITAL SOURCES ─────────────────────────────── */
+.quellen-section {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg) !important;
+}
+.quellen-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+.quellen-section .container { position: relative; z-index: 1; }
+
+/* ── KI-INTRO / KI MODUL ───────────────────────────────────── */
+.ki-intro-section {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(180deg, #07111E 0%, #050C18 50%, #07111E 100%) !important;
+}
+.ki-intro-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=1600&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.07;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+.ki-intro-section .container { position: relative; z-index: 1; }
+
+/* ── PLATFORM SLIDER ────────────────────────────────────────── */
+.section_plattform {
+  background: var(--bg-elev) !important;
+  position: relative;
+  isolation: isolate;
+}
+.section_plattform::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+}
+.section_plattform .container,
+.section_plattform .plattform-grid { position: relative; z-index: 1; }
+
+/* ── PAIN / STATUS QUO ──────────────────────────────────────── */
+.pain-section {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(160deg, #06101E 0%, #070C1A 50%, #050B16 100%) !important;
+}
+.pain-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── STATS BAR ──────────────────────────────────────────────── */
+.stats-bar {
+  position: relative;
+}
+section:has(.stats-bar) {
+  background: var(--bg) !important;
+  position: relative;
+  isolation: isolate;
+}
+section:has(.stats-bar)::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── PROCESS / PM SECTION ──────────────────────────────────── */
+.pm-section {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg) !important;
+}
+.pm-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+.pm-section > * { position: relative; z-index: 1; }
+
+/* ── SELL / SELLCRUITING ────────────────────────────────────── */
+.sell-section {
+  background: var(--bg-elev) !important;
+  position: relative;
+  isolation: isolate;
+}
+.sell-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1400&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+.sell-section .container { position: relative; z-index: 1; }
+
+/* ── INDUSTRIES / IND SECTION ───────────────────────────────── */
+.ind-section {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg) !important;
+}
+.ind-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+.ind-section > * { position: relative; z-index: 1; }
+
+/* ── TESTIMONIALS / TM SECTION ──────────────────────────────── */
+.tm-section {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg-elev) !important;
+}
+.tm-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+.tm-section .container { position: relative; z-index: 1; }
+/* Testimonial headings → amber */
+.tm-section .eyebrow { color: var(--accent) !important; }
+
+/* ── QUALITÄT & PROZESS / TS SECTION ────────────────────────── */
+.ts-section {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg) !important;
+}
+.ts-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=55&auto=format&fit=crop') center 20%/cover no-repeat;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+}
+.ts-section .container { position: relative; z-index: 1; }
+
+/* ── FAQ / SEC-CREAM ────────────────────────────────────────── */
+.sec-cream {
+  background: var(--bg-elev-2) !important;
+  position: relative;
+  isolation: isolate;
+}
+.sec-cream::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+.sec-cream .container { position: relative; z-index: 1; }
+.faq-q { color: var(--fg) !important; }
+.faq-q:hover { color: var(--accent) !important; }
+
+/* ── MOSAIC / DARK CTA ──────────────────────────────────────── */
+.mosaic-section {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(160deg, #070D1C 0%, #091524 50%, #060B18 100%) !important;
+}
+.mosaic-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.08;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── FINAL CTA ──────────────────────────────────────────────── */
+section[data-screen-label="Final CTA"] {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg-elev) !important;
+}
+section[data-screen-label="Final CTA"]::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+section[data-screen-label="Final CTA"] .container { position: relative; z-index: 1; }
+
+/* ── GUARANTEE ──────────────────────────────────────────────── */
+section[data-screen-label="Guarantee"] {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg) !important;
+}
+section[data-screen-label="Guarantee"]::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+section[data-screen-label="Guarantee"] .container { position: relative; z-index: 1; }
+
+/* ── COMPARISON ─────────────────────────────────────────────── */
+section[data-screen-label="Comparison"] {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg-elev) !important;
+}
+section[data-screen-label="Comparison"]::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=55&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+}
+section[data-screen-label="Comparison"] .container { position: relative; z-index: 1; }
+
+/* ============================================================
+   SECTION HEADER / EYEBROW AMBER OVERRIDES
+   ============================================================ */
+.section-head .eyebrow { color: var(--accent) !important; }
+.section-head .eyebrow::before { background: var(--accent) !important; }
+
+/* All dark sections: eyebrow stays amber */
+.pain-section .eyebrow,
+.ki-section .eyebrow,
+.mosaic-section .eyebrow,
+.berater-section .eyebrow,
+.trust-section .eyebrow,
+.ki-intro-section .eyebrow {
+  color: #D4881E !important;
+}
+.pain-section .eyebrow::before,
+.ki-section .eyebrow::before,
+.mosaic-section .eyebrow::before,
+.berater-section .eyebrow::before,
+.trust-section .eyebrow::before,
+.ki-intro-section .eyebrow::before {
+  background: #D4881E !important;
+  box-shadow: 0 0 12px rgba(212,136,30,0.40) !important;
+}
+
+/* ============================================================
+   TYPOGRAPHY REFINEMENTS — SECTION HEADLINES
+   ============================================================ */
+/* Dark sections: headlines ivory/warm */
+.pain-section h2, .pain-section .h2,
+.ki-section h2, .ki-section .h2,
+.mosaic-section h2, .mosaic-section .h2,
+.berater-section h2, .berater-section .h2,
+.trust-section h2, .trust-section .h2,
+.ki-intro-section h2, .ki-intro-section .h2 {
+  color: #F0EBE0 !important;
+}
+
+/* Accent spans in dark sections → amber */
+.pain-section .accent,
+.ki-section .accent,
+.mosaic-section .accent,
+.berater-section h2 em,
+.trust-section h2 em {
+  color: #D4881E !important;
+  -webkit-text-fill-color: #D4881E !important;
+  background: none !important;
+}
+
+/* ============================================================
+   CARD REFINEMENTS — CLEAN BOUNDARIES
+   ============================================================ */
+/* Stepper card */
+.stepper-wrap {
+  border-radius: var(--r-xl) !important;
+  box-shadow: var(--shadow-lg) !important;
+  background: var(--bg-elev) !important;
+}
+
+/* Compare table */
+.compare {
+  border-radius: var(--r-xl) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Guarantee box */
+.guarantee {
+  border-radius: var(--r-2xl) !important;
+  box-shadow: var(--shadow-xl) !important;
+}
+
+/* ============================================================
+   BRANCHE SUB-PAGES — Photo Hero Backgrounds
+   ============================================================ */
+.br-hero,
+.ab-hero,
+.ko-hero,
+.ka-hero {
+  background: var(--bg) !important;
+}
+
+/* Alle Hero-Bilder etwas sichtbarer */
+.br-hero-bg img,
+.ab-hero-bg img,
+.ko-hero-bg img,
+.ka-hero-bg img {
+  opacity: 0.38 !important;
+}
+
+/* ============================================================
+   HOVER — KI Match Engine Panel (Hero)
+   ============================================================ */
+.klp {
+  border-radius: 22px !important;
+}
+.klp-match-score {
+  background: linear-gradient(135deg, #D4881E, #B8720F, #935C0A) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+.klp-live-dot { background: #34d399 !important; box-shadow: 0 0 8px #34d399 !important; }
+.klp-scan-fill { background: linear-gradient(90deg, #935C0A, #D4881E) !important; }
+.klp-bar-fill { background: linear-gradient(90deg, rgba(184,114,15,0.5), rgba(184,114,15,0.9)) !important; }
+.klp-row.best-match .klp-pct { color: #D4881E !important; }
+.klp-row.best-match { background: rgba(184,114,15,0.06) !important; border-bottom-color: rgba(184,114,15,0.14) !important; }
+.klp-match-tag { color: #D4881E !important; }
+.klp-match-banner { border-color: rgba(184,114,15,0.30) !important; background: linear-gradient(135deg, rgba(184,114,15,0.10) 0%, rgba(184,114,15,0.05) 100%) !important; }
+.klp-query-label { color: #D4881E !important; }
+.klp-query-text { border-right-color: #D4881E !important; }
+
+/* ============================================================
+   SECTION: LOGO WALL — amber hover
+   ============================================================ */
+.logo-cell:hover { color: var(--accent) !important; opacity: 1 !important; }
+
+/* ============================================================
+   MOBILE NAV — cream background (not dark)
+   ============================================================ */
+.mobile-nav {
+  background: rgba(245,241,232,0.97) !important;
+}
+.mobile-nav a { color: var(--fg) !important; }
+.mobile-nav a:hover { color: var(--accent) !important; }
+
+/* ============================================================
+   REVEAL ANIMATIONS — amber glow on focus
+   ============================================================ */
+.reveal.in, .reveal-left.in, .reveal-right.in, .reveal-scale.in {
+  opacity: 1;
+}
+
+/* ── MOSAIC: Fallback wenn Bilder nicht laden → kein Schwarz ─ */
+.mosaic-tile {
+  background: linear-gradient(135deg, #0D1828 0%, #0A1522 100%) !important;
+}
+.tile-bg {
+  background-color: #0A1522 !important;
+}
+

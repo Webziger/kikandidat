@@ -1,0 +1,3447 @@
+<!DOCTYPE html>
+<html lang="de" data-screen-label="01 Homepage">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KI-Kandidat — Software-Recruiting für den DACH-Mittelstand</title>
+<meta name="description" content="KI-gestütztes Recruiting + 1.000.000 Fachkräfte im Talent-Pool + persönliche Betreuung. Erste Kandidaten in 72 Stunden. Mit Matching-Garantie. Moderne Personalgewinnung für den DACH-Mittelstand." />
+<meta name="keywords" content="Software Recruiting, KI Recruiting, Fachkräfte gewinnen, Personalvermittlung DACH, Active Sourcing, Talent Pool, Employer Branding, Karriereseite" />
+<meta property="og:title" content="KI-Kandidat — Software-Recruiting für den Mittelstand" />
+<meta property="og:description" content="KI-Matching + Talent-Cloud + persönliche Beratung. Erste Kandidaten in 72h. Matching-Garantie. Digitale Recruiting-Prozesse für den DACH-Mittelstand." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ki-kandidat.de" />
+<meta property="og:image" content="https://ki-kandidat.de/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#000E1E" />
+<link rel="canonical" href="https://ki-kandidat.de/index.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=1600&q=75&auto=format&fit=crop&crop=center" fetchpriority="high" />
+<link rel="stylesheet" href="styles/tokens.css?v=20260516e" />
+<link rel="stylesheet" href="styles/components.css?v=20260516q" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"KI-Kandidat",
+  "url":"https://ki-kandidat.de",
+  "logo":"https://ki-kandidat.de/logo.svg",
+  "description":"KI-gestütztes Software-Recruiting für den DACH-Mittelstand",
+  "address":{"@type":"PostalAddress","addressCountry":"DE"},
+  "sameAs":["https://www.linkedin.com/"]
+}
+</script>
+<style>
+  /* Premium Dark Mode & Hover Overrides */
+  body {
+    background: var(--bg) !important;
+    color: var(--fg) !important;
+  }
+  
+  /* Global Mouse Cursor Glow */
+  .cursor-glow-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(232, 201, 122, 0.07) 0%, rgba(199, 162, 74, 0.04) 30%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    transition: left 0.1s ease-out, top 0.1s ease-out;
+    mix-blend-mode: screen;
+  }
+
+  /* Hero — DACH Network Map */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse 100% 80% at 75% 40%, rgba(30, 25, 10, 0.4) 0%, rgba(0, 14, 30, 1) 70%);
+  }
+  /* Subtle tech grid in background */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M40 0H0v40h40V0zM19 19h2v2h-2v-2z" fill="rgba(255,255,255,0.015)" fill-rule="evenodd"/></svg>') repeat;
+    z-index: 0;
+  }
+  .hero .container {
+    position: relative;
+    z-index: 2;
+  }
+  .hero .h-display {
+    color: var(--fg);
+  }
+  .hero .lead {
+    color: rgba(255,255,255,0.85) !important;
+  }
+
+  /* ── Ultra-Realistic Minimalist iPad Pro ── */
+  .ipad-device {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    animation: ipadFlyIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) both,
+               ipadFloat 6s ease-in-out 1.5s infinite;
+    filter: drop-shadow(0 40px 60px rgba(0,0,0,0.6)) drop-shadow(0 0 80px rgba(96,165,250,0.06));
+    z-index: 10;
+  }
+  @keyframes ipadFlyIn {
+    0% { opacity:0; transform:translateY(70px) scale(0.9); }
+    100% { opacity:1; transform:translateY(0) scale(1); }
+  }
+  @keyframes ipadFloat {
+    0%,100% { transform:translateY(0); }
+    50% { transform:translateY(-10px); }
+  }
+  .ipad-chassis {
+    position: relative;
+    background: linear-gradient(145deg, #505256 0%, #2a2a2c 100%);
+    border-radius: 36px;
+    padding: 3px; /* The visible aluminum edge */
+    box-shadow: 
+      inset 0 1.5px 2px rgba(255,255,255,0.4),
+      inset 0 -1.5px 2px rgba(0,0,0,0.8),
+      inset 1.5px 0 2px rgba(255,255,255,0.2),
+      inset -1.5px 0 2px rgba(0,0,0,0.6),
+      0 0 0 1px rgba(0,0,0,0.4);
+  }
+  /* Hardware buttons */
+  .ipad-chassis::before {
+    content: ''; position: absolute; right: -2px; top: 120px; width: 2px; height: 40px;
+    background: #3a3b3e; border-radius: 0 2px 2px 0;
+    box-shadow: inset 1px 0 1px rgba(255,255,255,0.1);
+  }
+  .ipad-chassis::after {
+    content: ''; position: absolute; left: 80px; top: -2px; width: 44px; height: 2px;
+    background: #3a3b3e; border-radius: 2px 2px 0 0;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
+  }
+  /* The Black Glass Bezel */
+  .ipad-bezel {
+    position: relative;
+    background: #000;
+    border-radius: 33px;
+    padding: 16px; /* Bezel thickness */
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+    overflow: hidden; /* Contains the glass glare */
+  }
+  /* Front Camera inside Bezel */
+  .ipad-camera {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #111;
+    box-shadow: inset 0 0 2px #0a1128, 0 0 1px rgba(255,255,255,0.1);
+    z-index: 20;
+  }
+  .ipad-camera::after {
+    content: ''; position: absolute;
+    top: 1.5px; right: 1.5px; width: 1.5px; height: 1.5px;
+    border-radius: 50%; background: rgba(96,165,250,0.8);
+  }
+  /* Screen Display */
+  .ipad-screen {
+    position: relative;
+    background: #020617;
+    border-radius: 18px; /* Inner screen corner radius */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 580px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+  }
+  /* Glass Slab Over Entire Bezel */
+  .ipad-glass {
+    position: absolute;
+    inset: 0;
+    border-radius: 33px;
+    background: linear-gradient(115deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 35%, transparent 45%);
+    pointer-events: none;
+    z-index: 30;
+  }
+  /* Status Bar */
+  .ipad-status {
+    padding: 12px 20px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+  .ipad-status-time {
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .ipad-status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  /* Signals */
+  .sig-bars { display:flex; align-items:flex-end; gap:2px; height:10px; }
+  .sig-bars span { width:3px; background:#fff; border-radius:1px; }
+  .sig-bars span:nth-child(1) { height:3px; }
+  .sig-bars span:nth-child(2) { height:5px; }
+  .sig-bars span:nth-child(3) { height:7px; }
+  .sig-bars span:nth-child(4) { height:10px; }
+  /* WiFi */
+  .wifi-icon { position:relative; width:14px; height:10px; display:flex; justify-content:center; align-items:flex-end; }
+  .wifi-icon .wifi-arc { position:absolute; border:2px solid #fff; border-bottom:0; border-radius:100px 100px 0 0; }
+  .wifi-icon .wifi-arc:nth-child(1) { width:14px; height:7px; top:0; }
+  .wifi-icon .wifi-arc:nth-child(2) { width:8px; height:4px; top:4px; }
+  .wifi-icon .wifi-dot { width:3px; height:3px; background:#fff; border-radius:50%; }
+  /* Battery */
+  .batt { display:flex; align-items:center; gap:3px; font-family:-apple-system,sans-serif; font-size:12px; color:rgba(255,255,255,0.9); }
+  .batt-shell {
+    width: 22px; height: 11px;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 3px;
+    padding: 1px;
+    position: relative;
+  }
+  .batt-shell::after {
+    content: ''; position: absolute; right: -3px; top: 2px;
+    width: 2px; height: 5px; background: rgba(255,255,255,0.6);
+    border-radius: 0 1px 1px 0;
+  }
+  .batt-fill {
+    display: block; width: 76%; height: 100%;
+    background: #fff; border-radius: 1px;
+  }
+  /* App content */
+  .ipad-app { overflow:hidden; flex: 1; display: flex; flex-direction: column; }
+  .ipad-app .hero-viz {
+    border:none !important; border-radius:0 !important;
+    background:rgba(0,14,30,0.99) !important;
+    box-shadow:none !important; aspect-ratio:auto !important;
+  }
+  }
+
+  /* ── Interactive Glow Grid (Pain points) ── */
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    position: relative;
+    margin-top: 48px;
+  }
+  @media (max-width: 900px) {
+    .pain-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .pain-grid { grid-template-columns: 1fr; }
+  }
+  .glow-card {
+    position: relative;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.06);
+    padding: 1px;
+    overflow: hidden;
+    cursor: default;
+    transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+  }
+  .glow-card:hover {
+    transform: translateY(-4px);
+  }
+  /* The glow element follows the mouse via JS */
+  .glow-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(400px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(232, 201, 122, 0.25), transparent 40%);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .pain-grid:hover .glow-card::before {
+    opacity: 1;
+  }
+  .glow-card-inner {
+    position: relative;
+    background: rgba(5, 8, 20, 0.95);
+    border-radius: 19px;
+    padding: 32px 24px;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.05);
+  }
+  .glow-eyebrow {
+    color: rgba(232, 201, 122, 0.7);
+    margin-bottom: 16px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+  .glow-card-inner h3 {
+    font-size: 26px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glow-card-inner p {
+    color: rgba(255,255,255,0.65);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  /* iPadOS status bar inside screen */
+  .ipad-os-statusbar {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 14px 5px;
+    background: rgba(0,14,30,1);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .ipad-os-statusbar .sb-time {
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: -0.015em;
+  }
+  .ipad-os-statusbar .sb-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  /* Signal bars */
+  .sb-signal {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5px;
+    height: 11px;
+  }
+  .sb-signal span {
+    width: 2.5px;
+    background: #fff;
+    border-radius: 1px;
+  }
+  .sb-signal span:nth-child(1){height:25%;}
+  .sb-signal span:nth-child(2){height:50%;}
+  .sb-signal span:nth-child(3){height:75%;}
+  .sb-signal span:nth-child(4){height:100%;}
+  /* WiFi */
+  .sb-wifi {
+    width: 15px;
+    height: 11px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5px;
+  }
+  .sb-wifi-arc {
+    border: 1.8px solid #fff;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+  }
+  .sb-wifi-arc:nth-child(1){width:13px;height:6px;}
+  .sb-wifi-arc:nth-child(2){width:8px;height:4px;}
+  .sb-wifi-dot{width:3px;height:3px;border-radius:50%;background:#fff;}
+  /* Battery */
+  .sb-battery {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .sb-batt-pct {
+    font-size: 11px;
+    font-family: -apple-system, sans-serif;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+  .sb-batt-body {
+    width: 23px;
+    height: 11px;
+    border: 1.5px solid rgba(255,255,255,0.65);
+    border-radius: 3px;
+    padding: 1.5px;
+    position: relative;
+  }
+  .sb-batt-body::after {
+    content:'';
+    position:absolute;
+    right:-4px;
+    top:50%;
+    transform:translateY(-50%);
+    width:2px;
+    height:5px;
+    background:rgba(255,255,255,0.45);
+    border-radius:0 2px 2px 0;
+  }
+  .sb-batt-fill {
+    width: 72%;
+    height: 100%;
+    background: #32d74b;
+    border-radius: 1.5px;
+  }
+  /* App content inside screen */
+  .ipad-app-content {
+    flex: 1;
+    overflow: hidden;
+  }
+  .ipad-app-content .hero-viz {
+    border: none !important;
+    border-radius: 0 !important;
+    background: rgba(0,14,30,0.99) !important;
+    box-shadow: none !important;
+    aspect-ratio: auto !important;
+    height: 100%;
+  }
+  @keyframes ipadFlyIn {
+    0% {
+      opacity: 0;
+      transform: translateY(80px) scale(0.88);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  @keyframes ipadFloat {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  .ipad-body {
+    position: relative;
+    /* Space Gray aluminum chassis */
+    background:
+      linear-gradient(180deg,
+        #3c3f47 0px, #3c3f47 1px,
+        #2d3038 1px, #2d3038 calc(100% - 1px),
+        #1e2028 calc(100% - 1px));
+    border-radius: 28px;
+    padding: 20px 18px;
+    /* Apple-accurate inset shadow on edges */
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.12),
+      inset 0 -1px 0 rgba(0,0,0,0.5),
+      inset 1px 0 0 rgba(255,255,255,0.06),
+      inset -1px 0 0 rgba(0,0,0,0.3),
+      0 0 0 1px rgba(0,0,0,0.6),
+      0 0 0 1.5px rgba(255,255,255,0.04);
+  }
+  /* Top bezel — thinner (iPad Pro has minimal bezels) */
+  .ipad-body::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -4px;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 42px;
+    /* Power button */
+    background: linear-gradient(180deg,
+      #3a3d46 0%, #2e3039 40%, #3a3d46 100%);
+    border-radius: 0 3px 3px 0;
+    box-shadow:
+      inset -1px 0 0 rgba(0,0,0,0.4),
+      1px 0 2px rgba(0,0,0,0.5);
+  }
+  /* Volume buttons on right */
+  .ipad-vol {
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ipad-vol-btn {
+    width: 4px;
+    height: 36px;
+    background: linear-gradient(180deg,
+      #3a3d46 0%, #2e3039 40%, #3a3d46 100%);
+    border-radius: 3px 0 0 3px;
+    box-shadow:
+      inset 1px 0 0 rgba(255,255,255,0.08),
+      -1px 0 2px rgba(0,0,0,0.5);
+  }
+  /* Top FaceID / camera strip */
+  .ipad-top-bar {
+    position: relative;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+  }
+  .ipad-camera {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 38% 38%, #3a4060 0%, #0d1117 55%, #030507 100%);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow:
+      0 0 0 2px rgba(0,0,0,0.6),
+      0 0 6px rgba(96,165,250,0.1);
+    position: relative;
+  }
+  .ipad-camera::after {
+    content: '';
+    position: absolute;
+    top: 2px; left: 2px;
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: rgba(96,165,250,0.25);
+  }
+  .ipad-screen {
+    position: relative;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    /* Gorilla glass edge glow */
+    box-shadow:
+      0 0 0 1px rgba(0,0,0,0.8),
+      inset 0 0 0 1px rgba(255,255,255,0.04);
+  }
+  /* Glass reflection */
+  .ipad-glass {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background:
+      linear-gradient(128deg,
+        rgba(255,255,255,0.06) 0%,
+        rgba(255,255,255,0.02) 20%,
+        transparent 40%),
+      linear-gradient(310deg,
+        transparent 60%,
+        rgba(255,255,255,0.015) 80%,
+        rgba(255,255,255,0.04) 100%);
+    pointer-events: none;
+    z-index: 6;
+    animation: glassShift 10s ease-in-out infinite;
+  }
+  @keyframes glassShift {
+    0%,100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+  /* Status bar — iPadOS style */
+  .ipad-statusbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px 6px;
+    background: rgba(0,14,30,0.98);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .ipad-statusbar .time {
+    font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+  .ipad-statusbar .icons {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  .ipad-sb-signal {
+    display: flex;
+    gap: 2px;
+    align-items: flex-end;
+    height: 12px;
+  }
+  .ipad-sb-signal span {
+    width: 3px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 1px;
+  }
+  .ipad-sb-signal span:nth-child(1) { height: 30%; }
+  .ipad-sb-signal span:nth-child(2) { height: 55%; }
+  .ipad-sb-signal span:nth-child(3) { height: 80%; }
+  .ipad-sb-signal span:nth-child(4) { height: 100%; }
+  .ipad-sb-wifi {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    align-items: center;
+    width: 14px;
+    height: 10px;
+    justify-content: flex-end;
+  }
+  .ipad-sb-wifi span {
+    border: 2px solid rgba(255,255,255,0.9);
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    opacity: 0.9;
+  }
+  .ipad-sb-wifi span:nth-child(1) { width: 12px; height: 6px; }
+  .ipad-sb-wifi span:nth-child(2) { width: 7px; height: 4px; }
+  .ipad-sb-wifi span:nth-child(3) { width: 2px; height: 2px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.9); }
+  .ipad-sb-battery {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .ipad-sb-battery-body {
+    width: 24px;
+    height: 12px;
+    border: 1.5px solid rgba(255,255,255,0.7);
+    border-radius: 3px;
+    padding: 1.5px;
+    position: relative;
+  }
+  .ipad-sb-battery-body::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 3px;
+    width: 2px;
+    height: 4px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 0 1px 1px 0;
+  }
+  .ipad-sb-battery-fill {
+    width: 75%;
+    height: 100%;
+    background: #32d74b;
+    border-radius: 1px;
+  }
+  .ipad-sb-pct {
+    font-size: 11px;
+    color: rgba(255,255,255,0.8);
+    font-family: -apple-system, sans-serif;
+  }
+  .ipad-screen .hero-viz {
+    border: none !important;
+    border-radius: 0 !important;
+    background: rgba(0,14,30,0.99) !important;
+    box-shadow: none !important;
+    aspect-ratio: auto !important;
+  }
+  @keyframes ipadFlyIn {
+    0% {
+      opacity: 0;
+      transform: translateY(80px) perspective(800px) rotateX(10deg) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) perspective(800px) rotateX(0) scale(1);
+    }
+  }
+
+  /* ── Section Photo Backgrounds ── */
+  .section-photo-bg {
+    position: relative;
+  }
+  .section-photo-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.07;
+    mix-blend-mode: luminosity;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .section-photo-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+  /* Pain section — office/team photo */
+  .section-pain-bg::before {
+    background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2000');
+    opacity: 0.08;
+  }
+  /* Pillars — tech/data center */
+  .section-pillars-bg::before {
+    background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000');
+    opacity: 0.06;
+  }
+  /* Process — workflow/handshake */
+  .section-process-bg::before {
+    background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2000');
+    opacity: 0.07;
+  }
+  /* Testimonials — people */
+  .section-testi-bg::before {
+    background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000');
+    opacity: 0.06;
+  }
+  /* CTA — abstract city night */
+  .section-cta-bg::before {
+    background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2000');
+    opacity: 0.12;
+    mix-blend-mode: screen;
+  }
+  .funnel-stage {
+    animation: stageFlyIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .funnel-stage:nth-child(1) { animation-delay: 0.5s; }
+  .funnel-stage:nth-child(2) { animation-delay: 0.65s; }
+  .funnel-stage:nth-child(3) { animation-delay: 0.8s; }
+  .funnel-stage:nth-child(4) { animation-delay: 0.95s; }
+  .funnel-stage:nth-child(5) { animation-delay: 1.1s; }
+  .funnel-stage:nth-child(6) { animation-delay: 1.25s; }
+  @keyframes stageFlyIn {
+    0% {
+      opacity: 0;
+      transform: translateX(50px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  /* Photorealistic Security/Pillar Backgrounds */
+  #pillars {
+    position: relative;
+  }
+  #pillars::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000') center/cover;
+    opacity: 0.05;
+    mix-blend-mode: screen;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Glassmorphism Cards */
+  .card, .testimonial {
+    background: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover, .testimonial:hover {
+    transform: translateY(-8px) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    background: rgba(15, 23, 42, 0.8) !important;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* ── Interactive Glow Pillars (Senior Design Level) ── */
+  .pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 64px;
+  }
+  .pillar {
+    position: relative;
+    border-radius: 40px;
+    background: rgba(255,255,255,0.04);
+    padding: 1px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    display: block !important;
+  }
+  .pillar:hover {
+    transform: translateY(-8px);
+  }
+  .pillar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(232, 201, 122, 0.25), transparent 40%);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .pillars:hover .pillar::before {
+    opacity: 1;
+  }
+  .pillar-inner {
+    position: relative;
+    background: radial-gradient(circle at 100% 0%, rgba(15, 23, 42, 0.98), rgba(0, 14, 30, 0.99));
+    border-radius: 39px;
+    padding: 80px;
+    height: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.08), inset 0 -1px 20px rgba(0,0,0,0.5);
+  }
+  .pillar-inner::after {
+    content: ''; position: absolute; inset: 0; border-radius: 39px;
+    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)" opacity="0.03"/%3E%3C/svg%3E');
+    pointer-events: none; mix-blend-mode: overlay;
+  }
+  .pillar-inner > * {
+    min-width: 0;
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 1100px) {
+    .pillar-inner { padding: 48px; gap: 48px; grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 900px) {
+    .pillar-inner { grid-template-columns: 1fr; padding: 32px; gap: 40px; }
+  }
+  
+  /* Senior Typography */
+  .pillar-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(232, 201, 122, 0.06);
+    border: 1px solid rgba(232, 201, 122, 0.12);
+    color: #93c5fd;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+    box-shadow: 0 0 20px rgba(232, 201, 122, 0.07);
+  }
+  .pillar-inner h2.pillar-title {
+    font-size: 44px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .pillar-inner h2.pillar-title .accent {
+    background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .pillar-features li {
+    font-size: 16px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+  }
+
+  /* Premium Glass Visualization Panel */
+  .pillar-viz {
+    aspect-ratio: auto !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+  }
+  .premium-glass-panel {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.6), rgba(0, 14, 30, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1 / 1;
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s ease;
+  }
+  .pillar:hover .premium-glass-panel {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 0 60px rgba(232, 201, 122, 0.10);
+  }
+  .premium-glass-header {
+    height: 44px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 8px;
+  }
+  .mac-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .mac-dot.r { background: #ff5f56; }
+  .mac-dot.y { background: #ffbd2e; }
+  .mac-dot.g { background: #27c93f; }
+  .premium-glass-title {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.1em;
+    padding-right: 44px; /* balance the dots */
+  }
+  .premium-glass-body {
+    padding: 32px;
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 3D Dashboard Mockups */
+  .hero-viz {
+    perspective: 2000px;
+    transform-style: preserve-3d;
+  }
+  .funnel {
+    transform: rotateY(-12deg) rotateX(4deg);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(232, 201, 122, 0.12) !important;
+    background: rgba(0, 14, 30, 0.85) !important;
+    border: 1px solid rgba(232, 201, 122, 0.20) !important;
+    backdrop-filter: blur(20px);
+  }
+  .hero-viz:hover .funnel {
+    transform: rotateY(-4deg) rotateX(2deg) scale(1.02);
+  }
+
+  /* 3D Sub-Visuals */
+  .pillar-viz > div {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(0, 14, 30, 0.8) !important;
+    border: 1px solid rgba(232,201,122,0.12) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+    backdrop-filter: blur(10px);
+  }
+  .pillar:hover .pillar-viz > div {
+    transform: scale(1.05) rotate(2deg);
+    border-color: rgba(232,201,122,0.30) !important;
+    box-shadow: 0 30px 60px rgba(232,201,122,0.12) !important;
+  }
+
+  /* Industry Tiles with Unique Per-Tile Hover Images */
+  .industry-tile {
+    position: relative;
+    overflow: hidden;
+    background: rgba(15,23,42,0.7) !important;
+    border: 1px solid rgba(255,255,255,0.06) !important;
+    transition: all 0.5s cubic-bezier(0.16,1,0.3,1) !important;
+    z-index: 1;
+    backdrop-filter: blur(12px);
+  }
+  .industry-tile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 0;
+  }
+  .industry-tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(2,6,23,0.85) 0%, rgba(2,6,23,0.4) 100%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 0;
+  }
+  .industry-tile:hover::before { opacity: 1; }
+  .industry-tile:hover::after  { opacity: 1; }
+  .industry-tile > * { position: relative; z-index: 1; }
+  .industry-tile[data-img='bau']::before      { background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=60&w=400'); }
+  .industry-tile[data-img='handwerk']::before { background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=60&w=400'); }
+  .industry-tile[data-img='industrie']::before{ background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=60&w=400'); }
+  .industry-tile[data-img='it']::before       { background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=60&w=400'); }
+  .industry-tile[data-img='pflege']::before   { background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=60&w=400'); }
+  .industry-tile[data-img='logistik']::before { background-image: url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=60&w=400'); }
+  .industry-tile[data-img='handel']::before   { background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=60&w=400'); }
+  .industry-tile[data-img='finanzen']::before { background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=60&w=400'); }
+  .industry-tile[data-img='energie']::before  { background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=60&w=400'); }
+  .industry-tile[data-img='hotellerie']::before{ background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=60&w=400'); }
+  .industry-tile[data-img='beratung']::before { background-image: url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=60&w=400'); }
+  .industry-tile[data-img='immobilien']::before{ background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=60&w=400'); }
+  .industry-tile:hover {
+    transform: translateY(-6px) scale(1.02) !important;
+    border-color: rgba(232,201,122,0.35) !important;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.6), 0 0 24px rgba(232,201,122,0.18) !important;
+  }
+
+  /* Process Steps Glow */
+  .steps li.active {
+    background: rgba(232,201,122,0.08) !important;
+    border-left: 3px solid var(--accent) !important;
+    box-shadow: inset 20px 0 40px -20px rgba(232,201,122,0.15) !important;
+  }
+
+  /* Button Premium Glow */
+  .btn-primary {
+    background: var(--accent) !important;
+    color: #06121A !important;
+    border: none !important;
+    box-shadow: 0 0 0 1px rgba(232,201,122,0.4), 0 10px 30px -8px rgba(232,201,122,0.4) !important;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 0 0 1px var(--accent), 0 14px 40px -10px rgba(232,201,122,0.5) !important;
+  }
+  
+  .h-display {
+    color: var(--fg);
+  }
+
+  .accent {
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+<div class="cursor-glow-overlay" id="cursorGlow"></div>
+<script>
+  document.addEventListener('mousemove', (e) => {
+    const glow = document.getElementById('cursorGlow');
+    if (glow) {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    }
+  });
+</script>
+
+<div class="cursor-glow-overlay" id="cursorGlow"></div>
+<div id="nav-mount"></div>
+
+<!-- ============ HERO SCROLL WRAPPER ============ -->
+<div class="hero-scroll-wrapper" id="heroScrollWrapper">
+<!-- ============ HERO ============ -->
+<section class="hero" id="main" data-screen-label="Hero">
+  <!-- Darkening overlay driven by scroll -->
+  <div class="hero-scroll-overlay" id="heroScrollOverlay"></div>
+
+  <!-- AI Robot background -->
+  <div class="hero-photo-bg">
+    <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=1600&q=75&auto=format&fit=crop&crop=center" alt="" class="hero-photo-img" loading="eager" fetchpriority="high" width="1600" height="900" />
+    <div class="hero-photo-grad"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text-layer" id="heroTextLayer">
+        <div class="hero-meta">
+          <div class="hero-live-badge">
+            <span class="dot-live"></span>
+            <span>Live · <span id="heroLiveCount">1.041.382</span> Profile im Pool</span>
+          </div>
+        </div>
+        <h1 class="h-display">
+          Stellen besetzen,<br>
+          die andere <em>nicht finden</em>.
+        </h1>
+        <p class="lead" style="margin-top:24px">
+          Wir verbinden eine Talent-Cloud mit 1.000.000 Fachkräften, eigene Recruiting-KI und persönliche Berater.
+          Sie erhalten vorqualifizierte Kandidaten — mit Matching-Garantie. Erste Profile in 72&nbsp;Stunden.
+        </p>
+        <div class="hero-ctas">
+          <a href="kontakt.html" class="btn btn-primary btn-arrow">Demo anfragen</a>
+          <a href="#process" class="btn btn-ghost btn-arrow">So funktioniert's</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <span class="num">2.000+</span>
+            <span class="lbl">KUNDEN DACH-WEIT</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="num">⌀ 21 Tage</span>
+            <span class="lbl">BIS EINSTELLUNG</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="num">96 %</span>
+            <span class="lbl">CULTURAL FIT</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="num">DSGVO</span>
+            <span class="lbl">SERVER IN DE</span>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Visualization — kiQ Scan -->
+      <div class="kiq-scan-scene" id="kiqScanScene">
+        <!-- Outer atmospheric halo — emanates from behind the close rings -->
+        <div class="hero-rings-wrap" id="heroRings" aria-hidden="true"></div>
+        <!-- MagicRings WebGL halo -->
+        <div class="ks-magic-rings" id="ksMagicRings" aria-hidden="true"></div>
+        <!-- Circular clip: grid + radar + beam + logo clipped to circle -->
+        <div class="ks-inner-circle">
+          <div class="ks-grid"></div>
+          <div class="ks-rings">
+            <div class="ks-ring" style="--r:1"></div>
+            <div class="ks-ring" style="--r:2"></div>
+            <div class="ks-ring" style="--r:3"></div>
+            <div class="ks-ring" style="--r:4"></div>
+          </div>
+          <div class="ks-beam"></div>
+          <div class="ks-logo-wrap">
+            <div class="ks-logo-glow"></div>
+            <div class="kiq-anim-wrap" style="width:90%;height:90%">
+              <img src="assets/kiq-logo.png" class="ks-logo-img" alt="kiQ" id="ksScanLogo" />
+            </div>
+          </div>
+        </div>
+        <!-- Profile chips — positions set via CSS custom properties -->
+        <div class="ks-chip" data-idx="0" style="--a:330deg;--d:160px">
+          <div class="ks-chip-photo" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&fit=crop&crop=face')"></div>
+          <div class="ks-chip-body"><div class="ks-chip-name">M. Huber</div><div class="ks-chip-role">SPS-Programmierer</div></div>
+          <div class="ks-chip-score">94%</div>
+        </div>
+        <div class="ks-chip" data-idx="1" style="--a:55deg;--d:190px">
+          <div class="ks-chip-photo" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&q=80&fit=crop&crop=face')"></div>
+          <div class="ks-chip-body"><div class="ks-chip-name">A. Schneider</div><div class="ks-chip-role">Mechatronik</div></div>
+          <div class="ks-chip-score">88%</div>
+        </div>
+        <div class="ks-chip" data-idx="2" style="--a:140deg;--d:175px">
+          <div class="ks-chip-photo" style="background-image:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&q=80&fit=crop&crop=face')"></div>
+          <div class="ks-chip-body"><div class="ks-chip-name">T. Richter</div><div class="ks-chip-role">IT-Infrastruktur</div></div>
+          <div class="ks-chip-score">91%</div>
+        </div>
+        <div class="ks-chip" data-idx="3" style="--a:205deg;--d:165px">
+          <div class="ks-chip-photo" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80&fit=crop&crop=face')"></div>
+          <div class="ks-chip-body"><div class="ks-chip-name">K. Wagner</div><div class="ks-chip-role">Industrieelektronik</div></div>
+          <div class="ks-chip-score">87%</div>
+        </div>
+        <div class="ks-chip" data-idx="4" style="--a:280deg;--d:185px">
+          <div class="ks-chip-photo" style="background-image:url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80&fit=crop&crop=face')"></div>
+          <div class="ks-chip-body"><div class="ks-chip-name">F. Bauer</div><div class="ks-chip-role">Automatisierung</div></div>
+          <div class="ks-chip-score">82%</div>
+        </div>
+        <!-- Match found overlay -->
+        <div class="ks-match" id="ksMatch">
+          <div class="ks-match-label">MATCH GEFUNDEN</div>
+          <div class="ks-match-score"><span id="ksMatchName">M. Huber</span> · <strong>94 % Fit</strong></div>
+        </div>
+        <!-- Live counter -->
+        <div class="ks-counter">
+          <span class="dot-live"></span>
+          <span>Scannt <strong id="ksScanCount">1.041.382</strong> Profile</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /hero-scroll-wrapper -->
+
+<!-- ============ MEHR ALS NUR RECRUITING ============ -->
+<section class="mehr-section section-light" data-screen-label="Mehr als nur Recruiting">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center; max-width:700px; margin: 0 auto 64px;">
+      <span class="eyebrow">Was uns unterscheidet</span>
+      <h2 class="h2" style="margin-top:20px; font-size:clamp(36px,4.5vw,60px);">Mehr als<br><em style="font-style:normal;color:var(--accent)">nur Recruiting.</em></h2>
+      <p class="lead" style="margin-top:20px;">Das System, das Kandidaten findet, qualifiziert und direkt übergibt — während Sie sich aufs Geschäft konzentrieren.</p>
+    </div>
+
+    <div class="feature-panels">
+
+      <!-- Panel 1: Talent Pool -->
+      <div class="fp reveal-left">
+        <div class="fp-photo">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&fit=crop&crop=center" alt="Talent Pool" loading="lazy" decoding="async" width="1400" height="900" />
+          <div class="fp-photo-overlay"></div>
+          <div class="fp-photo-badge">
+            <span class="mono" style="color:var(--accent);font-size:11px;">01 · TALENT-POOL</span>
+          </div>
+        </div>
+        <div class="fp-content">
+          <div class="fp-num">1.000.000<span style="color:var(--accent)">+</span></div>
+          <h3 class="h3" style="margin-top:12px">Fachkräfte kennen<br>wir bereits.</h3>
+          <p style="color:var(--fg-muted);margin-top:16px;line-height:1.65">Keine Kaltakquise. Unsere Datenbank wächst täglich um 1.200 geprüfte Profile — DSGVO-konform, strukturiert, sofort abrufbar.</p>
+          <div class="fp-tags" style="margin-top:24px">
+            <span class="fp-tag">DSGVO-konform</span>
+            <span class="fp-tag">Opt-in Profile</span>
+            <span class="fp-tag">Täglich aktuell</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Speed (reversed) -->
+      <div class="fp fp-rev reveal-right">
+        <div class="fp-photo">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1400&fit=crop&crop=center" alt="Schnelligkeit" loading="lazy" decoding="async" width="1400" height="900" />
+          <div class="fp-photo-overlay"></div>
+          <div class="fp-photo-badge">
+            <span class="mono" style="color:var(--accent);font-size:11px;">02 · GESCHWINDIGKEIT</span>
+          </div>
+        </div>
+        <div class="fp-content">
+          <div class="fp-num">ø <em style="font-style:normal;color:var(--accent)">21</em> Tage</div>
+          <h3 class="h3" style="margin-top:12px">Statt 86 Tage<br>Marktdurchschnitt.</h3>
+          <p style="color:var(--fg-muted);margin-top:16px;line-height:1.65">Wir liefern in weniger als einem Viertel der üblichen Zeit — mit Matching-Garantie. Erste qualifizierte Profile innerhalb von 72 Stunden.</p>
+          <div class="fp-compare" style="margin-top:28px">
+            <div class="fp-bar-row">
+              <span class="fp-bar-label">KI-Kandidat</span>
+              <div class="fp-bar-track"><div class="fp-bar-fill" style="width:24%"></div></div>
+              <span class="fp-bar-val" style="color:var(--accent)">21 T</span>
+            </div>
+            <div class="fp-bar-row" style="margin-top:10px">
+              <span class="fp-bar-label">Markt</span>
+              <div class="fp-bar-track"><div class="fp-bar-fill fp-bar-dim" style="width:100%"></div></div>
+              <span class="fp-bar-val" style="color:var(--fg-muted)">86 T</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: KI Matching -->
+      <div class="fp reveal-left">
+        <div class="fp-photo">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&fit=crop&crop=center" alt="KI-Matching" loading="lazy" decoding="async" width="1400" height="900" />
+          <div class="fp-photo-overlay"></div>
+          <div class="fp-photo-badge">
+            <span class="mono" style="color:var(--accent);font-size:11px;">03 · KI-INTELLIGENZ</span>
+          </div>
+        </div>
+        <div class="fp-content">
+          <div class="fp-num">100<span style="color:var(--accent)">+</span></div>
+          <h3 class="h3" style="margin-top:12px">Datenpunkte.<br>Pro Kandidat. In Echtzeit.</h3>
+          <p style="color:var(--fg-muted);margin-top:16px;line-height:1.65">Wechselsignale, Qualifikation, Region, Wettbewerber — unsere KI analysiert jeden Kandidaten täglich und priorisiert nach Wechselwahrscheinlichkeit.</p>
+          <div class="fp-tags" style="margin-top:24px">
+            <span class="fp-tag">Wechselbereitschaft</span>
+            <span class="fp-tag">Cultural Fit</span>
+            <span class="fp-tag">Gehaltsrahmen</span>
+            <span class="fp-tag">+97 weitere</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: Persönlich (reversed) -->
+      <div class="fp fp-rev reveal-right">
+        <div class="fp-photo fp-photo-people">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1400&fit=crop&crop=center" alt="Persönliche Berater" loading="lazy" decoding="async" width="1400" height="900" />
+          <div class="fp-photo-overlay"></div>
+          <div class="fp-photo-badge">
+            <span class="mono" style="color:var(--accent);font-size:11px;">04 · PERSÖNLICH</span>
+          </div>
+        </div>
+        <div class="fp-content">
+          <div class="fp-num" style="font-size:clamp(28px,3vw,44px)">1 Berater.<br><span style="color:var(--accent)">Immer erreichbar.</span></div>
+          <p style="color:var(--fg-muted);margin-top:20px;line-height:1.65">Kein Ticketsystem. Kein Callcenter. Ihr dedizierter Berater kennt Ihre Branche, Ihre Region und Ihren Bedarf — persönlich, nicht algorithmisch.</p>
+          <div class="mb-berater-photos" style="margin-top:28px">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&q=80&fit=crop&crop=face" alt="Beraterin" width="80" height="80" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&q=80&fit=crop&crop=face" alt="Berater" width="80" height="80" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&q=80&fit=crop&crop=face" alt="Berater" width="80" height="80" loading="lazy" decoding="async" />
+            <div class="mb-berater-more">+8</div>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap">
+            <a href="kontakt.html" class="btn btn-primary btn-arrow" style="font-size:14px;padding:12px 22px">Berater kennenlernen</a>
+            <a href="about.html" class="btn btn-ghost" style="font-size:14px;padding:12px 20px">Über uns</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /feature-panels -->
+  </div>
+</section>
+
+<!-- ============ QUELLEN / ORBITAL SOURCES ============ -->
+<section id="quellen" class="quellen-section">
+  <div class="container">
+    <div class="quellen-grid">
+
+      <!-- LEFT: copy -->
+      <div class="quellen-copy reveal-left">
+        <span class="eyebrow">Talent-Quellen</span>
+        <h2 class="h2">24+ Quellen.<br><em>Eine Pipeline.</em></h2>
+        <p class="lead">Wir aggregieren 24+ Premium-Quellen — von LinkedIn über Indeed bis StepStone — in einer einzigen, branchenspezifisch gefilterten Talent-Pipeline.</p>
+        <ul class="quellen-checks">
+          <li>1.000.000+ Fachkräfte im DACH-Talentpool</li>
+          <li>Tagesaktuell angereichert &amp; verifiziert</li>
+          <li>DSGVO-konforme Quellen-Auswahl</li>
+        </ul>
+        <a href="kontakt.html" class="quellen-link">
+          Wie wir deine Pipeline füllen <span class="arr">→</span>
+        </a>
+      </div>
+
+      <!-- RIGHT: orbital animation -->
+      <div class="quellen-orbital-wrap reveal-right rd-2">
+        <div class="orbital-stage" id="orbitalStage" aria-hidden="true">
+
+          <!-- Background glow -->
+          <div class="orbital-glow-bg"></div>
+
+          <!-- SVG ring outlines + sweep arm -->
+          <svg class="orbital-rings-svg" viewBox="-350 -350 700 700">
+            <circle cx="0" cy="0" r="133"   fill="none" stroke="rgba(199,162,74,0.07)" stroke-width="1" stroke-dasharray="3 9"/>
+            <circle cx="0" cy="0" r="213.5" fill="none" stroke="rgba(199,162,74,0.07)" stroke-width="1" stroke-dasharray="3 9"/>
+            <circle cx="0" cy="0" r="290.5" fill="none" stroke="rgba(199,162,74,0.07)" stroke-width="1" stroke-dasharray="3 9"/>
+            <g class="orbital-sweep">
+              <defs>
+                <linearGradient id="sweepGrad" gradientUnits="userSpaceOnUse" x1="-290" y1="0" x2="0" y2="0">
+                  <stop offset="0%"   stop-color="#E8C97A" stop-opacity="0"/>
+                  <stop offset="55%"  stop-color="#E8C97A" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#ffffff"  stop-opacity="1"/>
+                </linearGradient>
+              </defs>
+              <path d="M -290 0 L 0 0" stroke="url(#sweepGrad)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            </g>
+          </svg>
+
+          <!-- ── RING 1 · 30s CW · inner orbit ── -->
+          <div class="orb-ring cw" style="animation-duration:30s">
+            <!-- LinkedIn -->
+            <div class="orb-icon-pos cnt-cw" style="left:69%;top:50%;animation-duration:30s">
+              <div class="orb-icon-inner" data-brand="linkedin" title="LinkedIn">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66h-3.55V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              </div>
+            </div>
+            <!-- HubSpot -->
+            <div class="orb-icon-pos cnt-cw" style="left:61.85%;top:64.85%;animation-duration:30s">
+              <div class="orb-icon-inner" data-brand="hubspot" title="HubSpot">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#FF7A59"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></svg>
+              </div>
+            </div>
+            <!-- Salesforce -->
+            <div class="orb-icon-pos cnt-cw" style="left:45.77%;top:68.52%;animation-duration:30s">
+              <div class="orb-icon-inner" data-brand="salesforce" title="Salesforce">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#00A1E0"><path d="M10.006 5.415a4.195 4.195 0 013.045-1.306c1.56 0 2.954.9 3.69 2.205.63-.3 1.35-.45 2.1-.45 2.85 0 5.159 2.34 5.159 5.22s-2.31 5.22-5.176 5.22c-.345 0-.69-.044-1.02-.104a3.75 3.75 0 01-3.3 1.95c-.6 0-1.155-.15-1.65-.375A4.314 4.314 0 018.88 20.4a4.302 4.302 0 01-4.05-2.82c-.27.062-.54.076-.825.076-2.204 0-4.005-1.8-4.005-4.05 0-1.5.811-2.805 2.01-3.51-.255-.57-.39-1.2-.39-1.846 0-2.58 2.1-4.65 4.65-4.65 1.53 0 2.85.705 3.72 1.8"/></svg>
+              </div>
+            </div>
+            <!-- Apollo.io -->
+            <div class="orb-icon-pos cnt-cw" style="left:32.88%;top:58.24%;animation-duration:30s">
+              <div class="orb-icon-inner" data-brand="apollo" title="Apollo.io">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 0C5.372 0 0 5.373 0 12c0 6.628 5.372 12 12 12s12-5.372 12-12A12.014 12.014 0 0 0 23.527 8.657a.6.6 0 0 0-1.127.409C22.663 10.009 22.8 10.994 22.8 12A10.73 10.73 0 0 1 19.637 19.637 10.729 10.729 0 0 1 12 22.8 10.73 10.73 0 0 1 4.363 19.637 10.728 10.728 0 0 1 1.2 12a10.73 10.73 0 0 1 3.163-7.637A10.728 10.728 0 0 1 12 1.2C14.576 1.2 17.013 2.096 18.958 3.74A1.466 1.466 0 1 0 19.82 2.9 11.953 11.953 0 0 0 12 0ZM10.56 5.88 6.36 16.782H8.99l.687-1.848H13.646l-.719-2.042H10.314L12.014 8.201l3.024 8.58H17.669L13.47 5.88Z"/></svg>
+              </div>
+            </div>
+            <!-- Pipedrive -->
+            <div class="orb-icon-pos cnt-cw" style="left:32.88%;top:41.76%;animation-duration:30s">
+              <div class="orb-icon-inner" data-brand="pipedrive" title="Pipedrive">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#00A836"><path d="M12.78 8.13c0 1.66-1.06 2.78-2.66 2.78-.74 0-1.31-.16-1.71-.36V5.62c.42-.1.93-.2 1.66-.2 1.66 0 2.71 1.04 2.71 2.71zM10.5 2.5c-2.31 0-3.84.42-5.04.83v15.59c0 .55.45 1 1 1h2.95v-6.05c.5.13 1.04.2 1.59.2 3.5 0 5.91-2.5 5.91-6.04 0-3.55-2.41-5.53-6.41-5.53zm6.62 17.32c0 .96-.78 1.74-1.74 1.74s-1.74-.78-1.74-1.74.78-1.74 1.74-1.74 1.74.78 1.74 1.74z"/></svg>
+              </div>
+            </div>
+            <!-- Indeed -->
+            <div class="orb-icon-pos cnt-cw" style="left:45.77%;top:31.48%;animation-duration:30s">
+              <div class="orb-icon-inner" data-brand="indeed" title="Indeed">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#003A9B"><path d="M11.566 21.5633v-8.762c.2553.0231.5009.0346.758.0346 1.2225 0 2.3739-.3206 3.3506-.8928v9.6182c0 .8219-.1957 1.4287-.5757 1.8338-.378.4033-.8808.6049-1.491.6049-.6007 0-1.0766-.2016-1.468-.6183-.3781-.4032-.5739-1.01-.5739-1.8184zM11.589.5659c2.5447-.8929 5.4424-.8449 7.6186.987.405.3687.8673.8334 1.0515 1.3806.2207.6913-.7695-.073-.9057-.167-.71-.4532-1.4182-.8334-2.2127-1.0946C12.8614.3873 8.8122 2.709 6.2945 6.315c-1.0516 1.5939-1.7367 3.2721-2.299 5.1174-.0614.2017-.1094.4647-.2207.6413-.1113.2036-.048-.5453-.048-.5702.0845-.7623.2438-1.4997.4414-2.237C5.3292 5.3375 7.897 2.0655 11.5891.5658zm4.9281 7.0587c0 1.6686-1.353 3.0224-3.0205 3.0224-1.6677 0-3.0186-1.3538-3.0186-3.0224 0-1.6687 1.351-3.0224 3.0186-3.0224 1.6676 0 3.0205 1.3518 3.0205 3.0224Z"/></svg>
+              </div>
+            </div>
+            <!-- Crunchbase -->
+            <div class="orb-icon-pos cnt-cw" style="left:61.85%;top:35.15%;animation-duration:30s">
+              <div class="orb-icon-inner" data-brand="crunchbase" title="Crunchbase">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#0288D1"><path d="M21.6 0H2.4A2.41 2.41 0 0 0 0 2.4v19.2A2.41 2.41 0 0 0 2.4 24h19.2a2.41 2.41 0 0 0 2.4-2.4V2.4A2.41 2.41 0 0 0 21.6 0zM7.045 14.465A2.11 2.11 0 0 0 9.84 13.42h1.66a3.69 3.69 0 1 1 0-1.75H9.84a2.11 2.11 0 1 0-2.795 2.795zm11.345.845a3.55 3.55 0 0 1-1.06.63 3.68 3.68 0 0 1-3.39-.38v.38h-1.51V5.37h1.5v4.11a3.74 3.74 0 0 1 1.8-.63H16a3.67 3.67 0 0 1 2.39 6.46zm-.223-2.766a2.104 2.104 0 1 1-4.207 0 2.104 2.104 0 0 1 4.207 0z"/></svg>
+              </div>
+            </div>
+          </div><!-- /ring1 -->
+
+          <!-- ── RING 2 · 46s CCW · middle orbit ── -->
+          <div class="orb-ring ccw" style="animation-duration:46s">
+            <!-- XING -->
+            <div class="orb-icon-pos cnt-ccw" style="left:80.5%;top:50%;animation-duration:46s">
+              <div class="orb-icon-inner" data-brand="xing" title="XING">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+              </div>
+            </div>
+            <!-- GitHub -->
+            <div class="orb-icon-pos cnt-ccw" style="left:73.36%;top:69.61%;animation-duration:46s">
+              <div class="orb-icon-inner" data-brand="github" title="GitHub">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#e6edf3"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </div>
+            </div>
+            <!-- Facebook -->
+            <div class="orb-icon-pos cnt-ccw" style="left:55.3%;top:80.04%;animation-duration:46s">
+              <div class="orb-icon-inner" data-brand="facebook" title="Facebook">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+              </div>
+            </div>
+            <!-- Instagram -->
+            <div class="orb-icon-pos cnt-ccw" style="left:34.75%;top:76.41%;animation-duration:46s">
+              <div class="orb-icon-inner" data-brand="instagram" title="Instagram">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>
+              </div>
+            </div>
+            <!-- X/Twitter -->
+            <div class="orb-icon-pos cnt-ccw" style="left:21.34%;top:60.43%;animation-duration:46s">
+              <div class="orb-icon-inner" data-brand="x" title="X / Twitter">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#e7e9ea"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+              </div>
+            </div>
+            <!-- YouTube -->
+            <div class="orb-icon-pos cnt-ccw" style="left:21.34%;top:39.57%;animation-duration:46s">
+              <div class="orb-icon-inner" data-brand="youtube" title="YouTube">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </div>
+            </div>
+            <!-- TikTok -->
+            <div class="orb-icon-pos cnt-ccw" style="left:34.75%;top:23.59%;animation-duration:46s">
+              <div class="orb-icon-inner" data-brand="tiktok" title="TikTok">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+              </div>
+            </div>
+            <!-- Pinterest -->
+            <div class="orb-icon-pos cnt-ccw" style="left:55.3%;top:19.96%;animation-duration:46s">
+              <div class="orb-icon-inner" data-brand="pinterest" title="Pinterest">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+              </div>
+            </div>
+            <!-- Notion -->
+            <div class="orb-icon-pos cnt-ccw" style="left:73.36%;top:30.39%;animation-duration:46s">
+              <div class="orb-icon-inner" data-brand="notion" title="Notion">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
+              </div>
+            </div>
+          </div><!-- /ring2 -->
+
+          <!-- ── RING 3 · 62s CW · outer orbit ── -->
+          <div class="orb-ring cw" style="animation-duration:62s">
+            <!-- Reddit -->
+            <div class="orb-icon-pos cnt-cw" style="left:91.5%;top:50%;animation-duration:62s">
+              <div class="orb-icon-inner" data-brand="reddit" title="Reddit">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>
+              </div>
+            </div>
+            <!-- Slack -->
+            <div class="orb-icon-pos cnt-cw" style="left:75.87%;top:82.45%;animation-duration:62s">
+              <div class="orb-icon-inner" data-brand="slack" title="Slack">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+              </div>
+            </div>
+            <!-- WhatsApp -->
+            <div class="orb-icon-pos cnt-cw" style="left:40.77%;top:90.46%;animation-duration:62s">
+              <div class="orb-icon-inner" data-brand="whatsapp" title="WhatsApp">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              </div>
+            </div>
+            <!-- Telegram -->
+            <div class="orb-icon-pos cnt-cw" style="left:12.61%;top:68.01%;animation-duration:62s">
+              <div class="orb-icon-inner" data-brand="telegram" title="Telegram">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              </div>
+            </div>
+            <!-- Zapier -->
+            <div class="orb-icon-pos cnt-cw" style="left:12.61%;top:31.99%;animation-duration:62s">
+              <div class="orb-icon-inner" data-brand="zapier" title="Zapier">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8"><path d="M4.157 0A4.151 4.151 0 0 0 0 4.161v15.678A4.151 4.151 0 0 0 4.157 24h15.682A4.152 4.152 0 0 0 24 19.839V4.161A4.152 4.152 0 0 0 19.839 0H4.157Zm10.61 8.761h.03a.577.577 0 0 1 .23.038.585.585 0 0 1 .201.124.63.63 0 0 1 .162.431.612.612 0 0 1-.162.435.58.58 0 0 1-.201.128.58.58 0 0 1-.23.042.529.529 0 0 1-.235-.042.585.585 0 0 1-.332-.328.559.559 0 0 1-.038-.235.613.613 0 0 1 .17-.431.59.59 0 0 1 .405-.162Zm2.853 1.572c.03.004.061.004.095.004.325-.011.646.064.937.219.238.144.431.355.552.609.128.279.189.582.185.888v.193a2 2 0 0 1 0 .219h-2.498c.003.227.075.45.204.642a.78.78 0 0 0 .646.265.714.714 0 0 0 .484-.136.642.642 0 0 0 .23-.318l.915.257a1.398 1.398 0 0 1-.28.537c-.14.159-.321.284-.521.355a2.234 2.234 0 0 1-.836.136 1.923 1.923 0 0 1-1.001-.245 1.618 1.618 0 0 1-.665-.703 2.221 2.221 0 0 1-.227-1.036 1.95 1.95 0 0 1 .48-1.398 1.9 1.9 0 0 1 1.3-.488Zm-9.607.023c.162.004.325.026.48.079.207.065.4.174.563.314.26.302.393.692.366 1.088v2.276H8.53l-.109-.711h-.065c-.064.163-.155.31-.272.439a1.122 1.122 0 0 1-.374.264 1.023 1.023 0 0 1-.453.083 1.334 1.334 0 0 1-.866-.264.965.965 0 0 1-.329-.801.993.993 0 0 1 .076-.431 1.02 1.02 0 0 1 .242-.363 1.478 1.478 0 0 1 1.043-.303h.952v-.181a.696.696 0 0 0-.136-.454.553.553 0 0 0-.438-.154.695.695 0 0 0-.378.086.48.48 0 0 0-.193.254l-.99-.144a1.26 1.26 0 0 1 .257-.563c.14-.174.321-.302.533-.378.261-.091.54-.136.82-.129.053-.003.106-.007.163-.007Zm4.384.007c.174 0 .347.038.506.114.182.083.34.211.458.374.257.423.377.911.351 1.406a2.53 2.53 0 0 1-.355 1.448 1.148 1.148 0 0 1-1.009.517c-.204 0-.401-.045-.582-.136a1.052 1.052 0 0 1-.48-.457 1.298 1.298 0 0 1-.114-.234h-.045l.004 1.784h-1.059v-4.713h.904l.117.805h.057c.068-.208.177-.401.328-.56a1.129 1.129 0 0 1 .843-.344h.076v-.004Zm7.559.084h.903l.113.805h.053a1.37 1.37 0 0 1 .235-.484.813.813 0 0 1 .313-.242.82.82 0 0 1 .39-.076h.234v1.051h-.401a.662.662 0 0 0-.313.008.623.623 0 0 0-.272.155.663.663 0 0 0-.174.26.683.683 0 0 0-.027.314v1.875h-1.054v-3.666Zm-17.515.003h3.262v.896L3.73 13.104l.034.113h1.973l.042.9H2.4v-.9l1.931-1.754-.045-.117H2.441v-.896Zm11.815 0h1.055v3.659h-1.055V10.45Z"/></svg>
+              </div>
+            </div>
+            <!-- StepStone -->
+            <div class="orb-icon-pos cnt-cw" style="left:40.77%;top:9.54%;animation-duration:62s">
+              <div class="orb-icon-inner" data-brand="stepstone" title="StepStone">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8">
+                  <rect width="24" height="24" rx="4" fill="rgba(188,200,216,0.15)" stroke="#BCC8D8" stroke-width="1.5"/>
+                  <text x="12" y="17" text-anchor="middle" font-size="11" font-weight="900" fill="#BCC8D8" font-family="Arial,sans-serif">S</text>
+                </svg>
+              </div>
+            </div>
+            <!-- Kununu -->
+            <div class="orb-icon-pos cnt-cw" style="left:75.87%;top:17.55%;animation-duration:62s">
+              <div class="orb-icon-inner" data-brand="kununu" title="Kununu">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#BCC8D8">
+                  <rect width="24" height="24" rx="4" fill="rgba(188,200,216,0.15)" stroke="#BCC8D8" stroke-width="1.5"/>
+                  <text x="12" y="17" text-anchor="middle" font-size="9" font-weight="900" fill="#BCC8D8" font-family="Arial,sans-serif">ku</text>
+                </svg>
+              </div>
+            </div>
+          </div><!-- /ring3 -->
+
+          <!-- ── CENTER LOGO ── -->
+          <div class="orbital-center">
+            <div class="orbital-center-ring">
+              <div class="orbital-center-inner">
+                <img src="assets/kiq-logo.png" alt="KI-Kandidat" class="orbital-center-logo"/>
+              </div>
+              <span class="orbital-ring-pulse"></span>
+              <span class="orbital-ring-pulse" style="animation-delay:1.8s"></span>
+            </div>
+          </div>
+
+        </div><!-- /orbital-stage -->
+      </div><!-- /orbital-wrap -->
+
+    </div><!-- /quellen-grid -->
+  </div><!-- /container -->
+</section><!-- /quellen -->
+
+<!-- ============ KI-FLOW SECTION ============ -->
+<section class="ki-intro-section" data-screen-label="Unser KI-Modul" id="kiModul">
+
+  <div class="container" style="text-align:center;position:relative;z-index:3">
+    <span class="eyebrow">Unser KI-Modul</span>
+    <p class="ki-intro-title">Wir stellen vor:</p>
+  </div>
+
+  <div class="ki-flow-stage" id="kiFlowStage">
+    <canvas id="kiFlowCanvas" class="ki-flow-canvas" aria-hidden="true"></canvas>
+
+    <!-- INPUT: Was die KI empfängt -->
+    <div class="ki-flow-col ki-flow-inputs">
+
+      <article class="ki-card" id="kic-pool">
+        <div class="ki-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.85"/></svg>
+        </div>
+        <div class="ki-card-body">
+          <h4 class="ki-card-name">Kandidaten-Pool</h4>
+          <p class="ki-card-stat">1.041.382 Profile</p>
+        </div>
+        <span class="ki-card-live"><span class="ki-live-dot"></span>Live</span>
+      </article>
+
+      <article class="ki-card" id="kic-data">
+        <div class="ki-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div class="ki-card-body">
+          <h4 class="ki-card-name">100+ Datenpunkte</h4>
+          <p class="ki-card-stat">Echtzeit-Analyse</p>
+        </div>
+      </article>
+
+      <article class="ki-card" id="kic-region">
+        <div class="ki-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="ki-card-body">
+          <h4 class="ki-card-name">Region &amp; Branche</h4>
+          <p class="ki-card-stat">12 Branchen · DACH</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- CENTER: KI-Kandidat Logo -->
+    <div class="ki-flow-col ki-flow-center">
+      <div class="ki-center-orb" id="kiCenterOrb">
+        <div class="ki-orb-ring ki-orb-ring--1"></div>
+        <div class="ki-orb-ring ki-orb-ring--2"></div>
+        <div class="ki-orb-ring ki-orb-ring--3"></div>
+        <div class="ki-lens" aria-hidden="true">
+          <div class="ki-lens-scan"></div>
+          <div class="ki-lens-pulse"></div>
+        </div>
+        <div class="ki-logo-frame">
+          <img src="assets/kiq-logo.png" alt="KI-Kandidat" class="ki-logo-clean" width="300" height="169"/>
+        </div>
+        <div class="ki-orb-label">KI-Kandidat</div>
+      </div>
+    </div>
+
+    <!-- OUTPUT: Was die KI liefert -->
+    <div class="ki-flow-col ki-flow-outputs">
+
+      <article class="ki-card ki-card--out" id="kic-match">
+        <div class="ki-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <div class="ki-card-body">
+          <h4 class="ki-card-name">KI-Match-Score</h4>
+          <p class="ki-card-stat">Bis 97 % Passung</p>
+        </div>
+      </article>
+
+      <article class="ki-card ki-card--out" id="kic-wechsel">
+        <div class="ki-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="ki-card-body">
+          <h4 class="ki-card-name">Wechselbereitschaft</h4>
+          <p class="ki-card-stat">KI-verifiziert</p>
+        </div>
+      </article>
+
+      <article class="ki-card ki-card--out" id="kic-contact">
+        <div class="ki-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="ki-card-body">
+          <h4 class="ki-card-name">Direktansprache</h4>
+          <p class="ki-card-stat">Automatisiert</p>
+        </div>
+      </article>
+
+    </div>
+  </div><!-- /.ki-flow-stage -->
+
+  <div class="container" style="text-align:center;position:relative;z-index:3;margin-top:56px">
+    <p class="lead" style="max-width:56ch;margin:0 auto;color:rgba(255,255,255,0.75)">
+      Unsere KI analysiert täglich jeden unserer <strong style="color:#fff;font-weight:600">1.041.382 Kandidaten</strong> auf über 100 Datenpunkten — und priorisiert die wechselbereiten Profile, die exakt zu Ihrer Stelle passen.
+    </p>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap">
+      <a href="#process" class="btn btn-primary btn-arrow">So funktioniert unsere KI</a>
+      <a href="kontakt.html" class="btn btn-ghost btn-arrow">Live-Demo anfragen</a>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var canvas = document.getElementById('kiFlowCanvas');
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var stage = document.getElementById('kiFlowStage');
+    var center = document.getElementById('kiCenterOrb');
+    var inputIds  = ['kic-pool','kic-data','kic-region'];
+    var outputIds = ['kic-match','kic-wechsel','kic-contact'];
+    var GOLD = 'rgba(232,201,122,';
+    var particles = [];
+    var raf;
+
+    function resize() {
+      var r = stage.getBoundingClientRect();
+      canvas.width  = r.width;
+      canvas.height = r.height;
+    }
+
+    function rel(el) {
+      var er = el.getBoundingClientRect();
+      var sr = stage.getBoundingClientRect();
+      return {
+        x: er.left - sr.left + er.width  / 2,
+        y: er.top  - sr.top  + er.height / 2
+      };
+    }
+
+    function ctrl(a, b, side) {
+      var mx = (a.x + b.x) / 2;
+      var my = (a.y + b.y) / 2;
+      var dx = b.x - a.x, dy = b.y - a.y;
+      var len = Math.sqrt(dx*dx + dy*dy);
+      var nx = -dy / len, ny = dx / len;
+      var curve = side * Math.min(len * 0.22, 60);
+      return { x: mx + nx * curve, y: my + ny * curve };
+    }
+
+    function bezierPt(a, c, b, t) {
+      var mt = 1 - t;
+      return {
+        x: mt*mt*a.x + 2*mt*t*c.x + t*t*b.x,
+        y: mt*mt*a.y + 2*mt*t*c.y + t*t*b.y
+      };
+    }
+
+    function Particle(srcId, dstId, offset, toCenter) {
+      this.srcId    = srcId;
+      this.dstId    = dstId;
+      this.t        = offset;
+      this.toCenter = toCenter;
+      this.speed    = 0.0018 + Math.random() * 0.0008;
+      this.size     = 3 + Math.random() * 1.5;
+    }
+    Particle.prototype.step = function() {
+      this.t += this.speed;
+      if (this.t > 1) this.t = 0;
+    };
+    Particle.prototype.draw = function() {
+      var a = rel(document.getElementById(this.srcId));
+      var b = rel(document.getElementById(this.dstId));
+      var side = this.toCenter ? -1 : 1;
+      var c = ctrl(a, b, side);
+      var pos = bezierPt(a, c, b, this.t);
+      var alpha = Math.sin(this.t * Math.PI);
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(pos.x, pos.y, this.size, 0, Math.PI*2);
+      ctx.fillStyle = GOLD + (0.9 * alpha) + ')';
+      ctx.shadowBlur = 14;
+      ctx.shadowColor = GOLD + '0.7)';
+      ctx.fill();
+      ctx.restore();
+    };
+
+    function buildParticles() {
+      particles = [];
+      var cent = center.id;
+      var COUNT = 4;
+      inputIds.forEach(function(id) {
+        for (var j = 0; j < COUNT; j++) {
+          particles.push(new Particle(id, cent, j / COUNT, true));
+        }
+      });
+      outputIds.forEach(function(id) {
+        for (var j = 0; j < COUNT; j++) {
+          particles.push(new Particle(cent, id, j / COUNT, false));
+        }
+      });
+    }
+
+    function drawLines() {
+      var cent = rel(center);
+      var all = inputIds.concat(outputIds);
+      all.forEach(function(id, i) {
+        var n = rel(document.getElementById(id));
+        var isInput = i < inputIds.length;
+        var side = isInput ? -1 : 1;
+        var c = ctrl(n, cent, side);
+
+        ctx.beginPath();
+        ctx.moveTo(n.x, n.y);
+        ctx.quadraticCurveTo(c.x, c.y, cent.x, cent.y);
+        ctx.strokeStyle = GOLD + '0.10)';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        /* animated glow segment along the path */
+        var t0 = (performance.now() / 2200 + i * 0.17) % 1;
+        var t1 = Math.min(t0 + 0.18, 1);
+        var steps = 20;
+        ctx.beginPath();
+        for (var s = 0; s <= steps; s++) {
+          var t = t0 + (t1 - t0) * s / steps;
+          var pt = bezierPt(n, c, cent, t);
+          if (s === 0) ctx.moveTo(pt.x, pt.y); else ctx.lineTo(pt.x, pt.y);
+        }
+        ctx.strokeStyle = GOLD + '0.55)';
+        ctx.lineWidth = 2;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = GOLD + '0.5)';
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        /* arrowhead at center end */
+        var tip  = bezierPt(n, c, cent, isInput ? 0.88 : 0.12);
+        var tip2 = bezierPt(n, c, cent, isInput ? 0.92 : 0.08);
+        var dx = isInput ? (cent.x - tip.x) : (n.x - tip.x);
+        var dy = isInput ? (cent.y - tip.y) : (n.y - tip.y);
+        var angle = Math.atan2(dy, dx);
+        ctx.save();
+        ctx.translate(tip2.x, tip2.y);
+        ctx.rotate(angle);
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(-9, -4);
+        ctx.lineTo(-9,  4);
+        ctx.closePath();
+        ctx.fillStyle = GOLD + '0.6)';
+        ctx.fill();
+        ctx.restore();
+      });
+    }
+
+    function loop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawLines();
+      particles.forEach(function(p) { p.step(); p.draw(); });
+      raf = requestAnimationFrame(loop);
+    }
+
+    function init() {
+      resize();
+      buildParticles();
+      cancelAnimationFrame(raf);
+      loop();
+    }
+
+    window.addEventListener('resize', function() {
+      resize();
+      buildParticles();
+    });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      requestAnimationFrame(init);
+    }
+  })();
+  </script>
+</section>
+
+<!-- ============ PLATFORM SLIDER ============ -->
+<section class="section_plattform" data-screen-label="Plattform-Slider">
+  <div class="plattform-grid container">
+    <!-- LEFT: copy -->
+    <div class="plattform-copy reveal-left">
+      <span class="eyebrow">Die Plattform</span>
+      <h2 class="h2" style="margin-top:20px">Eine Plattform.<br><em>Volle Kontrolle.</em></h2>
+      <p class="lead" style="margin-top:24px;max-width:42ch">Kein Dienstleister mit Datenbank — sondern ein vollständiges Recruiting-Betriebssystem. KI-Matching, Talent-Cloud, Sellcruiting und Live-Analyse in einer Oberfläche. Kein Blindflug.</p>
+      <a href="kontakt.html" class="btn btn-primary btn-arrow" style="margin-top:36px">Demo anfragen</a>
+    </div>
+
+    <!-- RIGHT: slider -->
+    <div class="plattform-slider-outer">
+      <div class="plattform-slider-wrapper">
+        <div class="plattform-track">
+
+          <div class="plattform-slide is-active">
+            <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=600&q=75&fit=crop&crop=center" alt="KI-Matching" loading="lazy" />
+            <div class="ps-overlay">
+              <span class="ps-tag">01 · KI-MATCHING</span>
+              <div class="ps-bottom">
+                <div class="ps-title">Präzise. Nicht geraten.</div>
+                <div class="ps-desc">97 % Trefferquote · Echtzeit-Scoring auf 100+ Datenpunkten</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plattform-slide">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=75&fit=crop&crop=center" alt="Talent-Cloud" loading="lazy" />
+            <div class="ps-overlay">
+              <span class="ps-tag">02 · TALENT-CLOUD</span>
+              <div class="ps-bottom">
+                <div class="ps-title">1.041.382 Fachkräfte.</div>
+                <div class="ps-desc">DSGVO-konform · täglich aktualisiert · sofort abrufbar</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plattform-slide">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=75&fit=crop&crop=center" alt="Sellcruiting" loading="lazy" />
+            <div class="ps-overlay">
+              <span class="ps-tag">03 · SELLCRUITING</span>
+              <div class="ps-bottom">
+                <div class="ps-title">Persönlich. Skalierbar.</div>
+                <div class="ps-desc">Direkte Kandidatenansprache — automatisiert &amp; menschlich</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plattform-slide">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=75&fit=crop&crop=center" alt="Live-Analyse" loading="lazy" />
+            <div class="ps-overlay">
+              <span class="ps-tag">04 · LIVE-ANALYSE</span>
+              <div class="ps-bottom">
+                <div class="ps-title">Daten statt Bauchgefühl.</div>
+                <div class="ps-desc">Wechselbereitschaft · Regionalbindung · Reaktionsmuster</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /plattform-track -->
+      </div><!-- /wrapper -->
+      <div class="plattform-pagination" id="plattformPag"></div>
+    </div><!-- /slider-outer -->
+  </div><!-- /grid -->
+
+  <script>
+  (function(){
+    var section  = document.querySelector('.section_plattform');
+    if (!section) return;
+    var wrapper  = section.querySelector('.plattform-slider-wrapper');
+    var slides   = Array.from(section.querySelectorAll('.plattform-slide'));
+    var pag      = document.getElementById('plattformPag');
+    var total    = slides.length;
+    var ACTIVE   = 0;
+    var VISIBLE  = 4;
+    var DELAY    = 3500;
+    var SWIPE    = 50;
+    var order    = slides.map(function(_,i){return i;});
+    var busy     = false, dragging = false, wasDrag = false;
+    var sx=0, sy=0, cx=0, cy=0, axis=null, timer=null;
+
+    /* Build track div */
+    var track = document.createElement('div');
+    track.className = 'plattform-track';
+    slides.forEach(function(s){ track.appendChild(s); });
+    wrapper.insertBefore(track, wrapper.firstChild);
+
+    /* Build dots */
+    slides.forEach(function(){
+      var d = document.createElement('div');
+      d.className = 'plattform-dot';
+      d.addEventListener('click', function(){
+        var activeReal = order[ACTIVE];
+        var idx = Array.from(pag.children).indexOf(d);
+        if (idx === activeReal) return;
+        var fwd=0, tmp=[].concat(order);
+        while(tmp[ACTIVE]!==idx&&fwd<total){tmp.push(tmp.shift());fwd++;}
+        var bck=0, tmp2=[].concat(order);
+        while(tmp2[ACTIVE]!==idx&&bck<total){tmp2.unshift(tmp2.pop());bck++;}
+        stop(); go(fwd<=bck?1:-1, Math.min(fwd,bck), start);
+      });
+      pag.appendChild(d);
+    });
+    var dots = Array.from(pag.children);
+
+    function applyOrder(){
+      order.forEach(function(real, pos){ slides[real].style.order = String(pos); });
+    }
+    function syncVisible(){
+      slides.forEach(function(s){
+        var pos = parseInt(s.style.order,10);
+        s.classList.toggle('plattform-slide--hidden', pos >= VISIBLE);
+      });
+    }
+    function showAll(){ slides.forEach(function(s){ s.classList.remove('plattform-slide--hidden'); }); }
+    function syncActive(){
+      var activeReal = order[ACTIVE];
+      slides.forEach(function(s,i){ s.classList.toggle('is-active', i===activeReal); });
+      dots.forEach(function(d,i){ d.classList.toggle('is-active', i===activeReal); });
+    }
+
+    function slideWidth(pos){
+      var r = order[pos];
+      return slides[r].getBoundingClientRect().width;
+    }
+    function sumW(from, to){
+      var sum=0;
+      for(var p=from;p<to;p++) sum += slideWidth(p) + 16;
+      return sum;
+    }
+
+    function go(dir, steps, cb){
+      if(busy) return; busy=true;
+      var offset = sumW(0, steps);
+      showAll();
+      track.style.transition='none';
+      track.style.transform='translate3d('+( dir*offset )+'px,0,0)';
+      for(var i=0;i<steps;i++){
+        if(dir===1) order.push(order.shift());
+        else order.unshift(order.pop());
+      }
+      applyOrder(); syncActive();
+      void track.offsetHeight;
+      requestAnimationFrame(function(){
+        track.style.transition='transform 0.52s cubic-bezier(0.25,0.46,0.45,0.94)';
+        track.style.transform='translate3d(0,0,0)';
+      });
+      var done=false;
+      function finish(){
+        if(done) return; done=true;
+        track.removeEventListener('transitionend',finish);
+        clearTimeout(fallback);
+        track.style.transition='none';
+        track.style.transform='translate3d(0,0,0)';
+        syncVisible(); busy=false;
+        if(typeof cb==='function') cb();
+      }
+      track.addEventListener('transitionend',finish);
+      var fallback=setTimeout(finish,680);
+    }
+
+    /* Autoplay */
+    function start(){
+      stop();
+      timer=setTimeout(function tick(){
+        if(!busy&&!dragging&&!document.hidden){ go(1,1,function(){ timer=setTimeout(tick,DELAY); }); }
+        else { timer=setTimeout(tick,DELAY); }
+      }, DELAY);
+    }
+    function stop(){ clearTimeout(timer); timer=null; }
+    section.addEventListener('mouseenter',stop);
+    section.addEventListener('mouseleave',start);
+
+    /* Slide clicks */
+    slides.forEach(function(slide){
+      slide.addEventListener('click',function(e){
+        if(wasDrag){e.preventDefault();return;}
+        var pos=parseInt(slide.style.order,10);
+        if(pos===ACTIVE||isNaN(pos)) return;
+        var dir=pos>ACTIVE?1:-1, steps=Math.abs(pos-ACTIVE);
+        stop(); go(dir,steps,start);
+      });
+    });
+
+    /* Drag/swipe */
+    function dragStart(x,y){ if(busy)return; dragging=true; wasDrag=false; axis=null; sx=cx=x; sy=cy=y; track.classList.add('is-dragging'); stop(); }
+    function dragMove(x,y,e){
+      if(!dragging)return; cx=x; cy=y;
+      var dx=cx-sx, dy=cy-sy;
+      if(!axis){ if(Math.abs(dx)>8||Math.abs(dy)>8) axis=Math.abs(dx)>Math.abs(dy)?'x':'y'; }
+      if(axis==='x'){ wasDrag=true; if(e&&e.cancelable)e.preventDefault(); }
+      else if(axis==='y'){ dragging=false; track.classList.remove('is-dragging'); start(); }
+    }
+    function dragEnd(){
+      if(!dragging)return; dragging=false; track.classList.remove('is-dragging');
+      var delta=cx-sx;
+      if(axis==='x'&&Math.abs(delta)>SWIPE) go(delta<0?1:-1,1,start);
+      else start();
+      setTimeout(function(){wasDrag=false;},50);
+    }
+    track.addEventListener('mousedown',function(e){dragStart(e.clientX,e.clientY);});
+    window.addEventListener('mousemove',function(e){if(dragging)dragMove(e.clientX,e.clientY,e);});
+    window.addEventListener('mouseup',function(){if(dragging)dragEnd();});
+    track.addEventListener('touchstart',function(e){var t=e.touches[0];dragStart(t.clientX,t.clientY);},{passive:false});
+    track.addEventListener('touchmove',function(e){if(!dragging)return;var t=e.touches[0];dragMove(t.clientX,t.clientY,e);},{passive:false});
+    track.addEventListener('touchend',dragEnd);
+    track.addEventListener('touchcancel',dragEnd);
+
+    /* Init */
+    applyOrder(); syncActive(); syncVisible(); start();
+  })();
+  </script>
+</section>
+
+<!-- ============ LOGO WALL ============ -->
+<section class="logo-wall section-tight section-light" style="padding:32px 0">
+  <div class="container">
+    <div class="logo-wall-label">Vertraut von Familienunternehmen bis DAX-Konzern — deutschlandweit</div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="logo-cell">MERTENS GRUPPE</div>
+        <div class="logo-cell">BAUER &amp; PARTNER</div>
+        <div class="logo-cell">NORDTECH AG</div>
+        <div class="logo-cell">SCHÄFER WERK</div>
+        <div class="logo-cell">ALPEN HAUS</div>
+        <div class="logo-cell">RHEIN LOGISTIK</div>
+        <div class="logo-cell">DREYER BAU</div>
+        <div class="logo-cell">HANSE BETON</div>
+        <div class="logo-cell">ZENTRAL PFLEGE</div>
+        <div class="logo-cell">SÜDTECH GmbH</div>
+        <div class="logo-cell">WEST HANDWERK</div>
+        <div class="logo-cell">BRENNER &amp; SÖHNE</div>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <div class="logo-cell">MERTENS GRUPPE</div>
+        <div class="logo-cell">BAUER &amp; PARTNER</div>
+        <div class="logo-cell">NORDTECH AG</div>
+        <div class="logo-cell">SCHÄFER WERK</div>
+        <div class="logo-cell">ALPEN HAUS</div>
+        <div class="logo-cell">RHEIN LOGISTIK</div>
+        <div class="logo-cell">DREYER BAU</div>
+        <div class="logo-cell">HANSE BETON</div>
+        <div class="logo-cell">ZENTRAL PFLEGE</div>
+        <div class="logo-cell">SÜDTECH GmbH</div>
+        <div class="logo-cell">WEST HANDWERK</div>
+        <div class="logo-cell">BRENNER &amp; SÖHNE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAIN STRIP ============ -->
+<section data-screen-label="Pain points" class="section-photo-bg" style="position:relative; z-index:2; background: linear-gradient(180deg, #020617 0%, #080b16 100%); padding: 100px 0;">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center;">
+      <span class="eyebrow" style="color: rgba(167,139,250,0.9); border: 1px solid rgba(167,139,250,0.3); padding: 6px 14px; border-radius: 100px; background: rgba(167,139,250,0.05); display: inline-block;">Status Quo</span>
+      <h2 class="h2" style="margin-top:24px; max-width: 800px; margin-left: auto; margin-right: auto; font-size: 38px;">Klassisches Recruiting ist heute zu langsam,<br>zu teuer und zu unsicher.</h2>
+      <p class="lead" style="max-width: 700px; margin-left: auto; margin-right: auto; margin-top: 16px; color: rgba(255,255,255,0.7);">Stellenanzeigen schalten und auf Bewerbungen hoffen — das war gestern. Heute entscheidet die Datentiefe der Datenbank und die Geschwindigkeit der KI.</p>
+    </div>
+
+    <div class="pain-grid" id="painGrid">
+      <div class="glow-card reveal rd-1">
+        <div class="glow-card-inner">
+          <div class="mono glow-eyebrow">01 · ZEIT</div>
+          <h3 class="h3">86 Tage Vakanz</h3>
+          <p>Durchschnittliche Time-to-Hire im DACH-Mittelstand 2025. Jeder Tag kostet Sie Umsatz und überfordert das Team.</p>
+        </div>
+      </div>
+      <div class="glow-card reveal rd-2">
+        <div class="glow-card-inner">
+          <div class="mono glow-eyebrow">02 · KOSTEN</div>
+          <h3 class="h3">€ 23.400 / Hire</h3>
+          <p>Stepstone, Personalvermittler, Anzeigen, HR-Stunden. Die Kosten je Einstellung explodieren — ohne Garantie auf Erfolg.</p>
+        </div>
+      </div>
+      <div class="glow-card reveal rd-3">
+        <div class="glow-card-inner">
+          <div class="mono glow-eyebrow">03 · QUALITÄT</div>
+          <h3 class="h3">42 % Fluktuation</h3>
+          <p>Cultural Fit, falsche Erwartungen, regionale Distanz: Fast jede zweite Einstellung scheitert in den ersten 12 Monaten.</p>
+        </div>
+      </div>
+      <div class="glow-card reveal rd-4">
+        <div class="glow-card-inner">
+          <div class="mono glow-eyebrow">04 · MARKT</div>
+          <h3 class="h3">71 % passiv</h3>
+          <p>Die besten Kandidaten suchen nicht aktiv. Sie warten auf das richtige Angebot zur richtigen Zeit. Genau die finden wir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE 3 PILLARS ============ -->
+<section id="pillars" data-screen-label="3 pillars" class="section-photo-bg section-pillars-bg">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Die Plattform</span>
+        <h2 class="h2" style="margin-top:16px">Drei Module.<br>Ein integriertes System.</h2>
+      </div>
+      <p class="lead">Talent-Cloud, KI-Matching und Sellcruiting laufen in einem Stack — jede Stelle profitiert vom gesamten System ab Tag&nbsp;1.</p>
+    </div>
+
+    <div class="pillars">
+
+      <!-- PILLAR 1: Cloud -->
+      <div class="pillar reveal-scale rd-1">
+        <div class="pillar-inner">
+          <div>
+            <div class="pillar-tag">
+              <span style="width:6px;height:6px;background:#60a5fa;border-radius:50%;box-shadow:0 0 10px #60a5fa;"></span>
+              01 · TALENT-CLOUD
+            </div>
+            <h2 class="h2 pillar-title"><span class="accent">1.000.000+</span> Fachkräfte<br>kennen wir bereits.</h2>
+            <p class="lead" style="margin-top:16px; color: #94a3b8; font-size: 18px; line-height: 1.6;">
+              Während andere bei null starten, greifen Sie auf eine bestehende, strukturierte Datenbank zu.
+              Qualifikation, Region, Mobilität, Wechselstatus — <strong style="color:#e2e8f0;font-weight:500;">täglich aktualisiert.</strong>
+            </p>
+            <ul class="pillar-features" style="margin-top: 32px;">
+              <li>Über eine Million strukturierte DACH-Kandidatenprofile</li>
+              <li>+ 1.200 neue Registrierungen pro Tag</li>
+              <li>Tagesaktueller Abgleich mit dem regionalen Arbeitsmarkt</li>
+              <li>DSGVO-konform, Server in Deutschland</li>
+            </ul>
+          </div>
+          <div class="pillar-viz">
+            <div class="premium-glass-panel viz-cloud">
+              <div class="premium-glass-header">
+                <div class="mac-dot r"></div><div class="mac-dot y"></div><div class="mac-dot g"></div>
+                <div class="premium-glass-title">LIVE_DB_CONNECTION</div>
+              </div>
+              <div class="premium-glass-body">
+                <div class="cloud-counter">
+                  <span class="v" id="cloudV" style="font-size: 64px; text-shadow: 0 0 40px rgba(232,201,122,0.30); background: linear-gradient(180deg, #ffffff, #E8C97A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -1px;">1.041.382</span>
+                  <span class="u" style="color:#64748b; font-size:16px;">Profile</span>
+                </div>
+                <div class="cloud-pulse" style="margin-top:8px"><span class="dot pulse-dot" style="width:8px;height:8px;background:#34d399;border-radius:999px;box-shadow:0 0 12px #34d399;"></span> <span style="color:#34d399; letter-spacing: 0.5px;">+<span id="cloudPulse">3</span> in den letzten 60s</span></div>
+                <div class="cloud-bar" style="margin-top:24px; background:rgba(255,255,255,0.05); height:4px;"><div class="fill" id="cloudFill" style="width:0; background: linear-gradient(90deg, #C7A24A, #E8C97A); box-shadow: 0 0 15px rgba(232,201,122,0.5);"></div></div>
+                <div class="cloud-grid" id="cloudGrid" style="margin-top:24px; gap:4px; flex: 1;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLAR 2: KI -->
+      <div class="pillar reveal-scale rd-2">
+        <div class="pillar-inner">
+          <div style="order: 2;">
+            <div class="pillar-tag">
+              <span style="width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 10px var(--accent-glow);"></span>
+              02 · KI-MATCHING
+            </div>
+            <h2 class="h2 pillar-title"><span class="accent">100+</span> Datenpunkte<br>pro Kandidat. In Echtzeit.</h2>
+            <p class="lead" style="margin-top:16px; color: #94a3b8; font-size: 18px; line-height: 1.6;">
+              Unsere KI prüft jeden Profilbestand täglich gegen Ihre Anforderungen.
+              Sie erkennt Wechselsignale, regionale Bindung, Reaktionsmuster — und <strong style="color:#e2e8f0;font-weight:500;">priorisiert nach Wechselwahrscheinlichkeit.</strong>
+            </p>
+            <ul class="pillar-features" style="margin-top: 32px;">
+              <li>Wechseltrigger-Erkennung (Dienstplan, Gehalt, Fahrzeit, …)</li>
+              <li>Wettbewerber-Monitoring im regionalen Markt</li>
+              <li>Reaktionsmuster &amp; Cultural-Fit-Scoring</li>
+              <li>Automatische Priorisierung der Top-Kandidaten</li>
+            </ul>
+          </div>
+          <div class="pillar-viz" style="order: 1;">
+            <div class="premium-glass-panel viz-ki" id="vizKi" style="transform: perspective(1000px) rotateY(4deg) rotateX(2deg); transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);">
+              <div class="premium-glass-header">
+                <div class="mac-dot r"></div><div class="mac-dot y"></div><div class="mac-dot g"></div>
+                <div class="premium-glass-title" style="color: var(--accent);">AI_SCORING_ENGINE</div>
+              </div>
+              <div class="premium-glass-body" style="gap: 16px;">
+                <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:12px;color:#94a3b8;margin-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:12px;">
+                  <span>Kandidat #4827 · Markus W.</span>
+                  <span style="color:var(--accent);font-weight:600;text-shadow: 0 0 10px rgba(232,201,122,0.4);">94/100 MATCH</span>
+                </div>
+                <div class="ki-row"><span class="lbl">Fachlich</span><span class="bar"><span class="f" data-pct="98" style="background: linear-gradient(90deg, #C7A24A, #E8C97A);"></span></span><span class="pct" style="color:var(--accent);">98%</span></div>
+                <div class="ki-row"><span class="lbl">Region</span><span class="bar"><span class="f" data-pct="100" style="background: linear-gradient(90deg, #C7A24A, #E8C97A);"></span></span><span class="pct" style="color:var(--accent);">100%</span></div>
+                <div class="ki-row"><span class="lbl">Wechsel</span><span class="bar"><span class="f" data-pct="89" style="background: linear-gradient(90deg, #C7A24A, #E8C97A);"></span></span><span class="pct" style="color:var(--accent);">89%</span></div>
+                <div class="ki-row"><span class="lbl">Gehalt</span><span class="bar"><span class="f" data-pct="92" style="background: linear-gradient(90deg, #C7A24A, #E8C97A);"></span></span><span class="pct" style="color:var(--accent);">92%</span></div>
+                <div class="ki-row"><span class="lbl">Cultural</span><span class="bar"><span class="f" data-pct="87" style="background: linear-gradient(90deg, #C7A24A, #E8C97A);"></span></span><span class="pct" style="color:var(--accent);">87%</span></div>
+                <div class="ki-row"><span class="lbl">Mobilität</span><span class="bar"><span class="f" data-pct="95" style="background: linear-gradient(90deg, #C7A24A, #E8C97A);"></span></span><span class="pct" style="color:var(--accent);">95%</span></div>
+                <div style="margin-top:auto;padding-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+                  <span class="mono" style="background:rgba(232,201,122,0.1);color:var(--accent);padding:6px 12px;border-radius:100px;font-size:10px;border:1px solid rgba(232,201,122,0.3);">SPS-Programmierung</span>
+                  <span class="mono" style="background:rgba(255,255,255,0.03);padding:6px 12px;border-radius:100px;font-size:10px;color:#94a3b8;border:1px solid rgba(255,255,255,0.05);">Stuttgart</span>
+                  <span class="mono" style="background:rgba(255,255,255,0.03);padding:6px 12px;border-radius:100px;font-size:10px;color:#94a3b8;border:1px solid rgba(255,255,255,0.05);">Schicht-Wechsler</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLAR 3: Sellcruiting -->
+      <div class="pillar reveal-scale rd-3">
+        <div class="pillar-inner">
+          <div>
+            <div class="pillar-tag">
+              <span style="width:6px;height:6px;background:#34d399;border-radius:50%;box-shadow:0 0 10px #34d399;"></span>
+              03 · SELLCRUITING
+            </div>
+            <h2 class="h2 pillar-title"><span class="accent" style="background: linear-gradient(135deg, #34d399 0%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Echte Menschen</span><br>verkaufen Ihre Stelle.</h2>
+            <p class="lead" style="margin-top:16px; color: #94a3b8; font-size: 18px; line-height: 1.6;">
+              Unsere geschulten Recruiter — unterstützt durch automatisierte Bewerberprozesse — sprechen jeden vorausgewählten Kandidaten persönlich an,
+              <strong style="color:#e2e8f0;font-weight:500;">klären Qualifikation, Erwartungen, Cultural Fit und sichern Ihr Vorstellungsgespräch.</strong>
+            </p>
+            <ul class="pillar-features" style="margin-top: 32px;">
+              <li>KI-Erstkontakt in &lt; 60 Sekunden möglich</li>
+              <li>Persönliche Recruiter prüfen Motivation &amp; Fit</li>
+              <li>Sie sprechen mit Kandidaten, die Ihr Angebot bereits akzeptiert haben</li>
+              <li>Lebenslauf, Profil &amp; Terminvorschlag — alles aufbereitet</li>
+            </ul>
+          </div>
+          <div class="pillar-viz">
+            <div class="premium-glass-panel viz-sell">
+              <div class="premium-glass-header">
+                <div class="mac-dot r"></div><div class="mac-dot y"></div><div class="mac-dot g"></div>
+                <div class="premium-glass-title" style="color: #34d399;">CHAT_PROTOCOL</div>
+              </div>
+              <div class="premium-glass-body" style="padding: 24px; gap: 16px;">
+                <div class="sell-msg recruiter" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); color:#cbd5e1; font-size: 14px;">
+                  <div class="who" style="color:#94a3b8; font-family:var(--font-mono); font-size:10px; margin-bottom:6px;">RECRUITER · LENA</div>
+                  Hallo Markus, ich bin Lena von KI-Kandidat. Ich rufe wegen einer SPS-Stelle bei einem Mittelständler in Esslingen an — passt das zeitlich für Sie?
+                </div>
+                <div class="sell-msg candidate" style="background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.2); color:#d1fae5; margin-left: 20px; font-size: 14px;">
+                  <div class="who" style="color:#6ee7b7; font-family:var(--font-mono); font-size:10px; margin-bottom:6px;">KANDIDAT · MARKUS</div>
+                  Klingt interessant. Was zahlen die?
+                </div>
+                <div class="sell-msg recruiter" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); color:#cbd5e1; font-size: 14px;">
+                  <div class="who" style="color:#94a3b8; font-family:var(--font-mono); font-size:10px; margin-bottom:6px;">RECRUITER · LENA</div>
+                  Rahmen 68–74 k €, 38-h-Woche, Fahrzeit unter 25 Min. Wäre das für Sie ein Wechselgrund?
+                </div>
+                <div class="sell-msg candidate" style="background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.2); color:#d1fae5; margin-left: 20px; font-size: 14px;">
+                  <div class="who" style="color:#6ee7b7; font-family:var(--font-mono); font-size:10px; margin-bottom:6px;">KANDIDAT · MARKUS</div>
+                  Ja. Termin bitte.
+                </div>
+                <div class="sell-status" style="margin-top:auto; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.2); padding:12px; border-radius:12px; color:#a7f3d0; font-family:var(--font-mono); font-size:12px; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow: 0 0 20px rgba(16,185,129,0.1);">
+                  <span class="dot pulse-dot" style="width:8px;height:8px;background:#10b981;border-radius:999px;box-shadow:0 0 10px #10b981;"></span> Vorqualifiziert · Termin Mo. 14:00
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS BAR ============ -->
+<section class="section-tight section-light" data-screen-label="Stats">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat reveal"><span class="num" data-counter="1041382" data-format="thousand">1.041.382<span class="unit"></span></span><span class="lbl">Fachkräfte in der Talent-Cloud</span></div>
+      <div class="stat reveal"><span class="num">50<span class="unit">+</span></span><span class="lbl">Branchen · DACH-weit aktiv</span></div>
+      <div class="stat reveal"><span class="num">⌀ 72<span class="unit">h</span></span><span class="lbl">bis zur ersten Kandidatenliste</span></div>
+      <div class="stat reveal"><span class="num">96<span class="unit">%</span></span><span class="lbl">Cultural-Fit-Quote</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KI LIVE-SCORING ============ -->
+<section class="ki-section" data-screen-label="KI Scoring">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">KI-Engine</span>
+        <h2 class="h2" style="margin-top:16px">100+ Datenpunkte<br>pro Kandidat. In Echtzeit.</h2>
+      </div>
+      <p class="lead">Unsere KI prüft täglich jeden Profilbestand gegen Ihre Anforderungen — erkennt Wechselsignale, regionale Bindung, Reaktionsmuster und priorisiert nach Wechselwahrscheinlichkeit. Sie sehen am Ende nur die Top 7.</p>
+    </div>
+
+    <div class="ki-section-grid reveal">
+      <!-- LEFT: Live scoring queue -->
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <!-- Data point chips -->
+        <div class="live-scoring-panel" style="padding:0;overflow:hidden;">
+          <div class="datapoint-grid">
+            <div class="datapoint-chip">
+              <div class="dp-label">Wechsel-Trigger</div>
+              <ul>
+                <li>Dienstplanänderung</li>
+                <li>Tarifabweichung +8%</li>
+                <li>Pendelzeit &gt; 45 min</li>
+                <li>Vorgesetztenwechsel</li>
+                <li>LinkedIn-Aktivität</li>
+              </ul>
+            </div>
+            <div class="datapoint-chip">
+              <div class="dp-label">Cultural Fit</div>
+              <ul>
+                <li>Teamgröße Präferenz</li>
+                <li>Entscheidungshierarchie</li>
+                <li>Schichtmodell-Tauglichkeit</li>
+                <li>Sprachen &amp; Region</li>
+                <li>Werttendenzen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live scoring queue -->
+        <div class="live-scoring-panel">
+          <div class="ls-panel-head">
+            <div class="ls-panel-title">
+              <span class="dot pulse-dot" style="width:6px;height:6px;background:#c084fc;border-radius:999px;box-shadow:0 0 8px #c084fc;"></span>
+              Live · Tägliches Scoring
+            </div>
+            <div class="ls-panel-count"><em id="ls-count">0</em> / 1.041.382 heute</div>
+          </div>
+          <div class="ls-queue" id="ls-queue">
+            <div class="ls-row" data-pct="96">
+              <div class="ls-av">MW</div>
+              <div class="ls-name">Markus W. · <em>SPS · Stuttgart</em></div>
+              <div class="ls-bar-wrap"><div class="ls-bar-fill"></div></div>
+              <div class="ls-pct">96</div>
+            </div>
+            <div class="ls-row" data-pct="91">
+              <div class="ls-av">JS</div>
+              <div class="ls-name">Julia S. · <em>CNC · Düsseldorf</em></div>
+              <div class="ls-bar-wrap"><div class="ls-bar-fill"></div></div>
+              <div class="ls-pct">91</div>
+            </div>
+            <div class="ls-row" data-pct="88">
+              <div class="ls-av">AK</div>
+              <div class="ls-name">Anton K. · <em>Polier · Hamburg</em></div>
+              <div class="ls-bar-wrap"><div class="ls-bar-fill"></div></div>
+              <div class="ls-pct">88</div>
+            </div>
+            <div class="ls-row" data-pct="83">
+              <div class="ls-av">TR</div>
+              <div class="ls-name">Tatjana R. · <em>Pflege · München</em></div>
+              <div class="ls-bar-wrap"><div class="ls-bar-fill"></div></div>
+              <div class="ls-pct">83</div>
+            </div>
+            <div class="ls-row scoring" data-pct="0">
+              <div class="ls-av">FM</div>
+              <div class="ls-name">Felix M. · <em>DevOps · Berlin</em></div>
+              <div class="ls-bar-wrap"><div class="ls-bar-fill"></div></div>
+              <div class="ls-pct" id="ls-now">…</div>
+            </div>
+          </div>
+          <div class="ls-panel-foot">
+            <span class="mono" style="font-size:11px;color:var(--fg-dim)">// 100+ Datenpunkte · 4 ms / Profil</span>
+            <span class="ls-cps">⚡ <em id="ls-cps">183</em> Profile/sec</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Match panel -->
+      <div class="match-panel-full" id="matchPanelFull">
+        <div class="match-panel-head">
+          <div class="match-cand">
+            <div class="av">MW</div>
+            <div>
+              <div class="name">Markus W.</div>
+              <div class="role">// SPS-Programmierer · Stuttgart</div>
+            </div>
+          </div>
+          <div class="match-score-badge">
+            <div class="v"><span data-count2="94">0</span></div>
+            <div class="l">Match-Score</div>
+          </div>
+        </div>
+        <div class="match-rows">
+          <div class="match-row"><span class="lbl">Fachlich</span><span class="bar"><span class="f accent-bar" data-mpct="98"></span></span><span class="pct">98%</span></div>
+          <div class="match-row"><span class="lbl">Region</span><span class="bar"><span class="f std-bar" data-mpct="100"></span></span><span class="pct">100%</span></div>
+          <div class="match-row"><span class="lbl">Wechsel</span><span class="bar"><span class="f accent-bar" data-mpct="89"></span></span><span class="pct">89%</span></div>
+          <div class="match-row"><span class="lbl">Gehalt</span><span class="bar"><span class="f std-bar" data-mpct="92"></span></span><span class="pct">92%</span></div>
+          <div class="match-row"><span class="lbl">Cultural</span><span class="bar"><span class="f std-bar" data-mpct="87"></span></span><span class="pct">87%</span></div>
+          <div class="match-row"><span class="lbl">Mobilität</span><span class="bar"><span class="f accent-bar" data-mpct="95"></span></span><span class="pct">95%</span></div>
+        </div>
+        <div class="match-tags">
+          <span class="match-tag primary">SPS Siemens S7</span>
+          <span class="match-tag primary">TIA Portal</span>
+          <span class="match-tag">Stuttgart 60 km</span>
+          <span class="match-tag">Schicht möglich</span>
+          <span class="match-tag">DE / EN</span>
+          <span class="match-tag">B-Führerschein</span>
+        </div>
+        <div class="match-panel-foot">
+          <span class="mono" style="font-size:11px;">Profil #4827</span>
+          <span class="time mono" style="font-size:11px;">Erstkontakt · 38h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8-STEP PROCESS ============ -->
+<section id="process" data-screen-label="Process" class="section-photo-bg section-process-bg">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">So arbeiten wir</span>
+        <h2 class="h2" style="margin-top:16px">Acht Schritte<br>von Briefing bis Vertragsunterschrift.</h2>
+      </div>
+      <p class="lead">Klare Phasen, klare Verantwortung, klare Übergaben. Sie sehen jederzeit, an welchem Punkt Ihre Stelle steht — kein Black-Box-Recruiting.</p>
+    </div>
+
+    <div class="stepper-wrap reveal">
+      <div class="stepper">
+        <ol class="steps" id="stepList">
+          <li data-step="1" class="active"><span class="step-num">01</span><span>Briefing &amp; Suchauftrag</span></li>
+          <li data-step="2"><span class="step-num">02</span><span>Talent-Cloud auslesen</span></li>
+          <li data-step="3"><span class="step-num">03</span><span>100+ Signale auswerten</span></li>
+          <li data-step="4"><span class="step-num">04</span><span>Markt &amp; Wettbewerb prüfen</span></li>
+          <li data-step="5"><span class="step-num">05</span><span>Wechselimpulse erfassen</span></li>
+          <li data-step="6"><span class="step-num">06</span><span>Matching &amp; Priorisierung</span></li>
+          <li data-step="7"><span class="step-num">07</span><span>Sellcruiting · Erstkontakt</span></li>
+          <li data-step="8"><span class="step-num">08</span><span>Vorqualifizierte Übergabe</span></li>
+        </ol>
+        <div class="step-content" id="stepContent">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW WITH UI MOCKUP ============ -->
+<section class="workflow-section section-light" data-screen-label="Workflow Mockup">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Live-Walkthrough</span>
+        <h2 class="h2" style="margin-top:16px">So findet unsere KI<br>die richtigen Kandidaten.</h2>
+      </div>
+      <p class="lead">Klicken oder scrollen Sie durch die Schritte — links sehen Sie, was tatsächlich in unserer Plattform passiert. Keine Black-Box, kein Marketing-Mockup. Das ist das echte UI.</p>
+    </div>
+
+    <div class="workflow-grid reveal">
+      <!-- LEFT: Sticky UI mockup -->
+      <div class="wf-mockup" id="wfMockup">
+        <aside class="wf-sidebar">
+          <div class="wf-sidebar-logo">KI-Kandidat</div>
+          <ul class="wf-menu">
+            <li><span class="ico" style="-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox=&quot;0 0 16 16&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><circle cx=&quot;8&quot; cy=&quot;5&quot; r=&quot;3&quot; fill=&quot;%23000&quot;/><path d=&quot;M2 14c0-3 3-5 6-5s6 2 6 5&quot; fill=&quot;%23000&quot;/></svg>')"></span> Meine Kandidaten</li>
+            <li><span class="ico" style="-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox=&quot;0 0 16 16&quot;><rect x=&quot;2&quot; y=&quot;3&quot; width=&quot;12&quot; height=&quot;10&quot; rx=&quot;1&quot; fill=&quot;none&quot; stroke=&quot;%23000&quot; stroke-width=&quot;1.5&quot;/></svg>')"></span> Neue Analyse</li>
+            <li class="active" id="wfActiveMenuItem"><span class="ico" style="-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox=&quot;0 0 16 16&quot;><circle cx=&quot;7&quot; cy=&quot;7&quot; r=&quot;4&quot; fill=&quot;none&quot; stroke=&quot;%23000&quot; stroke-width=&quot;1.5&quot;/><line x1=&quot;10&quot; y1=&quot;10&quot; x2=&quot;14&quot; y2=&quot;14&quot; stroke=&quot;%23000&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot;/></svg>')"></span> Neue Stelle suchen</li>
+            <li><span class="ico" style="-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox=&quot;0 0 16 16&quot;><circle cx=&quot;8&quot; cy=&quot;8&quot; r=&quot;6&quot; fill=&quot;none&quot; stroke=&quot;%23000&quot; stroke-width=&quot;1.5&quot;/></svg>')"></span> Ansprechpartner</li>
+            <li><span class="ico" style="-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox=&quot;0 0 16 16&quot;><line x1=&quot;3&quot; y1=&quot;5&quot; x2=&quot;13&quot; y2=&quot;5&quot; stroke=&quot;%23000&quot; stroke-width=&quot;1.5&quot;/><line x1=&quot;3&quot; y1=&quot;8&quot; x2=&quot;13&quot; y2=&quot;8&quot; stroke=&quot;%23000&quot; stroke-width=&quot;1.5&quot;/><line x1=&quot;3&quot; y1=&quot;11&quot; x2=&quot;13&quot; y2=&quot;11&quot; stroke=&quot;%23000&quot; stroke-width=&quot;1.5&quot;/></svg>')"></span> Meine Analysen</li>
+            <li><span class="ico" style="-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox=&quot;0 0 16 16&quot;><rect x=&quot;2&quot; y=&quot;2&quot; width=&quot;5&quot; height=&quot;5&quot; fill=&quot;%23000&quot;/><rect x=&quot;9&quot; y=&quot;2&quot; width=&quot;5&quot; height=&quot;5&quot; fill=&quot;%23000&quot;/><rect x=&quot;2&quot; y=&quot;9&quot; width=&quot;5&quot; height=&quot;5&quot; fill=&quot;%23000&quot;/><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;5&quot; height=&quot;5&quot; fill=&quot;%23000&quot;/></svg>')"></span> Dashboard</li>
+          </ul>
+          <div class="wf-sidebar-foot">
+            <span class="ico" style="-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox=&quot;0 0 16 16&quot;><circle cx=&quot;8&quot; cy=&quot;8&quot; r=&quot;3&quot; fill=&quot;none&quot; stroke=&quot;%23000&quot; stroke-width=&quot;1.5&quot;/></svg>')"></span>
+            Einstellungen
+          </div>
+        </aside>
+        <main class="wf-main">
+          <div class="wf-main-head">
+            <div class="wf-main-title" id="wfMainTitle">Neue Analyse</div>
+            <div class="wf-cloud-status">
+              <span class="dot"></span>
+              <span id="wfCloudStatus">Cloud laden...</span>
+            </div>
+          </div>
+          <!-- Apple-look live dashboard -->
+          <div class="wf-active-step" id="wfActiveStep">
+            <span class="wf-active-spinner"></span>
+            <div class="wf-active-body">
+              <div class="wf-active-name" id="wfActiveName">Lade KI-Kandidat Cloud</div>
+              <div class="wf-active-progress"><div class="wf-progress-bar" id="wfProgressBar"></div></div>
+            </div>
+            <div class="wf-active-pct" id="wfActivePct">28%</div>
+          </div>
+
+          <div class="wf-metrics">
+            <div class="wf-metric" data-key="profiles">
+              <div class="wf-metric-val" data-val="0">0</div>
+              <div class="wf-metric-lbl">Profile geprüft</div>
+            </div>
+            <div class="wf-metric" data-key="signals">
+              <div class="wf-metric-val" data-val="0">0</div>
+              <div class="wf-metric-lbl">Signale erkannt</div>
+            </div>
+            <div class="wf-metric" data-key="score">
+              <div class="wf-metric-val" data-val="0" data-suffix="%">0%</div>
+              <div class="wf-metric-lbl">Top Match-Score</div>
+            </div>
+          </div>
+
+          <div class="wf-feed">
+            <div class="wf-feed-head">
+              <span class="wf-feed-pulse"></span>
+              <span>Live-Aktivität</span>
+            </div>
+            <div class="wf-feed-list" id="wfFeed"></div>
+          </div>
+
+          <div class="wf-spark">
+            <svg viewBox="0 0 260 50" preserveAspectRatio="none" class="wf-spark-svg">
+              <defs>
+                <linearGradient id="sparkGrad" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#E8C97A" stop-opacity="0.30"/>
+                  <stop offset="100%" stop-color="#E8C97A" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path id="wfSparkArea" class="wf-spark-area" fill="url(#sparkGrad)" d=""></path>
+              <path id="wfSparkLine" class="wf-spark-line" stroke="#E8C97A" stroke-width="1.5" fill="none" d=""></path>
+            </svg>
+            <div class="wf-spark-lbl">Match-Score-Verlauf · letzte 30 Min.</div>
+          </div>
+        </main>
+      </div>
+
+      <!-- RIGHT: Step list -->
+      <div class="wf-list" id="wfList">
+        <div class="wf-item reveal rd-1" data-step="1">
+          <div class="wf-item-num">01</div>
+          <div class="wf-item-body">
+            <h4>Suchauftrag anlegen</h4>
+            <p>Sie teilen uns mit, wen Sie suchen. So sieht Ihr Wunschkandidat aus und diese Qualifikationen sind zwingend nötig.</p>
+          </div>
+        </div>
+        <div class="wf-item active reveal rd-2" data-step="2">
+          <div class="wf-item-num">02</div>
+          <div class="wf-item-body">
+            <h4>KI-Kandidat Cloud auslesen</h4>
+            <p>Fachkräfte finden, die genau jetzt für Ihr Angebot offen sind. Unsere KI verknüpft unsere Datenbank fortlaufend mit Echtzeit-Marktdaten.</p>
+          </div>
+        </div>
+        <div class="wf-item reveal rd-3" data-step="3">
+          <div class="wf-item-num">03</div>
+          <div class="wf-item-body">
+            <h4>Signale auswerten</h4>
+            <p>Über 100 Signale auswerten — neue Qualifikationen, Umzug, Wechselstatus. Unsere KI prüft 100+ Datenpunkte, um zu erkennen, welcher Kandidat jetzt tatsächlich erreichbar ist.</p>
+          </div>
+        </div>
+        <div class="wf-item reveal rd-4" data-step="4">
+          <div class="wf-item-num">04</div>
+          <div class="wf-item-body">
+            <h4>Wettbewerb beobachten</h4>
+            <p>Wer stellt in Ihrer Region was zu welchen Konditionen ein? Wo entstehen Unzufriedenheit und Wechselchancen? Tagesaktuelle Marktbeobachtung.</p>
+          </div>
+        </div>
+        <div class="wf-item reveal rd-5" data-step="5">
+          <div class="wf-item-num">05</div>
+          <div class="wf-item-body">
+            <h4>Impulse erfassen</h4>
+            <p>Wechseltrigger erkennen — Dienstplanänderungen, Gehaltsabweichungen, Pendelzeiten. Reaktion innerhalb von 60 Sekunden.</p>
+          </div>
+        </div>
+        <div class="wf-item reveal" style="--rd:480ms" data-step="6">
+          <div class="wf-item-num">06</div>
+          <div class="wf-item-body">
+            <h4>Kandidaten finden &amp; priorisieren</h4>
+            <p>Der Algorithmus priorisiert Top-Profile mit höchster Wechselwahrscheinlichkeit — dort, wo Ihre Stärken die Schwächen des Wettbewerbs kompensieren.</p>
+          </div>
+        </div>
+        <div class="wf-item reveal" style="--rd:560ms" data-step="7">
+          <div class="wf-item-num">07</div>
+          <div class="wf-item-body">
+            <h4>Sellcruiting · Erstkontakt</h4>
+            <p>Recruiter und KI-gestützte Bewerberqualifizierung sprechen jeden Top-Kandidaten persönlich an, prüfen Motivation und Cultural Fit, sichern Ihr Vorstellungsgespräch.</p>
+          </div>
+        </div>
+        <div class="wf-item reveal" style="--rd:640ms" data-step="8">
+          <div class="wf-item-num">08</div>
+          <div class="wf-item-body">
+            <h4>Kandidaten-Übergabe</h4>
+            <p>Sie erhalten ausschließlich Kandidaten, die fachlich passen, Ihr Angebot akzeptiert und ein Gespräch zugesagt haben. Inklusive Lebenslauf und Terminvorschlag.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELLCRUITING DUAL CARDS ============ -->
+<section class="sell-section" data-screen-label="Sellcruiting Dual">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Sellcruiting</span>
+        <h2 class="h2" style="margin-top:16px">Wie funktioniert das<br>Sellcruiting bei KI-Kandidat?</h2>
+      </div>
+      <p class="lead">Unsere Experten kontaktieren die passenden Kandidaten und prüfen Qualifikation sowie Interesse. Zwei Wege — eine Übergabe in höchster Qualität.</p>
+    </div>
+
+    <div class="sell-grid">
+      <!-- RECRUITER CARD -->
+      <div class="sell-card recruiter reveal-left">
+        <div class="sell-card-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10" cy="9" r="4"/>
+            <path d="M3 22c0-4 3-7 7-7s7 3 7 7"/>
+            <circle cx="20" cy="12" r="3"/>
+            <path d="M17 23c0-3 2-5 5-5s5 2 5 5"/>
+          </svg>
+        </div>
+        <h3>Recruiter kontaktiert</h3>
+        <p>Unsere Recruiter sprechen persönlich mit ausgewählten Kandidaten, prüfen Qualifikation und Rahmenbedingungen im Detail und sorgen dafür, dass echtes Interesse an Ihrem Unternehmen und ein vollständiger Lebenslauf vorliegen.</p>
+        <ul class="features">
+          <li>Geschulte Recruiter selektieren vor</li>
+          <li>Effektiver Einstellungsprozess</li>
+          <li>Persönlicher Beziehungsaufbau</li>
+        </ul>
+        <div class="sell-recruiter-visual">
+          <div class="sell-recruiter-photo">
+            <span class="sell-recruiter-badge"><span class="dot"></span> Live · Lena · 09:24</span>
+            <img src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=900&q=80&fit=crop&crop=center" alt="Recruiterin im Gespräch" loading="lazy" decoding="async" width="900" height="600" />
+          </div>
+        </div>
+      </div>
+
+      <!-- AI AGENT CARD -->
+      <div class="sell-card ai reveal-right">
+        <div class="sell-card-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="3" width="18" height="22" rx="3"/>
+            <circle cx="14" cy="11" r="3"/>
+            <path d="M10 18c1.5-1 4-1.5 4-1.5s2.5.5 4 1.5"/>
+            <path d="M14 7v1"/>
+          </svg>
+        </div>
+        <h3>KI-Agent kontaktiert</h3>
+        <p>Unsere KI kontaktiert priorisierte Kandidaten automatisiert, klärt fachliche Anforderungen, regionale Passung und Wechselbereitschaft — und prüft, ob Ihr Arbeitgeberangebot vollständig akzeptiert wird und echtes Gesprächsinteresse besteht.</p>
+        <ul class="features">
+          <li>Kontakt innerhalb von 60 Sekunden</li>
+          <li>Automatisches Profil mit Lebenslauf</li>
+          <li>24/7 verfügbar · skalierbar</li>
+        </ul>
+        <div class="sell-ai-visual">
+          <span class="sell-ai-floating-badge"><span class="dot"></span> KI-Kandidat · Call läuft</span>
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="phone-status">
+                <span>9:41</span>
+                <span>KI</span>
+              </div>
+              <div class="phone-msg ai">Hallo Markus, ich rufe von KI-Kandidat an. Eine SPS-Stelle bei einem Mittelständler in Esslingen — Zeitpunkt passt?</div>
+              <div class="phone-msg user">Klingt interessant. Was zahlen die?</div>
+              <div class="phone-msg ai">68–74 k €, 38-h-Woche, Fahrzeit unter 25 Min. Wäre das ein Wechselgrund?</div>
+              <div class="phone-waveform">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="phone-cta">Jetzt KI-Kandidat testen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section class="section-light" data-screen-label="Industries">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Branchen</span>
+        <h2 class="h2" style="margin-top:16px">Spezialisiert,<br>nicht generalistisch.</h2>
+      </div>
+      <p class="lead">In jeder dieser 12 Branchen haben wir eigene Daten, eigene Recruiter und eigene Sourcing-Strategien. Klicken Sie auf Ihre — und sehen Sie unsere Live-Zahlen.</p>
+    </div>
+
+    <div class="industries reveal">
+      <a class="industry-tile" data-img="bau" href="branche-bau.html">
+        <span class="num">01</span><div class="stripe-bg"></div>
+        <span class="name">Bau</span><span class="arrow">↗</span>
+      </a>
+      <a class="industry-tile" data-img="handwerk" href="branchen.html">
+        <span class="num">02</span><div class="stripe-bg"></div>
+        <span class="name">Handwerk</span><span class="arrow">↗</span>
+      </a>
+      <a class="industry-tile" data-img="industrie" href="branchen.html">
+        <span class="num">03</span><div class="stripe-bg"></div>
+        <span class="name">Industrie</span><span class="arrow">↗</span>
+      </a>
+      <a class="industry-tile" data-img="it" href="branchen.html">
+        <span class="num">04</span><div class="stripe-bg"></div>
+        <span class="name">IT &amp; Tech</span><span class="arrow">↗</span>
+      </a>
+      <a class="industry-tile" data-img="pflege" href="branchen.html">
+        <span class="num">05</span><div class="stripe-bg"></div>
+        <span class="name">Pflege &amp; Gesundheit</span><span class="arrow">↗</span>
+      </a>
+      <a class="industry-tile" data-img="logistik" href="branchen.html">
+        <span class="num">06</span><div class="stripe-bg"></div>
+        <span class="name">Logistik &amp; Transport</span><span class="arrow">↗</span>
+      </a>
+      <a class="industry-tile" data-img="handel" href="branchen.html">
+        <span class="num">07</span><div class="stripe-bg"></div>
+        <span class="name">Handel &amp; Automotive</span><span class="arrow">↗</span>
+      </a>
+      <a class="industry-tile" data-img="finanzen" href="branchen.html">
+        <span class="num">08</span><div class="stripe-bg"></div>
+        <span class="name">Finanzen</span><span class="arrow">↗</span>
+      </a>
+      <a class="industry-tile" data-img="energie" href="branchen.html">
+        <span class="num">09</span><div class="stripe-bg"></div>
+        <span class="name">Energie</span><span class="arrow">↗</span>
+      </a>
+      <a class="industry-tile" data-img="hotellerie" href="branchen.html">
+        <span class="num">10</span><div class="stripe-bg"></div>
+        <span class="name">Hotellerie &amp; Gastro</span><span class="arrow">↗</span>
+      </a>
+      <a class="industry-tile" data-img="beratung" href="branchen.html">
+        <span class="num">11</span><div class="stripe-bg"></div>
+        <span class="name">Beratung</span><span class="arrow">↗</span>
+      </a>
+      <a class="industry-tile" data-img="immobilien" href="branchen.html">
+        <span class="num">12</span><div class="stripe-bg"></div>
+        <span class="name">Immobilien</span><span class="arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE ============ -->
+<section data-screen-label="Guarantee">
+  <div class="container">
+    <div class="guarantee reveal">
+      <div class="guarantee-grid">
+        <div>
+          <span class="eyebrow">Garantie</span>
+          <h2 class="h2" style="margin-top:16px">Wir versprechen nur,<br>was unsere KI vorher prüft.</h2>
+          <p class="lead" style="margin-top:20px">
+            Vor jedem Projektstart gleicht unsere KI Ihre Anforderungen mit der Talent-Cloud ab.
+            Wir wissen <em>vorher</em>, ob ausreichend passende Kandidaten in Ihrer Region wechselbereit sind.
+            Reicht das Matching-Potenzial nicht, sagen wir es offen — bevor Sie investieren.
+            Auf die versprochene Einstellung erhalten Sie eine <strong style="color:var(--fg)">Geld-zurück-Garantie</strong>.
+          </p>
+          <div style="display:flex;gap:14px;margin-top:32px;flex-wrap:wrap">
+            <a href="kontakt.html" class="btn btn-primary btn-arrow">Matching-Check anfragen</a>
+            <a href="#faq" class="btn btn-ghost">Wie funktioniert das?</a>
+          </div>
+        </div>
+        <div>
+          <div class="seal">
+            <div class="seal-text">
+              <svg viewBox="0 0 220 220" width="220" height="220">
+                <defs>
+                  <path id="circ" d="M 110 110 m -88 0 a 88 88 0 1 1 176 0 a 88 88 0 1 1 -176 0" />
+                </defs>
+                <text font-family="IBM Plex Mono" font-size="11" letter-spacing="3" fill="var(--fg-muted)">
+                  <textPath href="#circ" startOffset="0">MATCHING-GARANTIE · GELD-ZURÜCK · QUALITÄTS-CHECK · DSGVO ·  </textPath>
+                </text>
+              </svg>
+            </div>
+            <div class="seal-center">
+              <span class="big">100%</span>
+              <span style="font-size:13px;color:var(--fg-muted);font-weight:400">oder Geld zurück</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section-light" data-screen-label="Testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Kundenstimmen</span>
+        <h2 class="h2" style="margin-top:16px">Zufriedene Unternehmen.<br>Das sagen sie.</h2>
+      </div>
+      <p class="lead">Echte Zahlen, echte Personalleiter. Wenn Sie tiefer einsteigen wollen: in unseren Fallstudien stehen Vakanzdauer, Bewerbungsvolumen und Einstellungs-Quote.</p>
+    </div>
+
+    <div class="testimonials reveal">
+      <article class="testimonial">
+        <p class="quote">In den ersten vier Monaten 380 Bewerbungen, davon 12 Einstellungen. KI-Kandidat ist es anders angegangen, als wir es bisher gewohnt waren — und es funktioniert.</p>
+        <div class="metrics">
+          <div class="metric"><span class="v">380</span><span class="l">BEWERBUNGEN</span></div>
+          <div class="metric"><span class="v">12</span><span class="l">EINSTELLUNGEN</span></div>
+          <div class="metric"><span class="v">4 Mo.</span><span class="l">LAUFZEIT</span></div>
+        </div>
+        <div class="footer-row">
+          <div class="av-img">DM</div>
+          <div class="author"><span class="name">Dörte Metze</span><span class="role">Personalleitung · Industrie-Mittelständler</span></div>
+        </div>
+      </article>
+
+      <article class="testimonial">
+        <p class="quote">Wir haben die SPS-Stellen an drei Standorten besetzt — und das nach erfolglosen klassischen Stellenanzeigen. Die Vorauswahl war strukturiert und effizient.</p>
+        <div class="metrics">
+          <div class="metric"><span class="v">3</span><span class="l">STANDORTE</span></div>
+          <div class="metric"><span class="v">100 %</span><span class="l">BESETZT</span></div>
+          <div class="metric"><span class="v">10 Wo.</span><span class="l">DAUER</span></div>
+        </div>
+        <div class="footer-row">
+          <div class="av-img">TZ</div>
+          <div class="author"><span class="name">Thomas Zink</span><span class="role">Geschäftsführung · Maschinenbau</span></div>
+        </div>
+      </article>
+
+      <article class="testimonial">
+        <p class="quote">Bereits im ersten Monat über 100 Bewerbungen. Die Qualität war so hoch wie noch nie — wir konnten zwei Führungskräfte und mehrere Fachpositionen besetzen.</p>
+        <div class="metrics">
+          <div class="metric"><span class="v">100+</span><span class="l">BEWERBUNGEN</span></div>
+          <div class="metric"><span class="v">6</span><span class="l">EINSTELLUNGEN</span></div>
+          <div class="metric"><span class="v">1 Mo.</span><span class="l">BIS ERFOLG</span></div>
+        </div>
+        <div class="footer-row">
+          <div class="av-img">PP</div>
+          <div class="author"><span class="name">Peter Plambeck</span><span class="role">Geschäftsführung · Bauunternehmen</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BERATER ============ -->
+<section class="berater-section" data-screen-label="Berater">
+  <div class="berater-bg-photo" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80&fit=crop&crop=center');"></div>
+  <div class="container">
+    <div class="berater-inner">
+      <div class="berater-text reveal-left">
+        <span class="eyebrow">Persönlich · nicht algorithmisch allein</span>
+        <h2 class="h2" style="margin-top:20px;font-size:clamp(32px,4.5vw,60px);">
+          Ein <em>dedizierter</em><br>Mensch.<br>Eine Telefonnummer.
+        </h2>
+        <p class="lead" style="margin-top:28px;color:rgba(244,246,250,0.85);">
+          Jeder Kunde bekommt eine:n feste:n Berater:in mit Branchenerfahrung — kein Service-Ticket, kein Chatbot.
+          Wir kennen Ihren Markt, Ihre Region, Ihre Wettbewerber. Und wir nehmen ab.
+        </p>
+        <ul class="berater-list">
+          <li>
+            <span class="k">⌀ 11 Jahre</span>
+            <span class="v">Branchenerfahrung pro Berater — nicht Generalist, sondern Spezialist für Ihren Markt</span>
+          </li>
+          <li>
+            <span class="k">4 h</span>
+            <span class="v">Antwortzeit garantiert werktags — kein Ticketsystem, direkter Kontakt</span>
+          </li>
+          <li>
+            <span class="k">1 Person</span>
+            <span class="v">Vom Briefing bis zum Vertragsabschluss — keine Übergaben, keine Informationsverluste</span>
+          </li>
+        </ul>
+        <div style="margin-top:36px;">
+          <a href="kontakt.html" class="btn btn-primary btn-arrow">Berater kennenlernen</a>
+        </div>
+      </div>
+
+      <div class="berater-card reveal-right">
+        <div class="berater-card-photo">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&q=80&fit=crop&crop=face" alt="Beraterin" loading="lazy" />
+        </div>
+        <h3>Sandra K.</h3>
+        <div class="role-label">Senior-Beraterin · Industrie &amp; Bau</div>
+        <p class="quote">
+          "Ich kenne die Bewerber in meiner Region persönlich. Wenn ich Ihnen einen Kandidaten empfehle, steht mein Name dahinter — nicht ein Algorithmus."
+        </p>
+        <div class="action-line">
+          <span class="action-dot"></span>
+          <span>Heute erreichbar · Berlin · 09:00–17:00</span>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+          <div style="flex:1;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:var(--r-md);padding:14px;text-align:center;">
+            <div style="font-family:var(--font-mono);font-size:18px;font-weight:600;color:var(--accent);">47</div>
+            <div style="font-size:11px;color:var(--fg-dim);margin-top:4px;">Einstellungen '25</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:var(--r-md);padding:14px;text-align:center;">
+            <div style="font-family:var(--font-mono);font-size:18px;font-weight:600;color:var(--accent);">⌀ 18d</div>
+            <div style="font-size:11px;color:var(--fg-dim);margin-top:4px;">Time-to-Hire</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARISON ============ -->
+<section class="section-light" data-screen-label="Comparison">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Vergleich</span>
+        <h2 class="h2" style="margin-top:16px">Klassische Agentur<br>vs. KI-Kandidat.</h2>
+      </div>
+      <p class="lead">Sie haben es schon mit Personalvermittlern probiert? Hier ist, was strukturell anders ist — und warum unsere Partner nach dem ersten Projekt bleiben.</p>
+    </div>
+
+    <div class="compare reveal">
+      <div class="compare-row head-row">
+        <div class="head">Kriterium</div>
+        <div class="head">Klassische Agentur</div>
+        <div class="head" style="color:var(--accent)">KI-Kandidat</div>
+      </div>
+      <div class="compare-row">
+        <div>Talent-Datenbank</div>
+        <div class="col-them">Stellenanzeigen + LinkedIn</div>
+        <div class="col-us">1.000.000+ DACH-Profile · eigene Cloud</div>
+      </div>
+      <div class="compare-row">
+        <div>Erste Kandidaten</div>
+        <div class="col-them">Nach 4–8 Wochen</div>
+        <div class="col-us">⌀ 72 Stunden</div>
+      </div>
+      <div class="compare-row">
+        <div>KI-Matching</div>
+        <div class="col-them">Manuelles Sichten</div>
+        <div class="col-us">100+ Datenpunkte · täglich aktualisiert</div>
+      </div>
+      <div class="compare-row">
+        <div>Vorqualifikation</div>
+        <div class="col-them">Lebenslauf-Check</div>
+        <div class="col-us">KI + Recruiter-Gespräch · Cultural Fit</div>
+      </div>
+      <div class="compare-row">
+        <div>Wechselbereitschaft</div>
+        <div class="col-them">Hoffnung</div>
+        <div class="col-us">Wechseltrigger-Erkennung in Echtzeit</div>
+      </div>
+      <div class="compare-row">
+        <div>Garantie</div>
+        <div class="col-them">Keine</div>
+        <div class="col-us">Geld-zurück bei ausbleibender Einstellung</div>
+      </div>
+      <div class="compare-row">
+        <div>Pricing</div>
+        <div class="col-them">% vom Jahresgehalt</div>
+        <div class="col-us">Preisobergrenze · planbar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DSGVO/TRUST ============ -->
+<section class="trust-section" data-screen-label="DSGVO">
+  <div class="container">
+    <div class="trust-grid reveal">
+      <!-- LEFT: Rotating seal -->
+      <div class="trust-seal-wrap">
+        <div class="trust-seal-svg">
+          <svg viewBox="0 0 280 280" width="280" height="280" overflow="visible">
+            <defs>
+              <path id="ringOuter" d="M 140,140 m -118,0 a 118,118 0 1,1 236,0 a 118,118 0 1,1 -236,0"/>
+              <path id="ringInner" d="M 140,140 m -96,0 a 96,96 0 1,1 192,0 a 96,96 0 1,1 -192,0"/>
+            </defs>
+            <!-- Outer circles -->
+            <circle cx="140" cy="140" r="130" fill="none" stroke="rgba(232,201,122,0.08)" stroke-width="1"/>
+            <circle cx="140" cy="140" r="118" fill="none" stroke="rgba(232,201,122,0.15)" stroke-width="0.5" stroke-dasharray="3 6"/>
+            <!-- Rotating outer text -->
+            <g class="seal-ring-outer">
+              <text font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="3.8" fill="rgba(232,201,122,0.75)">
+                <textPath href="#ringOuter" startOffset="0">· DSGVO KONFORM · ISO 27001 · SERVER IN DEUTSCHLAND · AVV IN 24H · OPT-IN · </textPath>
+              </text>
+            </g>
+            <!-- Inner dashed ring -->
+            <circle cx="140" cy="140" r="96" fill="none" stroke="rgba(232,201,122,0.08)" stroke-width="1" stroke-dasharray="2 4"/>
+            <!-- Rotating inner text -->
+            <g class="seal-ring-inner">
+              <text font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="2.5" fill="rgba(155,135,245,0.5)">
+                <textPath href="#ringInner" startOffset="0">· FRANKFURT HOSTING · KEIN US-TRANSFER · SCHREMS-II-SAFE · </textPath>
+              </text>
+            </g>
+            <!-- Compass ticks -->
+            <g stroke="rgba(232,201,122,0.30)" stroke-width="1">
+              <line x1="140" y1="10" x2="140" y2="20"/>
+              <line x1="140" y1="260" x2="140" y2="270"/>
+              <line x1="10" y1="140" x2="20" y2="140"/>
+              <line x1="260" y1="140" x2="270" y2="140"/>
+            </g>
+            <!-- Center filled circle -->
+            <circle cx="140" cy="140" r="72" fill="rgba(10,18,40,0.95)" stroke="rgba(232,201,122,0.20)" stroke-width="1"/>
+          </svg>
+          <div class="seal-center-content">
+            <div>
+              <div class="seal-mark" style="color:var(--fg);font-size:16px;font-weight:700;letter-spacing:-0.02em;">KI<br>Kandidat</div>
+              <div class="seal-est">Seit 2021</div>
+            </div>
+          </div>
+        </div>
+        <div class="trust-badges">
+          <span class="trust-badge"><span class="check">✓</span> DSGVO</span>
+          <span class="trust-badge"><span class="check">✓</span> ISO 27001</span>
+          <span class="trust-badge"><span class="check">✓</span> DE-Server</span>
+          <span class="trust-badge"><span class="check">✓</span> AVV 24h</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Copy -->
+      <div class="trust-copy">
+        <span class="eyebrow">Vertrauen · gemessen, nicht versprochen</span>
+        <h2 class="h2" style="margin-top:20px;">Wir behandeln Ihre<br>Daten so streng wie<br><em>Sie es tun.</em></h2>
+        <p class="lead" style="margin-top:20px;">
+          Hosting in Frankfurt, AV-Vertrag binnen 24 Stunden, ISO 27001 zertifiziert. Jedes Profil opt-in, jederzeit löschbar. Keine Daten verlassen den DACH-Raum — auch nicht für KI-Training.
+        </p>
+        <ul class="trust-list">
+          <li><span class="tl-mark">✓</span><span class="tl-k">DSGVO konform</span><span class="tl-v">Art. 6 Abs. 1 lit. b · vollständig dokumentiert</span></li>
+          <li><span class="tl-mark">✓</span><span class="tl-k">ISO/IEC 27001</span><span class="tl-v">Zertifiziert seit 2019 · Auditiert Q1 2026</span></li>
+          <li><span class="tl-mark">✓</span><span class="tl-k">Server in Deutschland</span><span class="tl-v">Frankfurt &amp; Berlin · Hetzner &amp; OVH DE</span></li>
+          <li><span class="tl-mark">✓</span><span class="tl-k">AVV in 24h</span><span class="tl-v">Standard-Auftragsverarbeitungsvertrag verfügbar</span></li>
+          <li><span class="tl-mark">✓</span><span class="tl-k">Kein US-Transfer</span><span class="tl-v">Kein Cloud-Lock-in · kein Schrems-II-Risiko</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="section-light" data-screen-label="FAQ">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Fragen &amp; Antworten</span>
+        <h2 class="h2" style="margin-top:16px">Was wir oft gefragt werden.</h2>
+      </div>
+      <p class="lead">Wenn Ihre Frage hier nicht steht: Wir nehmen uns 30 Minuten in einem unverbindlichen Erstgespräch und beantworten alles, was Sie wissen müssen.</p>
+    </div>
+
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary class="faq-q"><span>Wir haben schon mit einer Recruiting-Agentur gearbeitet — und es hat nicht funktioniert.</span><span class="ico">+</span></summary>
+        <div class="faq-a">Klassische Agenturen schalten Anzeigen und hoffen auf Rücklauf. Wir starten nicht bei null: Unsere KI durchsucht täglich 1.000.000+ Fachkräfte in der Talent-Cloud nach exakt den Kandidaten, die gerade wechselbereit sind und zu Ihrem Angebot passen. Sie bekommen vorqualifizierte Kandidaten, die Ihr Stellenangebot bereits akzeptiert haben.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span>Wie schnell sehen wir die ersten Kandidaten?</span><span class="ico">+</span></summary>
+        <div class="faq-a">Sobald Ihr Suchauftrag angelegt ist, beginnt das KI-Matching sofort. Erste priorisierte Kandidaten erreichen Sie nach durchschnittlich 72 Stunden. Der Sellcruiting-Erstkontakt durch unsere automatisierten Recruiting-Prozesse erfolgt innerhalb von 60 Sekunden nach Identifikation.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span>Funktioniert das auch in unserer Region und Branche?</span><span class="ico">+</span></summary>
+        <div class="faq-a">Vor Projektstart prüfen wir, ob in Ihrer Region und Branche ausreichend wechselbereite Fachkräfte in unserer Cloud vorhanden sind. Wir sind in 12 Branchen aktiv und haben Daten für jede DACH-Region. Wenn das Matching-Potenzial nicht reicht, sagen wir es ehrlich — bevor Sie investieren.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span>Wie garantiert ihr, dass die Kandidaten qualifiziert sind?</span><span class="ico">+</span></summary>
+        <div class="faq-a">Jeder Kandidat durchläuft Sellcruiting: Erst prüft die KI 100+ Datenpunkte, dann sprechen unsere Recruiter persönlich mit dem Kandidaten und prüfen Qualifikation, regionale Passung und ernsthaftes Interesse. Sie sehen ausschließlich Kandidaten, die Ihr Gehaltsangebot akzeptiert und ein Vorstellungsgespräch zugesagt haben.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span>Was kostet das?</span><span class="ico">+</span></summary>
+        <div class="faq-a">Wir arbeiten mit einer transparenten Preisobergrenze pro Stelle — keine Provision auf Jahresgehälter, keine Überraschungen. Im Erstgespräch nennen wir Ihnen den exakten Preis für Ihre Stelle und Region — inklusive Geld-zurück-Garantie.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span>Ist das DSGVO-konform?</span><span class="ico">+</span></summary>
+        <div class="faq-a">Vollständig. Alle Server stehen in Deutschland, alle Kandidaten haben aktiv eingewilligt. Wir sind ISO-27001-zertifiziert und arbeiten mit deutschen Datenschutzbeauftragten zusammen.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2.000+ UNTERNEHMEN PHOTO MOSAIC ============ -->
+<section class="mosaic-section" data-screen-label="2000+ Unternehmen">
+  <div class="mosaic-viewport">
+    <div class="mosaic-columns" id="mosaicCols">
+      <!-- columns populated by JS — each scrolls vertically as a marquee -->
+    </div>
+  </div>
+  <div class="image-overlay-layer"></div>
+  <div class="mosaic-overlay reveal">
+    <span class="eyebrow" style="justify-content:center;display:inline-flex;">Referenzen · DACH-weit</span>
+    <h2 style="margin-top:24px;">Führende Unternehmen im DACH-Raum.<br><em>Strukturiert. Digital. Erfolgreich.</em></h2>
+    <p>Über 2.000 Unternehmen aus mehr als 50 Branchen setzen auf KI-Kandidat — vom inhabergeführten Mittelstand bis zum börsennotierten Konzern. Diskret, schnell, mit nachvollziehbarer Datenbasis.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="kontakt.html" class="btn btn-primary btn-arrow">Referenzen entdecken</a>
+      <a href="branchen.html" class="btn btn-ghost btn-arrow">Branchen ansehen</a>
+    </div>
+    <div class="mosaic-stats">
+      <div class="mosaic-stat"><span class="v">2.000+</span><span class="l">Unternehmen</span></div>
+      <div class="mosaic-stat"><span class="v">50+</span><span class="l">Branchen</span></div>
+      <div class="mosaic-stat"><span class="v">DACH</span><span class="l">3 Standorte</span></div>
+      <div class="mosaic-stat"><span class="v">100%</span><span class="l">DSGVO · DE</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section data-screen-label="Final CTA">
+  <div class="container">
+    <div class="final-cta reveal">
+      <span class="eyebrow">Nächster Schritt</span>
+      <h2 class="h-display" style="margin-top:20px;font-size:clamp(36px,5.5vw,72px)">
+        30 Minuten,<br>
+        die Ihr Recruiting <em style="color:var(--accent);font-style:normal">verändern</em>.
+      </h2>
+      <p class="lead" style="margin:24px auto 0;text-align:center">
+        Wir analysieren Ihre offenen Stellen, prüfen das Matching-Potenzial in der Talent-Cloud und sagen Ihnen ehrlich, ob &amp; wie wir helfen können.
+      </p>
+      <div style="display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap">
+        <a href="kontakt.html" class="btn btn-primary btn-arrow">Termin vereinbaren</a>
+        <a href="branchen.html" class="btn btn-ghost btn-arrow">Branchen ansehen</a>
+      </div>
+      <div style="display:flex;gap:32px;justify-content:center;margin-top:40px;flex-wrap:wrap;font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:0.1em;text-transform:uppercase">
+        <span>✓ 30 Min · unverbindlich</span>
+        <span>✓ Matching-Check inklusive</span>
+        <span>✓ DSGVO-konform</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<!-- DACH Talent Network Map — Persons + Channels -->
+<script>
+(function() {
+  const canvas = document.getElementById('dachCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, dpr;
+
+  function resize() {
+    const hero = canvas.parentElement;
+    dpr = window.devicePixelRatio || 1;
+    W = hero.offsetWidth;
+    H = hero.offsetHeight;
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', () => { resize(); });
+
+  // ── Projection ──────────────────────────────────────────────
+  // Map covers Germany + Austria + Switzerland
+  const LAT_MIN = 45.8, LAT_MAX = 55.1, LON_MIN = 5.8, LON_MAX = 15.2;
+
+  function proj(lat, lon) {
+    // Mercator-like: x linear, y uses log(tan) for accuracy
+    const latRad = lat * Math.PI / 180;
+    const latMinRad = LAT_MIN * Math.PI / 180;
+    const latMaxRad = LAT_MAX * Math.PI / 180;
+    const mx = Math.log(Math.tan(Math.PI/4 + latRad/2));
+    const mMin = Math.log(Math.tan(Math.PI/4 + latMinRad/2));
+    const mMax = Math.log(Math.tan(Math.PI/4 + latMaxRad/2));
+
+    // Use 55% of canvas width, centered at 50%
+    const padX = W * 0.35, padY = H * 0.1;
+    const mapW = W * 0.55, mapH = H * 0.85;
+
+    const x = padX + ((lon - LON_MIN) / (LON_MAX - LON_MIN)) * mapW;
+    const y = padY + ((mMax - mx) / (mMax - mMin)) * mapH;
+    return [x, y];
+  }
+
+  // ── Simplified Country Outlines (lat/lon polygon points) ────
+  const germanyOutline = [
+    [55.06,8.60],[54.91,8.14],[54.40,8.66],[53.93,9.23],[54.17,10.00],
+    [53.78,10.71],[54.06,11.38],[53.98,12.02],[53.64,14.08],
+    [52.37,14.55],[51.71,14.98],[50.97,14.25],[50.47,12.47],
+    [50.08,12.44],[50.22,12.96],[49.77,13.01],[48.75,13.83],
+    [47.66,13.03],[47.58,12.35],[47.68,10.15],[47.54,9.90],
+    [47.80,8.58],[47.65,8.24],[47.62,7.57],[48.07,7.16],
+    [48.59,7.84],[49.44,6.38],[49.89,6.36],[50.12,6.13],
+    [50.37,6.07],[51.06,6.22],[51.83,6.07],[51.84,6.50],
+    [52.65,6.73],[52.44,7.06],[53.05,7.21],[53.30,7.05],
+    [53.59,7.57],[54.03,8.42],[55.06,8.60]
+  ];
+  const austriaOutline = [
+    [48.04,9.55],[47.66,10.20],[47.58,12.35],[47.66,13.03],
+    [48.00,13.04],[48.75,13.83],[49.01,14.42],[48.88,15.16],
+    [48.37,15.22],[48.20,16.20],[47.99,16.74],[47.86,17.08],
+    [47.55,16.45],[46.82,16.10],[46.65,15.64],[46.44,14.07],
+    [46.38,13.39],[46.56,12.89],[47.10,12.20],[46.97,11.10],
+    [47.45,10.52],[47.57,9.89],[47.80,9.73],[48.04,9.55]
+  ];
+  const switzerlandOutline = [
+    [47.62,7.57],[47.44,7.05],[46.90,6.14],[46.38,5.96],
+    [45.82,6.76],[45.93,7.20],[45.97,8.02],[46.53,8.97],
+    [46.49,9.54],[46.87,10.42],[47.48,10.47],[47.57,9.89],
+    [47.62,7.57]
+  ];
+
+  function drawCountry(outline, fillColor, strokeColor, label, labelLat, labelLon) {
+    if (outline.length < 2) return;
+    ctx.beginPath();
+    const [sx, sy] = proj(outline[0][0], outline[0][1]);
+    ctx.moveTo(sx, sy);
+    for (let i = 1; i < outline.length; i++) {
+      const [px, py] = proj(outline[i][0], outline[i][1]);
+      ctx.lineTo(px, py);
+    }
+    ctx.closePath();
+    ctx.fillStyle = fillColor;
+    ctx.fill();
+    ctx.strokeStyle = strokeColor;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Country label
+    const [lx, ly] = proj(labelLat, labelLon);
+    ctx.font = '700 11px Inter, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.35)';
+    ctx.textAlign = 'center';
+    ctx.fillText(label, lx, ly);
+  }
+
+  // ── City Nodes ───────────────────────────────────────────────
+  // [name, lat, lon, importance(1-5), country]
+  const CITIES_RAW = [
+    ['Berlin',     52.52, 13.41, 5, 'DE'],
+    ['Hamburg',    53.55,  9.99, 4, 'DE'],
+    ['München',    48.14, 11.58, 4.5, 'DE'],
+    ['Frankfurt',  50.11,  8.68, 4, 'DE'],
+    ['Stuttgart',  48.78,  9.18, 3.5, 'DE'],
+    ['Köln',       50.94,  6.96, 3.5, 'DE'],
+    ['Düsseldorf', 51.23,  6.77, 3, 'DE'],
+    ['Leipzig',    51.34, 12.37, 2.5, 'DE'],
+    ['Nürnberg',   49.45, 11.08, 2.5, 'DE'],
+    ['Hannover',   52.37,  9.74, 2.5, 'DE'],
+    ['Dortmund',   51.51,  7.47, 2.5, 'DE'],
+    ['Wien',       48.21, 16.37, 4.5, 'AT'],
+    ['Graz',       47.07, 15.44, 2.5, 'AT'],
+    ['Salzburg',   47.80, 13.04, 2.5, 'AT'],
+    ['Zürich',     47.38,  8.54, 4, 'CH'],
+    ['Bern',       46.95,  7.45, 3, 'CH'],
+    ['Basel',      47.56,  7.59, 2.5, 'CH'],
+  ];
+
+  const cities = CITIES_RAW.map(([name, lat, lon, imp, country]) => {
+    const [x, y] = proj(lat, lon);
+    return { name, lat, lon, x, y, imp, country, phase: Math.random() * Math.PI * 2 };
+  });
+
+  // ── Channel Icons ─────────────────────────────────────────────
+  // Each city gets one floating channel icon
+  const CHANNEL_ICONS = ['📧', '📱', '💼', '📞', '💬', '🤝'];
+  const cityChannels = cities.map((c, i) => ({
+    city: c,
+    icon: CHANNEL_ICONS[i % CHANNEL_ICONS.length],
+    angle: (i / cities.length) * Math.PI * 2,
+    radius: 26 + c.imp * 4,
+    speed: 0.004 + Math.random() * 0.003,
+    phase: Math.random() * Math.PI * 2
+  }));
+
+  // ── Connections ───────────────────────────────────────────────
+  const ROUTES = [
+    [0,1],[0,3],[0,7],[0,9],[1,9],[1,10],[2,4],[2,8],[2,13],
+    [3,4],[3,5],[3,14],[4,8],[5,6],[5,10],[6,10],
+    [11,13],[11,12],[14,15],[14,16],[15,16],[2,11],[3,14]
+  ];
+  const connections = ROUTES
+    .filter(([a, b]) => a < cities.length && b < cities.length)
+    .map(([a, b]) => ({ from: cities[a], to: cities[b] }));
+
+  // ── Particles ─────────────────────────────────────────────────
+  const particles = [];
+  for (let i = 0; i < 20; i++) {
+    const conn = connections[Math.floor(Math.random() * connections.length)];
+    particles.push({
+      conn, t: Math.random(),
+      speed: 0.002 + Math.random() * 0.003,
+      rev: Math.random() > 0.5,
+      alpha: 0.5 + Math.random() * 0.5
+    });
+  }
+
+  // ── Draw Person Icon ──────────────────────────────────────────
+  function drawPerson(x, y, radius, color, alpha) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    // Head
+    ctx.beginPath();
+    ctx.arc(x, y - radius * 0.35, radius * 0.38, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+    // Body arc
+    ctx.beginPath();
+    ctx.arc(x, y + radius * 0.35, radius * 0.55, Math.PI, 0);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // ── Draw Channel Badge ────────────────────────────────────────
+  function drawChannelBadge(cx, cy, icon, alpha) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    // Background circle
+    ctx.beginPath();
+    ctx.arc(cx, cy, 11, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(15,25,50,0.85)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(232,201,122,0.5)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    // Icon
+    ctx.font = '11px serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(icon, cx, cy + 1);
+    ctx.restore();
+  }
+
+  // ── Main Draw Loop ────────────────────────────────────────────
+  let frame = 0;
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    frame++;
+    const now = Date.now() / 1000;
+
+    // 1) Country fills
+    drawCountry(germanyOutline,
+      'rgba(40,32,10,0.20)', 'rgba(232,201,122,0.28)',
+      'DEUTSCHLAND', 51.2, 10.5);
+    drawCountry(austriaOutline,
+      'rgba(20,70,55,0.18)', 'rgba(52,211,153,0.25)',
+      'ÖSTERREICH', 47.5, 13.5);
+    drawCountry(switzerlandOutline,
+      'rgba(80,30,100,0.18)', 'rgba(167,139,250,0.25)',
+      'SCHWEIZ', 46.8, 8.2);
+
+    // 2) Connection lines
+    connections.forEach(conn => {
+      const mx = (conn.from.x + conn.to.x) / 2;
+      const my = (conn.from.y + conn.to.y) / 2 - 20;
+      ctx.beginPath();
+      ctx.moveTo(conn.from.x, conn.from.y);
+      ctx.quadraticCurveTo(mx, my, conn.to.x, conn.to.y);
+      ctx.strokeStyle = 'rgba(232,201,122,0.20)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 6]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    });
+
+    // 3) Particles along connections
+    particles.forEach(p => {
+      p.t += p.speed;
+      if (p.t > 1) {
+        p.conn = connections[Math.floor(Math.random() * connections.length)];
+        p.t = 0; p.rev = Math.random() > 0.5;
+        p.alpha = 0.5 + Math.random() * 0.5;
+      }
+      const t = p.rev ? 1 - p.t : p.t;
+      const c = p.conn;
+      const mx = (c.from.x + c.to.x) / 2;
+      const my = (c.from.y + c.to.y) / 2 - 20;
+      const px = (1-t)*(1-t)*c.from.x + 2*(1-t)*t*mx + t*t*c.to.x;
+      const py = (1-t)*(1-t)*c.from.y + 2*(1-t)*t*my + t*t*c.to.y;
+
+      // Glow trail
+      const grd = ctx.createRadialGradient(px, py, 0, px, py, 10);
+      grd.addColorStop(0, `rgba(232,201,122,${p.alpha * 0.6})`);
+      grd.addColorStop(1, 'transparent');
+      ctx.fillStyle = grd;
+      ctx.fillRect(px - 10, py - 10, 20, 20);
+
+      ctx.beginPath();
+      ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(245,223,160,${p.alpha})`;
+      ctx.fill();
+    });
+
+    // 4) City nodes with person icons + pulse rings + labels
+    cities.forEach(city => {
+      const pulse = 1 + Math.sin(now * 1.8 + city.phase) * 0.2;
+      const r = city.imp * 5;
+
+      // Country color
+      const color = city.country === 'AT' ? 'rgba(52,211,153,1)' :
+                    city.country === 'CH' ? 'rgba(245,223,160,1)' :
+                    'rgba(232,201,122,1)';
+      const colorSoft = city.country === 'AT' ? 'rgba(52,211,153,0.15)' :
+                        city.country === 'CH' ? 'rgba(167,139,250,0.15)' :
+                        'rgba(232,201,122,0.10)';
+
+      // Outer pulse ring
+      if (city.imp >= 3) {
+        ctx.beginPath();
+        ctx.arc(city.x, city.y, r * 2 * pulse, 0, Math.PI * 2);
+        ctx.strokeStyle = color.replace('1)', `${0.15 * pulse})`);
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      }
+
+      // Glow
+      const grd = ctx.createRadialGradient(city.x, city.y, 0, city.x, city.y, r * 3);
+      grd.addColorStop(0, colorSoft);
+      grd.addColorStop(1, 'transparent');
+      ctx.fillStyle = grd;
+      ctx.fillRect(city.x - r*3, city.y - r*3, r*6, r*6);
+
+      // Node background circle
+      ctx.beginPath();
+      ctx.arc(city.x, city.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(10,18,40,0.85)';
+      ctx.fill();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Person icon inside node
+      drawPerson(city.x, city.y, r * 0.75, color, 0.95);
+
+      // City label
+      if (city.imp >= 3) {
+        ctx.font = `${city.imp >= 4.5 ? 600 : 500} ${city.imp >= 4 ? 11 : 10}px Inter, sans-serif`;
+        ctx.fillStyle = 'rgba(255,255,255,0.8)';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(city.name, city.x, city.y - r - 8);
+      }
+    });
+
+    // 5) Floating channel badges around major cities
+    cityChannels.forEach(ch => {
+      if (ch.city.imp < 3) return;
+      ch.angle += ch.speed;
+      const bx = ch.city.x + Math.cos(ch.angle) * ch.radius;
+      const by = ch.city.y + Math.sin(ch.angle) * (ch.radius * 0.6);
+      // Connecting thread
+      ctx.beginPath();
+      ctx.moveTo(ch.city.x, ch.city.y);
+      ctx.lineTo(bx, by);
+      ctx.strokeStyle = 'rgba(232,201,122,0.10)';
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+      drawChannelBadge(bx, by, ch.icon, 0.8);
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+})();
+</script>
+<!-- Tweaks state holder -->
+<script>
+window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "theme": "dark",
+  "accent": "cyan",
+  "density": "comfortable",
+  "headline_variant": "A"
+}/*EDITMODE-END*/;
+</script>
+
+<!-- Dev-only: React + Babel for Tweaks panel (localhost only) -->
+<script>
+(function(){
+  if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') return;
+  function injectScript(src, attrs) {
+    var el = document.createElement('script');
+    el.src = src;
+    for (var k in attrs) el[k] = attrs[k];
+    document.body.appendChild(el);
+  }
+  injectScript('https://unpkg.com/react@18.3.1/umd/react.development.js', { integrity: 'sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L', crossOrigin: 'anonymous' });
+  injectScript('https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js', { integrity: 'sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm', crossOrigin: 'anonymous' });
+  injectScript('https://unpkg.com/@babel/standalone@7.29.0/babel.min.js', { integrity: 'sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y', crossOrigin: 'anonymous' });
+  // tweaks-panel and tweaks-app need Babel loaded first — inject after window load
+  window.addEventListener('load', function() {
+    var p = document.createElement('script'); p.type = 'text/babel'; p.src = 'tweaks-panel.jsx'; document.body.appendChild(p);
+    var a = document.createElement('script'); a.type = 'text/babel'; a.src = 'js/tweaks-app.jsx'; document.body.appendChild(a);
+  });
+})();
+</script>
+
+<!-- Three.js for MagicRings WebGL animation (deferred) -->
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js" crossorigin="anonymous" defer></script>
+<script src="js/magic-rings.js" defer></script>
+<script src="js/chrome.js" defer></script>
+<script src="js/home.js?v=20260516p" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() { if (window.RG) RG.mountChrome('home'); });
+</script>
+
+<script>
+  // Cursor glow
+  const glow = document.getElementById('cursorGlow');
+  document.addEventListener('mousemove', (e) => {
+    if (glow) {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    }
+    // Glow Card Interaction
+    const cards = document.querySelectorAll('.glow-card, .pillar');
+    for (const card of cards) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    }
+  });
+
+  // Hero live counter badge ticker
+  (function() {
+    const el = document.getElementById('heroLiveCount');
+    if (!el) return;
+    let n = 1041382;
+    function fmt(v) { return v.toLocaleString('de-DE'); }
+    el.textContent = fmt(n);
+    setInterval(() => {
+      n += Math.floor(Math.random() * 3) + 1;
+      el.textContent = fmt(n);
+    }, 3200);
+  })();
+</script>
+
+</body>
+</html>

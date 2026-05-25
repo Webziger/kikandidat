@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="de" data-screen-label="Branche · Bau">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#000E1E" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://ki-kandidat.de/branche-bau.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bau-Recruiting · KI-Kandidat.de" />
+<meta property="og:description" content="Bauleiter, Poliere, Architekten, Statiker. 142.000 Profile im Pool, 320+ Bau-Kunden deutschlandweit." />
+<meta property="og:url" content="https://ki-kandidat.de/branche-bau.html" />
+<meta property="og:image" content="https://ki-kandidat.de/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Bau-Recruiting · KI-Kandidat.de" />
+<meta name="twitter:description" content="Bauleiter, Poliere, Architekten, Statiker. 142.000 Profile im Pool, 320+ Bau-Kunden deutschlandweit." />
+<title>Recruiting Bau · Polier, Bauleiter, Architekt — KI-Kandidat.de</title>
+<meta name="description" content="Spezialisiertes Recruiting für die Baubranche im DACH-Raum: Bauleiter, Poliere, Architekten, Statiker. 142.000 Fachkräfte im Talent-Pool, ⌀ 18 Tage Time-to-Hire." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/tokens.css?v=20260521h" />
+<link rel="stylesheet" href="styles/components.css?v=20260521h" />
+<link rel="stylesheet" href="styles/mobile.css" />
+<link rel="stylesheet" href="styles/scroll-polish.css" />
+<style>
+  /* Page-specific */
+  .breadcrumb { font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted); letter-spacing: 0.05em; padding: 24px 0 0; }
+  .breadcrumb a { color: var(--fg-muted); }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb .sep { color: var(--fg-dim); margin: 0 10px; }
+
+  .branch-hero { padding: 32px 0 var(--s-9); }
+  .branch-hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: end; padding-bottom: 56px; border-bottom: 1px solid var(--line); }
+  .branch-hero h1 { font-family: var(--font-display); font-size: clamp(48px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.04em; font-weight: 700; }
+  .branch-hero h1 em { font-style: normal; color: var(--accent); }
+
+  .branch-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); }
+  .branch-stat { padding: 28px 32px; border-right: 1px solid var(--line); }
+  .branch-stat:last-child { border-right: none; }
+  .branch-stat .v { font-family: var(--font-display); font-size: 36px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+  .branch-stat .l { font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px; display: block; }
+
+  /* Roles grid */
+  .roles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-xl); overflow: hidden; }
+  .role { background: var(--bg-elev); padding: 32px; display: flex; flex-direction: column; gap: 16px; transition: background 200ms; cursor: pointer; }
+  .role:hover { background: var(--bg-elev-2); }
+  .role-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+  .role-num { font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.1em; }
+  .role-pool { font-family: var(--font-mono); font-size: 11px; color: var(--accent); padding: 3px 8px; background: var(--accent-soft); border-radius: 4px; }
+  .role-name { font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+  .role-desc { font-size: 14px; color: var(--fg-muted); line-height: 1.55; flex: 1; }
+  .role-meta { display: flex; gap: 16px; padding-top: 16px; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); }
+  .role-meta .x { color: var(--fg); }
+
+  /* Map / regional */
+  .region-block { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .region-map { position: relative; aspect-ratio: 1 / 1.1; background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--r-xl); padding: 24px; overflow: hidden; }
+  .region-map svg { width: 100%; height: 100%; }
+  .region-pin { position: absolute; width: 14px; height: 14px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft), 0 0 24px var(--accent-glow); animation: pinPulse 2s ease-in-out infinite; transform: translate(-50%,-50%); }
+  .region-pin .lbl { position: absolute; top: -28px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: var(--font-mono); font-size: 10px; color: var(--fg); background: var(--bg-elev-2); border: 1px solid var(--line); padding: 4px 8px; border-radius: 4px; letter-spacing: 0.05em; }
+  @keyframes pinPulse { 0%,100% { box-shadow: 0 0 0 4px var(--accent-soft), 0 0 24px var(--accent-glow); } 50% { box-shadow: 0 0 0 12px transparent, 0 0 24px var(--accent-glow); } }
+
+  .region-list { display: flex; flex-direction: column; }
+  .region-row { display: grid; grid-template-columns: 1fr auto auto; gap: 24px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .region-row:first-child { border-top: 1px solid var(--line); }
+  .region-name { font-family: var(--font-display); font-size: 20px; font-weight: 600; }
+  .region-bar { width: 160px; height: 4px; background: var(--bg-elev-2); border-radius: 2px; overflow: hidden; position: relative; }
+  .region-bar i { display: block; height: 100%; background: var(--accent); border-radius: 2px; transition: width 800ms cubic-bezier(.2,.8,.2,1); }
+  .region-count { font-family: var(--font-mono); font-size: 13px; color: var(--accent); min-width: 80px; text-align: right; }
+
+  /* Case study highlight */
+  .case-study { background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--r-xl); padding: 56px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: center; }
+  .case-study .quote { font-family: var(--font-display); font-size: clamp(28px, 3vw, 36px); line-height: 1.25; letter-spacing: -0.02em; font-weight: 500; }
+  .case-study .quote::before { content: '"'; font-size: 64px; line-height: 0; vertical-align: -32px; color: var(--accent); margin-right: 8px; }
+  .case-author { display: flex; align-items: center; gap: 14px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .case-author .av { width: 52px; height: 52px; border-radius: 999px; background: var(--bg-elev-2); display: grid; place-items: center; font-family: var(--font-mono); font-size: 14px; color: var(--accent); border: 1px solid var(--line); }
+  .case-numbers { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
+  .case-num { background: var(--bg); padding: 24px; }
+  .case-num .v { font-family: var(--font-display); font-size: 40px; font-weight: 700; color: var(--accent); letter-spacing: -0.03em; }
+  .case-num .l { font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; display: block; }
+
+  /* Open positions table */
+  .positions { border: 1px solid var(--line); border-radius: var(--r-xl); overflow: hidden; }
+  .pos-row { display: grid; grid-template-columns: 100px 2fr 1fr 1fr 100px 56px; align-items: center; padding: 18px 24px; border-bottom: 1px solid var(--line); transition: background 150ms; cursor: pointer; }
+  .pos-row:last-child { border-bottom: none; }
+  .pos-row:hover { background: var(--bg-elev); }
+  .pos-row.head { background: var(--bg-elev); font-family: var(--font-mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0.1em; text-transform: uppercase; cursor: default; }
+  .pos-row.head:hover { background: var(--bg-elev); }
+  .pos-id { font-family: var(--font-mono); font-size: 12px; color: var(--fg-dim); }
+  .pos-title { font-weight: 600; font-size: 16px; }
+  .pos-meta { font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted); }
+  .pos-status { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pos-status.live { background: rgba(52,211,153,0.12); color: var(--success); border: 1px solid var(--success); }
+  .pos-status.hot { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent); }
+  .pos-arrow { font-size: 18px; color: var(--fg-dim); text-align: right; }
+
+  @media (max-width: 920px) {
+    .branch-hero-grid, .region-block, .case-study { grid-template-columns: 1fr; gap: 32px; }
+    .roles { grid-template-columns: 1fr; }
+    .branch-stats { grid-template-columns: repeat(2, 1fr); }
+    .pos-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .pos-row > *:nth-child(n+5) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+
+<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+<div id="nav-mount"></div>
+
+<!-- Breadcrumb -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="index.html">HOME</a>
+    <span class="sep">/</span>
+    <a href="branchen.html">BRANCHEN</a>
+    <span class="sep">/</span>
+    <span style="color:var(--accent)">BAU</span>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="branch-hero">
+  <div class="container">
+    <div class="branch-hero-grid">
+      <div>
+        <span class="eyebrow">Branche · 01</span>
+        <h1 style="margin-top:24px">Recruiting<br>für die <em>Bau&shy;branche.</em></h1>
+      </div>
+      <div>
+        <p class="lead">
+          Bauleiter, Poliere, Architekten, Statiker, Kalkulatoren — wir kennen jede Rolle und jede Region.
+          Mit 142.000 Bau-Fachkräften in der Talent-Cloud und einem auf Bau spezialisierten Sellcruiting-Team
+          besetzen wir Stellen, an denen klassische Anzeigen jahrelang gescheitert sind.
+        </p>
+        <div style="display:flex;gap:14px;margin-top:32px">
+          <a href="kontakt.html" class="btn btn-primary btn-arrow">Bau-Stelle anfragen</a>
+          <a href="#positions" class="btn btn-ghost">Live-Vakanzen ansehen</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="branch-stats">
+      <div class="branch-stat">
+        <span class="v">142.000</span>
+        <span class="l">Bau-Fachkräfte im Pool</span>
+      </div>
+      <div class="branch-stat">
+        <span class="v">⌀ 18</span>
+        <span class="l">Tage Time-to-Hire</span>
+      </div>
+      <div class="branch-stat">
+        <span class="v">94 %</span>
+        <span class="l">Cultural-Fit-Quote Bau</span>
+      </div>
+      <div class="branch-stat">
+        <span class="v">320+</span>
+        <span class="l">Bauunternehmen Kunden</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Roles -->
+<section data-screen-label="Roles">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Rollen</span>
+        <h2 class="h2" style="margin-top:16px">Jede Bau-Rolle.<br>Eigener Talent-Pool.</h2>
+      </div>
+      <p class="lead">Die Bau-KPIs unserer Cloud, sortiert nach Wechselwahrscheinlichkeit und regionaler Verfügbarkeit.</p>
+    </div>
+
+    <div class="roles reveal">
+      <article class="role">
+        <div class="role-head">
+          <span class="role-num">01 / 09</span>
+          <span class="role-pool">28.400 im Pool</span>
+        </div>
+        <h3 class="role-name">Bauleiter / Bauleiterin</h3>
+        <p class="role-desc">Hochbau, Tiefbau, Schlüsselfertigbau. Sowohl Junior-Bauleiter (3+ J. Erfahrung) als auch Senior-Positionen mit Projektverantwortung &gt; 20 Mio €.</p>
+        <div class="role-meta">
+          <span>⌀ <span class="x">22 Tage</span></span>
+          <span>⌀ <span class="x">85 k €</span></span>
+          <span>Wechsel <span class="x" style="color:var(--accent)">28%</span></span>
+        </div>
+      </article>
+      <article class="role">
+        <div class="role-head">
+          <span class="role-num">02 / 09</span>
+          <span class="role-pool">19.700 im Pool</span>
+        </div>
+        <h3 class="role-name">Polier / Werkpolier</h3>
+        <p class="role-desc">Geprüfter Polier mit Meisterbrief oder gleichwertiger Qualifikation. Spezialisierungen Roh­bau, Schlüssel­fertig, Tiefbau, Spezialtiefbau.</p>
+        <div class="role-meta">
+          <span>⌀ <span class="x">14 Tage</span></span>
+          <span>⌀ <span class="x">62 k €</span></span>
+          <span>Wechsel <span class="x" style="color:var(--accent)">34%</span></span>
+        </div>
+      </article>
+      <article class="role">
+        <div class="role-head">
+          <span class="role-num">03 / 09</span>
+          <span class="role-pool">17.200 im Pool</span>
+        </div>
+        <h3 class="role-name">Architekt / Architektin</h3>
+        <p class="role-desc">Hochbau, Innenarchitektur, Stadtplanung. Sowohl Allrounder mit LP 1–9 als auch Spezialisten in Ausführungsplanung und Bauüberwachung.</p>
+        <div class="role-meta">
+          <span>⌀ <span class="x">26 Tage</span></span>
+          <span>⌀ <span class="x">72 k €</span></span>
+          <span>Wechsel <span class="x" style="color:var(--accent)">22%</span></span>
+        </div>
+      </article>
+      <article class="role">
+        <div class="role-head">
+          <span class="role-num">04 / 09</span>
+          <span class="role-pool">11.840 im Pool</span>
+        </div>
+        <h3 class="role-name">Bauingenieur</h3>
+        <p class="role-desc">Konstruktiver Ingenieurbau, Projektmanagement, Tragwerksplanung. Mit Schwerpunkt-Erfahrung Stahlbeton, Holzbau oder Stahlbau.</p>
+        <div class="role-meta">
+          <span>⌀ <span class="x">19 Tage</span></span>
+          <span>⌀ <span class="x">78 k €</span></span>
+          <span>Wechsel <span class="x" style="color:var(--accent)">25%</span></span>
+        </div>
+      </article>
+      <article class="role">
+        <div class="role-head">
+          <span class="role-num">05 / 09</span>
+          <span class="role-pool">8.230 im Pool</span>
+        </div>
+        <h3 class="role-name">Kalkulator</h3>
+        <p class="role-desc">Massenermittlung, Angebotserstellung, Nachtrags­kalkulation. Erfahrung mit RIB iTWO, Nevaris, ARRIBA oder Sidoun unbedingt erwünscht.</p>
+        <div class="role-meta">
+          <span>⌀ <span class="x">24 Tage</span></span>
+          <span>⌀ <span class="x">68 k €</span></span>
+          <span>Wechsel <span class="x" style="color:var(--accent)">19%</span></span>
+        </div>
+      </article>
+      <article class="role">
+        <div class="role-head">
+          <span class="role-num">06 / 09</span>
+          <span class="role-pool">6.510 im Pool</span>
+        </div>
+        <h3 class="role-name">Statiker / Tragwerksplaner</h3>
+        <p class="role-desc">Prüfingenieure, Tragwerks­planer Hochbau und Brückenbau. Selten am Markt, hoher Spezialisierungs­grad — entsprechend lange Suchen üblich.</p>
+        <div class="role-meta">
+          <span>⌀ <span class="x">42 Tage</span></span>
+          <span>⌀ <span class="x">88 k €</span></span>
+          <span>Wechsel <span class="x" style="color:var(--accent)">14%</span></span>
+        </div>
+      </article>
+      <article class="role">
+        <div class="role-head">
+          <span class="role-num">07 / 09</span>
+          <span class="role-pool">22.100 im Pool</span>
+        </div>
+        <h3 class="role-name">Bautechniker</h3>
+        <p class="role-desc">Staatlich geprüft, mit Schwerpunkt Bautechnik, Betontechnik oder Tiefbautechnik. Ideal als Schnittstelle Polier ↔ Bauleitung.</p>
+        <div class="role-meta">
+          <span>⌀ <span class="x">16 Tage</span></span>
+          <span>⌀ <span class="x">58 k €</span></span>
+          <span>Wechsel <span class="x" style="color:var(--accent)">31%</span></span>
+        </div>
+      </article>
+      <article class="role">
+        <div class="role-head">
+          <span class="role-num">08 / 09</span>
+          <span class="role-pool">14.890 im Pool</span>
+        </div>
+        <h3 class="role-name">Maurermeister / Vorarbeiter</h3>
+        <p class="role-desc">Meisterbrief, mehrjährige Führungs­erfahrung auf der Baustelle. Hoch gefragt, schwer zu finden — wir kennen die regionalen Wechsel-Cluster.</p>
+        <div class="role-meta">
+          <span>⌀ <span class="x">12 Tage</span></span>
+          <span>⌀ <span class="x">54 k €</span></span>
+          <span>Wechsel <span class="x" style="color:var(--accent)">38%</span></span>
+        </div>
+      </article>
+      <article class="role">
+        <div class="role-head">
+          <span class="role-num">09 / 09</span>
+          <span class="role-pool">12.840 im Pool</span>
+        </div>
+        <h3 class="role-name">Projektleiter</h3>
+        <p class="role-desc">Gesamt­verantwortung für Bau­projekte, Auftragsvolumen ab 5 Mio €. Häufig mit Wechsel zur Generalunternehmer-Seite oder ins Projekt­entwicklungs­geschäft.</p>
+        <div class="role-meta">
+          <span>⌀ <span class="x">28 Tage</span></span>
+          <span>⌀ <span class="x">95 k €</span></span>
+          <span>Wechsel <span class="x" style="color:var(--accent)">21%</span></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Regional -->
+<section data-screen-label="Regions">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Regionen</span>
+        <h2 class="h2" style="margin-top:16px">Wo wir<br>Bau-Fachkräfte finden.</h2>
+      </div>
+      <p class="lead">Die geografische Verteilung der wechselbereiten Bau-Talente in unserer Cloud — Stand heute, tagesaktuell.</p>
+    </div>
+
+    <div class="region-block reveal">
+      <div class="region-map">
+        <svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+          <!-- Stylized DACH outline -->
+          <path d="M 80 80 L 120 60 L 180 50 L 230 55 L 290 70 L 330 95 L 350 130 L 360 175 L 350 220 L 340 260 L 330 295 L 310 325 L 270 355 L 220 370 L 180 365 L 140 380 L 100 360 L 80 320 L 60 280 L 50 230 L 55 180 L 65 130 L 80 80 Z"
+                fill="rgba(37,99,235,0.04)" stroke="rgba(37,99,235,0.25)" stroke-width="1" stroke-dasharray="2 4" />
+          <!-- Inner grid -->
+          <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+            <line x1="0" y1="100" x2="400" y2="100" />
+            <line x1="0" y1="200" x2="400" y2="200" />
+            <line x1="0" y1="300" x2="400" y2="300" />
+            <line x1="100" y1="0" x2="100" y2="440" />
+            <line x1="200" y1="0" x2="200" y2="440" />
+            <line x1="300" y1="0" x2="300" y2="440" />
+          </g>
+          <text x="20" y="20" font-family="IBM Plex Mono" font-size="10" fill="var(--fg-dim)" letter-spacing="2">DACH · LIVE-VERTEILUNG</text>
+        </svg>
+        <div class="region-pin" style="left:42%;top:30%"><span class="lbl">Hamburg · 9.200</span></div>
+        <div class="region-pin" style="left:58%;top:38%"><span class="lbl">Berlin · 11.400</span></div>
+        <div class="region-pin" style="left:36%;top:50%"><span class="lbl">NRW · 28.700</span></div>
+        <div class="region-pin" style="left:48%;top:62%"><span class="lbl">Frankfurt · 14.200</span></div>
+        <div class="region-pin" style="left:54%;top:78%"><span class="lbl">München · 18.300</span></div>
+        <div class="region-pin" style="left:40%;top:72%"><span class="lbl">Stuttgart · 12.800</span></div>
+        <div class="region-pin" style="left:64%;top:84%"><span class="lbl">Wien · 6.900</span></div>
+      </div>
+      <div class="region-list">
+        <div class="region-row">
+          <span class="region-name">Nordrhein-Westfalen</span>
+          <span class="region-bar"><i style="width:100%"></i></span>
+          <span class="region-count">28.700</span>
+        </div>
+        <div class="region-row">
+          <span class="region-name">Bayern</span>
+          <span class="region-bar"><i style="width:88%"></i></span>
+          <span class="region-count">25.200</span>
+        </div>
+        <div class="region-row">
+          <span class="region-name">Baden-Württemberg</span>
+          <span class="region-bar"><i style="width:76%"></i></span>
+          <span class="region-count">21.700</span>
+        </div>
+        <div class="region-row">
+          <span class="region-name">Niedersachsen + Hamburg</span>
+          <span class="region-bar"><i style="width:55%"></i></span>
+          <span class="region-count">15.800</span>
+        </div>
+        <div class="region-row">
+          <span class="region-name">Hessen</span>
+          <span class="region-bar"><i style="width:50%"></i></span>
+          <span class="region-count">14.200</span>
+        </div>
+        <div class="region-row">
+          <span class="region-name">Berlin + Brandenburg</span>
+          <span class="region-bar"><i style="width:48%"></i></span>
+          <span class="region-count">13.800</span>
+        </div>
+        <div class="region-row">
+          <span class="region-name">Österreich</span>
+          <span class="region-bar"><i style="width:42%"></i></span>
+          <span class="region-count">12.000</span>
+        </div>
+        <div class="region-row">
+          <span class="region-name">Schweiz</span>
+          <span class="region-bar"><i style="width:38%"></i></span>
+          <span class="region-count">10.600</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Case study -->
+<section data-screen-label="Case study">
+  <div class="container">
+    <div class="case-study reveal">
+      <div>
+        <span class="eyebrow">Fallstudie · Plambeck Bau</span>
+        <p class="quote" style="margin-top:24px">Bereits im ersten Monat über 100 Bewerbungen. Wir konnten zwei Bauleiter und einen Polier einstellen — und das nach zwölf Monaten erfolgloser Stellenanzeigen auf den großen Jobportalen.</p>
+        <div class="case-author">
+          <div class="av">PP</div>
+          <div>
+            <div style="font-weight:600">Peter Plambeck</div>
+            <div style="font-size:13px;color:var(--fg-muted)">Geschäftsführung · Plambeck Bau GmbH</div>
+          </div>
+        </div>
+      </div>
+      <div class="case-numbers">
+        <div class="case-num"><span class="v">112</span><span class="l">Bewerbungen</span></div>
+        <div class="case-num"><span class="v">3</span><span class="l">Einstellungen</span></div>
+        <div class="case-num"><span class="v">28</span><span class="l">Tage Laufzeit</span></div>
+        <div class="case-num"><span class="v">12</span><span class="l">Mon. zuvor erfolglos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Open positions -->
+<section id="positions" data-screen-label="Open positions">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Live · Aktuell offen</span>
+        <h2 class="h2" style="margin-top:16px">Aktuelle Vakanzen<br>im Bau, die wir gerade besetzen.</h2>
+      </div>
+      <p class="lead">Ein Auszug aus unserer Pipeline — Sie sehen, was unsere Recruiter heute bearbeiten. Vertraulichkeit gewahrt.</p>
+    </div>
+
+    <div class="positions reveal">
+      <div class="pos-row head">
+        <div>ID</div><div>Position</div><div>Region</div><div>Gehalt</div><div>Status</div><div></div>
+      </div>
+      <div class="pos-row">
+        <div class="pos-id">#BU-2401</div>
+        <div class="pos-title">Bauleiter Hochbau</div>
+        <div class="pos-meta">Stuttgart · 50 km</div>
+        <div class="pos-meta">82–95 k €</div>
+        <div><span class="pos-status hot">Hot</span></div>
+        <div class="pos-arrow">→</div>
+      </div>
+      <div class="pos-row">
+        <div class="pos-id">#BU-2398</div>
+        <div class="pos-title">Polier Schlüsselfertigbau</div>
+        <div class="pos-meta">München · 30 km</div>
+        <div class="pos-meta">58–66 k €</div>
+        <div><span class="pos-status live">Aktiv</span></div>
+        <div class="pos-arrow">→</div>
+      </div>
+      <div class="pos-row">
+        <div class="pos-id">#BU-2392</div>
+        <div class="pos-title">Architekt LP 5–9</div>
+        <div class="pos-meta">Hamburg · Hybrid</div>
+        <div class="pos-meta">68–80 k €</div>
+        <div><span class="pos-status live">Aktiv</span></div>
+        <div class="pos-arrow">→</div>
+      </div>
+      <div class="pos-row">
+        <div class="pos-id">#BU-2389</div>
+        <div class="pos-title">Tragwerksplaner Stahlbau</div>
+        <div class="pos-meta">Frankfurt · Hybrid</div>
+        <div class="pos-meta">85–98 k €</div>
+        <div><span class="pos-status hot">Hot</span></div>
+        <div class="pos-arrow">→</div>
+      </div>
+      <div class="pos-row">
+        <div class="pos-id">#BU-2381</div>
+        <div class="pos-title">Kalkulator (RIB iTWO)</div>
+        <div class="pos-meta">NRW · Köln/Düsseldorf</div>
+        <div class="pos-meta">62–72 k €</div>
+        <div><span class="pos-status live">Aktiv</span></div>
+        <div class="pos-arrow">→</div>
+      </div>
+      <div class="pos-row">
+        <div class="pos-id">#BU-2376</div>
+        <div class="pos-title">Senior Projektleiter</div>
+        <div class="pos-meta">Berlin · Onsite</div>
+        <div class="pos-meta">95–115 k €</div>
+        <div><span class="pos-status live">Aktiv</span></div>
+        <div class="pos-arrow">→</div>
+      </div>
+      <div class="pos-row">
+        <div class="pos-id">#BU-2370</div>
+        <div class="pos-title">Bautechniker Tiefbau</div>
+        <div class="pos-meta">Leipzig · 40 km</div>
+        <div class="pos-meta">52–62 k €</div>
+        <div><span class="pos-status live">Aktiv</span></div>
+        <div class="pos-arrow">→</div>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:32px;color:var(--fg-muted);font-size:14px">+ 47 weitere offene Bau-Stellen sind in unserer Pipeline. <a href="kontakt.html" style="color:var(--accent)">Sprechen Sie uns an →</a></p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section data-screen-label="CTA">
+  <div class="container">
+    <div class="final-cta reveal">
+      <span class="eyebrow">Bereit?</span>
+      <h2 class="h-display" style="margin-top:20px;font-size:clamp(36px,5vw,64px)">Lassen Sie uns Ihre Bau-Stelle <em style="color:var(--accent);font-style:normal">in 3 Wochen</em> besetzen.</h2>
+      <p class="lead" style="margin:24px auto 0;text-align:center">In einem 30-min Gespräch zeigen wir Ihnen die exakte Wechsel-Wahrscheinlichkeit Ihrer Wunsch­kandidaten in Ihrer Region — kostenlos und unverbindlich.</p>
+      <div style="display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap">
+        <a href="kontakt.html" class="btn btn-primary btn-arrow">Bau-Matching-Check</a>
+        <a href="branchen.html" class="btn btn-ghost btn-arrow">Andere Branchen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script>
+window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"dark","accent":"cyan","density":"comfortable","headline_variant":"A"}/*EDITMODE-END*/;
+window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
+</script>
+<!-- Dev-only: React + Babel for Tweaks panel (localhost only) -->
+<script src="js/chrome.js" defer></script>
+<script>
+  RG.mountChrome('industries');
+</script>
+
+<script src="js/page-polish.js" defer></script>
+</body>
+</html>

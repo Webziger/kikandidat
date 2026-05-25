@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Seite nicht gefunden · KI-Kandidat.de</title>
+<meta name="robots" content="noindex, follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/tokens.css" />
+<link rel="stylesheet" href="styles/design-refresh.css" />
+<style>
+  body { background: var(--bg); color: var(--fg); min-height: 100vh; display: flex; flex-direction: column; }
+  .page-404 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-404::before {
+    content: '404';
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: clamp(160px, 30vw, 360px);
+    font-weight: 800;
+    letter-spacing: -.04em;
+    color: rgba(184,114,15,0.06);
+    user-select: none;
+    pointer-events: none;
+    line-height: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+  .e404-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+  }
+  .e404-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+  .e404-title {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 800;
+    letter-spacing: -.035em;
+    line-height: .96;
+    color: var(--fg);
+    margin: 0 0 20px;
+    position: relative;
+  }
+  .e404-lead {
+    font-size: clamp(16px, 1.4vw, 19px);
+    color: var(--fg-muted);
+    line-height: 1.72;
+    max-width: 48ch;
+    margin: 0 auto 40px;
+    position: relative;
+  }
+  .e404-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .e404-links {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 640px;
+    width: 100%;
+    position: relative;
+  }
+  @media (max-width: 600px) { .e404-links { grid-template-columns: 1fr; } }
+  .e404-link {
+    padding: 16px 20px;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--fg);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+    box-shadow: 0 2px 8px rgba(10,15,28,0.05);
+  }
+  .e404-link:hover {
+    border-color: rgba(184,114,15,0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(184,114,15,0.10);
+  }
+  .e404-link-title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+  }
+  .e404-link-sub {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--fg-dim);
+    letter-spacing: .06em;
+  }
+</style>
+</head>
+<body>
+<div id="nav-mount"></div>
+
+<main class="page-404">
+  <div class="e404-eyebrow">Fehler 404</div>
+  <h1 class="e404-title">Seite nicht gefunden.</h1>
+  <p class="e404-lead">Die gesuchte Seite existiert nicht oder wurde verschoben. Vielleicht finden Sie hier was Sie suchen:</p>
+  <div class="e404-actions">
+    <a href="index.html" class="btn btn-primary btn-arrow">Zur Startseite</a>
+    <a href="kontakt.html" class="btn btn-ghost btn-arrow">Demo anfragen</a>
+  </div>
+  <div class="e404-links">
+    <a href="branchen.html" class="e404-link">
+      <span class="e404-link-title">Branchen</span>
+      <span class="e404-link-sub">12 Branchen · DACH</span>
+    </a>
+    <a href="about.html" class="e404-link">
+      <span class="e404-link-title">Über uns</span>
+      <span class="e404-link-sub">Team & Mission</span>
+    </a>
+    <a href="karriere.html" class="e404-link">
+      <span class="e404-link-title">Karriere</span>
+      <span class="e404-link-sub">18 offene Stellen</span>
+    </a>
+  </div>
+</main>
+
+<div id="footer-mount"></div>
+<script src="js/chrome.js" defer></script>
+<script>RG.mountChrome('404');</script>
+</body>
+</html>

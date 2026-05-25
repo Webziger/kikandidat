@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ki-kandidat.de/sitemap.xml
+
+# Kein Crawling von Assets-Ordner (Bilder werden über Sitemap nicht benötigt)
+Disallow: /uploads/
+
+# Crawl-delay für höflichere Crawler
+Crawl-delay: 2
