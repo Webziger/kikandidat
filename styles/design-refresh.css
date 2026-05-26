@@ -181,16 +181,18 @@ h1 em::after { display: none !important; }
 .hero-live-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(245,241,232,0.07);
-  border: 1px solid rgba(245,241,232,0.14);
+  gap: 10px;
+  background: rgba(245,241,232,0.06);
+  border: 1px solid rgba(245,241,232,0.16);
   border-radius: 999px;
-  padding: 6px 14px;
+  padding: 8px 18px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: rgba(245,241,232,0.75);
-  letter-spacing: 0.04em;
-  backdrop-filter: blur(8px);
+  font-size: 12px;
+  color: rgba(245,241,232,0.80);
+  letter-spacing: 0.06em;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
 }
 .dot-live {
   width: 7px; height: 7px; border-radius: 50%;
@@ -708,6 +710,96 @@ section:has(.stats-bar)::before {
 .faq-q { color: var(--fg) !important; }
 .faq-q:hover { color: var(--accent) !important; }
 
+/* ── PAIN SECTION — vollständige Lesbarkeit auf dunklem Hintergrund ── */
+.pain-section {
+  background: linear-gradient(160deg, #06101E 0%, #070C1A 50%, #050B16 100%) !important;
+}
+.pain-strip {
+  border-color: rgba(255,255,255,0.07) !important;
+}
+.pain-strip-item {
+  color: rgba(245,241,232,0.40) !important;
+}
+.pain-strip-dot {
+  background: rgba(245,241,232,0.20) !important;
+}
+/* Headline */
+.pain-headline h2 {
+  color: #F0EBE0 !important;
+}
+.pain-headline h2 em {
+  color: #D4881E !important;
+  -webkit-text-fill-color: #D4881E !important;
+  background: none !important;
+  font-style: italic !important;
+}
+.pain-headline p {
+  color: rgba(245,241,232,0.58) !important;
+}
+/* Stat labels */
+.pain-label {
+  color: rgba(245,241,232,0.42) !important;
+}
+.pain-label::before {
+  background: rgba(245,241,232,0.20) !important;
+}
+/* Big numbers */
+.pain-big {
+  color: #F0EBE0 !important;
+  font-size: clamp(42px, 5.5vw, 80px) !important;
+  white-space: nowrap !important;
+  display: block !important;
+}
+.pain-big[data-counted="false"] {
+  color: rgba(245,241,232,0.15) !important;
+}
+.pain-stat:hover .pain-big {
+  color: #EF4444 !important;
+}
+/* Divider rule */
+.pain-rule {
+  background: rgba(255,255,255,0.08) !important;
+}
+/* Description */
+.pain-desc {
+  color: rgba(245,241,232,0.55) !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+}
+/* KI-Kandidat answer */
+.pain-answer {
+  color: rgba(212,136,30,0.80) !important;
+  border-color: rgba(212,136,30,0.14) !important;
+}
+.pain-stat:hover .pain-answer {
+  color: #D4881E !important;
+}
+.pain-answer::before {
+  color: #D4881E !important;
+}
+/* Divider between stats */
+.pain-stat {
+  border-color: rgba(255,255,255,0.06) !important;
+}
+.pain-stat:hover {
+  background: rgba(239,68,68,0.04) !important;
+}
+/* Bottom CTA strip */
+.pain-cta-strip {
+  border-color: rgba(255,255,255,0.06) !important;
+}
+.pain-cta-strip p {
+  color: rgba(245,241,232,0.28) !important;
+}
+.pain-cta-strip .btn-ghost {
+  color: rgba(245,241,232,0.70) !important;
+  border-color: rgba(245,241,232,0.20) !important;
+}
+.pain-cta-strip .btn-ghost:hover {
+  background: rgba(245,241,232,0.06) !important;
+  border-color: rgba(245,241,232,0.35) !important;
+}
+
 /* ── MOSAIC / DARK CTA ──────────────────────────────────────── */
 .mosaic-section {
   position: relative;
@@ -912,3 +1004,498 @@ section[data-screen-label="Comparison"] .container { position: relative; z-index
   background-color: #0A1522 !important;
 }
 
+
+
+/* ================================================================
+   BRANCH PAGES — Vollständige Lesbarkeit & Foto-Backgrounds
+   ================================================================ */
+
+/* ── Hero ──────────────────────────────────────────────────────── */
+.branch-hero h1 { color: var(--fg) !important; }
+.branch-hero h1 em { color: var(--accent) !important; font-style: italic !important; }
+.branch-hero .lead { color: var(--fg-muted) !important; }
+.branch-hero .eyebrow { color: var(--accent) !important; }
+
+/* ── Stats bar under hero ───────────────────────────────────────── */
+.branch-stats {
+  border-color: var(--line) !important;
+  background: var(--bg-elev) !important;
+}
+.branch-stat { border-color: var(--line) !important; }
+.branch-stat .v { color: var(--fg) !important; font-weight: 700 !important; }
+.branch-stat .l { color: var(--fg-dim) !important; }
+
+/* ── Section heads ──────────────────────────────────────────────── */
+.branch-hero ~ section .h2,
+.branch-hero ~ section h2 { color: var(--fg) !important; }
+.branch-hero ~ section .lead { color: var(--fg-muted) !important; }
+.branch-hero ~ section .eyebrow { color: var(--accent) !important; }
+.branch-hero ~ section p { color: var(--fg-muted) !important; }
+
+/* ── Roles grid ─────────────────────────────────────────────────── */
+.roles {
+  background: var(--line) !important;
+  border-color: var(--line) !important;
+}
+.role {
+  background: var(--bg-elev) !important;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease !important;
+}
+.role:hover {
+  background: var(--bg-elev-2) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(10,15,28,0.08) !important;
+}
+.role-name { color: var(--fg) !important; font-family: var(--font-display) !important; }
+.role-desc { color: var(--fg-muted) !important; line-height: 1.65 !important; }
+.role-num { color: var(--fg-dim) !important; }
+.role-pool {
+  color: var(--accent) !important;
+  background: var(--accent-soft) !important;
+  border-radius: 4px !important;
+  padding: 2px 8px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+}
+.role-meta {
+  color: var(--fg-dim) !important;
+  border-top-color: var(--line) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+}
+.role-meta .x { color: var(--fg) !important; font-weight: 600 !important; }
+
+/* ── Region block ───────────────────────────────────────────────── */
+.region-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 48px;
+}
+@media(max-width:860px){ .region-block{ grid-template-columns:1fr; } }
+.region-map {
+  position: relative;
+  background: var(--bg-elev) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--r-xl) !important;
+  overflow: hidden !important;
+  aspect-ratio: 1 / 1.1 !important;
+  padding: 24px !important;
+}
+.region-map svg { width: 100%; height: 100%; }
+.region-pin {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.region-pin .lbl {
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+  color: var(--fg-muted) !important;
+  background: var(--bg-elev) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  white-space: nowrap !important;
+}
+.region-pin::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(184,114,15,0.15);
+}
+.region-list { display: flex; flex-direction: column; gap: 14px; }
+.region-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  gap: 16px;
+  align-items: center;
+}
+.region-name {
+  font-size: 13px !important;
+  color: var(--fg-muted) !important;
+  font-weight: 500 !important;
+}
+.region-bar {
+  height: 4px;
+  background: var(--line) !important;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.region-bar i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #D4881E, #B8720F) !important;
+  border-radius: 2px;
+  transition: width 1s ease !important;
+}
+.region-count {
+  font-family: var(--font-mono) !important;
+  font-size: 12px !important;
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── Case study ─────────────────────────────────────────────────── */
+.case-study {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding: 48px !important;
+  background: var(--bg-elev) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--r-xl) !important;
+  box-shadow: var(--shadow-lg) !important;
+  position: relative;
+  overflow: hidden;
+}
+@media(max-width:860px){ .case-study{ grid-template-columns:1fr; gap:32px; padding:28px !important; } }
+.case-study::before {
+  content: '"';
+  position: absolute;
+  top: -20px; left: 24px;
+  font-size: 180px;
+  font-family: var(--font-display);
+  color: rgba(184,114,15,0.07);
+  line-height: 1;
+  pointer-events: none;
+  font-weight: 800;
+}
+.case-study .eyebrow { color: var(--accent) !important; margin-bottom: 16px; display: block; }
+.case-study .quote {
+  font-size: clamp(17px,1.5vw,21px) !important;
+  line-height: 1.65 !important;
+  color: var(--fg) !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  position: relative;
+  z-index: 1;
+}
+.case-study .quote::before {
+  content: '"';
+  color: var(--accent);
+  font-style: normal;
+  font-size: 1.4em;
+  line-height: 0;
+  vertical-align: -0.3em;
+  margin-right: 4px;
+}
+.case-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.case-author .av {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  border: 1px solid rgba(184,114,15,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.case-author div { color: var(--fg) !important; }
+.case-numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.case-num {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;
+  background: var(--bg-elev-2) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--r-md) !important;
+  transition: border-color .2s ease;
+}
+.case-num:hover { border-color: rgba(184,114,15,0.30) !important; }
+.case-num .v {
+  font-family: var(--font-display) !important;
+  font-size: clamp(28px,3vw,40px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--accent) !important;
+  line-height: 1 !important;
+}
+.case-num .l {
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+  color: var(--fg-dim) !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+/* ── Positions / Open Jobs ──────────────────────────────────────── */
+.positions {
+  border: 1px solid var(--line) !important;
+  border-radius: var(--r-xl) !important;
+  overflow: hidden !important;
+  background: var(--bg-elev) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+.pos-row {
+  display: grid !important;
+  grid-template-columns: 80px 1fr 140px 100px 80px 40px !important;
+  gap: 16px !important;
+  align-items: center !important;
+  padding: 16px 24px !important;
+  border-bottom: 1px solid var(--line) !important;
+  font-size: 14px !important;
+  color: var(--fg) !important;
+  transition: background .15s ease !important;
+}
+@media(max-width:860px){
+  .pos-row { grid-template-columns: 1fr auto !important; }
+  .pos-row .pos-id, .pos-row .pos-meta, .pos-row .pos-arrow { display: none !important; }
+}
+.pos-row:last-child { border-bottom: none !important; }
+.pos-row:hover:not(.head) { background: var(--accent-soft) !important; }
+.pos-row.head {
+  background: var(--bg-elev-2) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.10em !important;
+  text-transform: uppercase !important;
+  color: var(--fg-dim) !important;
+}
+.pos-id { font-family: var(--font-mono) !important; font-size: 11px !important; color: var(--fg-dim) !important; }
+.pos-title { font-weight: 600 !important; color: var(--fg) !important; }
+.pos-meta { color: var(--fg-muted) !important; font-size: 13px !important; }
+.pos-arrow { color: var(--accent) !important; font-family: var(--font-mono) !important; }
+.pos-status {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.06em !important;
+  font-weight: 600 !important;
+}
+.pos-status.hot {
+  background: rgba(239,68,68,0.10) !important;
+  color: #EF4444 !important;
+  border: 1px solid rgba(239,68,68,0.25) !important;
+}
+.pos-status.live {
+  background: rgba(13,148,86,0.10) !important;
+  color: #0D9456 !important;
+  border: 1px solid rgba(13,148,86,0.25) !important;
+}
+.pos-status.new {
+  background: rgba(184,114,15,0.10) !important;
+  color: #B8720F !important;
+  border: 1px solid rgba(184,114,15,0.25) !important;
+}
+
+/* ── Section photo backgrounds auf Branch-Seiten ───────────────── */
+.branch-hero ~ section[data-screen-label="Regions"] {
+  background: var(--bg-elev-2) !important;
+  position: relative;
+}
+.branch-hero ~ section[data-screen-label="Case study"] {
+  background: var(--bg) !important;
+}
+.branch-hero ~ section[data-screen-label="Open positions"] {
+  background: var(--bg-elev) !important;
+  position: relative;
+  isolation: isolate;
+}
+.branch-hero ~ section[data-screen-label="Open positions"]::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=50&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+.branch-hero ~ section[data-screen-label="Open positions"] .container { position: relative; z-index: 1; }
+
+/* Final CTA Section auf Branch-Seiten */
+.branch-hero ~ section:has(.final-cta) {
+  background: var(--bg-elev-2) !important;
+}
+.branch-hero ~ .final-cta,
+.branch-hero ~ section .final-cta {
+  background:
+    radial-gradient(700px 350px at 50% 0%, rgba(184,114,15,0.07) 0%, transparent 65%),
+    var(--bg-elev) !important;
+  border-color: var(--line-strong) !important;
+}
+.branch-hero ~ section .final-cta .h-display,
+.branch-hero ~ section .final-cta h2 { color: var(--fg) !important; }
+.branch-hero ~ section .final-cta em {
+  color: var(--accent) !important;
+  -webkit-text-fill-color: var(--accent) !important;
+  background: none !important;
+}
+.branch-hero ~ section .final-cta .lead { color: var(--fg-muted) !important; }
+
+
+/* ================================================================
+   DARK SECTIONS — Neue Farbtöne aus Kunden-Screenshots
+   Warm Schwarz-Braun · Tief Navy · Waldgrün · Burgunder
+   Nur dunkle Sections werden geändert — helle bleiben unberührt
+   ================================================================ */
+
+/* ── 1. HERO — Warm Near-Black (Photo über dunklem Grund) ──────── */
+.hero {
+  background: #0E0702 !important;
+}
+.hero-photo-grad {
+  background:
+    linear-gradient(110deg,
+      rgba(14,7,2,0.97) 0%,
+      rgba(14,7,2,0.84) 38%,
+      rgba(14,7,2,0.42) 66%,
+      rgba(14,7,2,0.65) 100%),
+    linear-gradient(180deg, rgba(14,7,2,0.10) 40%, rgba(14,7,2,0.97) 100%) !important;
+}
+
+/* ── 2. PAIN SECTION — Warm Schwarz-Braun mit Amber-Radial ──────── */
+.pain-section {
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(100,42,5,0.28) 0%, transparent 70%),
+    linear-gradient(160deg, #160A03 0%, #0E0602 50%, #0A0401 100%) !important;
+}
+
+/* ── 3. PILLARS — Tief Navy ──────────────────────────────────────── */
+#pillars,
+.section-pillars-bg {
+  background:
+    radial-gradient(ellipse 55% 45% at 30% 30%, rgba(15,22,60,0.40) 0%, transparent 65%),
+    linear-gradient(150deg, #07091C 0%, #040714 50%, #020510 100%) !important;
+}
+
+/* ── 4. KI-INTRO / KI-MODUL ─────────────────────────────────────── */
+.ki-intro-section {
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(12,18,50,0.45) 0%, transparent 70%),
+    linear-gradient(180deg, #060818 0%, #040614 50%, #060818 100%) !important;
+}
+
+/* ── 5. KI-SECTION (Live Scoring) ──────────────────────────────── */
+.ki-section {
+  background:
+    radial-gradient(ellipse 55% 40% at 70% 30%, rgba(12,18,55,0.40) 0%, transparent 65%),
+    linear-gradient(180deg, #050717 0%, #030511 50%, #050717 100%) !important;
+}
+
+/* ── 6. BERATER SECTION — Warm Schwarz-Braun ────────────────────── */
+.berater-section {
+  background:
+    radial-gradient(ellipse 60% 55% at 20% 60%, rgba(90,35,4,0.25) 0%, transparent 65%),
+    #0E0702 !important;
+}
+
+/* ── 7. MOSAIC SECTION — Warm Schwarz-Braun ─────────────────────── */
+.mosaic-section {
+  background:
+    radial-gradient(ellipse 50% 45% at 60% 40%, rgba(80,30,3,0.22) 0%, transparent 65%),
+    linear-gradient(155deg, #120804 0%, #0A0502 50%, #0D0703 100%) !important;
+}
+.mosaic-section::before {
+  opacity: 0.06 !important;
+}
+
+/* ── 8. TRUST SECTION — Tief Navy ───────────────────────────────── */
+.trust-section {
+  background:
+    radial-gradient(ellipse 55% 45% at 80% 80%, rgba(10,16,50,0.38) 0%, transparent 65%),
+    linear-gradient(180deg, #060818 0%, #03050F 50%, #060818 100%) !important;
+}
+
+/* ── 9. FOOTER ───────────────────────────────────────────────────── */
+.footer {
+  background:
+    linear-gradient(180deg, #0C0602 0%, #080401 100%) !important;
+}
+
+/* ── 10. INDUSTRY TILES auf index.html — Per-Branche Farbton ──── */
+/* Warm Braun (Bau, Handwerk) */
+.industry-tile[data-img='bau']::before {
+  background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=60&w=400') !important;
+}
+.industry-tile[data-img='handwerk']::before {
+  background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=60&w=400') !important;
+}
+
+/* ── 11. GLOW-CARDS (Pain Section) — dunkler Innenraum ─────────── */
+.glow-card-inner {
+  background:
+    radial-gradient(ellipse 80% 60% at 30% 20%, rgba(90,35,4,0.15) 0%, transparent 60%),
+    rgba(8,4,1,0.97) !important;
+}
+
+/* ── 12. BRANCHE-TILES auf branchen.html — Nach Branchenfarbe ─── */
+/* Warm Braun */
+.br-mtile[data-i='bau'],
+.br-mtile[data-i='handwerk'] {
+  background:
+    radial-gradient(ellipse 70% 60% at 35% 55%, rgba(110,48,6,0.55) 0%, #0D0401 100%) !important;
+}
+/* Tief Navy */
+.br-mtile[data-i='industrie'],
+.br-mtile[data-i='it'],
+.br-mtile[data-i='finanzen'],
+.br-mtile[data-i='logistik'] {
+  background:
+    radial-gradient(ellipse 65% 55% at 35% 55%, rgba(14,22,60,0.55) 0%, #04060F 100%) !important;
+}
+/* Waldgrün */
+.br-mtile[data-i='pflege'],
+.br-mtile[data-i='energie'],
+.br-mtile[data-i='beratung'] {
+  background:
+    radial-gradient(ellipse 65% 55% at 35% 55%, rgba(5,32,10,0.50) 0%, #020803 100%) !important;
+}
+/* Burgunder */
+.br-mtile[data-i='handel'],
+.br-mtile[data-i='hotellerie'],
+.br-mtile[data-i='immobilien'] {
+  background:
+    radial-gradient(ellipse 65% 55% at 35% 55%, rgba(65,5,18,0.55) 0%, #090103 100%) !important;
+}
+/* Foto-Layer weniger sichtbar damit Gradient dominiert */
+.br-mtile::before { opacity: 0.30 !important; }
+.br-mtile:hover::before { opacity: 0.48 !important; }
+
+/* ── 13. INDUSTRY TILES auf index.html — dunkle Basis ──────────── */
+.industry-tile::after {
+  background:
+    linear-gradient(160deg, rgba(4,2,1,0.80) 0%, rgba(4,2,1,0.30) 50%, rgba(4,2,1,0.88) 100%) !important;
+}
+
+/* ── 14. DARK PANELS in hellen Sections (KI-Engine etc.) ────────── */
+.klp {
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 20%, rgba(80,30,3,0.12) 0%, transparent 55%),
+    rgba(6,3,1,0.94) !important;
+}
+.live-scoring-panel,
+.match-panel-full {
+  background:
+    radial-gradient(ellipse 65% 50% at 20% 20%, rgba(10,16,45,0.20) 0%, transparent 60%),
+    rgba(8,4,1,0.92) !important;
+}
+
+/* ── 15. DARK SECTION BORDERS — wärmere Trennlinien ────────────── */
+.pain-section .pain-stat { border-color: rgba(255,240,220,0.05) !important; }
+.mosaic-section .mosaic-stat { border-color: rgba(255,240,220,0.08) !important; }

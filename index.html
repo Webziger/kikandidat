@@ -203,9 +203,9 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   /* Premium Dark Mode & Hover Overrides */
   body { background: var(--bg); color: var(--fg); }
   
-  /* Global Mouse Cursor Glow */
+  /* Global Mouse Cursor Glow — removed */
   .cursor-glow-overlay {
-    position: fixed;
+    display: none;
     top: 0; left: 0;
     width: 800px; height: 800px;
     background: radial-gradient(circle, rgba(37,99,235,0.07) 0%, rgba(199, 162, 74, 0.04) 30%, transparent 70%);
@@ -1185,7 +1185,6 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 <body>
 <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
 
-<div class="cursor-glow-overlay" id="cursorGlow"></div>
 <div id="nav-mount"></div>
 
 <main id="main">
@@ -1205,10 +1204,10 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text-layer" id="heroTextLayer">
-        <div class="hero-meta">
-          <div class="hero-live-badge" style="margin-top:8px">
+        <div class="hero-meta" style="margin-bottom:32px">
+          <div class="hero-live-badge">
             <span class="dot-live"></span>
-            <span>Live · <span id="heroLiveCount">1.041.382</span> Profile im Pool</span>
+            <span>Live &nbsp;·&nbsp; <span id="heroLiveCount">1.041.382</span> Fachkräfte im Pool</span>
           </div>
         </div>
         <h1 class="h-display">
@@ -1836,7 +1835,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   position:relative;
   width:0; height:0;
   transform-style:preserve-3d;
-  animation:scCubeRotate 16s linear infinite;
+  animation:scCubeRotate 24s linear infinite;
 }
 /* ── Einzelner Voxel ─────────────────────────────────── */
 .sc-voxel{
@@ -1858,17 +1857,16 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
     box-shadow  .9s ease;
   will-change:transform;
 }
-/* Voxels verwandeln sich in Apple-Steckbrief-Karten während Foto-Phase */
+/* Fotos auf Voxels — randlos, mit Schatten für Tiefe */
 .sc-voxel-wrap.sc-show-photos .sc-voxel{
-  background:linear-gradient(180deg, #FCFCFE 0%, #ECECF0 100%);
-  border-radius:6px;
+  background: transparent;
+  border-radius: 8px;
   box-shadow:
-    inset 0  1px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(0,0,0,.06),
-    inset 1px 0 0 rgba(255,255,255,.5),
-    0 3px 8px rgba(0,0,0,.18),
-    0 1px 3px rgba(0,0,0,.10);
+    0 10px 28px rgba(0,0,0,0.55),
+    0 3px 8px rgba(0,0,0,0.35);
 }
+.sc-voxel-core{ opacity:0 !important; background:transparent !important; box-shadow:none !important; display:block; }
+.sc-voxel-wrap.sc-show-photos .sc-voxel-core{ display:none !important; }
 /* Explodierend + explodiert → Voxels an Ziel-Position */
 .sc-voxel-wrap.sc-exploding .sc-voxel,
 .sc-voxel-wrap.sc-exploded  .sc-voxel{
@@ -1882,60 +1880,79 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   transition-duration:1.0s;
   transition-timing-function:cubic-bezier(.2,0,.3,1.35);
 }
-/* ── Lupe im Zentrum ─────────────────────────────────── */
+/* ── Logo Mitte — versteckt wenn Cube assembled, sichtbar bei Fotos/Explosion ── */
 .sc-lupe-center{
   position:absolute;
   left:50%; top:50%;
-  width:58%; height:58%;
-  transform:translate(-50%,-50%) scale(.40);
+  width:auto; height:auto;
+  /* BASIS: komplett versteckt hinter dem Cube */
+  transform:translate3d(-50%,-50%,0) scale(0.15);
   opacity:0;
   pointer-events:none;
-  z-index:10;  /* über Voxels im 3D-Kontext */
+  z-index:10;
   transition:
-    transform 1.0s cubic-bezier(.22,1,.36,1) .45s,
-    opacity   .65s ease .42s,
-    filter    .75s ease .42s;
-  filter:drop-shadow(0 0 0 transparent);
+    transform 0.85s cubic-bezier(0.22,1.3,0.36,1) 0s,
+    opacity   0.35s ease 0s;
+  background:none; border:none; box-shadow:none;
+  will-change: transform, opacity;
 }
 .sc-lupe-center img{
-  width:100%; height:100%;
+  width:240px;
+  height:140px;
   object-fit:contain;
+  display:block;
+  background:none;
+  filter: drop-shadow(0 0 32px rgba(230,140,30,0.55))
+          drop-shadow(0 0 80px rgba(230,130,20,0.32));
+  image-rendering: -webkit-optimize-contrast;
 }
-/* Lupe sichtbar im exploded-Zustand — softer Glow für die clean PNG */
+/* SCHRITT 1: Photo-Phase — Logo "fährt aus" auf mittlere Größe */
+.sc-cube-host.sc-photos-on .sc-lupe-center{
+  transform:translate3d(-50%,-50%,0) scale(0.55);
+  opacity:0.95;
+  transition:
+    transform 0.7s cubic-bezier(0.22,1.4,0.36,1) 0s,
+    opacity   0.4s ease 0s;
+}
+/* SCHRITT 2: Exploded — Logo riesig & dramatisch */
 .sc-cube-host.sc-exploded .sc-lupe-center{
-  transform:translate(-50%,-50%) scale(1);
+  transform:translate3d(-50%,-50%,0) scale(1.40);
   opacity:1;
-  filter:
-    drop-shadow(0 0 18px rgba(240,140,50,.55))
-    drop-shadow(0 0 44px rgba(255,150,40,.28));
-  animation:scLupeBreathe 3.5s ease-in-out 1.4s infinite;
+  transition:
+    transform 1.1s cubic-bezier(0.22,1.4,0.36,1) 0s,
+    opacity   0.4s ease 0s;
+  animation:scLogoBreathe 3.5s ease-in-out 1.3s infinite;
 }
-@keyframes scLupeBreathe{
-  0%,100%{ transform:translate(-50%,-50%) scale(1); }
-  50%   { transform:translate(-50%,-50%) scale(1.035); }
+@keyframes scLogoBreathe{
+  0%,100%{ transform:translate3d(-50%,-50%,0) scale(1.40); }
+  50%    { transform:translate3d(-50%,-50%,0) scale(1.50); }
 }
-/* ── Voxel-Foto (Bewerbungsfoto, Apple-Steckbrief-Look) ──────── */
+
+/* ── Voxel-Foto — GPU-beschleunigt, sauber ─────────────── */
 .sc-voxel-photo{
   position:absolute;
-  inset:2.5px;                             /* schmaler weißer Rahmen */
-  width:calc(100% - 5px);
-  height:calc(100% - 5px);
-  border-radius:4.5px;                     /* harmonisch zum Voxel-Radius (6px) */
+  inset:0;
+  width:100%;
+  height:100%;
+  border-radius:8px;
   object-fit:cover;
+  object-position:center center;
   opacity:0;
-  /* Kein permanenter blur-filter — Animation nur während Show-Phase */
-  transition:opacity .9s ease var(--pd,0ms);
   pointer-events:none;
-  box-shadow:inset 0 0 0 .5px rgba(0,0,0,.06);
+  will-change: opacity, transform;
+  transform: translateZ(0);
+  contain: layout style paint;
+  /* Smooth fade-out wenn show-photos entfernt wird */
+  transition: opacity 0.4s ease;
 }
-/* Photo-Phase: Apple-Steckbrief blur-to-clear via one-shot Animation */
+/* Photo IN — alle Fotos in <450ms fertig, deterministischer Stagger */
 .sc-voxel-wrap.sc-show-photos .sc-voxel-photo{
-  opacity:1;
-  animation:scPhotoReveal 1.5s cubic-bezier(.22,1,.36,1) var(--pd,0ms) both;
+  animation: scPhotoIn 0.42s cubic-bezier(0.22,1,0.36,1) var(--pd,0ms) both;
 }
-@keyframes scPhotoReveal{
-  0%   { filter:blur(12px) saturate(.85); }
-  100% { filter:blur(0)    saturate(.96); }
+@keyframes scPhotoIn{
+  0%   { opacity:0; transform: translateZ(0) scale(0.88); }
+  60%  { opacity:1; transform: translateZ(0) scale(1.03); }
+  100% { opacity:1; transform: translateZ(0) scale(1.00); }
 }
 /* ── Keyframes ───────────────────────────────────────── */
 @keyframes scCubeRotate{
@@ -2371,11 +2388,11 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
         <!-- 27 Voxels werden per JS generiert -->
       </div>
       <div class="sc-lupe-center">
-        <img src="assets/kiq-lupe.png?v=4" alt="" draggable="false">
+        <img src="assets/kiq-logo-clean.png" alt="KI-Kandidat" draggable="false">
       </div>
     </div>
-    <div class="sc-cube-caption">
-      <img src="assets/kiq-logo.png" class="sc-cube-logo" alt="KI-Kandidat">
+    <div class="sc-cube-caption" style="display:none">
+      <img src="assets/kiq-logo-clean.png" class="sc-cube-logo" alt="KI-Kandidat">
     </div>
   </div>
 
@@ -2447,19 +2464,42 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
         v.style.setProperty('--d',   (Math.random() * 230).toFixed(0) + 'ms');
         v.style.setProperty('--col', voxelColor(xi, yi, zi));
 
-        // Alle 26 Außen-Voxels bekommen Bewerbungsfotos (innerer Kern bleibt orange)
+        // Core-Voxel markieren (kein Foto, unsichtbar in Foto-Phase)
         var isCore = (xi === 1 && yi === 1 && zi === 1);
-        if (!isCore) {
+        if (isCore) {
+          v.classList.add('sc-voxel-core');
+        } else {
           var idx = xi * N * N + yi * N + zi; // 0–26
           if (idx > 13) idx--;                // Kern (idx=13) überspringen → 0–25
-          var photoIdx = (idx % 9) + 1;       // 1–9 (jedes Foto ~3× verteilt)
+          // Professionelle Business-Headshots
+          var proPhotos = [
+            'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=72&q=70&fit=crop&crop=face',
+            'https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=72&q=70&fit=crop&crop=face',
+            'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=72&q=70&fit=crop&crop=face',
+            'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=72&q=70&fit=crop&crop=face',
+            'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=72&q=70&fit=crop&crop=face',
+            'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=72&q=70&fit=crop&crop=face',
+            'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=72&q=70&fit=crop&crop=face',
+            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=72&q=70&fit=crop&crop=face',
+            'https://images.unsplash.com/photo-1548142813-c348350df52b?w=72&q=70&fit=crop&crop=face',
+            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=72&q=70&fit=crop&crop=face',
+            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=72&q=70&fit=crop&crop=face',
+            'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=72&q=70&fit=crop&crop=face'
+          ];
+          var photoIdx = idx % proPhotos.length;
           var pi = document.createElement('img');
           pi.className = 'sc-voxel-photo';
-          pi.src = 'assets/photo-' + photoIdx + '.jpg';
+          pi.src = proPhotos[photoIdx];
           pi.alt = '';
           pi.draggable = false;
           pi.onerror = function(){ this.style.display = 'none'; };
-          pi.style.setProperty('--pd', (Math.random() * 700).toFixed(0) + 'ms');
+          // Deterministischer Stagger — keine Math.random(), völlig flüssig
+          var distToCenter = Math.sqrt(
+            Math.pow(xi-1,2)+Math.pow(yi-1,2)+Math.pow(zi-1,2)
+          );
+          // Max 90ms gesamt: Distanz 0→Mitte, 1.73→Ecke. 90/1.73 ≈ 52ms/Einheit
+          var baseDelay = Math.round(distToCenter * 52);
+          pi.style.setProperty('--pd', baseDelay + 'ms');
           v.appendChild(pi);
         }
 
@@ -2468,50 +2508,106 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
     }
   }
 
-  if (reduce) return; // Kein Zyklus bei reduced-motion
+  // Bilder vorladen UND warten bis alle bereit sind
+  var preloadUrls = [
+    'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=72&q=70&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=72&q=70&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=72&q=70&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=72&q=70&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=72&q=70&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=72&q=70&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=72&q=70&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=72&q=70&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1548142813-c348350df52b?w=72&q=70&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=72&q=70&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=72&q=70&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=72&q=70&fit=crop&crop=face'
+  ];
+  var preloadPromises = preloadUrls.map(function(u){
+    return new Promise(function(resolve){
+      var i = new Image();
+      i.onload  = function(){ resolve(true); };
+      i.onerror = function(){ resolve(false); };
+      i.src = u;
+    });
+  });
+  // Auch das Logo vorladen
+  preloadPromises.push(new Promise(function(resolve){
+    var i = new Image();
+    i.onload = function(){ resolve(true); };
+    i.onerror = function(){ resolve(false); };
+    i.src = 'assets/kiq-logo-clean.png';
+  }));
 
-  // Animations-State-Machine Timing (ms) — ~20s Total-Cycle, ~13s Foto-Phase
-  var T_EXPLODE    = 900;
-  var T_HOLD       = 3000;
-  var T_REASSEMBLE = 1000;
-  var T_ASSEMBLED  = 15000;
+  if (reduce) return;
+
+  // GPU-Hinweise für flüssige Animation
+  wrap.style.willChange = 'transform';
+  host.style.willChange = 'transform';
+
+  // Animations-Timing — Fotos sind WÄHREND Explosion sichtbar
+  var T_EXPLODE    = 250;    // Fotos haben 250ms Vorlauf, dann fliegt der Würfel auseinander
+  var T_EXPLODED   = T_EXPLODE + 850;
+  var T_HOLD       = 3800;
+  var T_REASSEMBLE = T_EXPLODED + T_HOLD;
+  var T_DONE       = T_REASSEMBLE + 1000;
+  var T_PHOTO_OUT  = T_DONE + 350;
+  var T_CYCLE      = T_PHOTO_OUT + 7500;
 
   function cycle() {
-    // Phase 1 — Explodieren
-    wrap.classList.add('sc-exploding');
+    // 1. Fotos sofort einblenden + Logo "fährt aus"
+    wrap.classList.add('sc-show-photos');
+    host.classList.add('sc-photos-on');
 
+    // 2. Explosion startet — Würfel fliegt mit Fotos auseinander
     setTimeout(function() {
-      // Phase 2 — Exploded: Lupe einblenden
+      wrap.classList.add('sc-exploding');
+    }, T_EXPLODE);
+
+    // 3. Voxels exploded — Logo zoomt rein
+    setTimeout(function() {
       wrap.classList.remove('sc-exploding');
       wrap.classList.add('sc-exploded');
       host.classList.add('sc-exploded');
-    }, T_EXPLODE);
+    }, T_EXPLODED);
 
+    // 4. Reassembling
     setTimeout(function() {
-      // Phase 3 — Reassembling: Lupe ausblenden, Voxels fliegen zurück
       host.classList.remove('sc-exploded');
       wrap.classList.remove('sc-exploded');
       wrap.classList.add('sc-reassembling');
-    }, T_EXPLODE + T_HOLD);
+    }, T_REASSEMBLE);
 
+    // 5. Reassembly done
     setTimeout(function() {
-      // Phase 4 — Assembled: Normal-Rotation
       wrap.classList.remove('sc-reassembling');
-    }, T_EXPLODE + T_HOLD + T_REASSEMBLE);
+    }, T_DONE);
 
-    // Fotos einblenden (800ms nach Assembled-Start — Voxels sind ruhig)
-    var T_PHOTO_IN  = T_EXPLODE + T_HOLD + T_REASSEMBLE + 800;
-    // Fotos ausblenden (1500ms vor nächster Explosion — sanftes Fade-out)
-    var T_PHOTO_OUT = T_EXPLODE + T_HOLD + T_REASSEMBLE + T_ASSEMBLED - 1500;
-    setTimeout(function(){ wrap.classList.add('sc-show-photos'); },    T_PHOTO_IN);
-    setTimeout(function(){ wrap.classList.remove('sc-show-photos'); }, T_PHOTO_OUT);
+    // 6. Fotos ausblenden + Logo zurück auf klein
+    setTimeout(function() {
+      wrap.classList.remove('sc-show-photos');
+      host.classList.remove('sc-photos-on');
+    }, T_PHOTO_OUT);
 
-    // Nächsten Zyklus planen
-    setTimeout(cycle, T_EXPLODE + T_HOLD + T_REASSEMBLE + T_ASSEMBLED);
+    // 7. Nächsten Zyklus planen
+    setTimeout(cycle, T_CYCLE);
   }
 
-  // Erster Zyklus startet nach 2.5s — Würfel dreht sich erst kurz
-  setTimeout(cycle, 2500);
+  // Erster Zyklus erst wenn alle Bilder geladen sind (max 4s warten)
+  var loadTimeout = setTimeout(function(){
+    if (typeof startedCycle === 'undefined') {
+      startedCycle = true;
+      cycle();
+    }
+  }, 4000);
+  var startedCycle = false;
+  Promise.all(preloadPromises).then(function(){
+    if (startedCycle) return;
+    startedCycle = true;
+    clearTimeout(loadTimeout);
+    // Kurzer Anlauf: Würfel dreht sich erst 2s sichtbar
+    setTimeout(cycle, 1800);
+  });
 
   // ── Sichtbarkeits-Tracking: CSS-Rotation pausieren wenn Cube nicht im Viewport ──
   var stage = document.querySelector('.sc-cube-stage');
@@ -3462,7 +3558,9 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 /* Number */
 .pain-big {
   font-family: var(--font-display);
-  font-size: clamp(52px, 7vw, 96px);
+  font-size: clamp(36px, 5vw, 80px);
+  display: block;
+  white-space: nowrap;
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.9;
@@ -6166,8 +6264,8 @@ window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 </script>
 
 <script>
-  // Cursor glow
-  const glow = document.getElementById('cursorGlow');
+  // Cursor glow — removed
+  const glow = null;
   document.addEventListener('mousemove', (e) => {
     if (glow) {
       glow.style.left = e.clientX + 'px';

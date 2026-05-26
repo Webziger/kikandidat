@@ -108,6 +108,66 @@
     .pos-row { grid-template-columns: 1fr 1fr; gap: 8px; }
     .pos-row > *:nth-child(n+5) { display: none; }
   }
+
+  /* ── Branch Hero Photo Background ─────────────────────── */
+  .branch-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+    padding-top: 48px;
+  }
+  .branch-hero-photo-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .branch-hero-photo-bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    filter: brightness(0.55) saturate(0.40);
+  }
+  .branch-hero-photo-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(108deg,
+        rgba(245,241,232,0.97) 0%,
+        rgba(245,241,232,0.88) 38%,
+        rgba(245,241,232,0.50) 62%,
+        rgba(245,241,232,0.80) 100%),
+      linear-gradient(180deg,
+        rgba(245,241,232,0.10) 40%,
+        rgba(245,241,232,0.98) 100%);
+  }
+  .branch-hero .container { position: relative; z-index: 2; }
+  .branch-hero-grid { position: relative; z-index: 2; }
+
+  /* ── Branch page readability fixes ────────────────────── */
+  .branch-stat .v { color: var(--fg) !important; }
+  .branch-stat .l { color: var(--fg-dim) !important; }
+  .role { background: var(--bg-elev) !important; }
+  .role:hover { background: var(--bg-elev-2) !important; }
+  .role-name { color: var(--fg) !important; }
+  .role-desc { color: var(--fg-muted) !important; }
+  .role-num { color: var(--fg-dim) !important; }
+  .role-pool { color: var(--accent) !important; background: var(--accent-soft) !important; }
+  .role-meta { color: var(--fg-dim) !important; border-color: var(--line) !important; }
+  .role-meta .x { color: var(--fg) !important; }
+
+  /* Dark sections on branch pages */
+  .section-dark-branch {
+    background: linear-gradient(160deg, #06101E 0%, #070C1A 60%, #050B16 100%);
+    color: #F0EBE0;
+    position: relative;
+  }
+  .section-dark-branch h2,
+  .section-dark-branch .h2 { color: #F0EBE0 !important; }
+  .section-dark-branch .lead,
+  .section-dark-branch p { color: rgba(245,241,232,0.70) !important; }
+  .section-dark-branch .eyebrow { color: #D4881E !important; }
+  .section-dark-branch .eyebrow::before { background: #D4881E !important; }
+
 </style>
 </head>
 <body>
@@ -129,6 +189,9 @@
 
 <!-- Hero -->
 <section class="branch-hero">
+  <div class="branch-hero-photo-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=75&auto=format&fit=crop" alt="" loading="eager" fetchpriority="high" />
+  </div>
   <div class="container">
     <div class="branch-hero-grid">
       <div>
@@ -540,7 +603,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 <!-- Dev-only: React + Babel for Tweaks panel (localhost only) -->
 <script src="js/chrome.js" defer></script>
 <script>
-  RG.mountChrome('industries');
+  if(typeof RG!=='undefined')RG.mountChrome('industries');
 </script>
 
 <script src="js/page-polish.js" defer></script>

@@ -18,7 +18,6 @@
         </div>
         <div class="nav-sep"></div>
         <div class="nav-cta">
-          <a href="kontakt.html" class="btn btn-ghost">Anmelden</a>
           <a href="kontakt.html" class="btn btn-primary btn-arrow">Demo anfragen</a>
         </div>
         <button class="nav-hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">

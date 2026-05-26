@@ -15,19 +15,7 @@
   }
   window.addEventListener('scroll', updateBar, { passive: true });
 
-  /* ── Custom cursor ────────────────────────────────────────── */
-  if (window.innerWidth > 900 && !reduced) {
-    const dot  = document.createElement('div'); dot.id = 'kiq-cursor';
-    const ring = document.createElement('div'); ring.id = 'kiq-cursor-ring';
-    document.body.append(dot, ring);
-    let mx = -100, my = -100, rx = -100, ry = -100;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
-    (function lag() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(lag); })();
-    document.querySelectorAll('a, button, .btn, .br-card, .job, .value, .person, .loc').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
-  }
+  /* ── Custom cursor — disabled ─────────────────────────────── */
 
   /* ── IntersectionObserver helper ─────────────────────────── */
   function onVisible(el, cb, thr = 0.1) {

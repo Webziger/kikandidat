@@ -241,7 +241,7 @@
 window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};</script>
 <!-- Dev-only: React + Babel for Tweaks panel (localhost only) -->
 <script src="js/chrome.js" defer></script>
-<script>RG.mountChrome('');</script>
+<script>if(typeof RG!=='undefined')RG.mountChrome('');</script>
 <script src="js/page-polish.js" defer></script>
 </body>
 </html>

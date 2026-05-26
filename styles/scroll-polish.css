@@ -40,37 +40,13 @@ body {
   box-shadow: 0 0 8px rgba(122,82,0,0.5);
 }
 
-/* ── Custom cursor ─────────────────────────────────────────── */
-#kiq-cursor {
-  position: fixed;
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--accent);
-  pointer-events: none;
-  z-index: 9998;
-  mix-blend-mode: screen;
-  transform: translate(-50%,-50%);
-  transition: width .2s ease, height .2s ease, opacity .2s ease;
-  opacity: 0;
-}
-#kiq-cursor-ring {
-  position: fixed;
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(122,82,0,0.5);
-  pointer-events: none;
-  z-index: 9997;
-  transform: translate(-50%,-50%);
-  transition: width .3s ease, height .3s ease, border-color .3s ease, transform .08s linear;
-  opacity: 0;
-}
+/* ── Custom cursor — disabled ────────────────────────────── */
+#kiq-cursor,
+#kiq-cursor-ring,
 body:hover #kiq-cursor,
-body:hover #kiq-cursor-ring { opacity: 1; }
-body.cursor-hover #kiq-cursor { width: 20px; height: 20px; }
-body.cursor-hover #kiq-cursor-ring { width: 52px; height: 52px; border-color: rgba(122,82,0,0.8); }
-@media (max-width: 900px) {
-  #kiq-cursor, #kiq-cursor-ring { display: none; }
-}
+body:hover #kiq-cursor-ring,
+body.cursor-hover #kiq-cursor,
+body.cursor-hover #kiq-cursor-ring { display: none !important; opacity: 0 !important; }
 
 /* ── Section 3D reveal (base, already in home.js but enhanced) */
 .s3d {

@@ -571,7 +571,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};</script>
 <script src="js/page-polish.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  if (window.RG) RG.mountChrome('contact');
+  if (window.RG) if(typeof RG!=='undefined')RG.mountChrome('contact');
 
   /* Float labels */
   document.querySelectorAll('.field-input, .field-textarea').forEach(function (f) {

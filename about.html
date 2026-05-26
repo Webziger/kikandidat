@@ -378,7 +378,7 @@
 <script>window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"dark","accent":"cyan","density":"comfortable","headline_variant":"A"}/*EDITMODE-END*/;
 window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};</script>
 <script src="js/chrome.js" defer></script>
-<script>document.addEventListener('DOMContentLoaded', function() { if (window.RG) RG.mountChrome('about'); });</script>
+<script>document.addEventListener('DOMContentLoaded', function() { if (window.RG) if(typeof RG!=='undefined')RG.mountChrome('about'); });</script>
 <script src="js/page-polish.js" defer></script>
 </body>
 </html>
