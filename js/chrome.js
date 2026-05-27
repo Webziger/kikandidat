@@ -1,6 +1,4 @@
-/* Shared layout: nav + footer + reveal observer + tweaks bridge */
 (function(){
-  // ============ NAV ============
   function buildNav(active) {
     return `
     <nav class="nav">
@@ -35,8 +33,6 @@
       <a href="kontakt.html" class="btn btn-primary btn-arrow" style="margin-top:8px">Demo anfragen</a>
     </div>`;
   }
-
-  // ============ FOOTER ============
   function buildFooter() {
     return `
     <footer class="footer">
@@ -107,7 +103,6 @@
       </div>
     </footer>`;
   }
-
   window.RG = window.RG || {};
   window.RG.mountChrome = function(activeKey) {
     const navMount = document.getElementById('nav-mount');
@@ -115,7 +110,6 @@
     if (navMount) navMount.outerHTML = buildNav(activeKey);
     if (footMount) {
       footMount.outerHTML = buildFooter();
-      // scroll-polish.js runs before this mounts the footer, so we re-attach the observer here
       var foot = document.querySelector('.footer');
       if (foot) {
         if ('IntersectionObserver' in window) {
@@ -127,7 +121,6 @@
         }
       }
     }
-    // Init hamburger after DOM update
     const btn = document.querySelector('.nav-hamburger');
     const drawer = document.getElementById('mobileNav');
     const closeBtn = drawer && drawer.querySelector('.mobile-nav-close');
@@ -149,8 +142,6 @@
       }));
     }
   };
-
-  // ============ Reveal on scroll ============
   function initReveals() {
     const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
     if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
@@ -159,11 +150,8 @@
     }, { threshold: 0.01, rootMargin: '0px 0px 120px 0px' });
     els.forEach(e => io.observe(e));
   }
-
-  // ============ Apply theme + accent from localStorage / tweaks ============
   function applyTweaks(t) {
     const root = document.documentElement;
-    // Site is always light — no theme toggle needed
     if (t.accent) {
       const presets = {
         cyan:   { a: '#E8C97A', a2: '#C7A24A', soft: 'rgba(232,201,122,0.10)', glow: 'rgba(232,201,122,0.40)' },
@@ -186,7 +174,6 @@
     }
   }
   window.RG.applyTweaks = applyTweaks;
-
   document.addEventListener('DOMContentLoaded', () => {
     initReveals();
   });

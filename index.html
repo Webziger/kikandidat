@@ -37,20 +37,17 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 <link rel="alternate" hreflang="x-default" href="https://ki-kandidat.de/" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-<link rel="preconnect" href="https://images.unsplash.com" crossorigin />
-<link rel="dns-prefetch" href="https://images.unsplash.com" />
-<link rel="preconnect" href="https://unpkg.com" crossorigin />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=1600&q=75&auto=format&fit=crop&crop=center" fetchpriority="high" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" /><link rel="preload" href="/assets/fonts/BricolageGrotesque-300-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/PlusJakartaSans-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/styles/fonts.css?v=20260526" />
+<link rel="preload" as="image" href="assets/img/photo-1677756119517-756a188d2d94-1600.webp" fetchpriority="high" />
 <link rel="stylesheet" href="styles/tokens.css?v=20260521h" />
 <link rel="stylesheet" href="styles/components.css?v=20260521h" />
 <link rel="stylesheet" href="styles/mobile.css" />
 <link rel="stylesheet" href="styles/scroll-polish.css?v=1" />
 <link rel="stylesheet" href="styles/design-refresh.css?v=20260521" />
 <link rel="stylesheet" href="styles/light-sections.css" />
+<link rel="stylesheet" href="/styles/premium-polish.css?v=20260526" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -827,27 +824,27 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   }
   /* Pain section — office/team photo */
   .section-pain-bg::before {
-    background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2000');
+    background-image: url('assets/img/photo-1542744173-8e7e53415bb0-1600.webp');
     opacity: 0.08;
   }
   /* Pillars — tech/data center */
   .section-pillars-bg::before {
-    background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000');
+    background-image: url('assets/img/photo-1558494949-ef010cbdcc31-1600.webp');
     opacity: 0.06;
   }
   /* Process — workflow/handshake */
   .section-process-bg::before {
-    background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2000');
+    background-image: url('assets/img/photo-1600880292203-757bb62b4baf-1600.webp');
     opacity: 0.07;
   }
   /* Testimonials — people */
   .section-testi-bg::before {
-    background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000');
+    background-image: url('assets/img/photo-1521737604893-d14cc237f11d-1600.webp');
     opacity: 0.06;
   }
   /* CTA — abstract city night */
   .section-cta-bg::before {
-    background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2000');
+    background-image: url('assets/img/photo-1477959858617-67f85cf4f1df-1600.webp');
     opacity: 0.12;
     mix-blend-mode: screen;
   }
@@ -879,7 +876,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
     content: '';
     position: absolute;
     inset: 0;
-    background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000') center/cover;
+    background: url('assets/img/photo-1550751827-4bd374c3f58b-1600.webp') center/cover;
     opacity: 0.05;
     mix-blend-mode: screen;
     z-index: 0;
@@ -1140,18 +1137,18 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   .industry-tile:hover::before { opacity: 1; }
   .industry-tile:hover::after  { opacity: 1; }
   .industry-tile > * { position: relative; z-index: 1; }
-  .industry-tile[data-img='bau']::before      { background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=60&w=400'); }
-  .industry-tile[data-img='handwerk']::before { background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=60&w=400'); }
-  .industry-tile[data-img='industrie']::before{ background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=60&w=400'); }
-  .industry-tile[data-img='it']::before       { background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=60&w=400'); }
-  .industry-tile[data-img='pflege']::before   { background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=60&w=400'); }
-  .industry-tile[data-img='logistik']::before { background-image: url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=60&w=400'); }
-  .industry-tile[data-img='handel']::before   { background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=60&w=400'); }
-  .industry-tile[data-img='finanzen']::before { background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=60&w=400'); }
-  .industry-tile[data-img='energie']::before  { background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=60&w=400'); }
-  .industry-tile[data-img='hotellerie']::before{ background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=60&w=400'); }
-  .industry-tile[data-img='beratung']::before { background-image: url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=60&w=400'); }
-  .industry-tile[data-img='immobilien']::before{ background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=60&w=400'); }
+  .industry-tile[data-img='bau']::before      { background-image: url('assets/img/photo-1504307651254-35680f356dfd-800.webp'); }
+  .industry-tile[data-img='handwerk']::before { background-image: url('assets/img/photo-1581092918056-0c4c3acd3789-800.webp'); }
+  .industry-tile[data-img='industrie']::before{ background-image: url('assets/img/photo-1518770660439-4636190af475-800.webp'); }
+  .industry-tile[data-img='it']::before       { background-image: url('assets/img/photo-1461749280684-dccba630e2f6-800.webp'); }
+  .industry-tile[data-img='pflege']::before   { background-image: url('assets/img/photo-1576091160399-112ba8d25d1d-800.webp'); }
+  .industry-tile[data-img='logistik']::before { background-image: url('assets/img/photo-1587293852726-70cdb56c2866-800.webp'); }
+  .industry-tile[data-img='handel']::before   { background-image: url('assets/img/photo-1563013544-824ae1b704d3-800.webp'); }
+  .industry-tile[data-img='finanzen']::before { background-image: url('assets/img/photo-1611974789855-9c2a0a7236a3-800.webp'); }
+  .industry-tile[data-img='energie']::before  { background-image: url('assets/img/photo-1466611653911-95081537e5b7-800.webp'); }
+  .industry-tile[data-img='hotellerie']::before{ background-image: url('assets/img/photo-1566073771259-6a8506099945-800.webp'); }
+  .industry-tile[data-img='beratung']::before { background-image: url('assets/img/photo-1600880292089-90a7e086ee0c-800.webp'); }
+  .industry-tile[data-img='immobilien']::before{ background-image: url('assets/img/photo-1560518883-ce09059eeffa-800.webp'); }
   .industry-tile:hover {
     transform: translateY(-6px) scale(1.02) !important;
     border-color: rgba(37,99,235,0.35) !important;
@@ -1197,7 +1194,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 
   <!-- AI Robot background -->
   <div class="hero-photo-bg">
-    <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=1600&q=75&auto=format&fit=crop&crop=center" alt="" class="hero-photo-img" loading="eager" fetchpriority="high" width="1600" height="900" />
+    <img src="assets/img/photo-1677756119517-756a188d2d94-1600.webp" alt="" class="hero-photo-img" loading="eager" fetchpriority="high" width="1600" height="900" />
     <div class="hero-photo-grad"></div>
   </div>
 
@@ -1578,31 +1575,31 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
           <!-- Candidate rows -->
           <div class="klp-list" id="klpList">
             <div class="klp-row" data-pct="94" data-best="1">
-              <div class="klp-av" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&q=80&fit=crop&crop=face')"></div>
+              <div class="klp-av" style="background-image:url('assets/img/photo-1507003211169-0a1dd7228f2d-800.webp')"></div>
               <div class="klp-info"><div class="klp-name">M. Huber</div><div class="klp-role">SPS-Programmierer · Stuttgart</div></div>
               <div class="klp-bar-wrap"><div class="klp-bar-fill"></div></div>
               <div class="klp-pct">94%</div>
             </div>
             <div class="klp-row" data-pct="91">
-              <div class="klp-av" style="background-image:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=64&q=80&fit=crop&crop=face')"></div>
+              <div class="klp-av" style="background-image:url('assets/img/photo-1560250097-0b93528c311a-800.webp')"></div>
               <div class="klp-info"><div class="klp-name">T. Richter</div><div class="klp-role">Steuerungstechniker · Esslingen</div></div>
               <div class="klp-bar-wrap"><div class="klp-bar-fill"></div></div>
               <div class="klp-pct">91%</div>
             </div>
             <div class="klp-row" data-pct="88">
-              <div class="klp-av" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=64&q=80&fit=crop&crop=face')"></div>
+              <div class="klp-av" style="background-image:url('assets/img/photo-1573496359142-b8d87734a5a2-800.webp')"></div>
               <div class="klp-info"><div class="klp-name">A. Schneider</div><div class="klp-role">Mechatronik · Waiblingen</div></div>
               <div class="klp-bar-wrap"><div class="klp-bar-fill"></div></div>
               <div class="klp-pct">88%</div>
             </div>
             <div class="klp-row" data-pct="85">
-              <div class="klp-av" style="background-image:url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&q=80&fit=crop&crop=face')"></div>
+              <div class="klp-av" style="background-image:url('assets/img/photo-1472099645785-5658abf4ff4e-800.webp')"></div>
               <div class="klp-info"><div class="klp-name">F. Bauer</div><div class="klp-role">Automatisierung · Ludwigsburg</div></div>
               <div class="klp-bar-wrap"><div class="klp-bar-fill"></div></div>
               <div class="klp-pct">85%</div>
             </div>
             <div class="klp-row" data-pct="82">
-              <div class="klp-av" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=64&q=80&fit=crop&crop=face')"></div>
+              <div class="klp-av" style="background-image:url('assets/img/photo-1580489944761-15a19d654956-800.webp')"></div>
               <div class="klp-info"><div class="klp-name">K. Wagner</div><div class="klp-role">Elektrotechnik · Böblingen</div></div>
               <div class="klp-bar-wrap"><div class="klp-bar-fill"></div></div>
               <div class="klp-pct">82%</div>
@@ -2275,10 +2272,10 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 
   <!-- Background photo layers -->
   <div class="sc-bg-layer">
-    <div class="sc-bg-slide active" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=60&fit=crop')"></div>
-    <div class="sc-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&q=60&fit=crop')"></div>
-    <div class="sc-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=60&fit=crop')"></div>
-    <div class="sc-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=60&fit=crop')"></div>
+    <div class="sc-bg-slide active" style="background-image:url('assets/img/photo-1521737604893-d14cc237f11d-1600.webp')"></div>
+    <div class="sc-bg-slide" style="background-image:url('assets/img/photo-1542744173-8e7e53415bb0-1600.webp')"></div>
+    <div class="sc-bg-slide" style="background-image:url('assets/img/photo-1518770660439-4636190af475-1600.webp')"></div>
+    <div class="sc-bg-slide" style="background-image:url('assets/img/photo-1600880292203-757bb62b4baf-1600.webp')"></div>
   </div>
   <div class="sc-overlay"></div>
 
@@ -2473,18 +2470,18 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
           if (idx > 13) idx--;                // Kern (idx=13) überspringen → 0–25
           // Professionelle Business-Headshots
           var proPhotos = [
-            'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=72&q=70&fit=crop&crop=face',
-            'https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=72&q=70&fit=crop&crop=face',
-            'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=72&q=70&fit=crop&crop=face',
-            'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=72&q=70&fit=crop&crop=face',
-            'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=72&q=70&fit=crop&crop=face',
-            'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=72&q=70&fit=crop&crop=face',
-            'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=72&q=70&fit=crop&crop=face',
-            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=72&q=70&fit=crop&crop=face',
-            'https://images.unsplash.com/photo-1548142813-c348350df52b?w=72&q=70&fit=crop&crop=face',
-            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=72&q=70&fit=crop&crop=face',
-            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=72&q=70&fit=crop&crop=face',
-            'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=72&q=70&fit=crop&crop=face'
+            'assets/img/photo-1560250097-0b93528c311a-800.webp',
+            'assets/img/photo-1573497019418-b400bb3ab074-800.webp',
+            'assets/img/photo-1519085360753-af0119f7cbe7-800.webp',
+            'assets/img/photo-1580489944761-15a19d654956-800.webp',
+            'assets/img/photo-1568602471122-7832951cc4c5-800.webp',
+            'assets/img/photo-1438761681033-6461ffad8d80-800.webp',
+            'assets/img/photo-1556157382-97eda2d62296-800.webp',
+            'assets/img/photo-1500648767791-00dcc994a43e-800.webp',
+            'assets/img/photo-1548142813-c348350df52b-800.webp',
+            'assets/img/photo-1507003211169-0a1dd7228f2d-800.webp',
+            'assets/img/photo-1472099645785-5658abf4ff4e-800.webp',
+            'assets/img/photo-1573496359142-b8d87734a5a2-800.webp'
           ];
           var photoIdx = idx % proPhotos.length;
           var pi = document.createElement('img');
@@ -2510,18 +2507,18 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 
   // Bilder vorladen UND warten bis alle bereit sind
   var preloadUrls = [
-    'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=72&q=70&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=72&q=70&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=72&q=70&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=72&q=70&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=72&q=70&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=72&q=70&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=72&q=70&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=72&q=70&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1548142813-c348350df52b?w=72&q=70&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=72&q=70&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=72&q=70&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=72&q=70&fit=crop&crop=face'
+    'assets/img/photo-1560250097-0b93528c311a-800.webp',
+    'assets/img/photo-1573497019418-b400bb3ab074-800.webp',
+    'assets/img/photo-1519085360753-af0119f7cbe7-800.webp',
+    'assets/img/photo-1580489944761-15a19d654956-800.webp',
+    'assets/img/photo-1568602471122-7832951cc4c5-800.webp',
+    'assets/img/photo-1438761681033-6461ffad8d80-800.webp',
+    'assets/img/photo-1556157382-97eda2d62296-800.webp',
+    'assets/img/photo-1500648767791-00dcc994a43e-800.webp',
+    'assets/img/photo-1548142813-c348350df52b-800.webp',
+    'assets/img/photo-1507003211169-0a1dd7228f2d-800.webp',
+    'assets/img/photo-1472099645785-5658abf4ff4e-800.webp',
+    'assets/img/photo-1573496359142-b8d87734a5a2-800.webp'
   ];
   var preloadPromises = preloadUrls.map(function(u){
     return new Promise(function(resolve){
@@ -3217,7 +3214,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
         <div class="plattform-track">
 
           <div class="plattform-slide is-active">
-            <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=600&q=75&fit=crop&crop=center" alt="KI-Matching" loading="lazy" />
+            <img src="assets/img/photo-1677756119517-756a188d2d94-800.webp" alt="KI-Matching" loading="lazy" />
             <div class="ps-overlay">
               <span class="ps-tag">01 · KI-MATCHING</span>
               <div class="ps-bottom">
@@ -3228,7 +3225,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
           </div>
 
           <div class="plattform-slide">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=75&fit=crop&crop=center" alt="Talent-Cloud" loading="lazy" />
+            <img src="assets/img/photo-1521737604893-d14cc237f11d-800.webp" alt="Talent-Cloud" loading="lazy" />
             <div class="ps-overlay">
               <span class="ps-tag">02 · TALENT-CLOUD</span>
               <div class="ps-bottom">
@@ -3239,7 +3236,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
           </div>
 
           <div class="plattform-slide">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=75&fit=crop&crop=center" alt="Sellcruiting" loading="lazy" />
+            <img src="assets/img/photo-1556761175-b413da4baf72-800.webp" alt="Sellcruiting" loading="lazy" />
             <div class="ps-overlay">
               <span class="ps-tag">03 · SELLCRUITING</span>
               <div class="ps-bottom">
@@ -3250,7 +3247,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
           </div>
 
           <div class="plattform-slide">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=75&fit=crop&crop=center" alt="Live-Analyse" loading="lazy" />
+            <img src="assets/img/photo-1551288049-bebda4e38f71-800.webp" alt="Live-Analyse" loading="lazy" />
             <div class="ps-overlay">
               <span class="ps-tag">04 · LIVE-ANALYSE</span>
               <div class="ps-bottom">
@@ -4610,9 +4607,9 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
                 <div class="lbl">Best&nbsp;Match</div>
               </div>
               <div class="app-result-list" id="pmResultList">
-                <div class="app-rc" data-av="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&q=80&fit=crop&crop=face" data-name="M. Huber" data-role="SPS-Programmierer · Stuttgart" data-pct="94%"></div>
-                <div class="app-rc" data-av="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=64&q=80&fit=crop&crop=face" data-name="T. Richter" data-role="Steuerungstechniker · Esslingen" data-pct="91%"></div>
-                <div class="app-rc" data-av="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=64&q=80&fit=crop&crop=face" data-name="A. Schneider" data-role="Mechatronik · Waiblingen" data-pct="88%"></div>
+                <div class="app-rc" data-av="assets/img/photo-1507003211169-0a1dd7228f2d-800.webp" data-name="M. Huber" data-role="SPS-Programmierer · Stuttgart" data-pct="94%"></div>
+                <div class="app-rc" data-av="assets/img/photo-1560250097-0b93528c311a-800.webp" data-name="T. Richter" data-role="Steuerungstechniker · Esslingen" data-pct="91%"></div>
+                <div class="app-rc" data-av="assets/img/photo-1573496359142-b8d87734a5a2-800.webp" data-name="A. Schneider" data-role="Mechatronik · Waiblingen" data-pct="88%"></div>
               </div>
               <div class="app-result-btn">Übergabe starten &rarr;</div>
             </div>
@@ -4919,7 +4916,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
         <div class="sell-recruiter-visual">
           <div class="sell-recruiter-photo">
             <span class="sell-recruiter-badge"><span class="dot"></span> Live · Lena · 09:24</span>
-            <img src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=900&q=80&fit=crop&crop=center" alt="Recruiterin im Gespräch" loading="lazy" decoding="async" width="900" height="600" />
+            <img src="assets/img/photo-1573497019418-b400bb3ab074-1600.webp" alt="Recruiterin im Gespräch" loading="lazy" decoding="async" width="900" height="600" />
           </div>
         </div>
       </div>
@@ -5191,7 +5188,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
     <div class="ind-grid" id="indGrid">
 
       <a class="ind-card" href="branche-bau.html" style="--ind-d:0ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1504307651254-35680f356dfd-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">01</span>
         <span class="ind-arrow">↗</span>
@@ -5202,7 +5199,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </a>
 
       <a class="ind-card" href="branche-handwerk.html" style="--ind-d:45ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1581092918056-0c4c3acd3789-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">02</span>
         <span class="ind-arrow">↗</span>
@@ -5213,7 +5210,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </a>
 
       <a class="ind-card" href="branche-industrie.html" style="--ind-d:90ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1518770660439-4636190af475-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">03</span>
         <span class="ind-arrow">↗</span>
@@ -5224,7 +5221,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </a>
 
       <a class="ind-card" href="branche-it.html" style="--ind-d:135ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1461749280684-dccba630e2f6-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">04</span>
         <span class="ind-arrow">↗</span>
@@ -5235,7 +5232,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </a>
 
       <a class="ind-card" href="branche-pflege.html" style="--ind-d:180ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1576091160399-112ba8d25d1d-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">05</span>
         <span class="ind-arrow">↗</span>
@@ -5246,7 +5243,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </a>
 
       <a class="ind-card" href="branche-logistik.html" style="--ind-d:225ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1587293852726-70cdb56c2866-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">06</span>
         <span class="ind-arrow">↗</span>
@@ -5257,7 +5254,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </a>
 
       <a class="ind-card" href="branche-handel.html" style="--ind-d:270ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1563013544-824ae1b704d3-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">07</span>
         <span class="ind-arrow">↗</span>
@@ -5268,7 +5265,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </a>
 
       <a class="ind-card" href="branche-finanzen.html" style="--ind-d:315ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1611974789855-9c2a0a7236a3-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">08</span>
         <span class="ind-arrow">↗</span>
@@ -5279,7 +5276,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </a>
 
       <a class="ind-card" href="branche-energie.html" style="--ind-d:360ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1466611653911-95081537e5b7-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">09</span>
         <span class="ind-arrow">↗</span>
@@ -5290,7 +5287,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </a>
 
       <a class="ind-card" href="branche-hotellerie.html" style="--ind-d:405ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1566073771259-6a8506099945-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">10</span>
         <span class="ind-arrow">↗</span>
@@ -5301,7 +5298,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </a>
 
       <a class="ind-card" href="branche-beratung.html" style="--ind-d:450ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1600880292089-90a7e086ee0c-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">11</span>
         <span class="ind-arrow">↗</span>
@@ -5312,7 +5309,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </a>
 
       <a class="ind-card" href="branche-immobilien.html" style="--ind-d:495ms">
-        <div class="ind-photo" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=70&w=600&fit=crop&crop=center')"></div>
+        <div class="ind-photo" style="background-image:url('assets/img/photo-1560518883-ce09059eeffa-800.webp')"></div>
         <div class="ind-grad"></div>
         <span class="ind-num">12</span>
         <span class="ind-arrow">↗</span>
@@ -5502,7 +5499,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 
 <!-- ============ BERATER ============ -->
 <section class="berater-section" data-screen-label="Berater">
-  <div class="berater-bg-photo" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80&fit=crop&crop=center');"></div>
+  <div class="berater-bg-photo" style="background-image:url('assets/img/photo-1600880292203-757bb62b4baf-1600.webp');"></div>
   <div class="container">
     <div class="berater-inner">
       <div class="berater-text reveal-left">
@@ -5535,7 +5532,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 
       <div class="berater-card reveal-right">
         <div class="berater-card-photo">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&q=80&fit=crop&crop=face" alt="Beraterin" loading="lazy" />
+          <img src="assets/img/photo-1573496359142-b8d87734a5a2-800.webp" alt="Beraterin" loading="lazy" />
         </div>
         <h3>Sandra K.</h3>
         <div class="role-label">Senior-Beraterin · Industrie &amp; Bau</div>
@@ -6212,48 +6209,6 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   }
 
   draw();
-})();
-</script>
-<!-- Tweaks state holder -->
-<script>
-window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "theme": "light",
-  "accent": "cyan",
-  "density": "comfortable",
-  "headline_variant": "A"
-}/*EDITMODE-END*/;
-</script>
-
-<script src="js/tweaks-loader.js" defer></script>
-
-<!-- Three.js loaded lazily when scan scene enters viewport -->
-<script>
-(function(){
-  var loaded=false;
-  function loadThree(){
-    if(loaded)return; loaded=true;
-    var s=document.createElement('script');
-    s.src='https://unpkg.com/three@0.160.0/build/three.min.js';
-    s.crossOrigin='anonymous';
-    s.onerror=function(){};
-    s.onload=function(){
-      var m=document.createElement('script');
-      m.src='js/magic-rings.js';
-      m.defer=true;
-      m.onerror=function(){};
-      document.head.appendChild(m);
-    };
-    document.head.appendChild(s);
-  }
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){
-      if(entries[0].isIntersecting){loadThree();io.disconnect();}
-    },{threshold:0.01});
-    document.addEventListener('DOMContentLoaded',function(){
-      var el=document.getElementById('kiqScanScene')||document.getElementById('heroRings');
-      if(el)io.observe(el); else loadThree();
-    });
-  } else { document.addEventListener('DOMContentLoaded',loadThree); }
 })();
 </script>
 <script src="js/chrome.js" defer></script>

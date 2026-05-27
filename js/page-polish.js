@@ -1,12 +1,6 @@
-/* ============================================================
-   KI-Kandidat — Page Polish (shared, alle Subpages)
-   Scroll-Reveal · Cursor · Progress · Counter · Split-Text
-   ============================================================ */
 (function () {
   'use strict';
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ── Scroll-progress ──────────────────────────────────────── */
   const bar = document.createElement('div'); bar.id = 'scroll-progress';
   document.body.prepend(bar);
   function updateBar() {
@@ -14,10 +8,6 @@
     bar.style.width = (max > 0 ? window.scrollY / max * 100 : 0) + '%';
   }
   window.addEventListener('scroll', updateBar, { passive: true });
-
-  /* ── Custom cursor — disabled ─────────────────────────────── */
-
-  /* ── IntersectionObserver helper ─────────────────────────── */
   function onVisible(el, cb, thr = 0.1) {
     if (!el) return;
     if (!('IntersectionObserver' in window)) { cb(); return; }
@@ -26,8 +16,6 @@
     }, { threshold: thr, rootMargin: '0px 0px -40px 0px' });
     io.observe(el);
   }
-
-  /* ── Stagger children ─────────────────────────────────────── */
   function staggerReveal(parent, selector, baseDelay = 0, step = 80) {
     if (!parent) return;
     const children = parent.querySelectorAll(selector);
@@ -40,8 +28,6 @@
       children.forEach(c => { c.style.opacity = '1'; c.style.transform = 'none'; });
     }, 0.05);
   }
-
-  /* ── Section heads word-split ─────────────────────────────── */
   function splitHead(head) {
     head.style.opacity = '0';
     const headings = head.querySelectorAll('.h1,.h2,.h3,.h-display');
@@ -64,17 +50,11 @@
     }, 0.08);
   }
   document.querySelectorAll('.section-head').forEach(splitHead);
-
-  /* ── Reveal classes ───────────────────────────────────────── */
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
     onVisible(el, () => el.classList.add('in'), 0.1);
   });
-
-  /* ── Stats bar stagger ────────────────────────────────────── */
   const sb = document.querySelector('.stats-bar');
   if (sb) staggerReveal(sb, '.stat', 0, 90);
-
-  /* ── Team grid stagger ────────────────────────────────────── */
   staggerReveal(document.querySelector('.team'), '.person', 0, 50);
   staggerReveal(document.querySelector('.values'), '.value', 0, 80);
   staggerReveal(document.querySelector('.locations'), '.loc', 0, 70);
@@ -84,8 +64,6 @@
   staggerReveal(document.querySelector('.contacts'), '.contact', 0, 80);
   staggerReveal(document.querySelector('.jobs'), '.job', 0, 40);
   staggerReveal(document.querySelector('.br-grid'), '.br-card', 0, 45);
-
-  /* ── Timeline items ───────────────────────────────────────── */
   const tl = document.querySelector('.timeline');
   if (tl) {
     tl.querySelectorAll('.tl-item').forEach((item, i) => {
@@ -97,16 +75,10 @@
       tl.querySelectorAll('.tl-item').forEach(item => { item.style.opacity = '1'; item.style.transform = 'none'; });
     }, 0.05);
   }
-
-  /* ── Final CTA ────────────────────────────────────────────── */
   const cta = document.querySelector('.final-cta');
   if (cta) onVisible(cta, () => cta.classList.add('in'), 0.15);
-
-  /* ── Footer ───────────────────────────────────────────────── */
   const footer = document.querySelector('.footer');
   if (footer) onVisible(footer, () => footer.classList.add('in'), 0.05);
-
-  /* ── Magnetic buttons ─────────────────────────────────────── */
   if (window.innerWidth > 900 && !reduced) {
     document.querySelectorAll('.btn-primary, .btn-ghost').forEach(btn => {
       btn.addEventListener('mousemove', e => {
@@ -116,8 +88,6 @@
       btn.addEventListener('mouseleave', () => btn.style.transform = '');
     });
   }
-
-  /* ── Smooth anchor scrolling ──────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href').slice(1);
@@ -125,5 +95,4 @@
       if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); }
     });
   });
-
 })();

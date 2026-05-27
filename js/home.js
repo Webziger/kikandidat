@@ -1,6 +1,4 @@
-/* Homepage interactions: counters, funnel reveal, stepper, KI bars */
 (function(){
-  // ===== Funnel counter animation when hero is visible =====
   function animateFunnel() {
     const stages = document.querySelectorAll('.funnel-stage');
     stages.forEach((s, i) => {
@@ -23,8 +21,6 @@
     }
     requestAnimationFrame(tick);
   }
-
-  // ===== Cloud counter ticking =====
   function startCloudCounter() {
     const v = document.getElementById('cloudV');
     const fill = document.getElementById('cloudFill');
@@ -36,8 +32,6 @@
       v.textContent = n.toLocaleString('de-DE');
     }, 1700);
     setTimeout(()=> fill.style.width = '74%', 200);
-
-    // build grid
     if (grid && grid.children.length === 0) {
       for (let i = 0; i < 64; i++) {
         const c = document.createElement('div');
@@ -47,7 +41,6 @@
         else if (r > 0.78) c.classList.add('warm');
         grid.appendChild(c);
       }
-      // pulse new cells
       setInterval(() => {
         const cells = grid.querySelectorAll('.cell');
         const idx = Math.floor(Math.random() * cells.length);
@@ -56,8 +49,6 @@
       }, 600);
     }
   }
-
-  // ===== KI bar animation =====
   function animateKiBars() {
     const fills = document.querySelectorAll('#vizKi .ki-row .f');
     fills.forEach((f, i) => {
@@ -66,8 +57,6 @@
       }, i * 180);
     });
   }
-
-  // ===== Stepper =====
   const stepData = [
     { n:'01', meta:'PHASE 1 · KICKOFF', t:'Briefing & Suchauftrag', d:'In einem 30-min Call klären wir Ihre offene Stelle, Anforderungen, Region, Gehaltsspanne und Cultural-Fit-Kriterien. Sie geben uns das "Wonach", wir definieren das "Wie".' , kpi:[{l:'AUFWAND FÜR SIE',v:'30 Min'},{l:'PHASE-DAUER',v:'Tag 0'}]},
     { n:'02', meta:'PHASE 2 · CLOUD', t:'Talent-Cloud auslesen', d:'Unser System filtert die 1.000.000+ Fachkräfte nach Qualifikation, Region und Mobilität. Wir erhalten eine erste, große Vorauswahl der grundsätzlich passenden Profile.' , kpi:[{l:'GEPRÜFT',v:'1M+ Profile'},{l:'PHASE-DAUER',v:'< 1 h'}]},
@@ -78,7 +67,6 @@
     { n:'07', meta:'PHASE 7 · SELLCRUITING', t:'Persönlicher Erstkontakt', d:'Unsere Recruiter — unterstützt durch automatisierte Systeme ergänzend — sprechen jeden Top-Kandidaten persönlich an. Wir prüfen Motivation, Cultural Fit und sichern Ihr Vorstellungsgespräch.' , kpi:[{l:'PERSÖNLICH',v:'Recruiter + Automatisierung'},{l:'GESPRÄCHE/TAG',v:'~ 1.200'}]},
     { n:'08', meta:'PHASE 8 · ÜBERGABE', t:'Vorqualifizierte Kandidaten', d:'Sie erhalten ausschließlich Kandidaten, die fachlich passen, regional verfügbar sind, Ihr Angebot akzeptiert haben und ein Vorstellungsgespräch zugesagt haben. Auf Wunsch terminieren wir direkt.' , kpi:[{l:'AKZEPTIERT',v:'100%'},{l:'BEREIT',v:'Vorstellungsgespräch'}]}
   ];
-
   function renderStep(i) {
     const data = stepData[i];
     if (!data) return;
@@ -98,7 +86,6 @@
       </div>
     `;
   }
-
   function initStepper() {
     const list = document.getElementById('stepList');
     if (!list) return;
@@ -116,8 +103,6 @@
     });
     renderStep(0);
   }
-
-  // ===== Init when in viewport =====
   function whenVisible(selector, cb) {
     const el = document.querySelector(selector);
     if (!el) return;
@@ -126,14 +111,9 @@
     }, { threshold: 0.3 });
     io.observe(el);
   }
-
-  // ===== KI Scoring section: live queue + match panel =====
   function initKiScoring() {
-    // Animate match panel bars
     const panel = document.getElementById('matchPanelFull');
     if (!panel) return;
-
-    // Animate match score counter
     const scoreEl = panel.querySelector('[data-count2]');
     if (scoreEl) {
       const target = parseInt(scoreEl.dataset.count2, 10);
@@ -147,15 +127,11 @@
       }
       requestAnimationFrame(tickScore);
     }
-
-    // Animate match bars
     panel.querySelectorAll('.match-row .f').forEach((f, i) => {
       setTimeout(() => {
         f.style.width = (f.dataset.mpct || 0) + '%';
       }, i * 160);
     });
-
-    // Live scoring counter ticker
     const countEl = document.getElementById('ls-count');
     const cpsEl = document.getElementById('ls-cps');
     if (countEl) {
@@ -170,8 +146,6 @@
         cpsEl.textContent = (150 + Math.floor(Math.random() * 80)).toString();
       }, 1200);
     }
-
-    // Animate ls-row bars on scroll into view
     const queue = document.getElementById('ls-queue');
     if (queue) {
       const io = new IntersectionObserver((entries, obs) => {
@@ -191,8 +165,6 @@
       io.observe(queue);
     }
   }
-
-  // ===== Reveal animation for .reveal elements =====
   function initReveal() {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -204,8 +176,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   }
-
-  // ===== Photo mosaic background — auto-scrolling marquee columns =====
   function buildMosaic() {
     const root = document.getElementById('mosaicCols');
     if (!root || root.children.length) return;
@@ -215,7 +185,7 @@
       '1576091160399-112ba8d25d1d', '1587293852726-70cdb56c2866', '1486406146926-c627a92ad1ab',
       '1556761175-5973dc0f32e7', '1497032628192-86f99bcd76bc', '1560518883-ce09059eeffa',
       '1553877522-43269d4ea984', '1573497019418-b400bb3ab074', '1600880292089-90a7e086ee0c',
-      '1497366858455-9c87cdf41d6f', '1521737852567-6949f3f9f2b5', '1611974789855-9c2a0a7236a3',
+      '1521737852567-6949f3f9f2b5', '1611974789855-9c2a0a7236a3',
       '1466611653911-95081537e5b7', '1566073771259-6a8506099945', '1551836022-aadb801c60ae',
       '1497366216548-37526070297c', '1486325212027-8081e485255e', '1559136555-9303baea8ebd',
       '1557804506-669a67965ba0', '1517048676732-d65bc937f952', '1561489413-985b06da5bee',
@@ -231,9 +201,8 @@
       const track = document.createElement('div');
       track.className = 'mosaic-track';
       const dir = c % 2 === 0 ? 'marqueeUp' : 'marqueeDown';
-      const dur = 48 + ((c * 7) % 16); // 48–64s spread per column for organic rhythm
+      const dur = 48 + ((c * 7) % 16);
       track.style.animation = `${dir} ${dur}s linear infinite`;
-      // Build tile set TWICE — duplicate is what makes the -50% loop seamless
       for (let pass = 0; pass < 2; pass++) {
         for (let i = 0; i < perCol; i++) {
           const idx = (c * 5 + i) % imgs.length;
@@ -241,7 +210,7 @@
           tile.className = 'mosaic-tile';
           const tbg = document.createElement('div');
           tbg.className = 'tile-bg';
-          tbg.style.backgroundImage = `url('https://images.unsplash.com/photo-${imgs[idx]}?w=600&q=70&fit=crop&crop=center')`;
+          tbg.style.backgroundImage = `url('assets/img/photo-${imgs[idx]}-800.webp')`;
           tile.appendChild(tbg);
           track.appendChild(tile);
         }
@@ -261,8 +230,6 @@
       io.observe(section);
     }
   }
-
-  // ===== Workflow mockup animation — Apple-look live dashboard =====
   function initWorkflow() {
     const items = document.querySelectorAll('#wfList .wf-item');
     const mainTitle = document.getElementById('wfMainTitle');
@@ -274,7 +241,6 @@
     const sparkLine = document.getElementById('wfSparkLine');
     const sparkArea = document.getElementById('wfSparkArea');
     if (!items.length || !activeName) return;
-
     const stepData = [
       { title: 'Neue Analyse', cloud: 'Suchprofil-Setup',
         active: 'Suchprofil wird erstellt', pct: 8,
@@ -283,7 +249,6 @@
           { tone:'blue',  txt:'Suchauftrag empfangen',    time:'jetzt' }
         ],
         spark: [50,50,50,50,50,50,50,50,50,50,50,50] },
-
       { title: 'Cloud-Sync', cloud: 'Cloud laden...',
         active: 'Lade KI-Kandidat Cloud', pct: 24,
         metrics: { profiles: 12500, signals: 0, score: 0 },
@@ -292,7 +257,6 @@
           { tone:'gold',  txt:'Suchprofil eingelesen',   time:'vor 2s' }
         ],
         spark: [50,52,55,58,60,62,64,66,68,70,72,74] },
-
       { title: 'Signal-Auswertung', cloud: 'KI-Scan läuft',
         active: '100+ Signale auswerten', pct: 42,
         metrics: { profiles: 29121, signals: 318, score: 71 },
@@ -302,7 +266,6 @@
           { tone:'blue',  txt:'29.121 Profile gescannt',    time:'vor 4s' }
         ],
         spark: [55,58,60,62,65,68,70,72,75,78,80,82] },
-
       { title: 'Marktanalyse', cloud: 'Wettbewerb Scan',
         active: 'Wettbewerber beobachten', pct: 56,
         metrics: { profiles: 29121, signals: 612, score: 79 },
@@ -312,7 +275,6 @@
           { tone:'blue',  txt:'Region · DACH erweitert',    time:'vor 7s' }
         ],
         spark: [60,62,65,68,72,75,78,80,82,84,86,87] },
-
       { title: 'Wechselimpulse', cloud: 'Trigger erkannt',
         active: 'Wechsel-Impulse erfassen', pct: 68,
         metrics: { profiles: 29121, signals: 612, score: 83 },
@@ -322,7 +284,6 @@
           { tone:'blue',  txt:'Gehaltsabweichung +12%',     time:'vor 6s' }
         ],
         spark: [65,68,70,72,75,78,80,82,84,86,88,90] },
-
       { title: 'Top-Kandidaten', cloud: 'Matching aktiv',
         active: 'Top-Kandidaten priorisieren', pct: 81,
         metrics: { profiles: 29121, signals: 612, score: 91 },
@@ -332,7 +293,6 @@
           { tone:'blue',  txt:'Cultural-Fit-Prüfung',       time:'vor 5s' }
         ],
         spark: [70,72,75,78,80,82,85,88,90,92,93,94] },
-
       { title: 'Sellcruiting', cloud: 'Erstkontakt läuft',
         active: 'Sellcruiting · Erstkontakt', pct: 92,
         metrics: { profiles: 29121, signals: 612, score: 94 },
@@ -342,7 +302,6 @@
           { tone:'blue',  txt:'Motivations-Check läuft',    time:'vor 8s' }
         ],
         spark: [78,80,82,85,88,90,92,94,95,96,97,97] },
-
       { title: 'Übergabe', cloud: '✓ 7 Kandidaten bereit',
         active: '7 vorqualifizierte Profile übergeben', pct: 100,
         metrics: { profiles: 29121, signals: 612, score: 97 },
@@ -353,8 +312,6 @@
         ],
         spark: [85,87,90,92,94,95,96,97,97,98,98,99] }
     ];
-
-    // Easing-cubic tweened counter
     function tweenNumber(el, to) {
       const from = parseFloat(el.dataset.val || 0);
       if (from === to) return;
@@ -373,8 +330,6 @@
       }
       requestAnimationFrame(tick);
     }
-
-    // Build sparkline SVG path strings
     function buildSparkPath(values, w = 260, h = 50, pad = 2) {
       const max = Math.max(...values), min = Math.min(...values);
       const range = max - min || 1;
@@ -388,7 +343,6 @@
       const area = line + ' L' + (w - pad).toFixed(1) + ' ' + (h - pad).toFixed(1) + ' L' + pad + ' ' + (h - pad).toFixed(1) + ' Z';
       return { line, area };
     }
-
     function setStep(i) {
       const data = stepData[i];
       if (!data) return;
@@ -399,13 +353,11 @@
       if (activeName) activeName.textContent = data.active;
       if (activePct) activePct.textContent = data.pct + '%';
       if (progressBar) progressBar.style.width = data.pct + '%';
-      // metrics — tween smoothly
       document.querySelectorAll('.wf-metric').forEach(metric => {
         const key = metric.dataset.key;
         const val = metric.querySelector('.wf-metric-val');
         if (val && data.metrics[key] != null) tweenNumber(val, data.metrics[key]);
       });
-      // feed — rebuild with stagger
       if (feed) {
         feed.innerHTML = '';
         data.events.forEach((e, idx) => {
@@ -416,21 +368,17 @@
           feed.appendChild(el);
         });
       }
-      // sparkline
       if (sparkLine && sparkArea) {
         const paths = buildSparkPath(data.spark);
         sparkLine.setAttribute('d', paths.line);
         sparkArea.setAttribute('d', paths.area);
       }
     }
-
     items.forEach((item, i) => {
       item.addEventListener('mouseenter', () => setStep(i));
       item.addEventListener('click', () => setStep(i));
     });
     setStep(2);
-
-    // Auto-cycle when section is in view
     let autoIdx = 2;
     let autoTimer = null;
     const section = document.querySelector('.workflow-section');
@@ -453,8 +401,6 @@
       io.observe(section);
     }
   }
-
-  // ===== KI-Modul "AI in action" flow — canvas particles + lens flash + match chips =====
   function initKiFlow() {
     const stage  = document.getElementById('kiFlowStage');
     const canvas = document.getElementById('kiFlowCanvas');
@@ -462,15 +408,13 @@
     if (!stage || !canvas || !orb) return;
     const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduced) return;
-
     const inputs  = ['kic-pool','kic-data','kic-region'].map(id => document.getElementById(id)).filter(Boolean);
     const outputs = ['kic-match','kic-wechsel','kic-contact'].map(id => document.getElementById(id)).filter(Boolean);
     if (!inputs.length || !outputs.length) return;
-
     const ctx = canvas.getContext('2d');
     let W = 0, H = 0, dpr = 1;
     let orbPt = { x: 0, y: 0 };
-    let inputPaths = [];   // {p0,p1,p2}
+    let inputPaths = [];
     let outputPaths = [];
     let particles = [];
     let visible = false;
@@ -478,7 +422,6 @@
     let nextEmit = inputs.map((_, i) => performance.now() + 600 + i * 700);
     const SCORES = ['92%','87%','94%','89%','96%','91%','88%','93%'];
     let scoreIdx = 0;
-
     function rectToStageCoords(el) {
       const s = stage.getBoundingClientRect();
       const r = el.getBoundingClientRect();
@@ -491,7 +434,6 @@
         bottom:r.bottom - s.top
       };
     }
-
     function recompute() {
       const s = stage.getBoundingClientRect();
       W = s.width; H = s.height;
@@ -501,15 +443,12 @@
       canvas.style.width  = W + 'px';
       canvas.style.height = H + 'px';
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
       const o = rectToStageCoords(orb);
       orbPt = { x: o.cx, y: o.cy };
-
       inputPaths = inputs.map(el => {
         const r = rectToStageCoords(el);
         const p0 = { x: r.right - 6, y: r.cy };
         const p2 = { x: orbPt.x,     y: orbPt.y };
-        // Control point: pull toward orb, slight vertical offset
         const p1 = { x: (p0.x + p2.x) / 2 + (p2.x - p0.x) * 0.10, y: (p0.y + p2.y) / 2 - 18 };
         return { el, p0, p1, p2 };
       });
@@ -521,7 +460,6 @@
         return { el, p0, p1, p2 };
       });
     }
-
     function bezierAt(p, t) {
       const u = 1 - t;
       return {
@@ -529,7 +467,6 @@
         y: u*u*p.p0.y + 2*u*t*p.p1.y + t*t*p.p2.y
       };
     }
-
     function emitInput(i) {
       if (particles.length >= 14) return;
       particles.push({ kind: 'in', pathIdx: i, t: 0, speed: 0.0011 + Math.random() * 0.0004, born: performance.now() });
@@ -538,7 +475,6 @@
       if (particles.length >= 14) return;
       particles.push({ kind: 'out', pathIdx: targetIdx, t: 0, speed: 0.0010 + Math.random() * 0.0004, born: performance.now() });
     }
-
     function spawnChip(card, label) {
       const r = card.getBoundingClientRect();
       const s = stage.getBoundingClientRect();
@@ -550,13 +486,11 @@
       stage.appendChild(chip);
       setTimeout(() => chip.remove(), 1500);
     }
-
     function flashOrb() {
       orb.classList.add('scanning', 'focused');
       setTimeout(() => orb.classList.remove('scanning'), 600);
       setTimeout(() => orb.classList.remove('focused'),  500);
     }
-
     function drawConnections() {
       ctx.lineWidth = 1;
       ctx.strokeStyle = 'rgba(232,201,122,0.10)';
@@ -567,11 +501,9 @@
         ctx.stroke();
       });
     }
-
     function drawParticle(p) {
       const path = p.kind === 'in' ? inputPaths[p.pathIdx] : outputPaths[p.pathIdx];
       if (!path) return;
-      // Trail: a few prior positions
       for (let i = 0; i < 5; i++) {
         const tt = Math.max(0, p.t - i * 0.025);
         const pos = bezierAt(path, tt);
@@ -583,7 +515,6 @@
         ctx.arc(pos.x, pos.y, 2.2 - i * 0.3, 0, Math.PI * 2);
         ctx.fill();
       }
-      // Head
       const head = bezierAt(path, p.t);
       ctx.beginPath();
       ctx.fillStyle = p.kind === 'in' ? 'rgba(255,230,170,0.95)' : 'rgba(255,210,140,1)';
@@ -593,33 +524,26 @@
       ctx.fill();
       ctx.shadowBlur = 0;
     }
-
     function tick(now) {
       if (!visible) return;
       frame++;
       window.__kiFrameCount = (window.__kiFrameCount || 0) + 1;
       ctx.clearRect(0, 0, W, H);
       drawConnections();
-
-      // Spawn inputs on per-card schedule
       for (let i = 0; i < inputs.length; i++) {
         if (now >= nextEmit[i]) {
           emitInput(i);
           nextEmit[i] = now + 1800 + Math.random() * 800;
         }
       }
-
-      // Advance & render particles
       for (let i = particles.length - 1; i >= 0; i--) {
         const p = particles[i];
-        p.t += p.speed * 16; // ~60fps assumption; ok for visual
+        p.t += p.speed * 16;
         if (p.t >= 1) {
           if (p.kind === 'in') {
             flashOrb();
-            // queue an output particle 500-800ms later toward a random output
             setTimeout(() => emitOutput(Math.floor(Math.random() * outputs.length)), 500 + Math.random() * 300);
           } else {
-            // arrived at output card: ping + chip
             const card = outputs[p.pathIdx];
             card.classList.add('pinged');
             setTimeout(() => card.classList.remove('pinged'), 800);
@@ -632,11 +556,9 @@
       }
       requestAnimationFrame(tick);
     }
-
     recompute();
     window.addEventListener('resize', () => requestAnimationFrame(recompute), { passive: true });
     window.addEventListener('scroll', () => requestAnimationFrame(recompute), { passive: true });
-
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver(entries => {
         entries.forEach(e => {
@@ -654,10 +576,6 @@
       requestAnimationFrame(tick);
     }
   }
-
-  // chromaKeyKiqLogo — removed: logo is now a transparent PNG
-
-  // ===== kiQ Constellation: nodes spread from center + lines draw progressively =====
   function initKiqConstellation() {
     const section = document.querySelector('.kiq-section');
     if (!section) return;
@@ -665,10 +583,7 @@
     if (!svg) return;
     const nodes = Array.from(section.querySelectorAll('.kiq-node'));
     if (!nodes.length) return;
-
     let activated = false;
-
-    // Compute spread vectors: translate each node FROM its position TO center so it starts at center
     function setupSpread() {
       const sr = section.getBoundingClientRect();
       const cx = sr.width / 2, cy = sr.height / 2;
@@ -681,15 +596,12 @@
         n.style.setProperty('--node-delay', `${i * 35}ms`);
       });
     }
-
     function drawLines(animate) {
       const NS = 'http://www.w3.org/2000/svg';
       const sr = section.getBoundingClientRect();
       const cx = sr.width / 2, cy = sr.height / 2;
       svg.setAttribute('viewBox', `0 0 ${sr.width} ${sr.height}`);
       while (svg.firstChild) svg.removeChild(svg.firstChild);
-
-      // ── Shared defs: glow filter for particles ─────────────────
       const defs = document.createElementNS(NS, 'defs');
       const filt = document.createElementNS(NS, 'filter');
       filt.id = 'kiqPGlow';
@@ -699,7 +611,6 @@
       blur.setAttribute('in', 'SourceGraphic'); blur.setAttribute('stdDeviation', '3');
       filt.appendChild(blur); defs.appendChild(filt);
       svg.appendChild(defs);
-
       nodes.forEach((n, i) => {
         const nr = n.getBoundingClientRect();
         const x2 = nr.left - sr.left + nr.width / 2;
@@ -707,8 +618,6 @@
         const len = Math.hypot(x2 - cx, y2 - cy);
         const isBig = n.classList.contains('big');
         const delay = i * 35 + 150;
-
-        // ── Per-line gold gradient: bright at center, fades to node ─
         const gradId = `kiqLg${i}`;
         const grad = document.createElementNS(NS, 'linearGradient');
         grad.id = gradId;
@@ -723,8 +632,6 @@
         s2.setAttribute('stop-color', 'rgba(232,201,122,0.04)');
         grad.appendChild(s1); grad.appendChild(s2);
         defs.appendChild(grad);
-
-        // ── Line ────────────────────────────────────────────────────
         const line = document.createElementNS(NS, 'line');
         line.setAttribute('x1', cx); line.setAttribute('y1', cy);
         line.setAttribute('x2', x2); line.setAttribute('y2', y2);
@@ -732,24 +639,19 @@
         line.style.stroke = `url(#${gradId})`;
         line.style.strokeWidth = isBig ? '1.2' : '0.7';
         line.style.fill = 'none';
-
         if (animate) {
           line.style.strokeDasharray = len;
           line.style.strokeDashoffset = len;
           line.style.transition = `stroke-dashoffset 0.9s cubic-bezier(0.4,0,0.2,1) ${delay}ms`;
           svg.appendChild(line);
           requestAnimationFrame(() => requestAnimationFrame(() => { line.style.strokeDashoffset = '0'; }));
-
-          // ── Flowing particle ──────────────────────────────────────
           const particleDur = Math.max(1.4, len / 165).toFixed(2);
           const particleBegin = ((delay + 970) / 1000).toFixed(2);
-
           const particle = document.createElementNS(NS, 'circle');
           particle.setAttribute('r', isBig ? '2.8' : '1.8');
           particle.setAttribute('fill', `rgba(232,201,122,${isBig ? 1 : 0.85})`);
           particle.setAttribute('filter', 'url(#kiqPGlow)');
           particle.setAttribute('opacity', '0');
-
           const motionEl = document.createElementNS(NS, 'animateMotion');
           motionEl.setAttribute('dur', `${particleDur}s`);
           motionEl.setAttribute('repeatCount', 'indefinite');
@@ -759,8 +661,6 @@
           motionEl.setAttribute('keySplines', '0.4 0 0.6 1');
           motionEl.setAttribute('path', `M${cx},${cy} L${x2},${y2}`);
           particle.appendChild(motionEl);
-
-          // Fade particle in once its line has drawn
           const fadeIn = document.createElementNS(NS, 'animate');
           fadeIn.setAttribute('attributeName', 'opacity');
           fadeIn.setAttribute('values', '0;1');
@@ -769,8 +669,6 @@
           fadeIn.setAttribute('fill', 'freeze');
           particle.appendChild(fadeIn);
           svg.appendChild(particle);
-
-          // ── Endpoint glow dot for big nodes ──────────────────────
           if (isBig) {
             const dot = document.createElementNS(NS, 'circle');
             dot.setAttribute('cx', x2); dot.setAttribute('cy', y2);
@@ -792,20 +690,15 @@
         }
       });
     }
-
     function activate() {
       if (activated) return;
       activated = true;
       setupSpread();
       drawLines(true);
-      // Slight delay before adding class so CSS vars are applied first
       requestAnimationFrame(() => requestAnimationFrame(() => section.classList.add('kiq-active')));
     }
-
-    // Initial static draw + spread vector setup
     setupSpread();
     drawLines(false);
-
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver(entries => {
         if (entries[0].isIntersecting) { activate(); io.disconnect(); }
@@ -814,52 +707,37 @@
     } else {
       activate();
     }
-
     window.addEventListener('resize', () => requestAnimationFrame(() => {
       setupSpread();
       drawLines(false);
     }));
     setTimeout(() => { setupSpread(); drawLines(activated); }, 500);
   }
-
-  // ===== Hero Scroll Effect: disabled — hero is now full-bleed photo =====
   function initHeroScrollEffect() {
-    return; // photo hero — no zoom needed
+    return;
     const wrapper = document.getElementById('heroScrollWrapper');
     const textLayer = document.getElementById('heroTextLayer');
     const scene = document.getElementById('kiqScanScene');
     const overlay = document.getElementById('heroScrollOverlay');
     if (!wrapper || !textLayer || !scene) return;
-
     let initialRect = null;
-
     function easeOut(t)    { return 1 - (1-t)*(1-t); }
     function easeInOut(t)  { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
     function lerp(a, b, t) { return a + (b - a) * t; }
-
     function computeInitial() {
-      // Hero is sticky so scene is always at same viewport position — safe to read any time
       initialRect = scene.getBoundingClientRect();
     }
-
     function update() {
       const scrolled = window.scrollY;
       const maxScroll = wrapper.offsetHeight - window.innerHeight;
       if (maxScroll <= 0) return;
       const p = Math.min(1, Math.max(0, scrolled / maxScroll));
-
-      // === TEXT: fade + slide up in first 35% of scroll ===
       const textP = easeOut(Math.min(1, p / 0.35));
       textLayer.style.opacity = (1 - textP).toFixed(3);
       textLayer.style.transform = `translateY(${(-textP * 48).toFixed(1)}px)`;
-
-      // === SCAN SCENE: start expanding at 15%, fill viewport at 100% ===
       const sceneStart = 0.15;
       const rawSceneP = Math.max(0, (p - sceneStart) / (1 - sceneStart));
       const sceneP = easeInOut(rawSceneP);
-
-      // Once animation is complete (p=1), sticky releases — clear all transforms so
-      // the scene goes back to normal flow and doesn't occlude sections below
       if (p >= 1) {
         scene.style.transform    = '';
         scene.style.borderRadius = '';
@@ -868,21 +746,15 @@
         if (overlay) overlay.style.opacity = '0';
         return;
       }
-
       if (sceneP > 0.001 && initialRect) {
         const vw = window.innerWidth, vh = window.innerHeight;
-        // Target: fill entire viewport
         const maxScale = Math.max(vw / initialRect.width, vh / initialRect.height);
         const scale = lerp(1, maxScale, sceneP);
-
-        // Move scene center to viewport center (screen-space translation)
         const cx = initialRect.left + initialRect.width / 2;
         const cy = initialRect.top + initialRect.height / 2;
         const tx = lerp(0, vw / 2 - cx, sceneP);
         const ty = lerp(0, vh / 2 - cy, sceneP);
-
         const radius = lerp(28, 0, Math.min(1, sceneP * 1.4));
-
         scene.style.transform     = `translate(${tx.toFixed(1)}px, ${ty.toFixed(1)}px) scale(${scale.toFixed(4)})`;
         scene.style.borderRadius  = `${radius.toFixed(1)}px`;
         scene.style.zIndex        = sceneP > 0.05 ? '20' : '';
@@ -892,22 +764,15 @@
         scene.style.borderRadius = '';
         scene.style.zIndex       = '';
       }
-
-      // === OVERLAY: very subtle vignette only (peaks ~15% at mid-expansion, fades to 0 when scene fills) ===
       if (overlay) overlay.style.opacity = (Math.sin(sceneP * Math.PI) * 0.15).toFixed(3);
     }
-
-    // Init on DOMContentLoaded (hero is already rendered)
     requestAnimationFrame(() => {
       computeInitial();
       update();
     });
-
     window.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
     window.addEventListener('resize', () => { computeInitial(); requestAnimationFrame(update); });
   }
-
-  // ===== Mehr Bento: animate timeline bars when in view =====
   function initMehrBento() {
     const timeCard = document.querySelector('.mb-card[data-mehr="time"]');
     if (!timeCard || !('IntersectionObserver' in window)) return;
@@ -919,8 +784,6 @@
     }, { threshold: 0.4 });
     io.observe(timeCard);
   }
-
-  // ===== kiQ Scan Scene: radar sweep + match cycling =====
   function initKiqScanScene() {
     const scene = document.getElementById('kiqScanScene');
     if (!scene) return;
@@ -929,7 +792,6 @@
     const matchName = document.getElementById('ksMatchName');
     const beamEl = scene.querySelector('.ks-beam');
     if (!chips.length || !matchEl) return;
-
     const profiles = [
       { idx: 0, name: 'M. Huber', score: '94 %' },
       { idx: 2, name: 'T. Richter', score: '91 %' },
@@ -937,14 +799,10 @@
       { idx: 3, name: 'K. Wagner', score: '87 %' },
     ];
     let step = 0;
-
     function runCycle() {
-      // Clear all
       chips.forEach(c => c.classList.remove('active'));
       matchEl.classList.remove('visible');
-
       const p = profiles[step % profiles.length];
-      // After beam completes one revolution (~4s via CSS), highlight
       setTimeout(() => {
         chips[p.idx] && chips[p.idx].classList.add('active');
         if (matchName) matchName.textContent = p.name;
@@ -952,28 +810,19 @@
         if (scoreEl) scoreEl.textContent = p.score + ' Fit';
         matchEl.classList.add('visible');
       }, 2800);
-
-      // Hide match after 2s
       setTimeout(() => matchEl.classList.remove('visible'), 5200);
       step++;
     }
-
     runCycle();
     setInterval(runCycle, 6500);
   }
-
-  // ===== Constellation continuous drift (starts after spread animation) =====
   function startConstellationDrift() {
     const section = document.querySelector('.kiq-section');
     if (!section) return;
     const nodes = Array.from(section.querySelectorAll('.kiq-node'));
     if (!nodes.length) return;
-
-    // Wait for spread to finish, then start live drift
     setTimeout(() => {
-      // Remove transform transition so RAF can drive it smoothly
       nodes.forEach(n => { n.style.transition = 'color 0.3s ease, text-shadow 0.3s ease, opacity 0.6s ease'; });
-
       const driftParams = nodes.map((_, i) => ({
         ax: 2 + (i % 3) * 1.5,
         ay: 2 + (i % 4) * 1.2,
@@ -994,25 +843,21 @@
         requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
-    }, 2200); // wait for spread transitions
+    }, 2200);
   }
-
   document.addEventListener('DOMContentLoaded', () => {
-    // ── MagicRings hero animation ──────────────────────────────
     (function initMagicRings() {
       const wrap = document.getElementById('heroRings');
       if (!wrap || typeof MagicRingsEffect === 'undefined') return;
-      /* Outer atmospheric halo — 900×900px container inside kiqScanScene.
-         Rings at ~243–567 px from center bleed into the hero background. */
       new MagicRingsEffect(wrap, {
         color:          '#E8C97A',
-        colorTwo:       '#C7A24A',   /* warm gold, matches inner rings */
-        speed:          0.36,        /* slow drift — atmospheric */
+        colorTwo:       '#C7A24A',
+        speed:          0.36,
         ringCount:      7,
-        attenuation:    7,           /* softer fall-off → wider visible arcs */
+        attenuation:    7,
         lineThickness:  1.3,
-        baseRadius:     0.27,        /* 0.27 × 900 = 243 px — just past scan scene edge */
-        radiusStep:     0.070,       /* 63 px steps */
+        baseRadius:     0.27,
+        radiusStep:     0.070,
         scaleRate:      0.09,
         opacity:        0.68,
         noiseAmount:    0.012,
@@ -1026,8 +871,6 @@
         clickBurst:     false,
       });
     })();
-
-    // ── MagicRings radar halo ──────────────────────────────────
     (function initRadarRings() {
       const wrap = document.getElementById('ksMagicRings');
       if (!wrap || typeof MagicRingsEffect === 'undefined') return;
@@ -1053,36 +896,27 @@
         clickBurst:     false,
       });
     })();
-
-    // ── 3-D scroll reveal for all sections after hero ──────────
     (function init3DScroll() {
-      /* Hero lives inside .hero-scroll-wrapper — traverse from that */
       const hero = document.querySelector('.hero');
       if (!hero) return;
       const anchor = hero.closest('.hero-scroll-wrapper') || hero;
-
       const sections = [];
       let el = anchor.nextElementSibling;
       while (el) {
         if (el.tagName === 'SECTION') sections.push(el);
         el = el.nextElementSibling;
       }
-
       if (!sections.length) return;
-
-      /* Add animation class; will-change only while invisible */
       sections.forEach(function(s) {
         s.classList.add('s3d');
         s.style.willChange = 'transform, opacity';
       });
-
       const io = new IntersectionObserver(function(entries) {
         entries.forEach(function(e) {
           if (!e.isIntersecting) return;
           const s = e.target;
           s.classList.add('s3d-in');
           io.unobserve(s);
-          /* After animation ends: clear transform so sticky children work */
           s.addEventListener('transitionend', function cleanup(ev) {
             if (ev.propertyName !== 'opacity') return;
             s.style.willChange = 'auto';
@@ -1090,10 +924,8 @@
           });
         });
       }, { threshold: 0.04, rootMargin: '0px 0px -24px 0px' });
-
       sections.forEach(function(s) { io.observe(s); });
     })();
-
     initHeroScrollEffect();
     initMehrBento();
     startCloudCounter();

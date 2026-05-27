@@ -1,43 +1,28 @@
-/* ============================================================
-   KI-Kandidat — Scroll Polish & Animation Engine
-   Suppress sanitized CDN cross-origin errors (Three.js / Babel)
-   so they don't surface as "Script error." in the console.       */
 window.addEventListener('error', function (e) {
   if (e.message === 'Script error.' && !e.filename) { e.preventDefault(); return false; }
 }, true);
-/* Suppress sanitized cross-origin console errors (Three.js CDN) */
 (function () { var orig = window.onerror; window.onerror = function (msg, src, line, col, err) { if (msg === 'Script error.' && !src) return true; return orig ? orig(msg, src, line, col, err) : false; }; })();
 (function () {
   'use strict';
-
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ── Scroll-progress bar ─────────────────────────────────── */
   const progressBar = document.createElement('div');
   progressBar.id = 'scroll-progress';
   document.body.prepend(progressBar);
-
   function updateProgress() {
     const max = document.documentElement.scrollHeight - window.innerHeight;
     progressBar.style.width = (max > 0 ? (window.scrollY / max * 100) : 0) + '%';
   }
   window.addEventListener('scroll', updateProgress, { passive: true });
-
-  /* ── Custom cursor (desktop only) ──────────────────────────── */
   if (window.innerWidth > 900 && !reduced) {
     const dot  = document.createElement('div'); dot.id = 'kiq-cursor';
     const ring = document.createElement('div'); ring.id = 'kiq-cursor-ring';
     document.body.append(dot, ring);
-
     let mx = -100, my = -100, rx = -100, ry = -100;
-
     document.addEventListener('mousemove', e => {
       mx = e.clientX; my = e.clientY;
       dot.style.left = mx + 'px';
       dot.style.top  = my + 'px';
     });
-
-    // Ring follows with lag
     (function followRing() {
       rx += (mx - rx) * 0.12;
       ry += (my - ry) * 0.12;
@@ -45,29 +30,22 @@ window.addEventListener('error', function (e) {
       ring.style.top  = ry + 'px';
       requestAnimationFrame(followRing);
     })();
-
-    // Hover states
     document.querySelectorAll('a, button, .btn, .industry-tile, .glow-card, .pillar, .wf-item').forEach(el => {
       el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
       el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
     });
   }
-
-  /* ── Section label (bottom-right) ───────────────────────────── */
   const sectionLabel = document.createElement('div');
   sectionLabel.id = 'section-label';
   document.body.append(sectionLabel);
-
   const labeledSections = Array.from(document.querySelectorAll('section[data-screen-label]'));
   let labelTimer;
-
   function showLabel(text) {
     clearTimeout(labelTimer);
     sectionLabel.textContent = text;
     sectionLabel.classList.add('visible');
     labelTimer = setTimeout(() => sectionLabel.classList.remove('visible'), 2200);
   }
-
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -78,12 +56,9 @@ window.addEventListener('error', function (e) {
     }, { threshold: 0.3 });
     labeledSections.forEach(s => io.observe(s));
   }
-
-  /* ── Hero headline line-by-line split ──────────────────────── */
   function initHeroSplit() {
     const h1 = document.querySelector('.hero h1.h-display');
     if (!h1 || reduced) return;
-    // Wrap each <br>-separated line in .hero-line spans
     const raw = h1.innerHTML;
     const parts = raw.split(/<br\s*\/?>/i);
     h1.innerHTML = parts.map((p, i) =>
@@ -91,14 +66,8 @@ window.addEventListener('error', function (e) {
     ).join('');
   }
   initHeroSplit();
-
-  /* ── Section heads: safe reveal (no innerHTML manipulation) ── */
   function splitWords(el, baseDelay) {
-    // INTENTIONALLY EMPTY — word splitting causes data-om-id artifacts
-    // Headings animate via simple .section-head opacity/translateY instead
   }
-
-  /* ── Generic IntersectionObserver trigger ─────────────────── */
   function onVisible(el, cb, threshold = 0.15) {
     if (!el) return;
     if (!('IntersectionObserver' in window)) { cb(); return; }
@@ -109,10 +78,7 @@ window.addEventListener('error', function (e) {
     }, { threshold, rootMargin: '0px 0px -40px 0px' });
     io.observe(el);
   }
-
-  /* ── Section heads: simple fade-up reveal ─────────────────── */
-  function activateSplitWords(container) { /* no-op */ }
-
+  function activateSplitWords(container) {  }
   document.querySelectorAll('.section-head').forEach(head => {
     head.style.opacity = '0';
     head.style.transform = 'translateY(24px)';
@@ -124,74 +90,49 @@ window.addEventListener('error', function (e) {
       if (ey) { ey.classList.add('eyebrow-reveal'); setTimeout(() => ey.classList.add('in'), 80); }
     }, 0.08);
   });
-
-  /* ── Stagger: testimonials ────────────────────────────────── */
   const testimonialsWrap = document.querySelector('.testimonials');
   if (testimonialsWrap) {
     onVisible(testimonialsWrap, () => testimonialsWrap.classList.add('in'), 0.1);
   }
-
-  /* ── Stagger: stats bar ───────────────────────────────────── */
   const statsBar = document.querySelector('.stats-bar');
   if (statsBar) {
-    // Remove existing .reveal classes so our stagger takes over
     statsBar.querySelectorAll('.stat').forEach(s => s.classList.remove('reveal'));
     onVisible(statsBar, () => statsBar.classList.add('in'), 0.1);
   }
-
-  /* ── Stagger: compare table ─────────────────────────────────── */
   const compareTable = document.querySelector('.compare');
   if (compareTable) {
     onVisible(compareTable, () => compareTable.classList.add('in'), 0.1);
   }
-
-  /* ── Stagger: FAQ ──────────────────────────────────────────── */
   const faqList = document.querySelector('.faq-list');
   if (faqList) {
     onVisible(faqList, () => faqList.classList.add('in'), 0.05);
   }
-
-  /* ── Stagger: sell cards ────────────────────────────────────── */
   const sellCards = document.querySelectorAll('.sell-card');
   if (sellCards.length) {
     onVisible(document.querySelector('.sell-grid') || sellCards[0].parentElement, () => {
       sellCards.forEach(c => c.classList.add('in'));
     }, 0.1);
   }
-
-  /* ── Berater inner ──────────────────────────────────────────── */
   const beraterInner = document.querySelector('.berater-inner');
   if (beraterInner) {
     onVisible(beraterInner, () => beraterInner.classList.add('in'), 0.1);
   }
-
-  /* ── Guarantee seal spin-in ─────────────────────────────────── */
   const guaranteeBlock = document.querySelector('.guarantee');
   if (guaranteeBlock) {
     onVisible(guaranteeBlock, () => guaranteeBlock.classList.add('in'), 0.15);
   }
-
-  /* ── Feature panels (Mehr-Section) ─────────────────────────── */
   document.querySelectorAll('.feature-panels .fp').forEach((fp, i) => {
     fp.style.transitionDelay = (i * 80) + 'ms';
     onVisible(fp, () => fp.classList.add('in'), 0.1);
   });
-
-  /* ── Quellen section ─────────────────────────────────────────── */
   ['quellen-copy', 'quellen-orbital-wrap'].forEach(cls => {
     const el = document.querySelector('.' + cls);
     if (el) onVisible(el, () => el.classList.add('in'), 0.1);
   });
-
-  /* ── Final CTA ───────────────────────────────────────────────── */
   const finalCta = document.querySelector('.final-cta');
   if (finalCta) onVisible(finalCta, () => finalCta.classList.add('in'), 0.15);
-
-  /* ── Footer ──────────────────────────────────────────────────── */
   const footer = document.querySelector('.footer');
   if (footer) onVisible(footer, () => footer.classList.add('in'), 0.05);
-
-  /* ── Parallax: hero photo ────────────────────────────────────── */
   if (!reduced) {
     const heroBg = document.querySelector('.hero-photo-img');
     if (heroBg) {
@@ -201,10 +142,7 @@ window.addEventListener('error', function (e) {
         heroBg.style.transform = `translateY(${p * 60}px) scale(1.06)`;
       }, { passive: true });
     }
-
-    /* Subtle parallax on section background images */
     document.querySelectorAll('.section-photo-bg::before, .berater-bg-photo').forEach(el => {
-      // Only real DOM elements
     });
     const beraterBg = document.querySelector('.berater-bg-photo');
     if (beraterBg) {
@@ -217,8 +155,6 @@ window.addEventListener('error', function (e) {
       window.addEventListener('scroll', updateBeraterParallax, { passive: true });
     }
   }
-
-  /* ── Magnetic buttons ──────────────────────────────────────── */
   if (window.innerWidth > 900 && !reduced) {
     document.querySelectorAll('.btn-primary, .btn-ghost').forEach(btn => {
       btn.addEventListener('mousemove', e => {
@@ -232,8 +168,6 @@ window.addEventListener('error', function (e) {
       });
     });
   }
-
-  /* ── Glow cards: mouse tracking gradient ──────────────────── */
   document.querySelectorAll('.glow-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
@@ -241,8 +175,6 @@ window.addEventListener('error', function (e) {
       card.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
     });
   });
-
-  /* ── Pillar glow tracking ──────────────────────────────────── */
   document.querySelectorAll('.pillar').forEach(p => {
     p.addEventListener('mousemove', e => {
       const r = p.getBoundingClientRect();
@@ -250,8 +182,6 @@ window.addEventListener('error', function (e) {
       p.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
     });
   });
-
-  /* ── Pillar 3D tilt on hover ──────────────────────────────── */
   if (!reduced && window.innerWidth > 900) {
     document.querySelectorAll('.pillar-inner').forEach(inner => {
       const pillar = inner.closest('.pillar');
@@ -267,8 +197,6 @@ window.addEventListener('error', function (e) {
       });
     });
   }
-
-  /* ── Active nav link on scroll ───────────────────────────────── */
   function updateActiveNav() {
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section[id]');
@@ -282,8 +210,6 @@ window.addEventListener('error', function (e) {
     });
   }
   window.addEventListener('scroll', updateActiveNav, { passive: true });
-
-  /* ── Number counter animation ──────────────────────────────── */
   function countUp(el, target, duration = 1600, format = true) {
     if (reduced) { el.textContent = format ? target.toLocaleString('de-DE') : target; return; }
     const start = performance.now();
@@ -295,8 +221,6 @@ window.addEventListener('error', function (e) {
       if (t < 1) requestAnimationFrame(tick);
     })(start);
   }
-
-  /* Stats bar counters */
   if (statsBar) {
     const statEls = statsBar.querySelectorAll('[data-counter]');
     onVisible(statsBar, () => {
@@ -306,8 +230,6 @@ window.addEventListener('error', function (e) {
       });
     }, 0.3);
   }
-
-  /* ── Hero live counter tick ─────────────────────────────────── */
   const heroLiveCount = document.getElementById('heroLiveCount');
   if (heroLiveCount) {
     let n = 1041382;
@@ -316,12 +238,9 @@ window.addEventListener('error', function (e) {
       heroLiveCount.textContent = n.toLocaleString('de-DE');
     }, 2100);
   }
-
-  /* ── Marquee speed on scroll ────────────────────────────────── */
   let lastScroll = 0;
   let marqueeSpeed = 40;
   const marqueeTracks = document.querySelectorAll('.marquee-track');
-
   window.addEventListener('scroll', () => {
     const dy = Math.abs(window.scrollY - lastScroll);
     lastScroll = window.scrollY;
@@ -330,8 +249,6 @@ window.addEventListener('error', function (e) {
       t.style.animationDuration = target + 's';
     });
   }, { passive: true });
-
-  /* ── Industry tile entrance stagger ─────────────────────────── */
   const industriesGrid = document.querySelector('.industries');
   if (industriesGrid) {
     const tiles = industriesGrid.querySelectorAll('.industry-tile');
@@ -347,14 +264,11 @@ window.addEventListener('error', function (e) {
       });
     }, 0.05);
   }
-
-  /* ── Workflow section: sticky scroll observer ─────────────── */
   const wfItems = document.querySelectorAll('#wfList .wf-item');
   if (wfItems.length && !reduced) {
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          // Trigger the underlying initWorkflow highlight
           const i = parseInt(e.target.dataset.step || '1', 10) - 1;
           e.target.dispatchEvent(new MouseEvent('mouseenter', { bubbles: false }));
         }
@@ -362,8 +276,6 @@ window.addEventListener('error', function (e) {
     }, { threshold: 0.6 });
     wfItems.forEach(item => io.observe(item));
   }
-
-  /* ── Pain grid entrance ─────────────────────────────────────── */
   const painGrid = document.getElementById('painGrid');
   if (painGrid) {
     const cards = painGrid.querySelectorAll('.glow-card');
@@ -379,8 +291,6 @@ window.addEventListener('error', function (e) {
       });
     }, 0.1);
   }
-
-  /* ── Kiq constellation nodes: hover glow ───────────────────── */
   document.querySelectorAll('.kiq-node').forEach(node => {
     node.addEventListener('mouseenter', () => {
       node.style.color = 'rgba(232,201,122,0.9)';
@@ -391,8 +301,6 @@ window.addEventListener('error', function (e) {
       node.style.textShadow = '';
     });
   });
-
-  /* ── Add section label on click too ────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href').slice(1);
@@ -404,11 +312,7 @@ window.addEventListener('error', function (e) {
       }
     });
   });
-
-  /* ── Viewport orientation change: re-init ───────────────────── */
   window.addEventListener('resize', () => {
-    // Re-run progress
     updateProgress();
   });
-
 })();
