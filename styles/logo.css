@@ -1,0 +1,92 @@
+/* ============================================================
+   KI-Kandidat Logo · Shimmer + Hover
+   ============================================================ */
+
+/* Logo-Container ist <a class="logo"> mit <img class="nav-kiq-logo"> innen.
+   Beim Footer wird die gleiche Bildklasse verwendet. */
+
+.nav-kiq-logo,
+.footer-kiq-logo {
+  display: block;
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  transition:
+    filter .35s cubic-bezier(.16,1,.3,1),
+    transform .35s cubic-bezier(.16,1,.3,1);
+}
+
+/* Hover: amber glow + sanftes Skalieren (nur in Nav) */
+.nav .logo:hover .nav-kiq-logo,
+.nav-floating .logo:hover .nav-kiq-logo {
+  filter: drop-shadow(0 0 10px rgba(212,136,30,.55)) brightness(1.08);
+  transform: scale(1.02);
+}
+
+/* Shimmer-Sweep beim ersten Laden — nur Nav-Logo, Startseite */
+@keyframes kiqLogoShimmer {
+  0%   { mask-position: -100% 0; -webkit-mask-position: -100% 0; }
+  100% { mask-position:  200% 0; -webkit-mask-position:  200% 0; }
+}
+
+.nav-kiq-logo.shimmer-on-load {
+  -webkit-mask-image: linear-gradient(110deg,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 30%,
+    rgba(0,0,0,.35) 45%,
+    rgba(255,255,255,1) 50%,
+    rgba(0,0,0,.35) 55%,
+    rgba(0,0,0,1) 70%,
+    rgba(0,0,0,1) 100%);
+          mask-image: linear-gradient(110deg,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 30%,
+    rgba(0,0,0,.35) 45%,
+    rgba(255,255,255,1) 50%,
+    rgba(0,0,0,.35) 55%,
+    rgba(0,0,0,1) 70%,
+    rgba(0,0,0,1) 100%);
+  -webkit-mask-size: 250% 100%;
+          mask-size: 250% 100%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: -100% 0;
+          mask-position: -100% 0;
+  animation: kiqLogoShimmer 1.8s cubic-bezier(.22,1,.36,1) 0.4s 1 forwards;
+}
+
+/* Nach der Animation: Mask zurücknehmen, damit das Logo voll sichtbar bleibt */
+.nav-kiq-logo.shimmer-on-load.shimmer-done {
+  -webkit-mask-image: none;
+          mask-image: none;
+}
+
+/* Footer-Logo behält neutrale Helligkeit, sanftes Hover */
+.footer .logo:hover .footer-kiq-logo {
+  filter: brightness(1.12);
+  transform: scale(1.02);
+}
+
+/* Reduced Motion: keine Shimmer/Transform, Hover-Filter behalten (statisch) */
+@media (prefers-reduced-motion: reduce) {
+  .nav-kiq-logo.shimmer-on-load,
+  .nav-kiq-logo.shimmer-on-load.shimmer-done {
+    -webkit-mask-image: none;
+            mask-image: none;
+    animation: none;
+  }
+  .nav .logo:hover .nav-kiq-logo,
+  .footer .logo:hover .footer-kiq-logo {
+    transform: none;
+  }
+}
+
+/* Footer auf dunklem Hintergrund: Wordmark soll hell sein */
+.footer .footer-kiq-logo {
+  color: #F5F1E8;
+}
+
+/* Nav auf hellem Hintergrund: Wordmark dunkel */
+.nav .nav-kiq-logo {
+  color: #0A0F1C;
+}

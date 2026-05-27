@@ -1,0 +1,294 @@
+/* ============================================================
+   Platform · 3 Säulen im HiOffice-Style
+   Card 1: Dark + Amber-Badge + Globe-Viz
+   Card 2: Blue-Gradient + Datenpunkt-Network
+   Card 3: Weiß + Photo (Recruiter mit Headset)
+   ============================================================ */
+
+.platform-section,
+section.platform-section,
+section#pillars.platform-section {
+  position: relative;
+  padding: 96px 0 120px;
+  background: var(--bg, #F5F1E8) !important;
+  background-image: none !important;
+  isolation: isolate;
+}
+.platform-section::before,
+.platform-section::after { display: none !important; }
+.platform-section .section-head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.platform-section .section-head .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #B8720F;
+  margin-bottom: 18px;
+}
+.platform-section .section-head .eyebrow::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: linear-gradient(90deg, transparent, #B8720F);
+}
+.platform-section .section-head h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 3.8vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  color: var(--fg, #0A0F1C);
+  margin: 0 auto;
+  max-width: 22ch;
+}
+
+.platform-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ── Basis-Card ─────────────────────────────────────────── */
+.pcard {
+  position: relative;
+  border-radius: 28px;
+  padding: 36px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform .4s cubic-bezier(.16,1,.3,1),
+              box-shadow .4s cubic-bezier(.16,1,.3,1);
+  box-shadow: 0 10px 40px -16px rgba(10,15,28,0.18);
+}
+.pcard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px -16px rgba(10,15,28,0.34);
+}
+
+.pcard-badge {
+  align-self: flex-start;
+  display: inline-flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  z-index: 2;
+}
+.pcard h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin: 0;
+}
+.pcard p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 38ch;
+}
+.pcard-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14.5px;
+  text-decoration: none;
+  letter-spacing: -0.005em;
+  transition: gap .25s ease;
+}
+.pcard-link:hover { gap: 14px; }
+.pcard-link::after {
+  content: '→';
+  transition: transform .25s ease;
+}
+.pcard-link:hover::after { transform: translateX(2px); }
+
+/* ── Card 1: Dark + Amber ───────────────────────────────── */
+.pcard-dark {
+  background: linear-gradient(155deg, #0F1828 0%, #0A1320 60%, #060B16 100%);
+  color: #F0EBE0;
+}
+.pcard-dark .pcard-badge-amber {
+  background: linear-gradient(135deg, rgba(226,162,62,0.18), rgba(184,114,15,0.16));
+  border: 1px solid rgba(226,162,62,0.40);
+  color: #E2A23E;
+}
+.pcard-dark p { color: rgba(240,235,224,0.78); }
+.pcard-dark .pcard-link { color: #F0EBE0; }
+.pcard-dark .pcard-link:hover { color: #E2A23E; }
+
+/* Card 1 Viz: Globe-Wireframe */
+.pcard-viz-globe {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -4px 0 4px;
+  min-height: 220px;
+}
+.pcard-viz-globe svg {
+  width: 80%;
+  max-width: 240px;
+  height: auto;
+  filter: drop-shadow(0 16px 28px rgba(184,114,15,0.22));
+}
+.pcard-viz-globe .globe-ring {
+  fill: none;
+  stroke: rgba(226,162,62,0.55);
+  stroke-width: 1;
+}
+.pcard-viz-globe .globe-ring-soft {
+  fill: none;
+  stroke: rgba(226,162,62,0.22);
+  stroke-width: 0.8;
+}
+.pcard-viz-globe .globe-center {
+  fill: rgba(226,162,62,0.95);
+  filter: drop-shadow(0 0 12px rgba(226,162,62,0.7));
+}
+.pcard-viz-globe .globe-node {
+  fill: #E2A23E;
+}
+@keyframes globeRotate {
+  to { transform: rotate(360deg); }
+}
+.pcard-viz-globe .globe-orbit {
+  transform-origin: 50% 50%;
+  animation: globeRotate 28s linear infinite;
+}
+
+/* ── Card 2: Blue-Gradient + Network-Viz ────────────────── */
+.pcard-blue {
+  background:
+    radial-gradient(80% 60% at 20% 20%, rgba(96,165,250,0.32), transparent 60%),
+    linear-gradient(155deg, #1E3A8A 0%, #1D4ED8 50%, #2563EB 100%);
+  color: #F0EBE0;
+}
+.pcard-blue .pcard-badge-blue {
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.30);
+  color: #F0EBE0;
+  backdrop-filter: blur(8px);
+}
+.pcard-blue p { color: rgba(240,235,224,0.86); }
+.pcard-blue .pcard-link { color: #F0EBE0; }
+.pcard-blue .pcard-link:hover { color: #DBEAFE; }
+
+.pcard-viz-network {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -4px 0 4px;
+  min-height: 220px;
+}
+.pcard-viz-network svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+.pcard-viz-network .net-edge {
+  stroke: rgba(255,255,255,0.30);
+  stroke-width: 0.8;
+  fill: none;
+}
+.pcard-viz-network .net-node {
+  fill: rgba(255,255,255,0.92);
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
+}
+.pcard-viz-network .net-node-accent {
+  fill: #E2A23E;
+  filter: drop-shadow(0 0 12px rgba(226,162,62,0.9));
+}
+@keyframes nodePulse {
+  0%,100% { opacity: 1;   transform: scale(1); }
+  50%     { opacity: 0.6; transform: scale(0.7); }
+}
+.pcard-viz-network .net-node-pulse {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: nodePulse 2.4s ease-in-out infinite;
+}
+.pcard-viz-network .net-label {
+  fill: rgba(255,255,255,0.78);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+
+/* ── Card 3: Light + Photo ──────────────────────────────── */
+.pcard-photo {
+  background: #FFFFFF;
+  color: #0A0F1C;
+  padding: 0;
+  overflow: hidden;
+}
+.pcard-photo .pcard-viz-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  background-size: cover;
+  background-position: center;
+}
+.pcard-photo .pcard-viz-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.55) 100%);
+}
+.pcard-photo .pcard-badge-light {
+  position: absolute;
+  top: 24px; left: 24px;
+  background: rgba(15,10,5,0.85);
+  border: 1px solid rgba(245,241,232,0.15);
+  color: rgba(245,241,232,0.92);
+  backdrop-filter: blur(8px);
+  z-index: 3;
+}
+.pcard-photo-body {
+  padding: 28px 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.pcard-photo .pcard-link {
+  color: #0A0F1C;
+  margin-top: auto;
+}
+.pcard-photo .pcard-link:hover { color: #B8720F; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .platform-cards { grid-template-columns: repeat(2, 1fr); }
+  .pcard { min-height: 480px; }
+}
+@media (max-width: 720px) {
+  .platform-cards { grid-template-columns: 1fr; gap: 20px; }
+  .platform-section { padding: 64px 0 80px; }
+  .pcard { padding: 28px; min-height: 440px; }
+  .pcard h3 { font-size: 24px; }
+}
+
+/* ── Reduced Motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .pcard-viz-globe .globe-orbit,
+  .pcard-viz-network .net-node-pulse { animation: none !important; }
+  .pcard:hover { transform: none; }
+}

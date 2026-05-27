@@ -32,9 +32,11 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 <link rel="canonical" href="https://ki-kandidat.de/" />
 <link rel="alternate" hreflang="de" href="https://ki-kandidat.de/" />
 <link rel="alternate" hreflang="x-default" href="https://ki-kandidat.de/" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" /><link rel="preload" href="/assets/fonts/BricolageGrotesque-300-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/PlayfairDisplay-700-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/PlusJakartaSans-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/styles/fonts.css?v=20260526" />
 <link rel="preload" as="image" href="assets/img/photo-1677756119517-756a188d2d94-1600.webp" fetchpriority="high" />
@@ -45,6 +47,9 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 <link rel="stylesheet" href="styles/design-refresh.css?v=20260521" />
 <link rel="stylesheet" href="styles/light-sections.css" />
 <link rel="stylesheet" href="/styles/premium-polish.css?v=20260526" />
+<link rel="stylesheet" href="/styles/hero-v2.css?v=20260527" />
+<link rel="stylesheet" href="/styles/platform-cards.css?v=20260527" />
+<link rel="stylesheet" href="/styles/logo.css?v=20260527" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -54,7 +59,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       "@id": "https://ki-kandidat.de/#org",
       "name": "KI-Kandidat",
       "url": "https://ki-kandidat.de",
-      "logo": "https://ki-kandidat.de/assets/kiq-logo.png",
+      "logo": "https://ki-kandidat.de/assets/kiq-logo.svg",
       "description": "Digitale Recruiting-Agentur für den Mittelstand — KI-gestützte Personalvermittlung mit eigener Talent-Cloud und persönlicher Betreuung.",
       "address": {"@type": "PostalAddress", "addressCountry": "DE", "addressLocality": "München"},
       "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "availableLanguage": "German", "email": "hello@ki-kandidat.de"}
@@ -127,7 +132,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   "name": "KI-Kandidat GmbH",
   "description": "Digitale Recruiting-Agentur für den Mittelstand im DACH-Raum. KI-gestützte Personalvermittlung mit über 1.000.000 Fachkräften in der Talent-Cloud.",
   "url": "https://ki-kandidat.de",
-  "logo": "https://ki-kandidat.de/assets/kiq-logo.png",
+  "logo": "https://ki-kandidat.de/assets/kiq-logo.svg",
   "image": "https://ki-kandidat.de/assets/og-image.jpg",
   "telephone": "+49-89-00000000",
   "email": "hello@ki-kandidat.de",
@@ -1190,523 +1195,145 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 
 <main id="main">
 <!-- ============ HERO SCROLL WRAPPER ============ -->
-<div class="hero-scroll-wrapper" id="heroScrollWrapper">
-<!-- ============ HERO ============ -->
-<section class="hero" data-screen-label="Hero" aria-label="KI-Kandidat — Software-Recruiting">
-  <!-- Darkening overlay driven by scroll -->
-  <div class="hero-scroll-overlay" id="heroScrollOverlay"></div>
-
-  <!-- AI Robot background -->
-  <div class="hero-photo-bg">
-    <img src="assets/img/photo-1677756119517-756a188d2d94-1600.webp" alt="KI-Kandidat Recruiting-Plattform – moderne Büroatmosphäre mit digitalem Arbeitsumfeld" class="hero-photo-img" loading="eager" fetchpriority="high" width="1600" height="900" />
-    <div class="hero-photo-grad"></div>
+<!-- ============ HERO v2 ============ -->
+<section class="hero-v2" data-screen-label="Hero" aria-label="KI-Kandidat — Digitale Recruiting-Agentur für den Mittelstand">
+  <div class="hero-mosaic-bg" aria-hidden="true">
+    <div class="hero-mosaic-cols" id="heroMosaicCols"></div>
+    <div class="hero-mosaic-veil"></div>
   </div>
 
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-text-layer" id="heroTextLayer">
-        <div class="hero-meta seo-mb-32">
-          <div class="hero-live-badge">
-            <span class="dot-live"></span>
-            <span>Live &nbsp;·&nbsp; <span id="heroLiveCount">1.041.382</span> Fachkräfte im Pool</span>
-          </div>
+  <!-- Trendline-SVG-Echo -->
+  <div class="hero-trendline" aria-hidden="true">
+    <svg viewBox="0 0 1440 800" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="trendGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"  stop-color="#E2A23E" stop-opacity="0"/>
+          <stop offset="40%" stop-color="#E2A23E" stop-opacity="0.85"/>
+          <stop offset="80%" stop-color="#C78417" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#8E5708" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M0 580 C 240 540, 380 420, 520 460 S 820 600, 980 440 1240 360, 1440 280" />
+    </svg>
+  </div>
+
+  <div class="container hero-v2-grid">
+    <!-- Linke Floating-Cards -->
+    <aside class="hero-floats hero-floats-left" aria-hidden="true">
+      <div class="float-badge">+42.300 € Recruiting-Wert · pro Hire</div>
+      <div class="float-card float-card-match">
+        <div class="float-card-head">
+          <span class="dot"></span>
+          <span>Neue Match-Anfrage</span>
         </div>
-        <h1 class="h-display">
-          Stellen besetzen,<br>
-          die andere <em>nicht finden</em>.
-        </h1>
-        <p class="lead" style="margin-top:24px;font-size:clamp(17px,1.5vw,20px);line-height:1.78">
-          Eine&nbsp;Million vorqualifizierte Fachkräfte. Eigene Recruiting-KI. Persönliche Berater:innen.
-          Ihre erste Auswahl liegt nach 72&nbsp;Stunden auf dem Tisch — mit Matching-Garantie.
-        </p>
-        <div class="hero-ctas">
-          <a href="kontakt.html" class="btn btn-primary btn-arrow">Demo anfragen</a>
-          <a href="#process" class="btn btn-ghost btn-arrow">So funktioniert's</a>
+        <h4 class="float-card-title">Bauleiter · München</h4>
+        <div class="float-card-meta">SAP + 8 J. Berufserfahrung · 50 km Umkreis</div>
+      </div>
+      <div class="float-card float-card-pipeline">
+        <span class="float-arrow">→</span>
+        <div class="float-card-head">
+          <span class="dot"></span>
+          <span>Bereite Erstgespräch vor</span>
         </div>
-        <div class="hero-trust">
-          <div class="hero-trust-item">
-            <span class="num">50+</span>
-            <span class="lbl">BRANCHEN DACH-WEIT</span>
-          </div>
-          <div class="hero-trust-item">
-            <span class="num">⌀ 21 Tage</span>
-            <span class="lbl">BIS EINSTELLUNG</span>
-          </div>
-          <div class="hero-trust-item">
-            <span class="num">96 %</span>
-            <span class="lbl">CULTURAL FIT</span>
-          </div>
-          <div class="hero-trust-item">
-            <span class="num">72h</span>
-            <span class="lbl">ERSTE KANDIDATEN</span>
+        <h4 class="float-card-title">4 Kandidaten · Jan</h4>
+        <ul class="float-card-list">
+          <li>E-Mail Vorlage angepasst</li>
+          <li>Vertrag erstellt</li>
+          <li>Videolink an Team gesendet</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Mittlere Headline -->
+    <div class="hero-v2-headline">
+      <span class="hero-eyebrow">KI-Recruiting · DACH-weit</span>
+      <h1 class="hero-serif">
+        Das System hinter den
+        <em>erfolgreichsten</em>
+        <em>Mittelstand-Hires</em>
+        Deutschlands.
+      </h1>
+      <p class="hero-lead">
+        <strong>Die externe Recruiting-Abteilung</strong> für qualifizierte Fachkräfte, lukrative Mandate und eine effizientere, digitale Personalgewinnung — mit Matching-Garantie.
+      </p>
+      <div class="hero-v2-cta">
+        <a href="kontakt.html" class="btn btn-primary btn-arrow">Erstgespräch buchen</a>
+      </div>
+    </div>
+
+    <!-- Rechte Floating-Badges + Phone -->
+    <aside class="hero-floats hero-floats-right" aria-hidden="true">
+      <div class="float-badge float-badge-right">+45 Bewerber · diese Woche</div>
+      <div class="hero-phone">
+        <div class="phone-chassis">
+          <div class="phone-bezel">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-statusbar">
+                <span>13:28</span>
+                <span class="phone-statusbar-right"><span class="icn"></span></span>
+              </div>
+              <div class="phone-app-head">Ihre Bewerber</div>
+              <div class="phone-app-tabs">
+                <span class="phone-tab active">Lokal</span>
+                <span class="phone-tab">Aktiv</span>
+              </div>
+              <ul class="phone-app-list">
+                <li>
+                  <div class="avatar">MH</div>
+                  <div class="info">
+                    <div class="name">M. Huber</div>
+                    <div class="role">SPS-Programmierer · Stuttgart</div>
+                  </div>
+                  <span class="pct">94 %</span>
+                </li>
+                <li>
+                  <div class="avatar">TR</div>
+                  <div class="info">
+                    <div class="name">T. Richter</div>
+                    <div class="role">Steuerungstechniker · Esslingen</div>
+                  </div>
+                  <span class="pct">91 %</span>
+                </li>
+                <li>
+                  <div class="avatar">AS</div>
+                  <div class="info">
+                    <div class="name">A. Schneider</div>
+                    <div class="role">Mechatronik · Waiblingen</div>
+                  </div>
+                  <span class="pct">88 %</span>
+                </li>
+                <li>
+                  <div class="avatar">FB</div>
+                  <div class="info">
+                    <div class="name">F. Bauer</div>
+                    <div class="role">Automatisierung · Ludwigsburg</div>
+                  </div>
+                  <span class="pct">85 %</span>
+                </li>
+              </ul>
+              <button class="phone-cta" type="button">Mitarbeiter eingestellt</button>
+            </div>
           </div>
         </div>
       </div>
-      <!-- Hero Visualization — KI Match Engine (completely new) -->
-      <div class="kiq-engine-wrap" id="kiqEngine" aria-label="KI-Kandidat Match Engine">
-        <style>
-        /* ── KI Match Engine Panel ──────────────────────────── */
-        .kiq-engine-wrap {
-          position: relative;
-          width: 100%;
-          max-width: 500px;
-          margin: 0 auto;
-          animation: engineAppear 1.1s cubic-bezier(0.22,1,0.36,1) 0.4s both;
-          z-index: 4;
-        }
-        @keyframes engineAppear {
-          from { opacity:0; transform: translateY(40px) scale(0.94); }
-          to   { opacity:1; transform: none; }
-        }
+    </aside>
+  </div>
 
-        /* Main panel */
-        .klp {
-          background: rgba(4, 8, 20, 0.92);
-          border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 20px;
-          overflow: hidden;
-          box-shadow:
-            0 0 0 1px rgba(37,99,235,0.08),
-            0 32px 80px rgba(0,0,0,0.7),
-            0 0 60px rgba(37,99,235,0.06);
-          backdrop-filter: blur(24px);
-          -webkit-backdrop-filter: blur(24px);
-        }
-
-        /* Header bar */
-        .klp-head {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          padding: 12px 16px;
-          border-bottom: 1px solid rgba(255,255,255,0.05);
-          background: rgba(255,255,255,0.02);
-        }
-        .klp-mac { display:flex; gap:5px; }
-        .klp-mac span {
-          width: 10px; height: 10px; border-radius: 50%;
-        }
-        .klp-mac span:nth-child(1) { background: #ff5f56; }
-        .klp-mac span:nth-child(2) { background: #ffbd2e; }
-        .klp-mac span:nth-child(3) { background: #27c93f; }
-
-        /* Logo in header */
-        .klp-logo {
-          height: 28px;
-          width: auto;
-          object-fit: contain;
-          mix-blend-mode: screen;
-          margin-left: 4px;
-          display: block;
-          image-rendering: -webkit-optimize-contrast;
-        }
-
-        .klp-head-right {
-          margin-left: auto;
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          font-family: var(--font-mono);
-          font-size: 10px;
-          color: rgba(52,211,153,0.9);
-          letter-spacing: 0.06em;
-        }
-        .klp-live-dot {
-          width: 6px; height: 6px;
-          border-radius: 50%;
-          background: #34d399;
-          box-shadow: 0 0 8px #34d399;
-          animation: livePulse 1.6s ease-in-out infinite;
-        }
-        @keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
-
-        /* Search query strip */
-        .klp-query {
-          padding: 10px 16px;
-          border-bottom: 1px solid rgba(255,255,255,0.04);
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-        .klp-query-label {
-          font-family: var(--font-mono);
-          font-size: 10px;
-          color: var(--accent);
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          flex-shrink: 0;
-        }
-        .klp-query-text {
-          font-family: var(--font-mono);
-          font-size: 11px;
-          color: rgba(255,255,255,0.78);
-          overflow: hidden;
-          white-space: nowrap;
-          border-right: 1px solid var(--accent);
-          animation: typeCursor 0.8s step-end infinite;
-        }
-        @keyframes typeCursor { 0%,100%{border-color:var(--accent)} 50%{border-color:transparent} }
-
-        /* Scan progress bar */
-        .klp-scan-wrap {
-          padding: 0 16px 0;
-          padding-top: 8px;
-        }
-        .klp-scan-meta {
-          display: flex;
-          justify-content: space-between;
-          font-family: var(--font-mono);
-          font-size: 10px;
-          color: rgba(255,255,255,0.5);
-          letter-spacing: 0.05em;
-          margin-bottom: 5px;
-        }
-        .klp-scan-meta em { color: var(--accent); font-style: normal; }
-        .klp-scan-track {
-          height: 2px;
-          background: rgba(255,255,255,0.06);
-          border-radius: 1px;
-          overflow: hidden;
-          margin-bottom: 12px;
-        }
-        .klp-scan-fill {
-          height: 100%;
-          background: linear-gradient(90deg, #1D4ED8, #2563EB);
-          border-radius: 1px;
-          width: 0%;
-          box-shadow: 0 0 6px rgba(37,99,235,0.5);
-          animation: scanProgress 4s ease-in-out infinite;
-        }
-        @keyframes scanProgress {
-          0%   { width: 0%; opacity: 1; }
-          85%  { width: 100%; opacity: 1; }
-          100% { width: 100%; opacity: 0; }
-        }
-
-        /* Candidate rows */
-        .klp-list { padding: 4px 0 0; }
-        .klp-row {
-          display: grid;
-          grid-template-columns: 32px 1fr 80px 44px;
-          gap: 10px;
-          align-items: center;
-          padding: 9px 16px;
-          border-bottom: 1px solid rgba(255,255,255,0.03);
-          opacity: 0;
-          transform: translateX(16px);
-          transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), background 0.3s ease;
-        }
-        .klp-row.visible { opacity: 1; transform: none; }
-        .klp-row.best-match {
-          background: rgba(37,99,235,0.06);
-          border-bottom-color: rgba(37,99,235,0.12);
-        }
-        .klp-row.best-match .klp-pct { color: var(--accent) !important; font-weight: 700; }
-
-        .klp-av {
-          width: 32px; height: 32px;
-          border-radius: 50%;
-          background-size: cover;
-          background-position: center;
-          border: 1.5px solid rgba(255,255,255,0.08);
-          flex-shrink: 0;
-        }
-        .klp-row.best-match .klp-av {
-          border-color: rgba(37,99,235,0.5);
-          box-shadow: 0 0 10px rgba(37,99,235,0.2);
-        }
-        .klp-info { min-width: 0; }
-        .klp-name {
-          font-size: 12px;
-          font-weight: 600;
-          color: rgba(255,255,255,0.95);
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          letter-spacing: -0.01em;
-        }
-        .klp-role {
-          font-family: var(--font-mono);
-          font-size: 10px;
-          color: rgba(255,255,255,0.55);
-          letter-spacing: 0.03em;
-          margin-top: 1px;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-        .klp-bar-wrap {
-          height: 3px;
-          background: rgba(255,255,255,0.06);
-          border-radius: 2px;
-          overflow: hidden;
-        }
-        .klp-bar-fill {
-          height: 100%;
-          background: linear-gradient(90deg, rgba(37,99,235,0.5), rgba(29,78,216,0.9));
-          border-radius: 2px;
-          width: 0;
-          transition: width 0.9s cubic-bezier(0.16,1,0.3,1);
-        }
-        .klp-pct {
-          font-family: var(--font-mono);
-          font-size: 11px;
-          color: rgba(255,255,255,0.65);
-          text-align: right;
-          letter-spacing: 0.02em;
-        }
-
-        /* Match found banner */
-        .klp-match-banner {
-          margin: 10px 12px 12px;
-          border-radius: 12px;
-          background: linear-gradient(135deg, rgba(37,99,235,0.10) 0%, rgba(37,99,235,0.05) 100%);
-          border: 1px solid rgba(37,99,235,0.25);
-          padding: 12px 16px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 10px;
-          opacity: 0;
-          transform: translateY(8px) scale(0.97);
-          transition: opacity 0.5s cubic-bezier(0.34,1.56,0.64,1), transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
-          box-shadow: 0 0 30px rgba(37,99,235,0.08);
-        }
-        .klp-match-banner.show { opacity: 1; transform: none; }
-        .klp-match-left { display:flex; flex-direction:column; gap:3px; }
-        .klp-match-tag {
-          font-family: var(--font-mono);
-          font-size: 9px;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          color: var(--accent);
-        }
-        .klp-match-name {
-          font-size: 13px;
-          font-weight: 700;
-          color: rgba(255,255,255,0.96);
-          letter-spacing: -0.02em;
-        }
-        .klp-match-score {
-          font-family: var(--font-display);
-          font-size: 28px;
-          font-weight: 800;
-          letter-spacing: -0.04em;
-          background: linear-gradient(135deg, #60A5FA, #2563EB, #1D4ED8);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          line-height: 1;
-        }
-        .klp-match-sub {
-          font-family: var(--font-mono);
-          font-size: 9px;
-          color: rgba(255,255,255,0.55);
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-        }
-
-        /* Floating ambient orbs behind panel */
-        .klp-orb {
-          position: absolute;
-          border-radius: 50%;
-          filter: blur(60px);
-          pointer-events: none;
-          z-index: -1;
-        }
-        .klp-orb-1 {
-          width: 220px; height: 220px;
-          background: rgba(37,99,235,0.09);
-          top: -60px; right: -60px;
-          animation: orbFloat1 8s ease-in-out infinite;
-        }
-        .klp-orb-2 {
-          width: 180px; height: 180px;
-          background: rgba(96,165,250,0.06);
-          bottom: -40px; left: -40px;
-          animation: orbFloat2 10s ease-in-out infinite;
-        }
-        @keyframes orbFloat1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-16px,12px)} }
-        @keyframes orbFloat2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(12px,-10px)} }
-
-        /* Gentle float on whole panel */
-        .klp {
-          animation: panelFloat 6s ease-in-out infinite;
-        }
-        @keyframes panelFloat {
-          0%,100% { transform: translateY(0px); }
-          50%      { transform: translateY(-8px); }
-        }
-
-        @media (max-width:1080px) {
-          .kiq-engine-wrap { max-width: 420px; }
-        }
-        </style>
-
-        <!-- Ambient orbs -->
-        <div class="klp-orb klp-orb-1"></div>
-        <div class="klp-orb klp-orb-2"></div>
-
-        <div class="klp">
-          <!-- Header -->
-          <div class="klp-head">
-            <div class="klp-mac">
-              <span></span><span></span><span></span>
-            </div>
-            <img src="assets/kiq-logo.png" class="klp-logo" alt="KI-Kandidat" />
-            <div class="klp-head-right">
-              <div class="klp-live-dot"></div>
-              <span>KI Engine aktiv</span>
-            </div>
-          </div>
-
-          <!-- Search query -->
-          <div class="klp-query">
-            <span class="klp-query-label">Suche</span>
-            <span class="klp-query-text" id="klpQuery">SPS-Programmierer · Stuttgart · 60 km</span>
-          </div>
-
-          <!-- Scan progress -->
-          <div class="klp-scan-wrap">
-            <div class="klp-scan-meta">
-              <span>Scannt <em id="klpScanCount">1.041.382</em> Profile</span>
-              <span id="klpScanStatus">Analysiere Wechselsignale…</span>
-            </div>
-            <div class="klp-scan-track">
-              <div class="klp-scan-fill"></div>
-            </div>
-          </div>
-
-          <!-- Candidate rows -->
-          <div class="klp-list" id="klpList">
-            <div class="klp-row" data-pct="94" data-best="1">
-              <div class="klp-av" style="background-image:url('assets/img/photo-1507003211169-0a1dd7228f2d-800.webp')"></div>
-              <div class="klp-info"><div class="klp-name">M. Huber</div><div class="klp-role">SPS-Programmierer · Stuttgart</div></div>
-              <div class="klp-bar-wrap"><div class="klp-bar-fill"></div></div>
-              <div class="klp-pct">94%</div>
-            </div>
-            <div class="klp-row" data-pct="91">
-              <div class="klp-av" style="background-image:url('assets/img/photo-1560250097-0b93528c311a-800.webp')"></div>
-              <div class="klp-info"><div class="klp-name">T. Richter</div><div class="klp-role">Steuerungstechniker · Esslingen</div></div>
-              <div class="klp-bar-wrap"><div class="klp-bar-fill"></div></div>
-              <div class="klp-pct">91%</div>
-            </div>
-            <div class="klp-row" data-pct="88">
-              <div class="klp-av" style="background-image:url('assets/img/photo-1573496359142-b8d87734a5a2-800.webp')"></div>
-              <div class="klp-info"><div class="klp-name">A. Schneider</div><div class="klp-role">Mechatronik · Waiblingen</div></div>
-              <div class="klp-bar-wrap"><div class="klp-bar-fill"></div></div>
-              <div class="klp-pct">88%</div>
-            </div>
-            <div class="klp-row" data-pct="85">
-              <div class="klp-av" style="background-image:url('assets/img/photo-1472099645785-5658abf4ff4e-800.webp')"></div>
-              <div class="klp-info"><div class="klp-name">F. Bauer</div><div class="klp-role">Automatisierung · Ludwigsburg</div></div>
-              <div class="klp-bar-wrap"><div class="klp-bar-fill"></div></div>
-              <div class="klp-pct">85%</div>
-            </div>
-            <div class="klp-row" data-pct="82">
-              <div class="klp-av" style="background-image:url('assets/img/photo-1580489944761-15a19d654956-800.webp')"></div>
-              <div class="klp-info"><div class="klp-name">K. Wagner</div><div class="klp-role">Elektrotechnik · Böblingen</div></div>
-              <div class="klp-bar-wrap"><div class="klp-bar-fill"></div></div>
-              <div class="klp-pct">82%</div>
-            </div>
-          </div>
-
-          <!-- Match found banner -->
-          <div class="klp-match-banner" id="klpMatchBanner">
-            <div class="klp-match-left">
-              <div class="klp-match-tag">✦ Best Match</div>
-              <div class="klp-match-name" id="klpMatchName">M. Huber · SPS-Programmierer</div>
-              <div class="klp-match-sub">Vorqualifiziert · Termin Mo. 09:00</div>
-            </div>
-            <div>
-              <div class="klp-match-score" id="klpMatchScore">94%</div>
-            </div>
-          </div>
-
-        </div><!-- /klp -->
-      </div><!-- /kiq-engine-wrap -->
-
-      <script>
-      /* ── KI Match Engine Animation ────────────────────────── */
-      (function () {
-        var rows    = Array.from(document.querySelectorAll('.klp-row'));
-        var banner  = document.getElementById('klpMatchBanner');
-        var queryEl = document.getElementById('klpQuery');
-        var countEl = document.getElementById('klpScanCount');
-        var statusEl= document.getElementById('klpScanStatus');
-
-        var queries = [
-          'SPS-Programmierer · Stuttgart · 60 km',
-          'Bauleiter · München · 50 km',
-          'DevOps Engineer · Hamburg · Remote',
-          'Pflegefachkraft · Berlin · 40 km',
-        ];
-        var statuses = [
-          'Analysiere Wechselsignale…',
-          'Prüfe Cultural Fit…',
-          'Berechne Match-Score…',
-          'Sortiere Top-Kandidaten…',
-        ];
-
-        var qIdx = 0;
-        var scanN = 1041382;
-
-        /* Tick live counter */
-        setInterval(function () {
-          scanN += Math.floor(Math.random() * 4) + 1;
-          if (countEl) countEl.textContent = scanN.toLocaleString('de-DE');
-        }, 1800);
-
-        /* Status cycle */
-        var sIdx = 0;
-        setInterval(function () {
-          sIdx = (sIdx + 1) % statuses.length;
-          if (statusEl) statusEl.textContent = statuses[sIdx];
-        }, 2200);
-
-        /* Main animation cycle */
-        function runCycle() {
-          /* Reset */
-          rows.forEach(function (r) {
-            r.classList.remove('visible', 'best-match');
-            var bar = r.querySelector('.klp-bar-fill');
-            if (bar) bar.style.width = '0';
-          });
-          if (banner) banner.classList.remove('show');
-
-          /* Update query */
-          qIdx = (qIdx + 1) % queries.length;
-          if (queryEl) queryEl.textContent = queries[qIdx];
-
-          /* Reveal rows staggered */
-          rows.forEach(function (row, i) {
-            var pct = parseInt(row.dataset.pct || '80', 10);
-            var isBest = row.dataset.best === '1';
-            setTimeout(function () {
-              row.classList.add('visible');
-              if (isBest) row.classList.add('best-match');
-              setTimeout(function () {
-                var bar = row.querySelector('.klp-bar-fill');
-                if (bar) bar.style.width = pct + '%';
-              }, 80);
-            }, 600 + i * 320);
-          });
-
-          /* Show match banner */
-          setTimeout(function () {
-            if (banner) banner.classList.add('show');
-          }, 600 + rows.length * 320 + 400);
-        }
-
-        /* First run after panel appears */
-        setTimeout(runCycle, 1200);
-        /* Repeat every 8s */
-        setInterval(runCycle, 8000);
-      })();
-      </script>
+  <!-- Client-Trust-Row -->
+  <div class="container hero-clients">
+    <div class="hero-clients-label">630+ Kunden vertrauen KI-Kandidat</div>
+    <div class="hero-clients-row" aria-hidden="true">
+      <span>RI Recht</span>
+      <span>S / G</span>
+      <span>PREU BOHLIG</span>
+      <span>PIETSCHMANN</span>
+      <span>ONETAX</span>
+      <span>AWB</span>
     </div>
   </div>
 </section>
-</div><!-- /hero-scroll-wrapper -->
+
 
 <!-- ============ MEHR ALS NUR RECRUITING — CINEMATIC SLIDER ============ -->
 <style>
@@ -2389,11 +2016,11 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
         <!-- 27 Voxels werden per JS generiert -->
       </div>
       <div class="sc-lupe-center">
-        <img src="assets/kiq-logo-clean.png" alt="KI-Kandidat" draggable="false">
+        <img src="assets/kiq-logo.svg" alt="KI-Kandidat" draggable="false">
       </div>
     </div>
     <div class="sc-cube-caption" style="display:none">
-      <img src="assets/kiq-logo-clean.png" class="sc-cube-logo" alt="KI-Kandidat">
+      <img src="assets/kiq-logo.svg" class="sc-cube-logo" alt="KI-Kandidat">
     </div>
   </div>
 
@@ -2537,7 +2164,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
     var i = new Image();
     i.onload = function(){ resolve(true); };
     i.onerror = function(){ resolve(false); };
-    i.src = 'assets/kiq-logo-clean.png';
+    i.src = 'assets/kiq-logo.svg';
   }));
 
   if (reduce) return;
@@ -2904,7 +2531,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
           <div class="orbital-center">
             <div class="orbital-center-ring">
               <div class="orbital-center-inner">
-                <img src="assets/kiq-logo.png" alt="KI-Kandidat" class="orbital-center-logo"/>
+                <img src="assets/kiq-logo.svg" alt="KI-Kandidat" class="orbital-center-logo"/>
               </div>
               <span class="orbital-ring-pulse"></span>
               <span class="orbital-ring-pulse" style="animation-delay:1.8s"></span>
@@ -2976,7 +2603,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
           <div class="ki-lens-pulse"></div>
         </div>
         <div class="ki-logo-frame">
-          <img src="assets/kiq-logo.png" alt="KI-Kandidat" class="ki-logo-clean" width="300" height="169"/>
+          <img src="assets/kiq-logo.svg" alt="KI-Kandidat" class="ki-logo-clean" width="300" height="169"/>
         </div>
         <div class="ki-orb-label">KI-Kandidat</div>
       </div>
@@ -3756,393 +3383,94 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 </script>
 
 <!-- ============ THE 3 PILLARS ============ -->
-<section id="pillars" data-screen-label="3 pillars" aria-label="Die digitale Recruiting-Agentur — Talent-Cloud, KI-Matching, vertriebsstarker Erstkontakt" class="section-photo-bg section-pillars-bg bg-glow-grid">
+<!-- ============ PLATFORM · 3 Säulen (HiOffice-Style) ============ -->
+<section id="pillars" class="platform-section" data-screen-label="Plattform · 3 Säulen" aria-label="Plattform · Talent-Cloud, KI-Matching, Sellcruiting">
   <div class="container">
-    <div class="section-head reveal">
-      <div>
-        <span class="eyebrow">Die Plattform</span>
-        <h2 class="h2 seo-mt-16">Die digitale Recruiting-Agentur<br>für den Mittelstand.</h2>
-      </div>
-      <p class="lead">Eine Million vorqualifizierte Fachkräfte, eine eigene Matching-KI und Berater:innen, die jeden Erstkontakt persönlich führen — alle drei Bausteine greifen ab Tag&nbsp;1 ineinander.</p>
-    </div>
+    <header class="section-head reveal">
+      <span class="eyebrow">Plattform · 3 Säulen</span>
+      <h2>Wie KI-Kandidat qualifizierte Mitarbeiter für Sie einstellt.</h2>
+    </header>
 
-    <div class="pillars">
+    <div class="platform-cards">
 
-      <!-- PILLAR 1: Cloud -->
-      <div class="pillar reveal-scale rd-1">
-        <div class="pillar-inner">
-          <div>
-            <div class="pillar-tag">
-              <span style="width:6px;height:6px;background:#60a5fa;border-radius:50%;box-shadow:0 0 10px #60a5fa;"></span>
-              01 · TALENT-CLOUD
-            </div>
-            <h2 class="h2 pillar-title"><span class="accent">1.000.000+</span> Fachkräfte<br>kennen wir bereits.</h2>
-            <p class="lead" style="margin-top:16px; color: var(--fg-muted); font-size: 18px; line-height: 1.6;">
-              Während andere bei null starten, greifen Sie auf eine bestehende, strukturierte Datenbank zu.
-              Qualifikation, Region, Mobilität, Wechselstatus — <strong style="color:var(--fg);font-weight:600;">täglich aktualisiert.</strong>
-            </p>
-            <ul class="pillar-features" style="margin-top: 32px;">
-              <li>Über eine Million strukturierte DACH-Kandidatenprofile</li>
-              <li>+ 1.200 neue Registrierungen pro Tag</li>
-              <li>Tagesaktueller Abgleich mit dem regionalen Arbeitsmarkt</li>
-              <li>Strukturiert, transparent, täglich aktuell</li>
-            </ul>
-          </div>
-          <div class="pillar-viz">
-            <style>
-              /* ── 3D Cube Live-DB Panel ─────────────────────────────── */
-              .vc3d-panel{position:relative;border-radius:22px;background:linear-gradient(160deg,rgba(14,26,44,.88) 0%,rgba(8,14,28,.94) 100%);border:1.5px solid rgba(37,99,235,.32);backdrop-filter:blur(28px) saturate(1.3);-webkit-backdrop-filter:blur(28px) saturate(1.3);box-shadow:0 0 0 1px rgba(37,99,235,.06),inset 0 1px 0 rgba(255,255,255,.08),inset 0 -1px 0 rgba(0,0,0,.4),0 40px 80px -30px rgba(0,0,0,.7),0 0 80px -20px rgba(37,99,235,.18);overflow:hidden;isolation:isolate;transform-style:preserve-3d;transform:perspective(1200px) rotateY(calc(-6deg + (var(--mx,0) * 5deg))) rotateX(calc(4deg + (var(--my,0) * -3deg)));transition:transform .6s cubic-bezier(.22,1,.36,1);will-change:transform}
-              .vc3d-panel::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.04) 18%,transparent 35%);pointer-events:none;z-index:5;border-radius:22px}
-              .vc3d-panel::after{content:'';position:absolute;inset:-1px;border-radius:22px;background:linear-gradient(110deg,transparent 30%,rgba(37,99,235,.32) 50%,transparent 70%);opacity:0;transition:opacity .8s ease,transform .9s ease;pointer-events:none;z-index:6;mix-blend-mode:overlay}
-              .vc3d-panel:hover::after{opacity:1;transform:translateX(8%)}
-
-              .vc3d-bar{position:relative;z-index:2;display:flex;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid rgba(37,99,235,.1);background:linear-gradient(180deg,rgba(255,255,255,.03),transparent)}
-              .vc3d-bar .mac-dot{width:10px;height:10px;border-radius:50%;opacity:.78}
-              .vc3d-bar .mac-dot.r{background:#FF5F57;box-shadow:0 0 8px rgba(255,95,87,.4)}
-              .vc3d-bar .mac-dot.y{background:#FEBC2E;box-shadow:0 0 8px rgba(254,188,46,.4)}
-              .vc3d-bar .mac-dot.g{background:#28C840;box-shadow:0 0 8px rgba(40,200,64,.4)}
-              .vc3d-title{flex:1;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(37,99,235,.78);text-align:center}
-              .vc3d-title em{font-style:normal;color:#22c55e;margin-left:10px;font-weight:600}
-              .vc3d-latency{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:999px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;color:#22c55e;font-weight:600}
-              .vc3d-latency .dot{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;animation:vcPulse 1.6s ease-in-out infinite}
-              @keyframes vcPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
-
-              .vc3d-body{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.1fr;gap:24px;padding:24px 22px 26px;align-items:center}
-              @media(max-width:1100px){.vc3d-body{grid-template-columns:1fr;gap:20px}}
-
-              /* Live Profile-Activity Area-Chart (60s Zeitreihe) */
-              .vc3d-viz-stage{position:relative;aspect-ratio:1;width:100%;max-width:280px;margin:0 auto;background:radial-gradient(circle at 50% 60%,rgba(37,99,235,.14),rgba(37,99,235,.03) 45%,transparent 75%);border-radius:16px;overflow:hidden;isolation:isolate}
-              .vc3d-chart{position:absolute;left:14px;right:14px;top:30px;bottom:24px;width:auto;height:auto;z-index:1}
-              .vc3d-chart-line{filter:drop-shadow(0 0 4px rgba(37,99,235,.55))}
-              .vc3d-chart-now{filter:drop-shadow(0 0 8px rgba(244,219,160,.95))}
-              .vc3d-chart-ring{animation:vcRing 1.8s ease-out infinite;transform-origin:center;transform-box:fill-box}
-              @keyframes vcRing{0%{r:3.5;opacity:.7}100%{r:14;opacity:0}}
-              @media(prefers-reduced-motion:reduce){.vc3d-chart-ring{animation:none}}
-              .vc3d-viz-axis{position:absolute;top:14px;left:14px;font-family:var(--font-mono);font-size:8.5px;letter-spacing:.12em;color:rgba(37,99,235,.55);text-transform:uppercase;display:flex;flex-direction:column;gap:3px;line-height:1;pointer-events:none}
-              .vc3d-viz-axis .vmax{color:#60A5FA}
-              .vc3d-viz-label{position:absolute;bottom:6px;left:14px;font-family:var(--font-mono);font-size:8.5px;letter-spacing:.12em;color:rgba(255,255,255,.55);text-transform:uppercase;pointer-events:none}
-              .vc3d-viz-pulse{position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:8.5px;letter-spacing:.06em;color:#22c55e;font-weight:600;text-transform:uppercase}
-              .vc3d-viz-pulse .dot{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;animation:vcPulse 1.6s ease-in-out infinite}
-              .vc3d-bracket{position:absolute;width:18px;height:18px;border:1.5px solid rgba(37,99,235,.55);pointer-events:none;z-index:4}
-              .vc3d-bracket.tl{top:8px;left:8px;border-right:0;border-bottom:0}
-              .vc3d-bracket.tr{top:8px;right:8px;border-left:0;border-bottom:0}
-              .vc3d-bracket.bl{bottom:8px;left:8px;border-right:0;border-top:0}
-              .vc3d-bracket.br{bottom:8px;right:8px;border-left:0;border-top:0}
-
-              .vc3d-readout{display:flex;flex-direction:column;gap:14px;min-width:0}
-              .vc3d-query{font-family:var(--font-mono);font-size:11px;line-height:1.55;color:rgba(255,255,255,.75);letter-spacing:.02em;padding:10px 12px;border-radius:8px;background:rgba(0,0,0,.28);border:1px solid rgba(37,99,235,.1)}
-              .vc3d-query .q-key{color:#60A5FA;font-weight:600}
-              .vc3d-query .q-val{color:#34d399}
-              .vc3d-query .q-comment{display:block;margin-top:4px;color:rgba(255,255,255,.45);font-style:italic}
-
-              .vc3d-count{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-              .vc3d-count .v{font-family:var(--font-display);font-size:clamp(40px,4.5vw,60px);font-weight:700;letter-spacing:-.025em;line-height:1;background:linear-gradient(180deg,#FFFFFF 0%,#60A5FA 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-shadow:0 0 28px rgba(37,99,235,.3)}
-              .vc3d-count .u{font-family:var(--font-mono);font-size:13px;letter-spacing:.08em;color:rgba(255,255,255,.65);text-transform:uppercase}
-
-              .vc3d-delta{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;color:#34d399;letter-spacing:.04em}
-              .vc3d-delta .dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:vcPulse 1.8s ease-in-out infinite}
-
-              .vc3d-progress{height:4px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden}
-              .vc3d-progress .fill{height:100%;width:0;background:linear-gradient(90deg,#2563EB 0%,#3B82F6 50%,#60A5FA 100%);box-shadow:0 0 14px rgba(37,99,235,.55);transition:width 1.6s cubic-bezier(.22,1,.36,1);border-radius:999px}
-
-              .vc3d-meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
-              .vc3d-meta-grid > div{padding:8px 10px;border-radius:9px;background:rgba(37,99,235,.04);border:1px solid rgba(37,99,235,.14);display:flex;flex-direction:column;gap:2px;transition:border-color .25s,background .25s}
-              .vc3d-meta-grid > div:hover{background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.28)}
-              .vc3d-meta-grid .k{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(37,99,235,.65);font-weight:600}
-              .vc3d-meta-grid .v{font-family:var(--font-display);font-size:13px;font-weight:600;color:#F1F5F9;letter-spacing:-.005em}
-
-              @media(prefers-reduced-motion:reduce){
-                .vc3d-panel{transform:perspective(1200px) rotateY(-2deg) rotateX(1deg);transition:none}
-                .vc3d-scan{animation:none}
-                .vc3d-latency .dot,.vc3d-delta .dot{animation:none}
-                .vc3d-panel::after{display:none}
-              }
-            </style>
-            <div class="vc3d-panel" id="vc3dPanel">
-              <div class="vc3d-bar">
-                <div class="mac-dot r"></div><div class="mac-dot y"></div><div class="mac-dot g"></div>
-                <div class="vc3d-title">talent_cloud_v3 <em>· LIVE</em></div>
-                <div class="vc3d-latency"><span class="dot"></span>12 ms</div>
-              </div>
-
-              <div class="vc3d-body">
-                <!-- LEFT: live spectrum / activity visualisation -->
-                <div class="vc3d-viz-stage" aria-hidden="true">
-                  <div class="vc3d-viz-axis">
-                    <span class="vmax">2.4k/s</span>
-                    <span>1.8k</span>
-                    <span>1.2k</span>
-                  </div>
-                  <div class="vc3d-viz-pulse"><span class="dot"></span>LIVE</div>
-                  <svg class="vc3d-chart" viewBox="0 0 240 140" preserveAspectRatio="none">
-                    <defs>
-                      <linearGradient id="vcFillGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%"   stop-color="#3B82F6" stop-opacity=".35"/>
-                        <stop offset="55%"  stop-color="#3B82F6" stop-opacity=".10"/>
-                        <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
-                      </linearGradient>
-                      <linearGradient id="vcLineGrad" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%"   stop-color="#2563EB"/>
-                        <stop offset="50%"  stop-color="#3B82F6"/>
-                        <stop offset="100%" stop-color="#60A5FA"/>
-                      </linearGradient>
-                    </defs>
-                    <g class="vc3d-chart-grid" stroke="rgba(37,99,235,.10)" stroke-width=".5" stroke-dasharray="2 3">
-                      <line x1="0" y1="35"  x2="240" y2="35"/>
-                      <line x1="0" y1="70"  x2="240" y2="70"/>
-                      <line x1="0" y1="105" x2="240" y2="105"/>
-                    </g>
-                    <path class="vc3d-chart-fill" fill="url(#vcFillGrad)"/>
-                    <path class="vc3d-chart-line" fill="none" stroke="url(#vcLineGrad)"
-                          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle class="vc3d-chart-ring" r="3.5" fill="none"
-                            stroke="#3B82F6" stroke-width="1" opacity=".5"/>
-                    <circle class="vc3d-chart-now" r="3" fill="#60A5FA"/>
-                  </svg>
-                  <div class="vc3d-viz-label">Profile activity · last 60s</div>
-                  <span class="vc3d-bracket tl"></span>
-                  <span class="vc3d-bracket tr"></span>
-                  <span class="vc3d-bracket bl"></span>
-                  <span class="vc3d-bracket br"></span>
-                </div>
-
-                <!-- RIGHT: live readout -->
-                <div class="vc3d-readout">
-                  <div class="vc3d-query">
-                    <span class="q-key">SELECT</span> count(*) <span class="q-key">FROM</span> talent_pool
-                    <span class="q-key">WHERE</span> active = <span class="q-val">true</span>;
-                    <span class="q-comment">-- DACH · refreshed every minute</span>
-                  </div>
-                  <div class="vc3d-count">
-                    <span class="v" id="cloudV">1.041.382</span>
-                    <span class="u">Profile</span>
-                  </div>
-                  <div class="vc3d-delta">
-                    <span class="dot"></span>
-                    <span>+<span id="cloudPulse">3</span> in den letzten 60s</span>
-                  </div>
-                  <div class="vc3d-progress"><div class="fill" id="cloudFill"></div></div>
-                  <div class="vc3d-meta-grid">
-                    <div><span class="k">Region</span><span class="v">DACH</span></div>
-                    <div><span class="k">Indexed</span><span class="v">24/7</span></div>
-                    <div><span class="k">Updated</span><span class="v" id="cloudFresh">just now</span></div>
-                    <div><span class="k">Shards</span><span class="v">12</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <script>
-              (() => {
-                const panel = document.getElementById('vc3dPanel');
-                const fresh = document.getElementById('cloudFresh');
-                if (!panel) return;
-                const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-                // ── Mouse parallax (Maximal-3D tilt) ──
-                if (!reduce) {
-                  let raf = null;
-                  const setVars = (mx, my) => {
-                    panel.style.setProperty('--mx', mx.toFixed(3));
-                    panel.style.setProperty('--my', my.toFixed(3));
-                  };
-                  const onMove = (e) => {
-                    const r = panel.getBoundingClientRect();
-                    const cx = e.clientX - r.left, cy = e.clientY - r.top;
-                    const mx = (cx / r.width) * 2 - 1;
-                    const my = (cy / r.height) * 2 - 1;
-                    if (raf) cancelAnimationFrame(raf);
-                    raf = requestAnimationFrame(() => setVars(mx, my));
-                  };
-                  const onLeave = () => setVars(0, 0);
-                  panel.addEventListener('mousemove', onMove);
-                  panel.addEventListener('mouseleave', onLeave);
-                }
-
-                // ── Live Profile-Activity Chart ──
-                (function initChart(){
-                  const svg  = panel.querySelector('.vc3d-chart');
-                  if (!svg) return;
-                  const fill = svg.querySelector('.vc3d-chart-fill');
-                  const line = svg.querySelector('.vc3d-chart-line');
-                  const now  = svg.querySelector('.vc3d-chart-now');
-                  const ring = svg.querySelector('.vc3d-chart-ring');
-
-                  const W = 240, H = 140, N = 60;
-                  const MIN = 1.2, MAX = 2.4;
-
-                  // Initial-Daten: Sinus-Trend + Noise
-                  const data = [];
-                  for (let i = 0; i < N; i++) {
-                    const base = 1.65 + Math.sin(i * 0.17) * 0.32 + (Math.random() - 0.5) * 0.22;
-                    data.push(Math.max(MIN, Math.min(MAX, base)));
-                  }
-
-                  function y(rate) {
-                    const norm = (rate - MIN) / (MAX - MIN);
-                    return H - norm * (H - 14) - 7;
-                  }
-
-                  function build() {
-                    const sx = W / (N - 1);
-                    let ld = '', fd = '';
-                    for (let i = 0; i < N; i++) {
-                      const x = i * sx, yy = y(data[i]);
-                      if (i === 0) {
-                        ld = `M ${x.toFixed(2)} ${yy.toFixed(2)}`;
-                        fd = `M ${x.toFixed(2)} ${H} L ${x.toFixed(2)} ${yy.toFixed(2)}`;
-                      } else {
-                        const px = (i - 1) * sx, py = y(data[i - 1]);
-                        const cx = (px + x) / 2;
-                        ld += ` Q ${cx.toFixed(2)} ${py.toFixed(2)} ${x.toFixed(2)} ${yy.toFixed(2)}`;
-                        fd += ` Q ${cx.toFixed(2)} ${py.toFixed(2)} ${x.toFixed(2)} ${yy.toFixed(2)}`;
-                      }
-                    }
-                    fd += ` L ${W} ${H} Z`;
-                    line.setAttribute('d', ld);
-                    fill.setAttribute('d', fd);
-                    const ly = y(data[N - 1]).toFixed(2);
-                    now.setAttribute('cx', W); now.setAttribute('cy', ly);
-                    ring.setAttribute('cx', W); ring.setAttribute('cy', ly);
-                  }
-                  build();
-
-                  if (!reduce) {
-                    let t = N;
-                    let chartVisible = true;
-                    if ('IntersectionObserver' in window) {
-                      const cio = new IntersectionObserver((entries) => {
-                        chartVisible = entries[0].isIntersecting;
-                      }, { threshold: 0.05 });
-                      cio.observe(svg);
-                    }
-                    setInterval(() => {
-                      if (!chartVisible) return;   // GPU sparen wenn unsichtbar
-                      t++;
-                      let v = 1.65 + Math.sin(t * 0.17) * 0.32 + (Math.random() - 0.5) * 0.22;
-                      if (Math.random() < 0.06) v += 0.32;   // 6% spike chance
-                      v = Math.max(MIN, Math.min(MAX, v));
-                      data.shift();
-                      data.push(v);
-                      build();
-                    }, 1000);
-                  }
-                })();
-
-                // ── Freshness ticker ──
-                if (fresh && !reduce) {
-                  let t = 0;
-                  setInterval(() => {
-                    t++;
-                    if (t > 58) { t = 0; fresh.textContent = 'just now'; return; }
-                    if (t < 3) { fresh.textContent = 'just now'; return; }
-                    fresh.textContent = t + 's ago';
-                  }, 1000);
-                }
-              })();
-            </script>
-          </div>
+      <!-- Card 1: Talent-Cloud — Dark + Amber -->
+      <article class="pcard pcard-dark reveal" id="talent-cloud">
+        <span class="pcard-badge pcard-badge-amber">1.000.000+ Fachkräfte</span>
+        <div class="pcard-viz pcard-viz-globe" aria-hidden="true">
+          <svg viewBox="0 0 240 240">
+            <g class="globe-orbit">
+              <ellipse class="globe-ring" cx="120" cy="120" rx="100" ry="40"/>
+              <ellipse class="globe-ring globe-ring-soft" cx="120" cy="120" rx="100" ry="60"/>
+              <ellipse class="globe-ring globe-ring-soft" cx="120" cy="120" rx="100" ry="80"/>
+              <circle class="globe-ring" cx="120" cy="120" r="100"/>
+              <circle class="globe-ring-soft" cx="120" cy="120" r="72"/>
+              <circle class="globe-ring-soft" cx="120" cy="120" r="42"/>
+            </g>
+            <circle class="globe-center" cx="120" cy="120" r="8"/>
+            <circle class="globe-node" cx="40"  cy="100" r="3"/>
+            <circle class="globe-node" cx="200" cy="140" r="3"/>
+            <circle class="globe-node" cx="120" cy="40"  r="3"/>
+            <circle class="globe-node" cx="120" cy="200" r="3"/>
+            <circle class="globe-node" cx="68"  cy="56"  r="2.4"/>
+            <circle class="globe-node" cx="172" cy="184" r="2.4"/>
+          </svg>
         </div>
-      </div>
+        <h3>Talent-Cloud</h3>
+        <p>1.000.000+ Fachkräfte sind bereits in unserer Talent-Cloud — und es kommen täglich rund 1.200 dazu.</p>
+        <a href="#quellen" class="pcard-link">Mehr erfahren</a>
+      </article>
 
-      <!-- PILLAR 2: KI -->
-      <div class="pillar reveal-scale rd-2">
-        <div class="pillar-inner">
-          <div style="order: 2;">
-            <div class="pillar-tag">
-              <span style="width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 10px var(--accent-glow);"></span>
-              02 · KI-MATCHING
-            </div>
-            <h2 class="h2 pillar-title"><span class="accent">100+</span> Datenpunkte<br>pro Kandidat. In Echtzeit.</h2>
-            <p class="lead" style="margin-top:16px; color: var(--fg-muted); font-size: 18px; line-height: 1.6;">
-              Unsere KI prüft täglich jeden Profilbestand gegen Ihre Anforderungen.
-              Sie erkennt frühe Anzeichen für einen Jobwechsel, regionale Bindung und Antwortverhalten — und <strong style="color:var(--fg);font-weight:600;">priorisiert nach Wechselwahrscheinlichkeit.</strong>
-            </p>
-            <ul class="pillar-features" style="margin-top: 32px;">
-              <li>Wechseltrigger-Erkennung (Dienstplan, Gehalt, Fahrzeit, …)</li>
-              <li>Wettbewerber-Monitoring im regionalen Markt</li>
-              <li>Reaktionsmuster &amp; Cultural-Fit-Scoring</li>
-              <li>Automatische Priorisierung der Top-Kandidaten</li>
-            </ul>
-          </div>
-          <div class="pillar-viz" style="order: 1;">
-            <div class="premium-glass-panel viz-ki" id="vizKi" style="transform: perspective(1000px) rotateY(4deg) rotateX(2deg); transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);">
-              <div class="premium-glass-header">
-                <div class="mac-dot r"></div><div class="mac-dot y"></div><div class="mac-dot g"></div>
-                <div class="premium-glass-title" style="color: var(--accent);">AI_SCORING_ENGINE</div>
-              </div>
-              <div class="premium-glass-body" style="gap: 16px;">
-                <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:12px;color:rgba(241,245,249,0.78);margin-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:12px;">
-                  <span>Kandidat #4827 · Markus W.</span>
-                  <span style="color:var(--accent);font-weight:600;text-shadow: 0 0 10px var(--accent-glow);">94/100 MATCH</span>
-                </div>
-                <div class="ki-row"><span class="lbl">Fachlich</span><span class="bar"><span class="f" data-pct="98" style="background: linear-gradient(90deg, #1D4ED8, #2563EB);"></span></span><span class="pct" style="color:var(--accent);">98%</span></div>
-                <div class="ki-row"><span class="lbl">Region</span><span class="bar"><span class="f" data-pct="100" style="background: linear-gradient(90deg, #1D4ED8, #2563EB);"></span></span><span class="pct" style="color:var(--accent);">100%</span></div>
-                <div class="ki-row"><span class="lbl">Wechsel</span><span class="bar"><span class="f" data-pct="89" style="background: linear-gradient(90deg, #1D4ED8, #2563EB);"></span></span><span class="pct" style="color:var(--accent);">89%</span></div>
-                <div class="ki-row"><span class="lbl">Gehalt</span><span class="bar"><span class="f" data-pct="92" style="background: linear-gradient(90deg, #1D4ED8, #2563EB);"></span></span><span class="pct" style="color:var(--accent);">92%</span></div>
-                <div class="ki-row"><span class="lbl">Cultural</span><span class="bar"><span class="f" data-pct="87" style="background: linear-gradient(90deg, #1D4ED8, #2563EB);"></span></span><span class="pct" style="color:var(--accent);">87%</span></div>
-                <div class="ki-row"><span class="lbl">Mobilität</span><span class="bar"><span class="f" data-pct="95" style="background: linear-gradient(90deg, #1D4ED8, #2563EB);"></span></span><span class="pct" style="color:var(--accent);">95%</span></div>
-                <div style="margin-top:auto;padding-top:16px;display:flex;gap:8px;flex-wrap:wrap">
-                  <span class="mono" style="background:var(--accent-soft);color:var(--accent);padding:6px 12px;border-radius:100px;font-size:10px;border:1px solid var(--accent-soft);">SPS-Programmierung</span>
-                  <span class="mono" style="background:rgba(255,255,255,0.04);padding:6px 12px;border-radius:100px;font-size:10px;color:rgba(241,245,249,0.78);border:1px solid rgba(255,255,255,0.10);">Stuttgart</span>
-                  <span class="mono" style="background:rgba(255,255,255,0.04);padding:6px 12px;border-radius:100px;font-size:10px;color:rgba(241,245,249,0.78);border:1px solid rgba(255,255,255,0.10);">Schicht-Wechsler</span>
-                </div>
-              </div>
-            </div>
-          </div>
+      <!-- Card 2: KI-Matching — Blue + Network -->
+      <article class="pcard pcard-blue reveal" id="ki-matching">
+        <span class="pcard-badge pcard-badge-blue">100+ Datenpunkte</span>
+        <div class="pcard-viz pcard-viz-network" aria-hidden="true">
+          <svg viewBox="0 0 300 220">
+            <!-- Edges -->
+            <line class="net-edge" x1="150" y1="110" x2="60"  y2="40"/>
+            <line class="net-edge" x1="150" y1="110" x2="240" y2="50"/>
+            <line class="net-edge" x1="150" y1="110" x2="40"  y2="120"/>
+            <line class="net-edge" x1="150" y1="110" x2="260" y2="130"/>
+            <line class="net-edge" x1="150" y1="110" x2="80"  y2="190"/>
+            <line class="net-edge" x1="150" y1="110" x2="220" y2="200"/>
+            <line class="net-edge" x1="150" y1="110" x2="120" y2="20"/>
+            <line class="net-edge" x1="150" y1="110" x2="180" y2="20"/>
+            <line class="net-edge" x1="60"  y1="40"  x2="120" y2="20"/>
+            <line class="net-edge" x1="240" y1="50"  x2="180" y2="20"/>
+            <line class="net-edge" x1="40"  y1="120" x2="80"  y2="190"/>
+            <line class="net-edge" x1="260" y1="130" x2="220" y2="200"/>
+            <!-- Nodes -->
+            <circle class="net-node net-node-accent" cx="150" cy="110" r="7"/>
+            <circle class="net-node net-node-pulse"  cx="60"  cy="40"  r="4"/>
+            <circle class="net-node net-node-pulse"  cx="240" cy="50"  r="4" style="animation-delay:.3s"/>
+            <circle class="net-node net-node-pulse"  cx="40"  cy="120" r="4" style="animation-delay:.6s"/>
+            <circle class="net-node net-node-pulse"  cx="260" cy="130" r="4" style="animation-delay:.9s"/>
+            <circle class="net-node net-node-pulse"  cx="80"  cy="190" r="4" style="animation-delay:1.2s"/>
+            <circle class="net-node net-node-pulse"  cx="220" cy="200" r="4" style="animation-delay:1.5s"/>
+            <circle class="net-node"                  cx="120" cy="20"  r="3"/>
+            <circle class="net-node"                  cx="180" cy="20"  r="3"/>
+            <!-- Labels -->
+            <text class="net-label" x="150" y="135" text-anchor="middle">KI-Matching</text>
+            <text class="net-label" x="42"  y="32"  text-anchor="start">Wechselsignale</text>
+            <text class="net-label" x="258" y="42"  text-anchor="end">Cultural-Fit</text>
+            <text class="net-label" x="22"  y="135" text-anchor="start">Region</text>
+            <text class="net-label" x="278" y="145" text-anchor="end">Skills</text>
+          </svg>
         </div>
-      </div>
+        <h3>KI-Matching</h3>
+        <p>Unsere KI prüft 100+ Datenpunkte — von Wechselsignalen über Cultural-Fit bis zur Pendel­bereitschaft.</p>
+        <a href="#kiModul" class="pcard-link">Mehr erfahren</a>
+      </article>
 
-      <!-- PILLAR 3: Sellcruiting -->
-      <div class="pillar reveal-scale rd-3">
-        <div class="pillar-inner">
-          <div>
-            <div class="pillar-tag">
-              <span style="width:6px;height:6px;background:#34d399;border-radius:50%;box-shadow:0 0 10px #34d399;"></span>
-              03 · SELLCRUITING
-            </div>
-            <h2 class="h2 pillar-title"><span class="accent" style="background: linear-gradient(135deg, #34d399 0%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Echte Menschen</span><br>verkaufen Ihre Stelle.</h2>
-            <p class="lead" style="margin-top:16px; color: var(--fg-muted); font-size: 18px; line-height: 1.6;">
-              Unsere geschulten Recruiter — unterstützt durch automatisierte Bewerberprozesse — sprechen jeden vorausgewählten Kandidaten persönlich an,
-              <strong style="color:var(--fg);font-weight:600;">klären Qualifikation, Erwartungen, Cultural Fit und sichern Ihr Vorstellungsgespräch.</strong>
-            </p>
-            <ul class="pillar-features" style="margin-top: 32px;">
-              <li>KI-Erstkontakt in &lt; 60 Sekunden möglich</li>
-              <li>Persönliche Recruiter prüfen Motivation &amp; Fit</li>
-              <li>Sie sprechen mit Kandidaten, die Ihr Angebot bereits akzeptiert haben</li>
-              <li>Lebenslauf, Profil &amp; Terminvorschlag — alles aufbereitet</li>
-            </ul>
-          </div>
-          <div class="pillar-viz">
-            <div class="premium-glass-panel viz-sell">
-              <div class="premium-glass-header">
-                <div class="mac-dot r"></div><div class="mac-dot y"></div><div class="mac-dot g"></div>
-                <div class="premium-glass-title" style="color: #34d399;">CHAT_PROTOCOL</div>
-              </div>
-              <div class="premium-glass-body" style="padding: 24px; gap: 16px;">
-                <div class="sell-msg recruiter" style="background:rgba(96,165,250,0.10); border:1px solid rgba(96,165,250,0.22); color:rgba(241,245,249,0.85); font-size: 14px;">
-                  <div class="who" style="color:#93C5FD; font-family:var(--font-mono); font-size:10px; margin-bottom:6px;">RECRUITER · LENA</div>
-                  Hallo Markus, ich bin Lena von KI-Kandidat. Ich rufe wegen einer SPS-Stelle bei einem Mittelständler in Esslingen an — passt das zeitlich für Sie?
-                </div>
-                <div class="sell-msg candidate" style="background:rgba(22,163,74,0.08); border:1px solid rgba(22,163,74,0.2); color:rgba(22,163,74,0.9); margin-left:20px; font-size: 14px;">
-                  <div class="who" style="color:var(--success); font-family:var(--font-mono); font-size:10px; margin-bottom:6px;">KANDIDAT · MARKUS</div>
-                  Klingt interessant. Was zahlen die?
-                </div>
-                <div class="sell-msg recruiter" style="background:rgba(96,165,250,0.10); border:1px solid rgba(96,165,250,0.22); color:rgba(241,245,249,0.85); font-size:14px;">
-                  <div class="who" style="color:#93C5FD; font-family:var(--font-mono); font-size:10px; margin-bottom:6px;">RECRUITER · LENA</div>
-                  Rahmen 68–74 k €, 38-h-Woche, Fahrzeit unter 25 Min. Wäre das für Sie ein Wechselgrund?
-                </div>
-                <div class="sell-msg candidate" style="background:rgba(22,163,74,0.08); border:1px solid rgba(22,163,74,0.2); color:rgba(22,80,40,0.9); margin-left:20px; font-size:14px;">
-                  <div class="who" style="color:var(--success); font-family:var(--font-mono); font-size:10px; margin-bottom:6px;">KANDIDAT · MARKUS</div>
-                  Ja. Termin bitte.
-                </div>
-                <div class="sell-status" style="margin-top:auto; background:rgba(22,163,74,0.08); border:1px solid rgba(22,163,74,0.25); padding:12px; border-radius:12px; color:rgba(22,80,40,0.9); font-family:var(--font-mono); font-size:12px; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow: 0 0 20px rgba(16,185,129,0.1);">
-                  <span class="dot pulse-dot" style="width:8px;height:8px;background:#10b981;border-radius:999px;box-shadow:0 0 10px #10b981;"></span> Vorqualifiziert · Termin Mo. 14:00
-                </div>
-              </div>
-            </div>
-          </div>
+      <!-- Card 3: Sellcruiting — Light + Photo -->
+      <article class="pcard pcard-photo reveal" id="sellcruiting">
+        <span class="pcard-badge pcard-badge-light">KI + Mensch</span>
+        <div class="pcard-viz-photo" style="background-image: url('assets/img/photo-1556157382-97eda2d62296-800.webp');" role="img" aria-label="Recruiter mit Headset im Erstkontakt-Gespräch"></div>
+        <div class="pcard-photo-body">
+          <h3>Sellcruiting</h3>
+          <p>Unsere Berater:innen kontaktieren die passenden Kandidaten persönlich und prüfen Qualifikation sowie echtes Interesse — keine Kaltakquise für Sie.</p>
+          <a href="#process" class="pcard-link">Mehr erfahren</a>
         </div>
-      </div>
+      </article>
 
     </div>
   </div>

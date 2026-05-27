@@ -4,7 +4,7 @@
     <nav class="nav">
       <div class="nav-inner">
         <a href="index.html" class="logo" aria-label="KI-Kandidat Home">
-          <img src="assets/kiq-logo.png" class="nav-kiq-logo" alt="kiQ" width="80" height="32" />
+          <img src="assets/kiq-logo.svg" class="nav-kiq-logo shimmer-on-load" alt="KI-Kandidat" width="180" height="40" />
         </a>
         <div class="nav-sep"></div>
         <div class="nav-links">
@@ -40,7 +40,7 @@
         <div class="footer-grid">
           <div class="footer-col">
             <a href="index.html" class="logo" style="margin-bottom:16px">
-              <img src="assets/kiq-logo.png" alt="KI-Kandidat" width="80" height="32" style="height:28px;width:auto;object-fit:contain;display:block" />
+              <img src="assets/kiq-logo.svg" class="footer-kiq-logo" alt="KI-Kandidat" width="180" height="40" style="height:36px;width:auto;object-fit:contain;display:block;color:#F5F1E8" />
             </a>
             <p style="color:rgba(250,248,244,0.70);font-size:14px;max-width:36ch;margin:0 0 24px 0">
               Die digitale Recruiting-Agentur für den Mittelstand. Talent-Cloud, eigene Matching-KI, persönliche Beratung — in einer Plattform.
@@ -107,7 +107,14 @@
   window.RG.mountChrome = function(activeKey) {
     const navMount = document.getElementById('nav-mount');
     const footMount = document.getElementById('footer-mount');
-    if (navMount) navMount.outerHTML = buildNav(activeKey);
+    if (navMount) {
+      navMount.outerHTML = buildNav(activeKey);
+      // Logo shimmer cleanup: nach Animation Mask zurücknehmen, damit Hover-Glow korrekt greift
+      var navLogo = document.querySelector('.nav-kiq-logo.shimmer-on-load');
+      if (navLogo) {
+        navLogo.addEventListener('animationend', function(){ navLogo.classList.add('shimmer-done'); }, { once: true });
+      }
+    }
     if (footMount) {
       footMount.outerHTML = buildFooter();
       var foot = document.querySelector('.footer');

@@ -1,0 +1,511 @@
+/* ============================================================
+   Hero v2 · Mosaic-Backdrop + KB-Layout + Serif-Headline
+   ============================================================ */
+
+.hero-v2 {
+  position: relative;
+  isolation: isolate;
+  background: #0A0502;
+  color: #F5F1E8;
+  overflow: hidden;
+  padding: 88px 0 64px;
+  min-height: 88vh;
+}
+
+/* ── Mosaic Backdrop ────────────────────────────────────── */
+.hero-mosaic-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  /* dunkler radialer Veil im Zentrum, damit Headline lesbar bleibt */
+}
+.hero-mosaic-cols {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  gap: 8px;
+  padding: 0 4px;
+  filter: saturate(0.85);
+  opacity: 0.42;
+  mix-blend-mode: luminosity;
+}
+.hero-mosaic-cols .mosaic-col {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+.hero-mosaic-cols .mosaic-track {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hero-mosaic-cols .mosaic-tile {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.hero-mosaic-cols .mosaic-tile .tile-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.hero-mosaic-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(10,5,2,0.86) 0%, rgba(10,5,2,0.95) 45%, rgba(10,5,2,1) 100%),
+    linear-gradient(180deg, rgba(10,5,2,0.6) 0%, rgba(10,5,2,0.2) 50%, rgba(10,5,2,0.85) 100%);
+  z-index: 1;
+}
+
+/* ── Trendline-Echo (dezent goldener Path) ────────────── */
+.hero-trendline {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-trendline svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+.hero-trendline path {
+  fill: none;
+  stroke: url(#trendGrad);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  opacity: 0.45;
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2400;
+  animation: trendDraw 2.6s cubic-bezier(.22,1,.36,1) 0.8s 1 forwards;
+}
+@keyframes trendDraw { to { stroke-dashoffset: 0; } }
+
+/* ── Layout: 3-Spalten-Grid (links Floats, Mitte Headline, rechts Phone) ─ */
+.hero-v2-grid {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(540px, 2fr) minmax(280px, 1fr);
+  align-items: center;
+  gap: 32px;
+  padding-top: 24px;
+}
+
+/* ── Floating Cards / Badges ────────────────────────────── */
+.hero-floats {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+}
+.hero-floats-left { padding-top: 40px; }
+.hero-floats-right { padding-top: 0; align-items: flex-end; }
+
+.float-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #1A0F02;
+  background: linear-gradient(135deg, #E2A23E 0%, #C78417 55%, #8E5708 100%);
+  box-shadow: 0 12px 28px -10px rgba(184,114,15,0.55),
+              0 1px 0 rgba(255,255,255,0.18) inset;
+  width: max-content;
+  animation: floatUpA 7s ease-in-out 0.6s infinite;
+}
+.float-badge-right {
+  margin-left: auto;
+  animation: floatUpB 7s ease-in-out 0.4s infinite;
+}
+@keyframes floatUpA {
+  0%,100% { transform: translateY(0) rotate(-1.5deg); }
+  50%     { transform: translateY(-8px) rotate(-1.5deg); }
+}
+@keyframes floatUpB {
+  0%,100% { transform: translateY(0) rotate(1deg); }
+  50%     { transform: translateY(-8px) rotate(1deg); }
+}
+
+.float-card {
+  background: rgba(15,10,5,0.78);
+  border: 1px solid rgba(212,136,30,0.20);
+  border-radius: 16px;
+  padding: 14px 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #F5F1E8;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  min-width: 250px;
+  box-shadow: 0 18px 40px -16px rgba(0,0,0,0.6),
+              0 1px 0 rgba(255,255,255,0.06) inset;
+  position: relative;
+}
+.float-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: rgba(245,241,232,0.62);
+  margin-bottom: 8px;
+}
+.float-card-head .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #16A34A;
+  box-shadow: 0 0 10px rgba(22,163,74,0.6);
+  animation: floatPulse 2s ease-in-out infinite;
+}
+@keyframes floatPulse {
+  0%,100% { opacity: 0.7; }
+  50%     { opacity: 1; }
+}
+.float-card-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+.float-card-meta {
+  color: rgba(245,241,232,0.66);
+  font-size: 12px;
+}
+.float-card-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px;
+  color: rgba(245,241,232,0.78);
+}
+.float-card-list li {
+  display: flex; align-items: center; gap: 8px;
+}
+.float-card-list li::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: rgba(212,136,30,0.20);
+  color: #E2A23E;
+  font-size: 10px;
+  font-weight: 700;
+}
+.float-card-pipeline {
+  margin-top: 12px;
+}
+.float-card-pipeline .float-arrow {
+  position: absolute;
+  top: 12px; right: 14px;
+  color: #E2A23E;
+  font-size: 18px;
+}
+
+/* Card-Float-Idle (sanft schwebend) */
+.float-card { animation: cardFloat 8s ease-in-out infinite; }
+.float-card-pipeline { animation-delay: 1s; }
+@keyframes cardFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-6px); }
+}
+
+/* ── Headline-Block (Mitte) ─────────────────────────────── */
+.hero-v2-headline {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E2A23E;
+  margin-bottom: 24px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: linear-gradient(90deg, transparent, #E2A23E);
+}
+.hero-serif,
+h1.hero-serif {
+  font-family: "Playfair Display", "Times New Roman", Georgia, serif !important;
+  font-weight: 700;
+  font-size: clamp(38px, 5.4vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: #F5F1E8;
+  margin: 0;
+}
+.hero-serif em {
+  font-style: italic;
+  font-weight: 500;
+  display: block;
+  color: #F5F1E8;
+  letter-spacing: -0.005em;
+}
+.hero-lead {
+  margin: 28px auto 0;
+  max-width: 60ch;
+  color: rgba(245,241,232,0.78);
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.7;
+}
+.hero-lead strong {
+  color: #F5F1E8;
+  font-weight: 700;
+}
+.hero-v2-cta {
+  margin-top: 36px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ── Phone-Mockup rechts ────────────────────────────────── */
+.hero-phone {
+  position: relative;
+  width: 260px;
+  max-width: 100%;
+  margin: 0 auto;
+  filter: drop-shadow(0 28px 48px rgba(0,0,0,0.6))
+          drop-shadow(0 0 80px rgba(184,114,15,0.10));
+  animation: phoneFloat 8s ease-in-out 0.8s infinite;
+  transform-origin: center;
+}
+@keyframes phoneFloat {
+  0%,100% { transform: translateY(0) rotate(2deg); }
+  50%     { transform: translateY(-10px) rotate(2deg); }
+}
+.phone-chassis {
+  background: linear-gradient(145deg, #1f2125, #0d0e10);
+  border-radius: 38px;
+  padding: 3px;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255,255,255,0.32),
+    inset 0 -1.5px 2px rgba(0,0,0,0.8),
+    0 0 0 1px rgba(0,0,0,0.5);
+}
+.phone-bezel {
+  background: #000;
+  border-radius: 34px;
+  padding: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.phone-notch {
+  position: absolute;
+  top: 10px; left: 50%;
+  transform: translateX(-50%);
+  width: 90px; height: 22px;
+  background: #000;
+  border-radius: 22px;
+  z-index: 30;
+}
+.phone-screen {
+  background: #0a0a0c;
+  border-radius: 26px;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.phone-statusbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 24px 6px;
+  font-family: -apple-system, sans-serif;
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+  z-index: 10;
+}
+.phone-statusbar-right { display:flex; gap: 6px; align-items: center; }
+.phone-statusbar-right .icn { width: 16px; height: 10px; background: #fff; border-radius: 2px; opacity: 0.85; }
+
+.phone-app-head {
+  padding: 14px 20px 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.phone-app-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 16px 12px;
+}
+.phone-tab {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+}
+.phone-tab.active {
+  background: linear-gradient(135deg, #E2A23E 0%, #C78417 100%);
+  color: #1A0F02;
+  font-weight: 700;
+}
+
+.phone-app-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  overflow: hidden;
+}
+.phone-app-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.92);
+}
+.phone-app-list .avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C78417, #8E5708);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center; justify-content: center;
+  color: #FFF8E8;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+}
+.phone-app-list .name {
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.1;
+}
+.phone-app-list .role {
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 1px;
+}
+.phone-app-list .pct {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  color: #E2A23E;
+}
+.phone-app-list .info {
+  flex: 1;
+  min-width: 0;
+}
+
+.phone-cta {
+  margin: 12px 14px 16px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #E2A23E 0%, #C78417 55%, #8E5708 100%);
+  color: #1A0F02;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px -6px rgba(184,114,15,0.6);
+}
+
+/* ── Logo-Wall unten in der Hero ─────────────────────────── */
+.hero-clients {
+  position: relative;
+  z-index: 3;
+  margin-top: 64px;
+  text-align: center;
+}
+.hero-clients-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,241,232,0.58);
+  margin-bottom: 18px;
+}
+.hero-clients-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+  opacity: 0.75;
+  filter: brightness(1.4);
+}
+.hero-clients-row span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: #F5F1E8;
+  opacity: 0.7;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .hero-v2-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .hero-floats-left, .hero-floats-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 0;
+    align-items: center;
+  }
+  .hero-floats-right { order: 3; }
+  .hero-v2-headline { order: 1; }
+  .hero-floats-left { order: 2; }
+  .float-card { max-width: 280px; }
+  .hero-phone { margin: 0 auto; }
+}
+@media (max-width: 700px) {
+  .hero-v2 { padding: 64px 0 48px; }
+  .hero-serif { font-size: clamp(32px, 8vw, 48px); }
+  .float-card { min-width: 0; width: 100%; max-width: 320px; }
+  .float-badge { font-size: 12px; padding: 8px 14px; }
+  .hero-phone { width: 220px; }
+}
+
+/* ── Reduced Motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .float-badge, .float-badge-right,
+  .float-card, .hero-phone,
+  .hero-trendline path { animation: none !important; }
+}

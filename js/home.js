@@ -230,6 +230,50 @@
       io.observe(section);
     }
   }
+  // ===== Hero-Mosaic-Backdrop (gleicher Pattern wie buildMosaic, mehr Spalten + schneller) =====
+  function buildHeroMosaic() {
+    const root = document.getElementById('heroMosaicCols');
+    if (!root || root.children.length) return;
+    const imgs = [
+      '1521737604893-d14cc237f11d', '1600880292203-757bb62b4baf', '1504307651254-35680f356dfd',
+      '1581092918056-0c4c3acd3789', '1518770660439-4636190af475', '1461749280684-dccba630e2f6',
+      '1576091160399-112ba8d25d1d', '1587293852726-70cdb56c2866', '1486406146926-c627a92ad1ab',
+      '1556761175-5973dc0f32e7', '1497032628192-86f99bcd76bc', '1560518883-ce09059eeffa',
+      '1553877522-43269d4ea984', '1573497019418-b400bb3ab074', '1600880292089-90a7e086ee0c',
+      '1521737852567-6949f3f9f2b5', '1611974789855-9c2a0a7236a3',
+      '1466611653911-95081537e5b7', '1566073771259-6a8506099945', '1551836022-aadb801c60ae',
+      '1497366216548-37526070297c', '1486325212027-8081e485255e', '1559136555-9303baea8ebd',
+      '1557804506-669a67965ba0', '1517048676732-d65bc937f952', '1561489413-985b06da5bee',
+      '1554224155-6726b3ff858f', '1497435334941-8c899ee9e8e9', '1517248135467-4c7edcad34c4',
+      '1454165804606-c3d57bc86b40', '1563013544-824ae1b704d3'
+    ];
+    const cols = window.matchMedia('(max-width: 700px)').matches ? 4
+               : window.matchMedia('(max-width: 1200px)').matches ? 6 : 8;
+    const perCol = 6;
+    for (let c = 0; c < cols; c++) {
+      const col = document.createElement('div');
+      col.className = 'mosaic-col';
+      const track = document.createElement('div');
+      track.className = 'mosaic-track';
+      const dir = c % 2 === 0 ? 'marqueeUp' : 'marqueeDown';
+      const dur = 36 + ((c * 5) % 14);
+      track.style.animation = `${dir} ${dur}s linear infinite`;
+      for (let pass = 0; pass < 2; pass++) {
+        for (let i = 0; i < perCol; i++) {
+          const idx = (c * 4 + i + pass) % imgs.length;
+          const tile = document.createElement('div');
+          tile.className = 'mosaic-tile';
+          const tbg = document.createElement('div');
+          tbg.className = 'tile-bg';
+          tbg.style.backgroundImage = `url('assets/img/photo-${imgs[idx]}-800.webp')`;
+          tile.appendChild(tbg);
+          track.appendChild(tile);
+        }
+      }
+      col.appendChild(track);
+      root.appendChild(col);
+    }
+  }
   function initWorkflow() {
     const items = document.querySelectorAll('#wfList .wf-item');
     const mainTitle = document.getElementById('wfMainTitle');
@@ -934,6 +978,7 @@
     initStepper();
     initReveal();
     buildMosaic();
+    buildHeroMosaic();
     initWorkflow();
     initKiFlow();
     initKiqConstellation();
