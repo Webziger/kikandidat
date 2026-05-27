@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Startseite -->
+  <url>
+    <loc>https://ki-kandidat.de/</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1438761681033-6461ffad8d80-1600.webp</image:loc>
+      <image:title>Recruiting-Fachkraft im Gespräch</image:title>
+      <image:caption>KI-Kandidat - Digitale Recruiting-Agentur</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1450101499163-c8848c66ca85-1600.webp</image:loc>
+      <image:title>Digitale Personalvermittlung - KI-Matching</image:title>
+      <image:caption>KI-Kandidat - Digitale Recruiting-Agentur</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1451187580459-43490279c0fa-1600.webp</image:loc>
+      <image:title>KI-gestützte Datenanalyse im Recruiting</image:title>
+      <image:caption>KI-Kandidat - Digitale Recruiting-Agentur</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1454165804606-c3d57bc86b40-1600.webp</image:loc>
+      <image:title>Professionelles Bewerbungsgespräch</image:title>
+      <image:caption>KI-Kandidat - Digitale Recruiting-Agentur</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Über uns -->
+  <url>
+    <loc>https://ki-kandidat.de/about.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1460925895917-afdab827c52f-1600.webp</image:loc>
+      <image:title>Digitale Geschäftsstrategie und Analyse</image:title>
+      <image:caption>KI-Kandidat - Unser Team und unsere Vision</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1472099645785-5658abf4ff4e-1600.webp</image:loc>
+      <image:title>Recruiting-Experte bei KI-Kandidat</image:title>
+      <image:caption>KI-Kandidat - Unser Team und unsere Vision</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1500648767791-00dcc994a43e-1600.webp</image:loc>
+      <image:title>Personalberater im Büro</image:title>
+      <image:caption>KI-Kandidat - Unser Team und unsere Vision</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1507003211169-0a1dd7228f2d-1600.webp</image:loc>
+      <image:title>Geschäftsführer und Recruiting-Spezialist</image:title>
+      <image:caption>KI-Kandidat - Unser Team und unsere Vision</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branchen-Übersicht -->
+  <url>
+    <loc>https://ki-kandidat.de/branchen.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1466611653911-95081537e5b7-1600.webp</image:loc>
+      <image:title>Fachkräfte in verschiedenen Branchen</image:title>
+      <image:caption>KI-Kandidat - Personalvermittlung für alle Branchen</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1477959858617-67f85cf4f1df-1600.webp</image:loc>
+      <image:title>Moderner Unternehmensstandort</image:title>
+      <image:caption>KI-Kandidat - Personalvermittlung für alle Branchen</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1486406146926-c627a92ad1ab-1600.webp</image:loc>
+      <image:title>Unternehmensgebäude und Wirtschaftsstandort</image:title>
+      <image:caption>KI-Kandidat - Personalvermittlung für alle Branchen</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1497366216548-37526070297c-1600.webp</image:loc>
+      <image:title>Modernes Büro und Arbeitsumgebung</image:title>
+      <image:caption>KI-Kandidat - Personalvermittlung für alle Branchen</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche IT -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-it.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1461749280684-dccba630e2f6-1600.webp</image:loc>
+      <image:title>IT-Entwickler beim Programmieren</image:title>
+      <image:caption>KI-Kandidat - IT-Fachkräfte und Softwareentwickler vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1518770660439-4636190af475-1600.webp</image:loc>
+      <image:title>Technologie und Elektronik im IT-Bereich</image:title>
+      <image:caption>KI-Kandidat - IT-Fachkräfte und Softwareentwickler vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1550751827-4bd374c3f58b-1600.webp</image:loc>
+      <image:title>Cybersecurity und IT-Infrastruktur</image:title>
+      <image:caption>KI-Kandidat - IT-Fachkräfte und Softwareentwickler vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1551288049-bebda4e38f71-1600.webp</image:loc>
+      <image:title>Datenanalyse und digitale Transformation</image:title>
+      <image:caption>KI-Kandidat - IT-Fachkräfte und Softwareentwickler vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche Bau -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-bau.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1503387762-592deb58ef4e-1600.webp</image:loc>
+      <image:title>Bauleiter auf der Baustelle</image:title>
+      <image:caption>KI-Kandidat - Baufachkräfte und Ingenieure vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1504307651254-35680f356dfd-1600.webp</image:loc>
+      <image:title>Bauarbeiter bei der Arbeit auf der Baustelle</image:title>
+      <image:caption>KI-Kandidat - Baufachkräfte und Ingenieure vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1560518883-ce09059eeffa-1600.webp</image:loc>
+      <image:title>Architektur und Gebäudekonstruktion</image:title>
+      <image:caption>KI-Kandidat - Baufachkräfte und Ingenieure vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche Handwerk -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-handwerk.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1504868584819-f8e8b4b6d7e3-1600.webp</image:loc>
+      <image:title>Handwerker bei der Arbeit</image:title>
+      <image:caption>KI-Kandidat - Handwerksfachkräfte vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1553877522-43269d4ea984-1600.webp</image:loc>
+      <image:title>Fachhandwerker mit Werkzeug</image:title>
+      <image:caption>KI-Kandidat - Handwerksfachkräfte vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1565043666747-69f6646db940-1600.webp</image:loc>
+      <image:title>Handwerksbetrieb und Werkstatt</image:title>
+      <image:caption>KI-Kandidat - Handwerksfachkräfte vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche Industrie -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-industrie.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1554224155-6726b3ff858f-1600.webp</image:loc>
+      <image:title>Industrieanlage und Produktion</image:title>
+      <image:caption>KI-Kandidat - Industrie-Fachkräfte und Ingenieure vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1581092918056-0c4c3acd3789-1600.webp</image:loc>
+      <image:title>Fachkraft in der Industrie</image:title>
+      <image:caption>KI-Kandidat - Industrie-Fachkräfte und Ingenieure vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1587293852726-70cdb56c2866-1600.webp</image:loc>
+      <image:title>Industrieproduktion und Fertigung</image:title>
+      <image:caption>KI-Kandidat - Industrie-Fachkräfte und Ingenieure vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche Pflege -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-pflege.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1576091160399-112ba8d25d1d-1600.webp</image:loc>
+      <image:title>Pflegefachkraft im Einsatz</image:title>
+      <image:caption>KI-Kandidat - Pflegepersonal und medizinische Fachkräfte vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1576091160550-2173dba999ef-1600.webp</image:loc>
+      <image:title>Krankenpflege und medizinische Versorgung</image:title>
+      <image:caption>KI-Kandidat - Pflegepersonal und medizinische Fachkräfte vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1580489944761-15a19d654956-1600.webp</image:loc>
+      <image:title>Pflegerin bei der Patientenbetreuung</image:title>
+      <image:caption>KI-Kandidat - Pflegepersonal und medizinische Fachkräfte vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche Logistik -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-logistik.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1558494949-ef010cbdcc31-1600.webp</image:loc>
+      <image:title>Logistikzentrum und Lagerhaltung</image:title>
+      <image:caption>KI-Kandidat - Logistikfachkräfte und Fahrer vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1563013544-824ae1b704d3-1600.webp</image:loc>
+      <image:title>Transport und Lieferlogistik</image:title>
+      <image:caption>KI-Kandidat - Logistikfachkräfte und Fahrer vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1566073771259-6a8506099945-1600.webp</image:loc>
+      <image:title>Lagerarbeiter und Versandlogistik</image:title>
+      <image:caption>KI-Kandidat - Logistikfachkräfte und Fahrer vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche Energie -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-energie.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1497435334941-8c899ee9e8e9-1600.webp</image:loc>
+      <image:title>Erneuerbare Energien und Windkraft</image:title>
+      <image:caption>KI-Kandidat - Energiefachkräfte und Techniker vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1611974789855-9c2a0a7236a3-1600.webp</image:loc>
+      <image:title>Finanzmärkte und Energiehandel</image:title>
+      <image:caption>KI-Kandidat - Energiefachkräfte und Techniker vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1664575600796-ffa828c5cb6e-1600.webp</image:loc>
+      <image:title>Energietechnik und Infrastruktur</image:title>
+      <image:caption>KI-Kandidat - Energiefachkräfte und Techniker vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche Finanzen -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-finanzen.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1556157382-97eda2d62296-1600.webp</image:loc>
+      <image:title>Finanzberatung und Bankwesen</image:title>
+      <image:caption>KI-Kandidat - Finanzfachkräfte und Berater vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1601584115197-04ecc0da31d7-1600.webp</image:loc>
+      <image:title>Finanzanalyst bei der Arbeit</image:title>
+      <image:caption>KI-Kandidat - Finanzfachkräfte und Berater vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche Hotellerie -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-hotellerie.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1517248135467-4c7edcad34c4-1600.webp</image:loc>
+      <image:title>Hotel und Gastronomiebereich</image:title>
+      <image:caption>KI-Kandidat - Hotellerie und Gastronomiepersonal vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1567401893414-76b7b1e5a7a5-1600.webp</image:loc>
+      <image:title>Einzelhandel und Kundenservice</image:title>
+      <image:caption>KI-Kandidat - Hotellerie und Gastronomiepersonal vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche Handel -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-handel.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1548142813-c348350df52b-1600.webp</image:loc>
+      <image:title>Handels- und Verkaufsfachkraft</image:title>
+      <image:caption>KI-Kandidat - Handelsfachkräfte und Vertrieb vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1560250097-0b93528c311a-1600.webp</image:loc>
+      <image:title>Vertriebsmitarbeiter im Kundengespräch</image:title>
+      <image:caption>KI-Kandidat - Handelsfachkräfte und Vertrieb vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche Immobilien -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-immobilien.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1556761175-5973dc0f32e7-1600.webp</image:loc>
+      <image:title>Team-Meeting bei KI-Kandidat</image:title>
+      <image:caption>KI-Kandidat - Immobilienfachkräfte vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1556761175-b413da4baf72-1600.webp</image:loc>
+      <image:title>Immobilienberatung und Projektentwicklung</image:title>
+      <image:caption>KI-Kandidat - Immobilienfachkräfte vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Branche Beratung -->
+  <url>
+    <loc>https://ki-kandidat.de/branche-beratung.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1542744173-8e7e53415bb0-1600.webp</image:loc>
+      <image:title>Unternehmensberatung und Strategie</image:title>
+      <image:caption>KI-Kandidat - Beratungsfachkräfte und Consultants vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1573496359142-b8d87734a5a2-1600.webp</image:loc>
+      <image:title>Beraterin im professionellen Gespräch</image:title>
+      <image:caption>KI-Kandidat - Beratungsfachkräfte und Consultants vermitteln</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1573497019418-b400bb3ab074-1600.webp</image:loc>
+      <image:title>Strategieberatung und Unternehmensentwicklung</image:title>
+      <image:caption>KI-Kandidat - Beratungsfachkräfte und Consultants vermitteln</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Karriere -->
+  <url>
+    <loc>https://ki-kandidat.de/karriere.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1519085360753-af0119f7cbe7-1600.webp</image:loc>
+      <image:title>Karrieremöglichkeiten bei KI-Kandidat</image:title>
+      <image:caption>KI-Kandidat - Karriere und Jobs im Recruiting</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1521737604893-d14cc237f11d-1600.webp</image:loc>
+      <image:title>Team-Meeting und Teamarbeit im Büro</image:title>
+      <image:caption>KI-Kandidat - Karriere und Jobs im Recruiting</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1522071820081-009f0129c71c-1600.webp</image:loc>
+      <image:title>Kollegen beim gemeinsamen Arbeiten</image:title>
+      <image:caption>KI-Kandidat - Karriere und Jobs im Recruiting</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1600880292089-90a7e086ee0c-1600.webp</image:loc>
+      <image:title>Moderner Arbeitsplatz und Büroumgebung</image:title>
+      <image:caption>KI-Kandidat - Karriere und Jobs im Recruiting</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1600880292203-757bb62b4baf-1600.webp</image:loc>
+      <image:title>Professionelles Arbeitsumfeld und Teamkultur</image:title>
+      <image:caption>KI-Kandidat - Karriere und Jobs im Recruiting</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Kontakt -->
+  <url>
+    <loc>https://ki-kandidat.de/kontakt.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1568602471122-7832951cc4c5-1600.webp</image:loc>
+      <image:title>Ansprechpartner bei KI-Kandidat</image:title>
+      <image:caption>KI-Kandidat - Kontakt und Beratung</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1677756119517-756a188d2d94-1600.webp</image:loc>
+      <image:title>KI-gestützte Kommunikation und Beratung</image:title>
+      <image:caption>KI-Kandidat - Kontakt und Beratung</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Bilder ohne 1600er-Variante (nur 800er verfügbar) -->
+  <url>
+    <loc>https://ki-kandidat.de/about.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1486325212027-8081e485255e-800.webp</image:loc>
+      <image:title>Laptop und digitales Arbeiten</image:title>
+      <image:caption>KI-Kandidat - Unser Team und unsere Vision</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1497032628192-86f99bcd76bc-800.webp</image:loc>
+      <image:title>Moderner Büroarbeitsplatz</image:title>
+      <image:caption>KI-Kandidat - Unser Team und unsere Vision</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ki-kandidat.de/karriere.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1517048676732-d65bc937f952-800.webp</image:loc>
+      <image:title>Mitarbeiter-Meeting und Präsentation</image:title>
+      <image:caption>KI-Kandidat - Karriere und Jobs im Recruiting</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1521737852567-6949f3f9f2b5-800.webp</image:loc>
+      <image:title>Teamarbeit und Unternehmenskultur</image:title>
+      <image:caption>KI-Kandidat - Karriere und Jobs im Recruiting</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1551836022-aadb801c60ae-800.webp</image:loc>
+      <image:title>Büro und Arbeitsatmosphäre</image:title>
+      <image:caption>KI-Kandidat - Karriere und Jobs im Recruiting</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ki-kandidat.de/kontakt.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1557804506-669a67965ba0-800.webp</image:loc>
+      <image:title>Beratungsgespräch und Kundenkontakt</image:title>
+      <image:caption>KI-Kandidat - Kontakt und Beratung</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://ki-kandidat.de/branchen.html</loc>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1559136555-9303baea8ebd-800.webp</image:loc>
+      <image:title>Wachstum und Unternehmenserfolg</image:title>
+      <image:caption>KI-Kandidat - Personalvermittlung für alle Branchen</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ki-kandidat.de/assets/img/photo-1561489413-985b06da5bee-800.webp</image:loc>
+      <image:title>Diverse Fachkräfte und Branchenvielfalt</image:title>
+      <image:caption>KI-Kandidat - Personalvermittlung für alle Branchen</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

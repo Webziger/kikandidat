@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
+Allow: /assets/img/
+Allow: /assets/fonts/
 Disallow: /uploads/
 Disallow: /assets/img/_raw/
 
+Sitemap: https://ki-kandidat.de/sitemap-index.xml
 Sitemap: https://ki-kandidat.de/sitemap.xml
+Sitemap: https://ki-kandidat.de/sitemap-images.xml
