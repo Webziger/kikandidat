@@ -6,3 +6,14 @@
 .ki-card--out{border-color:rgba(184,114,15,0.18) !important}
 .ki-card-icon{background:rgba(184,114,15,0.10) !important;border-color:rgba(184,114,15,0.20) !important}
 .ki-orb-ring{border-color:rgba(184,114,15,0.25) !important}
+/* ── KI-Section: warm background + logo currentColor fix ─── */
+.ki-intro-section{background:radial-gradient(ellipse 60% 90% at 20% 60%,rgba(184,114,15,0.16) 0%,transparent 55%),radial-gradient(ellipse 50% 60% at 80% 20%,rgba(212,136,30,0.10) 0%,transparent 50%),#0A0502 !important}
+.ki-intro-section::after{background:linear-gradient(90deg,transparent,rgba(184,114,15,0.28) 25%,rgba(184,114,15,0.50) 50%,rgba(184,114,15,0.28) 75%,transparent) !important}
+.ki-logo-clean{color:#F5F1E8 !important}
+/* ── KI-Section: remaining blue fixes ────────────────────── */
+.ki-orb-label{color:rgba(184,114,15,0.65) !important}
+.ki-card-stat{color:var(--accent) !important}
+.ki-card-icon{color:rgba(184,114,15,0.85) !important}
+.ki-card-live{color:var(--accent) !important}
+.ki-live-dot{background:var(--accent) !important}
+.ki-card-icon svg{stroke:currentColor !important}

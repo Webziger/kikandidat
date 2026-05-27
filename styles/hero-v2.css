@@ -472,8 +472,18 @@ h1.hero-serif {
   .hero-serif { font-size: clamp(32px, 8vw, 48px); }
   .float-card { min-width: 0; width: 100%; max-width: 320px; }
   .float-badge { font-size: 12px; padding: 8px 14px; }
-  .hero-phone { width: 220px; }
-  .phone-screen { min-height: 340px; }
+  .hero-phone { width: 190px; }
+  .phone-screen { max-height: 380px; min-height: unset; overflow: hidden; }
+  /* compact phone card layout */
+  .phone-app-head { font-size: 14px; padding: 10px 12px 6px; }
+  .phone-app-tabs { padding: 0 12px 8px; }
+  .phone-app-list { padding: 4px 8px; gap: 5px; }
+  .phone-app-list li { align-items: flex-start; gap: 8px; padding: 7px; }
+  .phone-app-list .avatar { width: 28px; height: 28px; font-size: 9px; }
+  .phone-app-list .name { font-size: 11.5px; }
+  .phone-app-list .role { font-size: 9.5px; }
+  .phone-app-list .pct { font-size: 11px; padding-top: 1px; }
+  .phone-cta { margin: 8px 10px 12px; font-size: 12px; padding: 10px 12px; }
 }
 
 /* ── Reduced Motion ─────────────────────────────────────── */
