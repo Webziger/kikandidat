@@ -112,7 +112,7 @@ section#pillars.platform-section {
 }
 .pcard-link:hover { gap: 14px; }
 .pcard-link::after {
-  content: '→';
+  content: '→' / '';
   transition: transform .25s ease;
 }
 .pcard-link:hover::after { transform: translateX(2px); }

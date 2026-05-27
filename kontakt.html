@@ -219,7 +219,7 @@
   <div class="breadcrumb"><a href="index.html">HOME</a><span class="sep">/</span><span style="color:var(--accent)">KONTAKT</span></div>
 </div>
 
-<section class="ko-hero" id="main">
+<section class="ko-hero" id="main" role="main">
   <div class="ko-hero-bg" aria-hidden="true">
     <img src="assets/img/photo-1556761175-5973dc0f32e7-1600.webp" alt="" loading="eager" fetchpriority="high" />
   </div>
@@ -281,38 +281,38 @@
             <div class="form-pane active" id="pane1">
               <div class="field-grid">
                 <div class="field-wrap">
-                  <label class="field-label">Vorname *</label>
-                  <input class="field-input" type="text" name="fname" required autocomplete="given-name" />
+                  <label class="field-label" for="ko-fname">Vorname *</label>
+                  <input class="field-input" type="text" id="ko-fname" name="fname" required autocomplete="given-name" />
                   <span class="field-check">✓</span>
                   <span class="field-error">Pflichtfeld</span>
                 </div>
                 <div class="field-wrap">
-                  <label class="field-label">Nachname *</label>
-                  <input class="field-input" type="text" name="lname" required autocomplete="family-name" />
+                  <label class="field-label" for="ko-lname">Nachname *</label>
+                  <input class="field-input" type="text" id="ko-lname" name="lname" required autocomplete="family-name" />
                   <span class="field-check">✓</span>
                   <span class="field-error">Pflichtfeld</span>
                 </div>
               </div>
               <div class="field-wrap">
-                <label class="field-label">Unternehmen *</label>
-                <input class="field-input" type="text" name="company" required autocomplete="organization" />
+                <label class="field-label" for="ko-company">Unternehmen *</label>
+                <input class="field-input" type="text" id="ko-company" name="company" required autocomplete="organization" />
                 <span class="field-check">✓</span>
                 <span class="field-error">Pflichtfeld</span>
               </div>
               <div class="field-grid">
                 <div class="field-wrap" style="margin-bottom:0">
-                  <label class="field-label" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Mitarbeiterzahl</label>
+                  <label class="field-label" for="ko-size" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Mitarbeiterzahl</label>
                   <div style="position:relative">
-                    <select class="field-select" name="size" style="padding:14px 40px 14px 16px">
+                    <select class="field-select" id="ko-size" name="size" style="padding:14px 40px 14px 16px">
                       <option>1–10</option><option>11–50</option><option selected>51–250</option><option>251–1.000</option><option>1.000+</option>
                     </select>
                     <span class="field-select-arrow">↓</span>
                   </div>
                 </div>
                 <div class="field-wrap" style="margin-bottom:0">
-                  <label class="field-label" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Branche</label>
+                  <label class="field-label" for="ko-industry" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Branche</label>
                   <div style="position:relative">
-                    <select class="field-select" name="industry" style="padding:14px 40px 14px 16px">
+                    <select class="field-select" id="ko-industry" name="industry" style="padding:14px 40px 14px 16px">
                       <option value="">Bitte wählen</option>
                       <option>Bau</option><option>Handwerk</option><option>Industrie</option><option>IT &amp; Tech</option>
                       <option>Pflege</option><option>Logistik</option><option>Handel</option><option>Finanzen</option>
@@ -332,20 +332,20 @@
             <div class="form-pane" id="pane2">
               <div class="field-grid">
                 <div class="field-wrap">
-                  <label class="field-label">Stelle(n) *</label>
-                  <input class="field-input" type="text" name="position" required placeholder="" />
+                  <label class="field-label" for="ko-position">Stelle(n) *</label>
+                  <input class="field-input" type="text" id="ko-position" name="position" required placeholder="" />
                   <span class="field-check">✓</span>
                   <span class="field-error">Pflichtfeld</span>
                 </div>
                 <div class="field-wrap">
-                  <label class="field-label">Region</label>
-                  <input class="field-input" type="text" name="region" placeholder="" />
+                  <label class="field-label" for="ko-region">Region</label>
+                  <input class="field-input" type="text" id="ko-region" name="region" placeholder="" />
                 </div>
               </div>
               <div class="field-wrap" style="margin-bottom:20px">
-                <label class="field-label" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Wie lange ist die Stelle vakant?</label>
+                <label class="field-label" for="ko-duration" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Wie lange ist die Stelle vakant?</label>
                 <div style="position:relative">
-                  <select class="field-select" name="duration" style="padding:14px 40px 14px 16px">
+                  <select class="field-select" id="ko-duration" name="duration" style="padding:14px 40px 14px 16px">
                     <option value="">Bitte wählen</option>
                     <option>Neue Stelle (noch nicht ausgeschrieben)</option>
                     <option>Unter 4 Wochen</option><option>1–3 Monate</option>
@@ -355,8 +355,8 @@
                 </div>
               </div>
               <div class="field-wrap textarea-wrap">
-                <label class="field-label">Ihre größte Recruiting-Herausforderung</label>
-                <textarea class="field-textarea" name="challenge" placeholder="Was funktioniert bei Ihnen gerade nicht im Recruiting?"></textarea>
+                <label class="field-label" for="ko-challenge">Ihre größte Recruiting-Herausforderung</label>
+                <textarea class="field-textarea" id="ko-challenge" name="challenge" placeholder="Was funktioniert bei Ihnen gerade nicht im Recruiting?"></textarea>
               </div>
               <div class="form-nav">
                 <button class="form-back" type="button" onclick="prevStep(2)">
@@ -371,20 +371,20 @@
             <div class="form-pane" id="pane3">
               <div class="field-grid">
                 <div class="field-wrap">
-                  <label class="field-label">E-Mail *</label>
-                  <input class="field-input" type="email" name="email" required autocomplete="email" />
+                  <label class="field-label" for="ko-email">E-Mail *</label>
+                  <input class="field-input" type="email" id="ko-email" name="email" required autocomplete="email" />
                   <span class="field-check">✓</span>
                   <span class="field-error">Gültige E-Mail erforderlich</span>
                 </div>
                 <div class="field-wrap">
-                  <label class="field-label">Telefon</label>
-                  <input class="field-input" type="tel" name="phone" autocomplete="tel" />
+                  <label class="field-label" for="ko-phone">Telefon</label>
+                  <input class="field-input" type="tel" id="ko-phone" name="phone" autocomplete="tel" />
                 </div>
               </div>
               <div class="field-wrap" style="margin-bottom:24px">
-                <label class="field-label" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Bevorzugte Kontaktzeit</label>
+                <label class="field-label" for="ko-calltime" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Bevorzugte Kontaktzeit</label>
                 <div style="position:relative">
-                  <select class="field-select" name="calltime" style="padding:14px 40px 14px 16px">
+                  <select class="field-select" id="ko-calltime" name="calltime" style="padding:14px 40px 14px 16px">
                     <option>Egal / Flexibel</option>
                     <option>Vormittags (9–12 Uhr)</option>
                     <option>Mittags (12–14 Uhr)</option>

@@ -131,22 +131,39 @@
     const btn = document.querySelector('.nav-hamburger');
     const drawer = document.getElementById('mobileNav');
     const closeBtn = drawer && drawer.querySelector('.mobile-nav-close');
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      btn.focus();
+    }
     if (btn && drawer) {
       btn.addEventListener('click', () => {
         const open = drawer.classList.toggle('open');
         btn.setAttribute('aria-expanded', open);
         document.body.style.overflow = open ? 'hidden' : '';
+        if (open) {
+          const first = drawer.querySelector('a, button');
+          if (first) setTimeout(() => first.focus(), 50);
+        } else {
+          btn.focus();
+        }
       });
-      if (closeBtn) closeBtn.addEventListener('click', () => {
-        drawer.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+      // Escape key closes drawer
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
       });
-      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        drawer.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }));
+      // Focus trap within open drawer
+      drawer.addEventListener('keydown', function(e) {
+        if (!drawer.classList.contains('open') || e.key !== 'Tab') return;
+        const focusable = Array.from(drawer.querySelectorAll('a, button')).filter(function(el) { return !el.disabled; });
+        if (!focusable.length) return;
+        const first = focusable[0], last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      });
     }
   };
   function initReveals() {

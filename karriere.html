@@ -243,7 +243,7 @@
 </div>
 
 <!-- Premium Hero -->
-<section class="ka-hero" id="main">
+<section class="ka-hero" id="main" role="main">
   <div class="ka-hero-bg" aria-hidden="true">
     <img src="assets/img/photo-1522071820081-009f0129c71c-1600.webp" alt="" loading="eager" fetchpriority="high" />
   </div>
@@ -425,24 +425,24 @@
       <div class="apply-form visible" id="applyForm">
         <div style="display:flex;gap:12px;margin-bottom:16px">
           <div class="apply-field" style="flex:1;margin-bottom:0">
-            <label class="apply-label">Vorname *</label>
+            <label class="apply-label" for="applyFname">Vorname *</label>
             <input class="apply-input" type="text" id="applyFname" required placeholder="Max" />
           </div>
           <div class="apply-field" style="flex:1;margin-bottom:0">
-            <label class="apply-label">Nachname *</label>
+            <label class="apply-label" for="applyLname">Nachname *</label>
             <input class="apply-input" type="text" id="applyLname" required placeholder="Mustermann" />
           </div>
         </div>
         <div class="apply-field">
-          <label class="apply-label">E-Mail *</label>
+          <label class="apply-label" for="applyEmail">E-Mail *</label>
           <input class="apply-input" type="email" id="applyEmail" required placeholder="max@example.de" />
         </div>
         <div class="apply-field">
-          <label class="apply-label">Profil-Link / Portfolio (optional)</label>
+          <label class="apply-label" for="applyProfile">Profil-Link / Portfolio (optional)</label>
           <input class="apply-input" type="url" id="applyProfile" placeholder="https://ihre-profilseite.de/..." />
         </div>
         <div class="apply-field">
-          <label class="apply-label">Warum KI-Kandidat?</label>
+          <label class="apply-label" for="applyMotiv">Warum KI-Kandidat?</label>
           <textarea class="apply-textarea" id="applyMotiv" placeholder="Was interessiert Sie an dieser Stelle und an unserem Unternehmen?"></textarea>
         </div>
         <div class="apply-field">
