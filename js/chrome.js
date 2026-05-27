@@ -83,12 +83,11 @@
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Standorte</h4>
+            <h4>Kontakt</h4>
             <ul>
-              <li><a href="#">München</a></li>
-              <li><a href="#">Hamburg</a></li>
-              <li><a href="#">Wien</a></li>
-              <li><a href="#">Zürich</a></li>
+              <li><a href="kontakt.html">Berlin · HQ</a></li>
+              <li><a href="mailto:hello@ki-kandidat.de">hello@ki-kandidat.de</a></li>
+              <li><a href="https://calendly.com/d-koch-ki-kandidat/30min" target="_blank" rel="noopener noreferrer">Termin buchen</a></li>
             </ul>
           </div>
         </div>

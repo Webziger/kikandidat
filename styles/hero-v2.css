@@ -27,9 +27,9 @@
   display: flex;
   gap: 8px;
   padding: 0 4px;
-  filter: saturate(0.85);
-  opacity: 0.42;
-  mix-blend-mode: luminosity;
+  filter: saturate(0.75) brightness(0.72);
+  opacity: 0.85;
+  mix-blend-mode: normal;
 }
 .hero-mosaic-cols .mosaic-col {
   flex: 1;
@@ -53,13 +53,14 @@
   inset: 0;
   background-size: cover;
   background-position: center;
+  filter: blur(1.5px);
 }
 .hero-mosaic-veil {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(10,5,2,0.86) 0%, rgba(10,5,2,0.95) 45%, rgba(10,5,2,1) 100%),
-    linear-gradient(180deg, rgba(10,5,2,0.6) 0%, rgba(10,5,2,0.2) 50%, rgba(10,5,2,0.85) 100%);
+    radial-gradient(ellipse 55% 65% at 50% 50%, rgba(10,5,2,0.88) 0%, rgba(10,5,2,0.78) 40%, rgba(10,5,2,0.38) 75%, rgba(10,5,2,0.12) 100%),
+    linear-gradient(180deg, rgba(10,5,2,0.55) 0%, rgba(10,5,2,0.05) 40%, rgba(10,5,2,0.05) 60%, rgba(10,5,2,0.60) 100%);
   z-index: 1;
 }
 
@@ -413,8 +414,10 @@ h1.hero-serif {
 }
 .phone-app-list .role {
   font-size: 10.5px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.5) !important;
   margin-top: 1px;
+  background: transparent !important;
+  transition: none !important;
 }
 .phone-app-list .pct {
   margin-left: auto;
