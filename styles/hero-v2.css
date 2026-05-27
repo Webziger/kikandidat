@@ -59,8 +59,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 55% 65% at 50% 50%, rgba(10,5,2,0.88) 0%, rgba(10,5,2,0.78) 40%, rgba(10,5,2,0.38) 75%, rgba(10,5,2,0.12) 100%),
-    linear-gradient(180deg, rgba(10,5,2,0.55) 0%, rgba(10,5,2,0.05) 40%, rgba(10,5,2,0.05) 60%, rgba(10,5,2,0.60) 100%);
+    radial-gradient(ellipse 55% 65% at 50% 50%, rgba(10,5,2,0.94) 0%, rgba(10,5,2,0.86) 40%, rgba(10,5,2,0.42) 75%, rgba(10,5,2,0.14) 100%),
+    linear-gradient(180deg, rgba(10,5,2,0.65) 0%, rgba(10,5,2,0.06) 38%, rgba(10,5,2,0.06) 62%, rgba(10,5,2,0.70) 100%);
   z-index: 1;
 }
 
@@ -447,37 +447,6 @@ h1.hero-serif {
 }
 
 /* ── Logo-Wall unten in der Hero ─────────────────────────── */
-.hero-clients {
-  position: relative;
-  z-index: 3;
-  margin-top: 64px;
-  text-align: center;
-}
-.hero-clients-label {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(245,241,232,0.58);
-  margin-bottom: 18px;
-}
-.hero-clients-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 36px;
-  flex-wrap: wrap;
-  opacity: 0.75;
-  filter: brightness(1.4);
-}
-.hero-clients-row span {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 0.04em;
-  color: #F5F1E8;
-  opacity: 0.7;
-}
 
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 1100px) {
