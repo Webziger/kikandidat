@@ -473,6 +473,7 @@ h1.hero-serif {
   .float-card { min-width: 0; width: 100%; max-width: 320px; }
   .float-badge { font-size: 12px; padding: 8px 14px; }
   .hero-phone { width: 220px; }
+  .phone-screen { min-height: 340px; }
 }
 
 /* ── Reduced Motion ─────────────────────────────────────── */
