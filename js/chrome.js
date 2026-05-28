@@ -3,12 +3,13 @@
     return `
     <nav class="nav">
       <div class="nav-inner">
-        <a href="index.html" class="logo" aria-label="KI-Kandidat Home">
-          <img src="assets/kiq-logo.svg" class="nav-kiq-logo shimmer-on-load" alt="KI-Kandidat" width="180" height="40" />
+        <a href="/" class="logo" aria-label="KI-Kandidat Home">
+          <img src="assets/kiq-logo.svg"      class="nav-kiq-logo kiq--silver shimmer-on-load" alt="KI-Kandidat" width="180" height="40" />
+          <img src="assets/kiq-logo-dark.svg" class="nav-kiq-logo kiq--dark"                   alt=""            width="180" height="40" aria-hidden="true" />
         </a>
         <div class="nav-sep"></div>
         <div class="nav-links">
-          <a href="index.html#pillars" class="${active==='product'?'active':''}">Plattform</a>
+          <a href="/#pillars" class="${active==='product'?'active':''}">Plattform</a>
           <a href="branchen.html" class="${active==='industries'?'active':''}">Branchen</a>
           <a href="about.html" class="${active==='about'?'active':''}">Über uns</a>
           <a href="karriere.html" class="${active==='career'?'active':''}">Karriere</a>
@@ -25,7 +26,7 @@
     </nav>
     <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Navigation">
       <button class="mobile-nav-close" aria-label="Menü schließen">&#x2715;</button>
-      <a href="index.html#pillars">Plattform</a>
+      <a href="/#pillars">Plattform</a>
       <a href="branchen.html">Branchen</a>
       <a href="about.html">Über uns</a>
       <a href="karriere.html">Karriere</a>
@@ -39,7 +40,7 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-col">
-            <a href="index.html" class="logo" style="margin-bottom:16px">
+            <a href="/" class="logo" style="margin-bottom:16px">
               <img src="assets/kiq-logo.svg" class="footer-kiq-logo" alt="KI-Kandidat" width="180" height="40" style="height:36px;width:auto;object-fit:contain;display:block;color:#F5F1E8" />
             </a>
             <p style="color:rgba(250,248,244,0.70);font-size:14px;max-width:36ch;margin:0 0 24px 0">
@@ -53,11 +54,11 @@
           <div class="footer-col">
             <h4>Plattform</h4>
             <ul>
-              <li><a href="index.html#pillars">Kandidaten Radar</a></li>
-              <li><a href="index.html#pillars">Kandidaten Hub</a></li>
-              <li><a href="index.html#pillars">Kandidaten Voice</a></li>
-              <li><a href="index.html#pillars">Karriereseiten</a></li>
-              <li><a href="index.html#pillars">Employer Branding</a></li>
+              <li><a href="/#pillars">Kandidaten Radar</a></li>
+              <li><a href="/#pillars">Kandidaten Hub</a></li>
+              <li><a href="/#pillars">Kandidaten Voice</a></li>
+              <li><a href="/#pillars">Karriereseiten</a></li>
+              <li><a href="/#pillars">Employer Branding</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -109,7 +110,7 @@
     if (navMount) {
       navMount.outerHTML = buildNav(activeKey);
       // Logo shimmer cleanup: nach Animation Mask zurücknehmen, damit Hover-Glow korrekt greift
-      var navLogo = document.querySelector('.nav-kiq-logo.shimmer-on-load');
+      var navLogo = document.querySelector('.kiq--silver.shimmer-on-load');
       if (navLogo) {
         navLogo.addEventListener('animationend', function(){ navLogo.classList.add('shimmer-done'); }, { once: true });
       }

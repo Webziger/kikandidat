@@ -37,12 +37,13 @@
     <rect x="4" y="58" width="32" height="84" rx="6" fill="url(#kiSilver)"/>
   </g>
 
-  <!-- Wordmark KANDIDAT — uses currentColor so adapts to context -->
+  <!-- Wordmark KANDIDAT — silver/cream on dark backgrounds -->
   <text x="270" y="108"
         font-family="'Bricolage Grotesque','Plus Jakarta Sans',system-ui,sans-serif"
         font-weight="800"
         font-size="76"
         letter-spacing="-2"
         textLength="430"
-        lengthAdjust="spacingAndGlyphs">KANDIDAT</text>
+        lengthAdjust="spacingAndGlyphs"
+        fill="#D8D4CC">KANDIDAT</text>
 </svg>

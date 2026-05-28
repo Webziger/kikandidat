@@ -51,3 +51,29 @@
 .mobile-nav a{color:rgba(245,241,232,0.85) !important;}
 .mobile-nav a:hover{color:#F5F1E8 !important;}
 .mobile-nav-close{border-color:rgba(245,241,232,0.18) !important;color:rgba(245,241,232,0.85) !important;}
+/* ── Logo-Swap: silver/dark je nach Nav-State ─────────────────── */
+.nav .kiq--dark{display:none}
+.nav .kiq--silver{display:block}
+.nav[data-theme="light"] .kiq--silver{display:none !important}
+.nav[data-theme="light"] .kiq--dark{display:block !important}
+.nav[data-theme="dark"] .kiq--silver{display:block !important}
+.nav[data-theme="dark"] .kiq--dark{display:none !important}
+
+/* ── Nav: Underline/Punkte entfernen ────────────────────────────── */
+.nav-links a::after{display:none !important}
+
+/* ── Nav: Active-State nur via Pill-Background ──────────────────── */
+.nav-links a.active{font-weight:500 !important}
+.nav[data-theme="dark"] .nav-links a.active{background:rgba(255,255,255,0.10) !important;color:#F5F1E8 !important}
+.nav[data-theme="light"] .nav-links a.active{background:rgba(10,15,28,0.07) !important;color:#0A0F1C !important}
+
+/* ── Nav-Sep auf dunkler Nav: weißliche Linie ───────────────────── */
+.nav[data-theme="dark"] .nav-sep{background:rgba(255,255,255,0.12) !important}
+
+/* ── Whitespace: verbleibende Sections ──────────────────────────── */
+.quellen-section{padding:clamp(48px,6vw,72px) 0 !important}
+.pain-section{padding:clamp(48px,6vw,72px) 0 !important}
+.logo-wall{padding:24px 0 !important}
+.mehr-section{padding:clamp(48px,6vw,72px) 0 !important}
+.guarantee-section,section:has(.guarantee){padding:clamp(48px,6vw,64px) 0 !important}
+.sc-wrapper{padding:60px 24px 24px !important}
