@@ -4,8 +4,8 @@
     <nav class="nav">
       <div class="nav-inner">
         <a href="/" class="logo" aria-label="KI-Kandidat Home">
-          <img src="assets/kiq-logo.svg"      class="nav-kiq-logo kiq--silver shimmer-on-load" alt="KI-Kandidat" width="180" height="40" />
-          <img src="assets/kiq-logo-dark.svg" class="nav-kiq-logo kiq--dark"                   alt=""            width="180" height="40" aria-hidden="true" />
+          <img src="assets/kiq-logo.png"      class="nav-kiq-logo kiq--silver shimmer-on-load" alt="KI-Kandidat" width="180" height="35" />
+          <img src="assets/kiq-logo-dark.png" class="nav-kiq-logo kiq--dark"                   alt=""            width="180" height="35" aria-hidden="true" />
         </a>
         <div class="nav-sep"></div>
         <div class="nav-links">
@@ -41,7 +41,7 @@
         <div class="footer-grid">
           <div class="footer-col">
             <a href="/" class="logo" style="margin-bottom:16px">
-              <img src="assets/kiq-logo.svg" class="footer-kiq-logo" alt="KI-Kandidat" width="180" height="40" style="height:36px;width:auto;object-fit:contain;display:block;color:#F5F1E8" />
+              <img src="assets/kiq-logo.png" class="footer-kiq-logo" alt="KI-Kandidat" width="180" height="35" style="height:36px;width:auto;object-fit:contain;display:block" />
             </a>
             <p style="color:rgba(250,248,244,0.70);font-size:14px;max-width:36ch;margin:0 0 24px 0">
               Die digitale Recruiting-Agentur für den Mittelstand. Talent-Cloud, eigene Matching-KI, persönliche Beratung — in einer Plattform.

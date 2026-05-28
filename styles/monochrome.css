@@ -223,3 +223,146 @@ h1 em, h2 em, h3 em,
    SPACING / CONTENT WIDTH — HiOffice generosity
    ============================================================================ */
 .container { max-width: var(--content-max); }
+
+/* ============================================================================
+   GREY-BLUE ACCENT — modern slate, tasteful second tone, distributed.
+   Silver stays the dominant accent; this grey-blue is the "versetzt" offset
+   that lands on section eyebrows, links, focus rings, AI/score signals and
+   the KI-module orb. WCAG-checked: --blue-deep 7.2:1 on light, --blue-bright
+   7.5:1 on dark.
+   ============================================================================ */
+:root {
+  --blue:         #5B6F8F;   /* mid steel grey-blue (decorative)   */
+  --blue-deep:    #43546F;   /* text-safe on light (≈7.2:1)        */
+  --blue-bright:  #93A6C4;   /* text-safe on dark  (≈7.5:1)        */
+  --blue-soft:    rgba(91,111,143,0.10);
+  --blue-glow:    rgba(91,111,143,0.30);
+  --grad-blue:        linear-gradient(90deg,#43546F,#5B6F8F);
+  --grad-blue-bright: linear-gradient(90deg,#5B6F8F,#93A6C4);
+}
+
+/* Eyebrows / kickers → grey-blue (recurring accent across every section) */
+.eyebrow, .kicker, .section-eyebrow, .pill-eyebrow,
+[class*="eyebrow"], [class*="-kicker"] {
+  color: var(--blue-deep) !important;
+}
+[data-nav-theme="dark"] .eyebrow,
+[data-nav-theme="dark"] .kicker,
+[data-nav-theme="dark"] [class*="eyebrow"],
+[data-nav-theme="dark"] [class*="-kicker"],
+.ki-intro-section .eyebrow {
+  color: var(--blue-bright) !important;
+}
+.eyebrow::before, [class*="eyebrow"]::before {
+  background: var(--blue) !important;
+}
+[data-nav-theme="dark"] .eyebrow::before,
+.ki-intro-section .eyebrow::before {
+  background: var(--blue-bright) !important;
+  box-shadow: 0 0 12px rgba(91,111,143,0.45) !important;
+}
+/* Compound-specificity eyebrow rules (beat the legacy .X .eyebrow overrides) */
+.section-head .eyebrow, .tm-section .eyebrow, .branch-hero .eyebrow,
+.case-study .eyebrow, .pillars-head .eyebrow, .pillars-section .eyebrow {
+  color: var(--blue-deep) !important;
+}
+[data-nav-theme="dark"] .section-head .eyebrow,
+[data-nav-theme="dark"] .tm-section .eyebrow,
+[data-nav-theme="dark"] .branch-hero .eyebrow,
+[data-nav-theme="dark"] .case-study .eyebrow,
+[data-nav-theme="dark"] .pillars-head .eyebrow,
+[data-nav-theme="dark"] .pillars-section .eyebrow {
+  color: var(--blue-bright) !important;
+}
+
+/* Inline text / arrow links on light surfaces → grey-blue */
+.quellen-link, .link-arrow, .text-link,
+.prose a, .content a, .footer-col a:hover {
+  color: var(--blue-deep) !important;
+}
+[data-nav-theme="dark"] .quellen-link,
+[data-nav-theme="dark"] .link-arrow {
+  color: var(--blue-bright) !important;
+}
+
+/* Focus-visible ring → grey-blue (accessibility + accent) */
+a:focus-visible, button:focus-visible, .btn:focus-visible,
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--blue) !important;
+  outline-offset: 2px !important;
+}
+
+/* AI / score / active-progress signals → grey-blue (semantic: blue = AI) */
+.ls-bar-fill,
+.wf-progress-bar,
+.accent-bar {
+  background: var(--grad-blue-bright) !important;
+}
+.ks-chip-score, .ks-match-score, .match-score-badge {
+  color: var(--blue-bright) !important;
+}
+
+/* ============================================================================
+   KI-MODUL SECTION ("Wir stellen vor:") — kill the flat black void.
+   Layered dark base + grey-blue core glow gives depth and a modern AI feel.
+   monochrome.css loads last → these win over the near-black design-refresh bg.
+   ============================================================================ */
+.ki-intro-section {
+  background:
+    radial-gradient(ellipse 58% 52% at 50% 42%, var(--blue-glow) 0%, transparent 62%),
+    radial-gradient(ellipse 95% 60% at 50% -12%, rgba(147,166,196,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 75% at 50% 118%, rgba(6,9,15,0.65) 0%, transparent 60%),
+    linear-gradient(180deg, #0D1626 0%, #0A1120 50%, #0C1626 100%)
+    !important;
+}
+/* Keep the subtle top hairline but tint it grey-blue */
+.ki-intro-section::after {
+  background: linear-gradient(90deg, transparent,
+    rgba(147,166,196,0.30) 25%, rgba(147,166,196,0.60) 50%,
+    rgba(147,166,196,0.30) 75%, transparent) !important;
+}
+/* Input/output cards: lift them off the dark so they read as glass panels */
+.ki-intro-section .ki-card {
+  background: rgba(147,166,196,0.06) !important;
+  border: 1px solid rgba(147,166,196,0.16) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset,
+              0 14px 40px -16px rgba(0,0,0,0.7) !important;
+  backdrop-filter: blur(22px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(160%) !important;
+}
+.ki-intro-section .ki-card:hover {
+  border-color: rgba(147,166,196,0.34) !important;
+  box-shadow: 0 0 0 1px rgba(91,111,143,0.18),
+              0 18px 50px -16px rgba(0,0,0,0.7) !important;
+}
+.ki-intro-section .ki-card-icon {
+  background: rgba(91,111,143,0.16) !important;
+  border-color: rgba(147,166,196,0.26) !important;
+  color: var(--blue-bright) !important;
+}
+.ki-intro-section .ki-card-icon svg { stroke: var(--blue-bright) !important; }
+.ki-intro-section .ki-card-stat { color: var(--blue-bright) !important; }
+/* Center orb: grey-blue halo glow + rings (the AI core) */
+.ki-center-orb::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: -28% !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, var(--blue-glow) 0%,
+              rgba(91,111,143,0.10) 45%, transparent 68%) !important;
+  filter: blur(10px);
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+.ki-orb-ring        { border-color: rgba(147,166,196,0.30) !important; }
+.ki-orb-ring--2     { border-color: rgba(147,166,196,0.16) !important; }
+.ki-orb-ring--3     { border-color: rgba(147,166,196,0.08) !important; }
+.ki-orb-label       { color: rgba(147,166,196,0.70) !important; }
+/* Neutralise the leftover champagne em-gradient in the KI title */
+.ki-intro-title em {
+  background: var(--grad-silver-text) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
