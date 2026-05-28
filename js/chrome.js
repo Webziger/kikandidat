@@ -86,7 +86,7 @@
             <h4>Kontakt</h4>
             <ul>
               <li><a href="kontakt.html">Berlin · HQ</a></li>
-              <li><a href="mailto:hello@ki-kandidat.de">hello@ki-kandidat.de</a></li>
+              <li><a href="mailto:info@ki-kandidat.de">info@ki-kandidat.de</a></li>
               <li><a href="https://calendly.com/d-koch-ki-kandidat/30min" target="_blank" rel="noopener noreferrer">Termin buchen</a></li>
             </ul>
           </div>

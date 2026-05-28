@@ -17,3 +17,18 @@
 .ki-card-live{color:var(--accent) !important}
 .ki-live-dot{background:var(--accent) !important}
 .ki-card-icon svg{stroke:currentColor !important}
+/* ── Whitespace-Reduktion: Section-Padding ───────────────── */
+.pm-section{padding:72px 0 !important}
+.sc2-head{padding:56px 0 40px !important}
+.ind-section{padding:clamp(56px,7vw,80px) 0 !important}
+.tm-section{padding:56px 0 !important}
+.ts-section{padding:72px 0 !important}
+
+/* ── Branchen-Grid Mobile: 3 Spalten statt 2 ─────────────── */
+@media(max-width:768px){
+  .ind-grid{grid-template-columns:repeat(3,1fr) !important;gap:6px !important}
+  .ind-card{aspect-ratio:3/4 !important}
+  .ind-name{font-size:12px !important;line-height:1.25 !important}
+  .ind-pool{font-size:8px !important}
+  .ind-num{font-size:11px !important}
+}
