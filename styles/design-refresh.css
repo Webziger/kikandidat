@@ -208,3 +208,49 @@ h1 em,.h-display em,.br-hl em,.ab-hero h1 em,.ko-hl em,.ka-hl em{background:line
 .ls-bar-fill{background:linear-gradient(90deg,#1D50C8,#3B6FE8) !important}
 .ls-row.scoring .ls-bar-fill{background:linear-gradient(90deg,#93C5FD,#1D50C8) !important}
 .ls-pct{color:#3B6FE8 !important}
+
+/* ══════════════════════════════════════════════════════════════
+   HIOFFICE-STYLE NAV — final override (max specificity)
+   Supersedes all earlier nav rules
+══════════════════════════════════════════════════════════════ */
+
+/* ── Base: light glass (cool white, strong blur) ──────────── */
+.nav{
+  backdrop-filter:blur(22px) saturate(180%) !important;
+  -webkit-backdrop-filter:blur(22px) saturate(180%) !important;
+  background:rgba(244,245,247,0.88) !important;
+  border-bottom:1px solid rgba(10,15,28,0.08) !important;
+  box-shadow:0 1px 20px rgba(6,9,15,0.06) !important;
+  transition:background 0.35s ease,box-shadow 0.35s ease,border-color 0.35s ease !important;
+}
+
+/* ── Dark glass (over dark sections) ────────────────────── */
+.nav[data-theme="dark"]{
+  background:rgba(6,9,18,0.80) !important;
+  border-bottom:1px solid rgba(255,255,255,0.07) !important;
+  box-shadow:0 1px 28px rgba(0,0,0,0.30) !important;
+}
+
+/* ── Nav links: adaptive color ──────────────────────────── */
+.nav[data-theme="dark"] .nav-links a{color:rgba(238,240,244,0.80) !important}
+.nav[data-theme="dark"] .nav-links a:hover{color:#FFFFFF !important}
+.nav[data-theme="light"] .nav-links a{color:rgba(10,15,28,0.70) !important}
+.nav[data-theme="light"] .nav-links a:hover{color:#0A0F1C !important}
+
+/* ── Nav separator: adaptive ────────────────────────────── */
+.nav[data-theme="dark"] .nav-sep{background:rgba(255,255,255,0.14) !important}
+.nav[data-theme="light"] .nav-sep{background:rgba(10,15,28,0.12) !important}
+
+/* ── CTA button: dark nav keeps champagne gold visible ──── */
+.nav[data-theme="dark"] .nav-cta .btn-primary{
+  box-shadow:0 0 0 1px rgba(201,168,76,0.38),0 4px 18px rgba(201,168,76,0.32) !important;
+}
+
+/* ── Mobile nav: cool white glass ───────────────────────── */
+.mobile-nav{
+  background:rgba(244,245,247,0.97) !important;
+  backdrop-filter:blur(20px) saturate(160%) !important;
+  -webkit-backdrop-filter:blur(20px) saturate(160%) !important;
+}
+.mobile-nav a{color:rgba(10,15,28,0.80) !important}
+.mobile-nav a:hover{color:#0A0F1C !important}

@@ -1971,24 +1971,6 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
         </div>
       </div>
 
-      <!-- 04 Persönlich -->
-      <div class="sc-slide" data-idx="3">
-        <div class="sc-slide-inner">
-          <span class="sc-n">04</span>
-          <div class="sc-tl">Persönlich</div>
-          <h2 class="sc-h">1 Berater.<br><em>Immer</em> erreichbar.</h2>
-          <p class="sc-p">Kein Ticketsystem. Kein Callcenter. Ihr dedizierter Berater kennt Ihre Branche, Ihre Region und Ihren Bedarf. Vom Briefing bis zur Vertragsunterschrift — eine Person, eine Telefonnummer.</p>
-          <div class="sc-st">
-            <div class="sc-st-item"><div class="v">ø 11<em>J</em></div><div class="l">Erfahrung</div></div>
-            <div class="sc-st-item"><div class="v">&lt;4<em>h</em></div><div class="l">Antwortzeit</div></div>
-            <div class="sc-st-item"><div class="v">11<em>+</em></div><div class="l">Berater</div></div>
-          </div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
-            <a href="kontakt.html" class="btn btn-primary btn-arrow" style="font-size:14px;padding:12px 22px">Berater kennenlernen</a>
-            <a href="about.html" class="btn btn-ghost" style="font-size:14px;padding:12px 20px">Über uns</a>
-          </div>
-        </div>
-      </div>
 
     </div><!-- /sc-slides -->
   </div>
@@ -4239,8 +4221,8 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 .sc2-section { position:relative; overflow:hidden; }
 .sc2-head { background:var(--bg); padding:96px 0 72px; }
 .sc2-split {
-  display:grid; grid-template-columns:1fr 1fr;
-  min-height:680px; position:relative;
+  display:grid; grid-template-columns:1fr;
+  min-height:580px; position:relative;
 }
 /* Left: Recruiter (warm) */
 .sc2-left { background:#FAF7F2; display:flex; flex-direction:column; overflow:hidden; position:relative; }
@@ -4263,7 +4245,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 .sc2-left-body { padding:40px 56px 64px; }
 
 /* Right: KI (dark) */
-.sc2-right { background:#060D1A; display:flex; flex-direction:column; position:relative; overflow:hidden; }
+.sc2-right { background:#060D1A; display:flex; flex-direction:row; position:relative; overflow:hidden; }
 .sc2-right::before {
   content:''; position:absolute; inset:0; pointer-events:none;
   background:radial-gradient(60% 55% at 55% 5%, rgba(99,102,241,0.20), transparent 65%),
@@ -4324,7 +4306,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   padding:10px 18px 14px; font-family:var(--font-mono); font-size:11px;
   color:rgba(255,255,255,0.30); letter-spacing:0.06em;
 }
-.sc2-right-body { padding:28px 56px 64px; position:relative; z-index:1; }
+.sc2-right-body { flex:1; padding:56px 64px 64px 48px; position:relative; z-index:1; display:flex; flex-direction:column; justify-content:center; }
 
 /* Shared step label */
 .sc2-step {
@@ -4374,11 +4356,9 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 @keyframes sc2Wave{0%,100%{transform:scaleY(1);opacity:.75}50%{transform:scaleY(.35);opacity:.35}}
 /* Responsive */
 @media(max-width:900px){
-  .sc2-split{grid-template-columns:1fr}
-  .sc2-left-photo{min-height:280px;max-height:360px}
-  .sc2-left-body,.sc2-right-body{padding:36px 28px 48px}
+  .sc2-right{flex-direction:column}
+  .sc2-right-body{padding:36px 28px 48px}
   .sc2-right-ui{padding:40px 28px 24px}
-  .sc2-or-node{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   .sc2-live-chip .dot,.sc2-chat-head-meta .s::before,.sc2-waveform span{animation:none!important}
@@ -4392,9 +4372,9 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       <div class="section-head reveal" style="text-align:center">
         <div>
           <span class="eyebrow">Kandidaten Voice</span>
-          <h2 class="h2 seo-mt-16">Zwei Wege.<br>Eine Übergabe in höchster Qualität.</h2>
+          <h2 class="h2 seo-mt-16">KI-Agent.<br>Jeder Kandidat — in <em>60 Sekunden</em> erreicht.</h2>
         </div>
-        <p class="lead">Recruiter und KI-Agent arbeiten parallel — jeder Kandidat wird genau über den richtigen Kanal erreicht.</p>
+        <p class="lead">Der KI-Agent kontaktiert, qualifiziert und übergib jeden Kandidaten vollständig profiliert — automatisiert, skalierbar, rund um die Uhr.</p>
       </div>
     </div>
   </div>
@@ -4402,28 +4382,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   <!-- Split -->
   <div class="sc2-split">
 
-    <!-- LEFT: Recruiter -->
-    <div class="sc2-left reveal-left">
-      <div class="sc2-left-photo">
-        <img src="assets/img/photo-1573497019418-b400bb3ab074-1600.webp" alt="KI-Kandidat Recruiterin im persönlichen Kandidatengespräch" loading="lazy" decoding="async" width="900" height="600" />
-        <span class="sc2-live-chip"><span class="dot"></span>Live · Lena · 09:24</span>
-      </div>
-      <div class="sc2-left-body">
-        <div class="sc2-step">01 · Persönlich</div>
-        <h3 class="sc2-h">Recruiter-Call</h3>
-        <p class="sc2-p">Geschulte Recruiter führen das Erstgespräch, prüfen Qualifikation und Rahmenbedingungen — und sorgen dafür, dass nur echtes Interesse weitergeht.</p>
-        <ul class="sc2-checks">
-          <li>Tiefe Qualifikationsprüfung im persönlichen Gespräch</li>
-          <li>Vollständiger Lebenslauf vor der Übergabe</li>
-          <li>Persönlicher Beziehungsaufbau zum Kandidaten</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- ODER-Node -->
-    <div class="sc2-or-node" aria-hidden="true">ODER</div>
-
-    <!-- RIGHT: KI-Agent -->
+    <!-- KI-Agent -->
     <div class="sc2-right reveal-right">
       <div class="sc2-right-ui">
         <div class="sc2-chat-card">
@@ -4447,7 +4406,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
         </div>
       </div>
       <div class="sc2-right-body">
-        <div class="sc2-step">02 · Automatisiert</div>
+        <div class="sc2-step">Kandidaten Voice · KI-Agent</div>
         <h3 class="sc2-h">KI-Agent-Call</h3>
         <p class="sc2-p">Die KI erreicht Kandidaten innerhalb von 60 Sekunden, klärt Qualifikation und Wechselbereitschaft — und erstellt automatisch das vollständige Profil.</p>
         <ul class="sc2-checks">

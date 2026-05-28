@@ -2,24 +2,20 @@
   <title>KI-Kandidat</title>
 
   <!-- ── K mark ─────────────────────────────────────────────── -->
-  <!-- Vertical spine -->
   <rect x="28" y="14" width="34" height="132" fill="#0A0F1C"/>
-  <!-- Upper arm -->
-  <polygon points="62,14 158,14 90,80 62,80" fill="#0A0F1C"/>
-  <!-- Lower arm -->
-  <polygon points="62,80 90,80 164,146 62,146" fill="#0A0F1C"/>
+  <polygon points="62,14 158,14 90,80 62,80"   fill="#0A0F1C"/>
+  <polygon points="62,80 90,80 164,146 62,146"  fill="#0A0F1C"/>
 
   <!-- ── i mark ─────────────────────────────────────────────── -->
-  <!-- Dot -->
-  <circle cx="196" cy="38" r="19" fill="#0A0F1C"/>
-  <!-- Stem -->
-  <rect x="181" y="66" width="30" height="80" rx="3" fill="#0A0F1C"/>
+  <circle  cx="196" cy="38" r="19"                          fill="#0A0F1C"/>
+  <!-- Stem with diagonal top (same angle as silver version) -->
+  <polygon points="181,90 211,66 211,146 181,146"           fill="#0A0F1C"/>
 
   <!-- ── KANDIDAT wordmark ──────────────────────────────────── -->
   <text x="248" y="113"
         font-family="'Bricolage Grotesque','Plus Jakarta Sans',system-ui,sans-serif"
         font-weight="800"
         font-size="72"
-        letter-spacing="2"
+        letter-spacing="3"
         fill="#0A0F1C">KANDIDAT</text>
 </svg>
