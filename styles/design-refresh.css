@@ -77,3 +77,134 @@
 .mehr-section{padding:clamp(48px,6vw,72px) 0 !important}
 .guarantee-section,section:has(.guarantee){padding:clamp(48px,6vw,64px) 0 !important}
 .sc-wrapper{padding:60px 24px 24px !important}
+
+/* ══════════════════════════════════════════════════════════════
+   SILVER-MODERN-KI — Complete color redesign
+   Replaces warm amber (#B8720F/#D4881E) with steel-silver
+   Cool dark navy backgrounds throughout
+   CTA buttons: champagne gold (refined warm, not orange)
+══════════════════════════════════════════════════════════════ */
+
+/* ── 1. CSS Variable Override ───────────────────────────────── */
+:root{--accent:#9BAAB8 !important;--accent-2:#6B7A8E !important;--accent-soft:rgba(155,170,184,0.08) !important;--accent-glow:rgba(155,170,184,0.22) !important;--warning:#9BAAB8 !important;--bg:#F3F4F6 !important;--bg-elev-2:#E7E9EE !important;--dark-bg:#06090F !important}
+
+/* ── 2. Primary CTA: champagne gold (warm-metallic, not orange) */
+.btn-primary,a.btn-primary,button.btn-primary,.nav-cta .btn-primary,.mosaic-section .btn-primary,.br-hero-ctas .btn-primary,.ab-hero-ctas .btn-primary,.ko-form-submit,.ka-hero-ctas .btn-primary{background:linear-gradient(135deg,#C9A84C 0%,#A88A36 55%,#7C6520 100%) !important;color:#060410 !important;box-shadow:0 0 0 1px rgba(201,168,76,0.28),0 4px 20px -4px rgba(201,168,76,0.45),inset 0 1px 0 rgba(255,255,255,0.18) !important}
+.btn-primary:hover,a.btn-primary:hover,button.btn-primary:hover,.nav-cta .btn-primary:hover,.br-hero-ctas .btn-primary:hover,.ab-hero-ctas .btn-primary:hover,.ko-form-submit:hover,.ka-hero-ctas .btn-primary:hover{background:linear-gradient(135deg,#D9B85C 0%,#B89A46 100%) !important;box-shadow:0 0 0 1px rgba(201,168,76,0.42),0 8px 32px -8px rgba(201,168,76,0.58) !important;transform:translateY(-2px) !important}
+
+/* ── 3. Hero: cool dark navy ────────────────────────────────── */
+.hero{background:radial-gradient(ellipse 55% 45% at 25% 55%,rgba(18,36,76,0.25) 0%,transparent 70%),#06090F !important}
+.hero-photo-grad{background:linear-gradient(110deg,rgba(6,9,15,0.97) 0%,rgba(6,9,15,0.84) 38%,rgba(6,9,15,0.42) 66%,rgba(6,9,15,0.65) 100%),linear-gradient(180deg,rgba(6,9,15,0.10) 40%,rgba(6,9,15,0.97) 100%) !important}
+
+/* ── 4. Hero headline em (italic) → silver gradient ─────────── */
+h1 em,.h-display em,.br-hl em,.ab-hero h1 em,.ko-hl em,.ka-hl em{background:linear-gradient(135deg,#E4E8EE 0%,#9BAAB8 60%,#6B7A8E 100%) !important;-webkit-background-clip:text !important;-webkit-text-fill-color:transparent !important;background-clip:text !important;color:transparent !important}
+
+/* ── 5. Stat numbers → silver gradient ─────────────────────── */
+.stat .num{background:linear-gradient(135deg,#DDE2EA 0%,#7F94A8 100%) !important;-webkit-background-clip:text !important;-webkit-text-fill-color:transparent !important;background-clip:text !important}
+
+/* ── 6. Pillar accent text → silver ────────────────────────── */
+.pillar-inner h2.pillar-title .accent,.pillar .accent{background:linear-gradient(135deg,#D4DAE6 0%,#8496AA 100%) !important;-webkit-background-clip:text !important;-webkit-text-fill-color:transparent !important;background-clip:text !important}
+.pillar-tag{background:rgba(155,170,184,0.08) !important;border-color:rgba(155,170,184,0.20) !important;color:#9BAAB8 !important}
+.pillar::before{background:radial-gradient(800px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(155,170,184,0.06),transparent 40%) !important}
+
+/* ── 7. Pain section: cool blue-dark ───────────────────────── */
+.pain-section{background:radial-gradient(ellipse 60% 50% at 50% 60%,rgba(16,28,60,0.28) 0%,transparent 70%),linear-gradient(160deg,#06090F 0%,#040710 50%,#030608 100%) !important}
+.pain-headline h2 em{color:#A8B4C4 !important;-webkit-text-fill-color:#A8B4C4 !important;background:none !important}
+.pain-answer{color:rgba(155,170,184,0.80) !important;border-color:rgba(155,170,184,0.14) !important}
+.pain-stat:hover .pain-answer{color:#9BAAB8 !important}
+.pain-answer::before{color:#9BAAB8 !important}
+
+/* ── 8. Mosaic section ──────────────────────────────────────── */
+.mosaic-section{background:radial-gradient(ellipse 50% 45% at 60% 40%,rgba(14,24,52,0.22) 0%,transparent 65%),linear-gradient(155deg,#060810 0%,#040609 50%,#050710 100%) !important}
+
+/* ── 9. KI sections ─────────────────────────────────────────── */
+.ki-intro-section{background:radial-gradient(ellipse 50% 40% at 50% 50%,rgba(12,20,52,0.45) 0%,transparent 70%),linear-gradient(180deg,#050818 0%,#030614 50%,#050818 100%) !important}
+.ki-section{background:radial-gradient(ellipse 55% 40% at 70% 30%,rgba(12,20,55,0.40) 0%,transparent 65%),linear-gradient(180deg,#040717 0%,#020512 50%,#040717 100%) !important}
+
+/* ── 10. Pillars section ────────────────────────────────────── */
+#pillars,.section-pillars-bg{background:radial-gradient(ellipse 55% 45% at 30% 30%,rgba(14,22,60,0.38) 0%,transparent 65%),linear-gradient(150deg,#06081C 0%,#030614 50%,#020510 100%) !important}
+
+/* ── 11. Trust section ──────────────────────────────────────── */
+.trust-section{background:radial-gradient(ellipse 55% 45% at 80% 80%,rgba(10,18,52,0.38) 0%,transparent 65%),linear-gradient(180deg,#05071A 0%,#03050F 50%,#05071A 100%) !important}
+
+/* ── 12. Footer: cool dark ──────────────────────────────────── */
+.footer{background:linear-gradient(180deg,#060810 0%,#040608 100%) !important}
+
+/* ── 13. Eyebrows on dark sections → silver ─────────────────── */
+.pain-section .eyebrow,.ki-section .eyebrow,.mosaic-section .eyebrow,.trust-section .eyebrow,.ki-intro-section .eyebrow{color:#9BAAB8 !important}
+.pain-section .eyebrow::before,.ki-section .eyebrow::before,.mosaic-section .eyebrow::before,.trust-section .eyebrow::before,.ki-intro-section .eyebrow::before{background:#9BAAB8 !important;box-shadow:0 0 10px rgba(155,170,184,0.35) !important}
+
+/* ── 14. Branch page eyebrows → silver ─────────────────────── */
+.br-eyebrow-row,.ab-eyebrow-row,.ka-hero-live{border-color:rgba(155,170,184,0.28) !important;background:rgba(155,170,184,0.07) !important;color:#9BAAB8 !important}
+.br-eyebrow-row .pulse,.ab-eyebrow-row .pulse,.ka-hero-live .pulse{background:#9BAAB8 !important;box-shadow:0 0 10px rgba(155,170,184,0.45) !important}
+
+/* ── 15. Industry tiles hover → silver ─────────────────────── */
+.industry-tile:hover{border-color:rgba(155,170,184,0.45) !important;box-shadow:0 20px 48px rgba(0,0,0,0.55),0 0 24px rgba(155,170,184,0.14) !important}
+.industry-tile:hover::after{background:linear-gradient(160deg,rgba(4,8,20,0.52) 0%,rgba(4,8,20,0.15) 50%,rgba(155,170,184,0.22) 100%) !important}
+.industry-tile:hover .arrow{color:#9BAAB8 !important}
+
+/* ── 16. Glow card → silver ────────────────────────────────── */
+.glow-card::before{background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(155,170,184,0.10),transparent 40%) !important}
+.glow-card .h3{background:linear-gradient(135deg,#F0F2F6 0%,#BCC4D0 100%) !important;-webkit-background-clip:text !important;-webkit-text-fill-color:transparent !important;background-clip:text !important}
+.glow-card-inner{background:radial-gradient(ellipse 80% 60% at 30% 20%,rgba(14,22,50,0.15) 0%,transparent 60%),rgba(6,8,16,0.97) !important}
+
+/* ── 17. KLP panel → silver ────────────────────────────────── */
+.klp-match-score{background:linear-gradient(135deg,#D4DAE4,#9BAAB8,#6B7A8E) !important;-webkit-background-clip:text !important;-webkit-text-fill-color:transparent !important;background-clip:text !important}
+.klp-scan-fill{background:linear-gradient(90deg,#6B7A8E,#9BAAB8) !important}
+.klp-bar-fill{background:linear-gradient(90deg,rgba(155,170,184,0.5),rgba(155,170,184,0.9)) !important}
+.klp-row.best-match .klp-pct{color:#9BAAB8 !important}
+.klp-row.best-match{background:rgba(155,170,184,0.06) !important;border-bottom-color:rgba(155,170,184,0.14) !important}
+.klp-match-tag{color:#9BAAB8 !important}
+.klp-match-banner{border-color:rgba(155,170,184,0.30) !important;background:linear-gradient(135deg,rgba(155,170,184,0.10) 0%,rgba(155,170,184,0.05) 100%) !important}
+.klp-query-label{color:#9BAAB8 !important}
+.klp-query-text{border-right-color:#9BAAB8 !important}
+.klp{background:radial-gradient(ellipse 70% 60% at 20% 20%,rgba(14,22,50,0.12) 0%,transparent 55%),rgba(6,8,15,0.94) !important}
+
+/* ── 18. Region bars → silver ───────────────────────────────── */
+.region-bar i{background:linear-gradient(90deg,#6B7A8E,#9BAAB8) !important}
+
+/* ── 19. Trust badges → silver ─────────────────────────────── */
+.trust-badge{background:rgba(155,170,184,0.06) !important;border-color:rgba(155,170,184,0.22) !important;color:#9BAAB8 !important}
+
+/* ── 20. Final CTA glow → silver ───────────────────────────── */
+.final-cta{background:radial-gradient(700px 350px at 50% 0%,rgba(155,170,184,0.07) 0%,transparent 70%),var(--bg-elev) !important}
+.branch-hero~.final-cta,.branch-hero~section .final-cta{background:radial-gradient(700px 350px at 50% 0%,rgba(155,170,184,0.07) 0%,transparent 65%),var(--bg-elev) !important}
+
+/* ── 21. Case study accent → silver ────────────────────────── */
+.case-study::before{color:rgba(155,170,184,0.07) !important}
+.case-num .v{color:#9BAAB8 !important}
+.case-num:hover{border-color:rgba(155,170,184,0.30) !important}
+.case-study .quote::before{color:#9BAAB8 !important}
+.case-author .av{background:rgba(155,170,184,0.08) !important;border-color:rgba(155,170,184,0.25) !important;color:#9BAAB8 !important}
+
+/* ── 22. Position status 'new' → silver ────────────────────── */
+.pos-status.new{background:rgba(155,170,184,0.10) !important;color:#9BAAB8 !important;border:1px solid rgba(155,170,184,0.25) !important}
+
+/* ── 23. Scroll progress → silver ──────────────────────────── */
+#scroll-progress{background:linear-gradient(90deg,#6B7A8E,#9BAAB8) !important;box-shadow:0 0 8px rgba(155,170,184,0.40) !important}
+#section-label{border:1px solid rgba(155,170,184,0.12) !important}
+
+/* ── 24. Bg orbs → cool silver-blue ────────────────────────── */
+.bg-orb-gold{background:radial-gradient(circle,rgba(80,105,140,0.16) 0%,transparent 70%) !important}
+
+/* ── 25. Ghost button → silver ─────────────────────────────── */
+.btn-ghost:hover{background:rgba(155,170,184,0.07) !important;border-color:rgba(155,170,184,0.30) !important}
+
+/* ── 26. Scrollbar → silver ─────────────────────────────────── */
+::-webkit-scrollbar-thumb{background:rgba(155,170,184,0.20) !important}
+::-webkit-scrollbar-thumb:hover{background:rgba(155,170,184,0.40) !important}
+
+/* ── 27. Focus → silver ─────────────────────────────────────── */
+:focus-visible{outline-color:#9BAAB8 !important}
+.btn:focus-visible{box-shadow:0 0 0 4px rgba(155,170,184,0.28) !important}
+
+/* ── 28. Mobile nav → cool white ───────────────────────────── */
+.mobile-nav{background:rgba(243,244,246,0.97) !important}
+
+/* ── 29. Selection → silver ─────────────────────────────────── */
+::selection{background:rgba(155,170,184,0.30) !important;color:#fff !important}
+
+/* ── KI scoring panel stays electric blue (intentional) ─────── */
+.ls-bar-fill{background:linear-gradient(90deg,#1D50C8,#3B6FE8) !important}
+.ls-row.scoring .ls-bar-fill{background:linear-gradient(90deg,#93C5FD,#1D50C8) !important}
+.ls-pct{color:#3B6FE8 !important}
