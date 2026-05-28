@@ -65,16 +65,16 @@
 <link rel="preload" href="/assets/fonts/BricolageGrotesque-300-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/PlayfairDisplay-700-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/PlusJakartaSans-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/styles/fonts.css?v=20260526" />
-<link rel="stylesheet" href="styles/tokens.css?v=20260521h" />
-<link rel="stylesheet" href="styles/components.css?v=20260521h" />
-<link rel="stylesheet" href="styles/mobile.css" />
-<link rel="stylesheet" href="styles/scroll-polish.css" />
-<link rel="stylesheet" href="styles/design-refresh.css?v=20260521" />
-<link rel="stylesheet" href="/styles/premium-polish.css?v=20260526" />
-<link rel="stylesheet" href="/styles/hero-v2.css?v=20260527" />
-<link rel="stylesheet" href="/styles/platform-cards.css?v=20260527" />
-<link rel="stylesheet" href="/styles/logo.css?v=20260527" />
+<link rel="stylesheet" href="/styles/fonts.css?v=20260528mono" />
+<link rel="stylesheet" href="styles/tokens.css?v=20260528mono" />
+<link rel="stylesheet" href="styles/components.css?v=20260528mono" />
+<link rel="stylesheet" href="styles/mobile.css?v=20260528mono" />
+<link rel="stylesheet" href="styles/scroll-polish.css?v=20260528mono" />
+<link rel="stylesheet" href="styles/design-refresh.css?v=20260528mono" />
+<link rel="stylesheet" href="/styles/premium-polish.css?v=20260528mono" />
+<link rel="stylesheet" href="/styles/hero-v2.css?v=20260528mono" />
+<link rel="stylesheet" href="/styles/platform-cards.css?v=20260528mono" />
+<link rel="stylesheet" href="/styles/logo.css?v=20260528mono" />
 <style>
   .breadcrumb { font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted); letter-spacing: 0.05em; padding: 24px 0 0; }
   .breadcrumb a { color: var(--fg-muted); }
@@ -84,16 +84,16 @@
   .ab-hero{position:relative;padding:96px 0 120px;overflow:hidden;background:var(--bg);color:var(--fg);isolation:isolate}
   .ab-hero-bg{position:absolute;inset:0;z-index:0}
   .ab-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.3;filter:saturate(.85) contrast(1.04)}
-  .ab-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,248,244,.5) 0%,rgba(250,248,244,.82) 55%,rgba(250,248,244,1) 100%),radial-gradient(55% 60% at 80% 22%,rgba(37,99,235,.12),transparent 65%),radial-gradient(50% 60% at 15% 78%,rgba(52,211,153,.08),transparent 60%)}
+  .ab-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(247,248,250,.5) 0%,rgba(247,248,250,.82) 55%,rgba(247,248,250,1) 100%),radial-gradient(55% 60% at 80% 22%,rgba(155,170,184,.12),transparent 65%),radial-gradient(50% 60% at 15% 78%,rgba(52,211,153,.08),transparent 60%)}
   .ab-hero-orb{position:absolute;border-radius:50%;filter:blur(60px);z-index:1;pointer-events:none}
-  .ab-hero-orb.gold{width:520px;height:520px;top:-160px;right:-120px;background:radial-gradient(circle,rgba(37,99,235,.18),transparent 65%)}
+  .ab-hero-orb.gold{width:520px;height:520px;top:-160px;right:-120px;background:radial-gradient(circle,rgba(155,170,184,.18),transparent 65%)}
   .ab-hero-orb.green{width:420px;height:420px;bottom:-120px;left:-100px;background:radial-gradient(circle,rgba(52,211,153,.14),transparent 65%)}
   .ab-hero .container{position:relative;z-index:2}
   .ab-hero h1{font-family:var(--font-display);font-size:clamp(48px,7vw,96px);line-height:.96;letter-spacing:-.035em;font-weight:700;margin-top:24px;color:var(--fg)}
-  .ab-hero h1 em{font-style:normal;background:linear-gradient(135deg,#60A5FA 0%,#2563EB 50%,#1D4ED8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .ab-hero h1 em{font-style:normal;background:linear-gradient(135deg,#C8CDD6 0%,#9BAAB8 50%,#6B7480 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .ab-hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center}
-  .ab-eyebrow-row{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid rgba(37,99,235,.28);background:rgba(37,99,235,.07);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);backdrop-filter:blur(8px)}
-  .ab-eyebrow-row .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px rgba(37,99,235,.55);animation:abPulse 2s ease-in-out infinite}
+  .ab-eyebrow-row{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid rgba(155,170,184,.28);background:rgba(155,170,184,.07);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);backdrop-filter:blur(8px)}
+  .ab-eyebrow-row .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px rgba(155,170,184,.55);animation:abPulse 2s ease-in-out infinite}
   @keyframes abPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.85)}}
   .ab-hero-lead{font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:var(--fg-muted);margin:28px 0 0;max-width:54ch}
   .ab-hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
@@ -103,15 +103,15 @@
   .ab-hero-stats .l{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim);margin-top:8px}
   /* Timeline panel right */
   .ab-tline{position:relative;border-radius:18px;border:1px solid rgba(15,22,35,0.10);background:linear-gradient(180deg,rgba(255,255,255,.04) 0%,rgba(255,255,255,.015) 100%);backdrop-filter:blur(20px) saturate(1.1);-webkit-backdrop-filter:blur(20px);box-shadow:0 30px 60px -20px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.06);padding:28px}
-  .ab-tline::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(37,99,235,.4),transparent)}
+  .ab-tline::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(155,170,184,.4),transparent)}
   .ab-tline-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(15,22,35,0.08)}
   .ab-tline-title{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim)}
   .ab-tline-since{font-family:var(--font-display);font-size:13px;color:var(--accent);font-weight:600}
   .ab-tline-list{position:relative;padding-left:22px}
-  .ab-tline-list::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,rgba(37,99,235,.4),rgba(37,99,235,.06))}
+  .ab-tline-list::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,rgba(155,170,184,.4),rgba(155,170,184,.06))}
   .ab-tnode{position:relative;padding:12px 0;display:grid;grid-template-columns:60px 1fr;gap:14px;align-items:center}
-  .ab-tnode::before{content:'';position:absolute;left:-22px;top:50%;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid rgba(37,99,235,.55);box-shadow:0 0 12px rgba(37,99,235,.35);transform:translateY(-50%)}
-  .ab-tnode.active::before{background:var(--accent);box-shadow:0 0 14px rgba(37,99,235,.6),0 0 28px rgba(37,99,235,.35)}
+  .ab-tnode::before{content:'';position:absolute;left:-22px;top:50%;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid rgba(155,170,184,.55);box-shadow:0 0 12px rgba(155,170,184,.35);transform:translateY(-50%)}
+  .ab-tnode.active::before{background:var(--accent);box-shadow:0 0 14px rgba(155,170,184,.6),0 0 28px rgba(155,170,184,.35)}
   .ab-tnode .y{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--accent);font-weight:600}
   .ab-tnode .t{font-size:14px;color:var(--fg-muted);line-height:1.45}
 
@@ -161,6 +161,7 @@
   .text-center { text-align: center; }
   .mx-auto { margin-left: auto; margin-right: auto; }
 </style>
+<link rel="stylesheet" href="/styles/monochrome.css?v=20260528mono" />
 </head>
 <body>
 

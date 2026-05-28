@@ -10,7 +10,7 @@ section.platform-section,
 section#pillars.platform-section {
   position: relative;
   padding: 96px 0 120px;
-  background: var(--bg, #F5F1E8) !important;
+  background: var(--bg, #F2F4F7) !important;
   background-image: none !important;
   isolation: isolate;
 }
@@ -28,13 +28,13 @@ section#pillars.platform-section {
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #B8720F;
+  color: #9BAAB8;
   margin-bottom: 18px;
 }
 .platform-section .section-head .eyebrow::before {
   content: '';
   width: 24px; height: 1px;
-  background: linear-gradient(90deg, transparent, #B8720F);
+  background: linear-gradient(90deg, transparent, #9BAAB8);
 }
 .platform-section .section-head h2 {
   font-family: var(--font-display);
@@ -120,16 +120,16 @@ section#pillars.platform-section {
 /* ── Card 1: Dark + Amber ───────────────────────────────── */
 .pcard-dark {
   background: linear-gradient(155deg, #0F1828 0%, #0A1320 60%, #060B16 100%);
-  color: #F0EBE0;
+  color: #EDEFF3;
 }
 .pcard-dark .pcard-badge-amber {
-  background: linear-gradient(135deg, rgba(226,162,62,0.18), rgba(184,114,15,0.16));
-  border: 1px solid rgba(226,162,62,0.40);
-  color: #E2A23E;
+  background: linear-gradient(135deg, rgba(200,205,214,0.18), rgba(155,170,184,0.16));
+  border: 1px solid rgba(200,205,214,0.40);
+  color: #C8CDD6;
 }
-.pcard-dark p { color: rgba(240,235,224,0.78); }
-.pcard-dark .pcard-link { color: #F0EBE0; }
-.pcard-dark .pcard-link:hover { color: #E2A23E; }
+.pcard-dark p { color: rgba(237,239,243,0.78); }
+.pcard-dark .pcard-link { color: #EDEFF3; }
+.pcard-dark .pcard-link:hover { color: #C8CDD6; }
 
 /* Card 1 Viz: Globe-Wireframe */
 .pcard-viz-globe {
@@ -145,24 +145,24 @@ section#pillars.platform-section {
   width: 80%;
   max-width: 240px;
   height: auto;
-  filter: drop-shadow(0 16px 28px rgba(184,114,15,0.22));
+  filter: drop-shadow(0 16px 28px rgba(155,170,184,0.22));
 }
 .pcard-viz-globe .globe-ring {
   fill: none;
-  stroke: rgba(226,162,62,0.55);
+  stroke: rgba(200,205,214,0.55);
   stroke-width: 1;
 }
 .pcard-viz-globe .globe-ring-soft {
   fill: none;
-  stroke: rgba(226,162,62,0.22);
+  stroke: rgba(200,205,214,0.22);
   stroke-width: 0.8;
 }
 .pcard-viz-globe .globe-center {
-  fill: rgba(226,162,62,0.95);
-  filter: drop-shadow(0 0 12px rgba(226,162,62,0.7));
+  fill: rgba(200,205,214,0.95);
+  filter: drop-shadow(0 0 12px rgba(200,205,214,0.7));
 }
 .pcard-viz-globe .globe-node {
-  fill: #E2A23E;
+  fill: #C8CDD6;
 }
 @keyframes globeRotate {
   to { transform: rotate(360deg); }
@@ -175,18 +175,18 @@ section#pillars.platform-section {
 /* ── Card 2: Blue-Gradient + Network-Viz ────────────────── */
 .pcard-blue {
   background:
-    radial-gradient(80% 60% at 20% 20%, rgba(96,165,250,0.32), transparent 60%),
-    linear-gradient(155deg, #1E3A8A 0%, #1D4ED8 50%, #2563EB 100%);
-  color: #F0EBE0;
+    radial-gradient(80% 60% at 20% 20%, rgba(200,205,214,0.32), transparent 60%),
+    linear-gradient(155deg, #6B7480 0%, #6B7480 50%, #9BAAB8 100%);
+  color: #EDEFF3;
 }
 .pcard-blue .pcard-badge-blue {
   background: rgba(255,255,255,0.16);
   border: 1px solid rgba(255,255,255,0.30);
-  color: #F0EBE0;
+  color: #EDEFF3;
   backdrop-filter: blur(8px);
 }
-.pcard-blue p { color: rgba(240,235,224,0.86); }
-.pcard-blue .pcard-link { color: #F0EBE0; }
+.pcard-blue p { color: rgba(237,239,243,0.86); }
+.pcard-blue .pcard-link { color: #EDEFF3; }
 .pcard-blue .pcard-link:hover { color: #DBEAFE; }
 
 .pcard-viz-network {
@@ -213,8 +213,8 @@ section#pillars.platform-section {
   filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
 }
 .pcard-viz-network .net-node-accent {
-  fill: #E2A23E;
-  filter: drop-shadow(0 0 12px rgba(226,162,62,0.9));
+  fill: #C8CDD6;
+  filter: drop-shadow(0 0 12px rgba(200,205,214,0.9));
 }
 @keyframes nodePulse {
   0%,100% { opacity: 1;   transform: scale(1); }
@@ -255,9 +255,9 @@ section#pillars.platform-section {
 .pcard-photo .pcard-badge-light {
   position: absolute;
   top: 24px; left: 24px;
-  background: rgba(15,10,5,0.85);
-  border: 1px solid rgba(245,241,232,0.15);
-  color: rgba(245,241,232,0.92);
+  background: rgba(9,13,22,0.85);
+  border: 1px solid rgba(242,244,247,0.15);
+  color: rgba(242,244,247,0.92);
   backdrop-filter: blur(8px);
   z-index: 3;
 }
@@ -272,7 +272,7 @@ section#pillars.platform-section {
   color: #0A0F1C;
   margin-top: auto;
 }
-.pcard-photo .pcard-link:hover { color: #B8720F; }
+.pcard-photo .pcard-link:hover { color: #9BAAB8; }
 
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 1100px) {

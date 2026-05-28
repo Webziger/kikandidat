@@ -1,0 +1,225 @@
+/* ============================================================================
+   monochrome.css — Single source of truth for the Silver-Only design system.
+   Loads LAST in every page. Canonical tokens + premium monochrome pill buttons
+   + HiOffice frosted-glass nav + generous spacing. No amber, no gold, no blue.
+   Semantic colours (green = live/success, red = hot/danger) survive.
+   ============================================================================ */
+
+:root {
+  /* ── Silver accent ramp ───────────────────────────────────────────── */
+  --accent:        #9BAAB8;   /* mid steel silver  */
+  --accent-2:      #6B7480;   /* dark silver       */
+  --accent-bright: #C8CDD6;   /* bright silver     */
+  --accent-dark:   #6B7480;
+  --accent-soft:   rgba(155,170,184,0.08);
+  --accent-glow:   rgba(155,170,184,0.26);
+
+  /* ── Surfaces (cool) ─────────────────────────────────────────────── */
+  --bg:        #F7F8FA;
+  --bg-elev:   #FFFFFF;
+  --bg-elev-2: #EDEFF3;
+  --dark-bg:   #06090F;
+  --dark-bg-2: #0A0F1C;
+
+  /* ── Text ────────────────────────────────────────────────────────── */
+  --fg:        #0A0F1C;
+  --fg-muted:  #3A4250;
+  --fg-dim:    #677080;
+  --fg-on-dark:#F2F4F7;
+
+  /* ── Lines / hairlines ───────────────────────────────────────────── */
+  --line:        rgba(10,15,28,0.08);
+  --line-strong: rgba(10,15,28,0.14);
+  --line-dark:   rgba(255,255,255,0.10);
+
+  /* ── Buttons ─────────────────────────────────────────────────────── */
+  --btn-primary-bg:  #0A0F1C;   /* near-black pill on light */
+  --btn-primary-fg:  #FFFFFF;
+  --btn-on-dark-bg:  #EEF1F5;   /* bright-silver pill on dark */
+  --btn-on-dark-fg:  #0A0F1C;
+  --r-pill: 999px;
+
+  /* ── Gradients (one ramp, not six copies) ────────────────────────── */
+  --grad-silver-text: linear-gradient(135deg,#E4E8EE 0%,#9BAAB8 60%,#6B7480 100%);
+  --grad-silver-fill: linear-gradient(90deg,#6B7480,#9BAAB8);
+
+  /* ── Semantic (KEEP) ─────────────────────────────────────────────── */
+  --success: #16A34A;
+  --warning: #9BAAB8;
+  --danger:  #EF4444;
+
+  /* ── Spacing (HiOffice generosity) ───────────────────────────────── */
+  --section-pad: clamp(80px, 10vw, 128px);
+  --content-max: 1280px;
+}
+
+::selection { background: #0A0F1C; color: #fff; }
+
+/* ============================================================================
+   PREMIUM MONOCHROME PILL BUTTONS
+   Overrides the legacy silver-gradient/white-text buttons (low contrast).
+   ============================================================================ */
+
+a.btn-primary,
+button.btn-primary,
+.btn.btn-primary,
+.nav-cta .btn-primary,
+.hero-v2-cta .btn-primary,
+.br-hero-ctas .btn-primary,
+.ab-hero-ctas .btn-primary,
+.ka-hero-ctas .btn-primary,
+.mosaic-section .btn-primary,
+.ko-form-submit {
+  background: var(--btn-primary-bg) !important;
+  background-image: none !important;
+  color: var(--btn-primary-fg) !important;
+  border: 0 !important;
+  border-radius: var(--r-pill) !important;
+  box-shadow: 0 1px 2px rgba(10,15,28,0.18), 0 8px 24px -10px rgba(10,15,28,0.45) !important;
+  transition: transform .18s ease, box-shadow .25s ease, background-color .2s ease !important;
+}
+
+a.btn-primary:hover,
+button.btn-primary:hover,
+.btn.btn-primary:hover,
+.nav-cta .btn-primary:hover,
+.hero-v2-cta .btn-primary:hover,
+.br-hero-ctas .btn-primary:hover,
+.ab-hero-ctas .btn-primary:hover,
+.ka-hero-ctas .btn-primary:hover,
+.mosaic-section .btn-primary:hover,
+.ko-form-submit:hover {
+  background: #161C2B !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 2px 4px rgba(10,15,28,0.22), 0 16px 36px -12px rgba(10,15,28,0.55) !important;
+}
+
+/* Bright pill on dark backgrounds (nav over dark, hero, dark sections) */
+.nav[data-theme="dark"] .btn-primary,
+.hero-v2 .btn-primary,
+[data-nav-theme="dark"] .btn-primary {
+  background: var(--btn-on-dark-bg) !important;
+  background-image: none !important;
+  color: var(--btn-on-dark-fg) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 10px 30px -12px rgba(0,0,0,0.6) !important;
+}
+.nav[data-theme="dark"] .btn-primary:hover,
+.hero-v2 .btn-primary:hover,
+[data-nav-theme="dark"] .btn-primary:hover {
+  background: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Kill the legacy shimmer sweep that assumed a gradient fill */
+.btn-primary::before { display: none !important; }
+
+/* Ghost buttons → clean hairline pills */
+a.btn-ghost,
+button.btn-ghost,
+.btn.btn-ghost {
+  background: transparent !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--line-strong) !important;
+  border-radius: var(--r-pill) !important;
+  box-shadow: none !important;
+  transition: border-color .2s ease, background-color .2s ease, transform .18s ease !important;
+}
+a.btn-ghost:hover,
+button.btn-ghost:hover,
+.btn.btn-ghost:hover {
+  background: rgba(10,15,28,0.04) !important;
+  border-color: rgba(10,15,28,0.28) !important;
+  transform: translateY(-1px) !important;
+}
+.nav[data-theme="dark"] .btn-ghost,
+.hero-v2 .btn-ghost,
+[data-nav-theme="dark"] .btn-ghost {
+  color: var(--fg-on-dark) !important;
+  border-color: var(--line-dark) !important;
+}
+.nav[data-theme="dark"] .btn-ghost:hover,
+.hero-v2 .btn-ghost:hover,
+[data-nav-theme="dark"] .btn-ghost:hover {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.30) !important;
+}
+
+/* ============================================================================
+   HIOFFICE FROSTED-GLASS NAV — reinforce: fixed, hairline, no heavy shadow
+   ============================================================================ */
+.nav {
+  border-bottom: 1px solid var(--line) !important;
+  box-shadow: none !important;
+}
+.nav[data-theme="light"] {
+  background: rgba(247,248,250,0.72) !important;
+  -webkit-backdrop-filter: saturate(160%) blur(18px) !important;
+  backdrop-filter: saturate(160%) blur(18px) !important;
+}
+.nav[data-theme="dark"] {
+  background: rgba(8,12,22,0.55) !important;
+  border-bottom-color: var(--line-dark) !important;
+  -webkit-backdrop-filter: saturate(160%) blur(18px) !important;
+  backdrop-filter: saturate(160%) blur(18px) !important;
+}
+.nav[data-theme="light"] .nav-links a { color: var(--fg-muted) !important; }
+.nav[data-theme="light"] .nav-links a:hover,
+.nav[data-theme="light"] .nav-links a.active { color: var(--fg) !important; }
+.nav[data-theme="dark"]  .nav-links a { color: rgba(242,244,247,0.78) !important; }
+.nav[data-theme="dark"]  .nav-links a:hover,
+.nav[data-theme="dark"]  .nav-links a.active { color: #fff !important; }
+.nav-sep { background: var(--line) !important; }
+.nav[data-theme="dark"] .nav-sep { background: var(--line-dark) !important; }
+
+/* Logo swap parity with nav theme */
+.nav[data-theme="light"] .kiq--silver { opacity: 0; }
+.nav[data-theme="light"] .kiq--dark   { opacity: 1; }
+.nav[data-theme="dark"]  .kiq--silver { opacity: 1; }
+.nav[data-theme="dark"]  .kiq--dark   { opacity: 0; }
+
+/* ============================================================================
+   DECORATIVE GRADIENT TEXT (the <em> highlights inside headlines)
+   Default = DARK graphite ramp → readable & metallic on LIGHT sections.
+   Dark sections override to a BRIGHT silver ramp (higher specificity wins).
+   ============================================================================ */
+h1 em, h2 em, h3 em,
+.h-display em, .h1 em, .h2 em, .h3 em,
+.hero-serif em {
+  background: linear-gradient(135deg,#3A4250 0%,#0A0F1C 90%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+[data-nav-theme="dark"] h1 em,
+[data-nav-theme="dark"] h2 em,
+[data-nav-theme="dark"] h3 em,
+[data-nav-theme="dark"] .h-display em,
+[data-nav-theme="dark"] .h1 em,
+[data-nav-theme="dark"] .h2 em,
+[data-nav-theme="dark"] .h3 em,
+.hero-v2 .hero-serif em {
+  background: var(--grad-silver-text) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+/* Eyebrows / kickers on LIGHT sections → readable muted graphite (not silver) */
+.eyebrow, .kicker, .section-eyebrow, .pill-eyebrow,
+[class*="eyebrow"], [class*="-kicker"] {
+  color: var(--fg-muted) !important;
+}
+[data-nav-theme="dark"] .eyebrow,
+[data-nav-theme="dark"] .kicker,
+[data-nav-theme="dark"] [class*="eyebrow"],
+[data-nav-theme="dark"] [class*="-kicker"] {
+  color: rgba(242,244,247,0.72) !important;
+}
+
+/* ============================================================================
+   SPACING / CONTENT WIDTH — HiOffice generosity
+   ============================================================================ */
+.container { max-width: var(--content-max); }

@@ -19,7 +19,7 @@
 /* Hover: amber glow + sanftes Skalieren (nur in Nav) */
 .nav .logo:hover .nav-kiq-logo,
 .nav-floating .logo:hover .nav-kiq-logo {
-  filter: drop-shadow(0 0 10px rgba(212,136,30,.55)) brightness(1.08);
+  filter: drop-shadow(0 0 10px rgba(200,205,214,.55)) brightness(1.08);
   transform: scale(1.02);
 }
 
@@ -83,7 +83,7 @@
 
 /* Footer auf dunklem Hintergrund: Wordmark soll hell sein */
 .footer .footer-kiq-logo {
-  color: #F5F1E8;
+  color: #F2F4F7;
 }
 
 /* Nav auf hellem Hintergrund: Wordmark dunkel */

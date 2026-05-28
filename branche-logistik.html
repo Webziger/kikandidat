@@ -134,16 +134,16 @@
 <link rel="preload" href="/assets/fonts/BricolageGrotesque-300-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/PlayfairDisplay-700-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/PlusJakartaSans-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/styles/fonts.css?v=20260526" />
-<link rel="stylesheet" href="styles/tokens.css?v=20260521h" />
-<link rel="stylesheet" href="styles/components.css?v=20260521h" />
-<link rel="stylesheet" href="styles/mobile.css" />
-<link rel="stylesheet" href="styles/scroll-polish.css" />
-<link rel="stylesheet" href="styles/design-refresh.css?v=20260521" />
-<link rel="stylesheet" href="/styles/premium-polish.css?v=20260526" />
-<link rel="stylesheet" href="/styles/hero-v2.css?v=20260527" />
-<link rel="stylesheet" href="/styles/platform-cards.css?v=20260527" />
-<link rel="stylesheet" href="/styles/logo.css?v=20260527" />
+<link rel="stylesheet" href="/styles/fonts.css?v=20260528mono" />
+<link rel="stylesheet" href="styles/tokens.css?v=20260528mono" />
+<link rel="stylesheet" href="styles/components.css?v=20260528mono" />
+<link rel="stylesheet" href="styles/mobile.css?v=20260528mono" />
+<link rel="stylesheet" href="styles/scroll-polish.css?v=20260528mono" />
+<link rel="stylesheet" href="styles/design-refresh.css?v=20260528mono" />
+<link rel="stylesheet" href="/styles/premium-polish.css?v=20260528mono" />
+<link rel="stylesheet" href="/styles/hero-v2.css?v=20260528mono" />
+<link rel="stylesheet" href="/styles/platform-cards.css?v=20260528mono" />
+<link rel="stylesheet" href="/styles/logo.css?v=20260528mono" />
 <style>
   .breadcrumb{font-family:var(--font-mono);font-size:12px;color:var(--fg-muted);letter-spacing:.05em;padding:24px 0 0}
   .breadcrumb a{color:var(--fg-muted)}.breadcrumb .sep{color:var(--fg-dim);margin:0 10px}
@@ -180,7 +180,7 @@
   .pain-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   @media(max-width:700px){.pain-list{grid-template-columns:1fr}}
   .pain-card{padding:28px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--bg-elev);transition:border-color .25s,transform .3s cubic-bezier(.16,1,.3,1)}
-  .pain-card:hover{border-color:rgba(37,99,235,.25);transform:translateY(-3px)}
+  .pain-card:hover{border-color:rgba(155,170,184,.25);transform:translateY(-3px)}
   .pain-label{font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
   .pain-title{font-family:var(--font-display);font-size:20px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
   .pain-body{font-size:13px;color:var(--fg-muted);line-height:1.6}
@@ -208,13 +208,13 @@
     position: absolute; inset: 0;
     background:
       linear-gradient(108deg,
-        rgba(245,241,232,0.97) 0%,
-        rgba(245,241,232,0.88) 38%,
-        rgba(245,241,232,0.50) 62%,
-        rgba(245,241,232,0.80) 100%),
+        rgba(242,244,247,0.97) 0%,
+        rgba(242,244,247,0.88) 38%,
+        rgba(242,244,247,0.50) 62%,
+        rgba(242,244,247,0.80) 100%),
       linear-gradient(180deg,
-        rgba(245,241,232,0.10) 40%,
-        rgba(245,241,232,0.98) 100%);
+        rgba(242,244,247,0.10) 40%,
+        rgba(242,244,247,0.98) 100%);
   }
   .branch-hero .container { position: relative; z-index: 2; }
   .branch-hero-grid { position: relative; z-index: 2; }
@@ -234,17 +234,18 @@
   /* Dark sections on branch pages */
   .section-dark-branch {
     background: linear-gradient(160deg, #06101E 0%, #070C1A 60%, #050B16 100%);
-    color: #F0EBE0;
+    color: #EDEFF3;
     position: relative;
   }
   .section-dark-branch h2,
-  .section-dark-branch .h2 { color: #F0EBE0 !important; }
+  .section-dark-branch .h2 { color: #EDEFF3 !important; }
   .section-dark-branch .lead,
-  .section-dark-branch p { color: rgba(245,241,232,0.70) !important; }
-  .section-dark-branch .eyebrow { color: #D4881E !important; }
-  .section-dark-branch .eyebrow::before { background: #D4881E !important; }
+  .section-dark-branch p { color: rgba(242,244,247,0.70) !important; }
+  .section-dark-branch .eyebrow { color: #C8CDD6 !important; }
+  .section-dark-branch .eyebrow::before { background: #C8CDD6 !important; }
 
 </style>
+<link rel="stylesheet" href="/styles/monochrome.css?v=20260528mono" />
 </head>
 <body>
 <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
@@ -403,28 +404,28 @@
 <!-- Interne Verlinkung: Verwandte Branchen (SEO) -->
 <section style="padding:56px 0;background:var(--bg-elev-2)">
   <div class="container">
-    <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#B8720F;margin:0 0 8px">Weitere Branchen</p>
+    <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9BAAB8;margin:0 0 8px">Weitere Branchen</p>
     <h2 style="font-family:var(--font-display);font-size:clamp(22px,2.8vw,32px);font-weight:700;letter-spacing:-.025em;margin:0 0 28px;color:var(--fg)">KI-Recruiting auch in diesen Branchen</h2>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
       
-      <a href="branche-handel.html" style="display:flex;flex-direction:column;gap:8px;padding:20px 22px;background:var(--bg-elev);border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--fg);transition:border-color .2s,transform .22s,box-shadow .22s" onmouseover="this.style.borderColor='rgba(184,114,15,0.38)';this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(184,114,15,0.10)'" onmouseout="this.style.borderColor='';this.style.transform='';this.style.boxShadow=''">
-        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#B8720F">01</span>
+      <a href="branche-handel.html" style="display:flex;flex-direction:column;gap:8px;padding:20px 22px;background:var(--bg-elev);border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--fg);transition:border-color .2s,transform .22s,box-shadow .22s" onmouseover="this.style.borderColor='rgba(155,170,184,0.38)';this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(155,170,184,0.10)'" onmouseout="this.style.borderColor='';this.style.transform='';this.style.boxShadow=''">
+        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9BAAB8">01</span>
         <span style="font-family:var(--font-display);font-size:17px;font-weight:700;letter-spacing:-.02em">Handel</span>
         <span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">Recruiting →</span>
       </a>
-      <a href="branche-industrie.html" style="display:flex;flex-direction:column;gap:8px;padding:20px 22px;background:var(--bg-elev);border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--fg);transition:border-color .2s,transform .22s,box-shadow .22s" onmouseover="this.style.borderColor='rgba(184,114,15,0.38)';this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(184,114,15,0.10)'" onmouseout="this.style.borderColor='';this.style.transform='';this.style.boxShadow=''">
-        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#B8720F">02</span>
+      <a href="branche-industrie.html" style="display:flex;flex-direction:column;gap:8px;padding:20px 22px;background:var(--bg-elev);border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--fg);transition:border-color .2s,transform .22s,box-shadow .22s" onmouseover="this.style.borderColor='rgba(155,170,184,0.38)';this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(155,170,184,0.10)'" onmouseout="this.style.borderColor='';this.style.transform='';this.style.boxShadow=''">
+        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9BAAB8">02</span>
         <span style="font-family:var(--font-display);font-size:17px;font-weight:700;letter-spacing:-.02em">Industrie</span>
         <span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">Recruiting →</span>
       </a>
-      <a href="branche-handwerk.html" style="display:flex;flex-direction:column;gap:8px;padding:20px 22px;background:var(--bg-elev);border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--fg);transition:border-color .2s,transform .22s,box-shadow .22s" onmouseover="this.style.borderColor='rgba(184,114,15,0.38)';this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(184,114,15,0.10)'" onmouseout="this.style.borderColor='';this.style.transform='';this.style.boxShadow=''">
-        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#B8720F">03</span>
+      <a href="branche-handwerk.html" style="display:flex;flex-direction:column;gap:8px;padding:20px 22px;background:var(--bg-elev);border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--fg);transition:border-color .2s,transform .22s,box-shadow .22s" onmouseover="this.style.borderColor='rgba(155,170,184,0.38)';this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(155,170,184,0.10)'" onmouseout="this.style.borderColor='';this.style.transform='';this.style.boxShadow=''">
+        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9BAAB8">03</span>
         <span style="font-family:var(--font-display);font-size:17px;font-weight:700;letter-spacing:-.02em">Handwerk</span>
         <span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">Recruiting →</span>
       </a>
     </div>
     <div style="margin-top:24px;text-align:center">
-      <a href="branchen.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#B8720F;text-decoration:none;padding:10px 22px;border:1px solid rgba(184,114,15,0.28);border-radius:999px" onmouseover="this.style.background='rgba(184,114,15,0.07)'" onmouseout="this.style.background=''">Alle 12 Branchen →</a>
+      <a href="branchen.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9BAAB8;text-decoration:none;padding:10px 22px;border:1px solid rgba(155,170,184,0.28);border-radius:999px" onmouseover="this.style.background='rgba(155,170,184,0.07)'" onmouseout="this.style.background=''">Alle 12 Branchen →</a>
     </div>
   </div>
 </section>
