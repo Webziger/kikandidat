@@ -30,10 +30,10 @@
     <path d="M30 18 L78 18 L196 18 L196 142 L150 142 L78 110 L78 142 L30 142 Z" fill="url(#kiShine)" opacity="0.22"/>
   </g>
 
-  <!-- i — slim silver stem with amber "person head" dot -->
+  <!-- i — slim silver stem with silver "person head" dot -->
   <g transform="translate(208 0)">
-    <circle cx="20" cy="32" r="14" fill="url(#kiAmber)"/>
-    <ellipse cx="20" cy="48" rx="14" ry="4" fill="url(#kiAmber)" opacity="0.20"/>
+    <circle cx="20" cy="32" r="14" fill="url(#kiSilver)"/>
+    <ellipse cx="20" cy="48" rx="14" ry="4" fill="url(#kiSilver)" opacity="0.20"/>
     <rect x="4" y="58" width="32" height="84" rx="6" fill="url(#kiSilver)"/>
   </g>
 

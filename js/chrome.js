@@ -55,7 +55,7 @@
             <ul>
               <li><a href="index.html#pillars">Talent-Cloud</a></li>
               <li><a href="index.html#pillars">KI-Matching</a></li>
-              <li><a href="index.html#pillars">Sellcruiting</a></li>
+              <li><a href="index.html#pillars">Active Sourcing</a></li>
               <li><a href="index.html#pillars">Karriereseiten</a></li>
               <li><a href="index.html#pillars">Employer Branding</a></li>
             </ul>
@@ -85,7 +85,7 @@
           <div class="footer-col">
             <h4>Kontakt</h4>
             <ul>
-              <li><a href="kontakt.html">Berlin · HQ</a></li>
+              <li><a href="https://ki-kandidat.de/kontakt.html">Kontakt</a></li>
               <li><a href="mailto:info@ki-kandidat.de">info@ki-kandidat.de</a></li>
               <li><a href="https://calendly.com/d-koch-ki-kandidat/30min" target="_blank" rel="noopener noreferrer">Termin buchen</a></li>
             </ul>

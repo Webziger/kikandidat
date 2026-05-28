@@ -64,7 +64,7 @@
     { n:'04', meta:'PHASE 4 · MARKT', t:'Markt & Wettbewerb prüfen', d:'Wir scannen Ihre regionale Konkurrenz: neue Stellen, Bewertungen, Benefits. Wir erkennen, wo Unzufriedenheit entsteht und wo Ihr Angebot besser ist.' , kpi:[{l:'MITBEWERBER',v:'Tagesaktuell'},{l:'BEWERTUNGEN',v:'Echtzeit'}]},
     { n:'05', meta:'PHASE 5 · TRIGGER', t:'Wechselimpulse erfassen', d:'Wenn sich beim Kandidaten etwas ändert (Schichtmodell, Gehalt, Pendelzeit), reagieren wir sofort. Wir kennen den Grund hinter dem Wechsel — nicht nur die Tatsache.' , kpi:[{l:'REAKTIONSZEIT',v:'< 60 sec'},{l:'TRIGGER ARTEN',v:'12+'}]},
     { n:'06', meta:'PHASE 6 · MATCH', t:'Matching & Priorisierung', d:'Ihr Angebot wird mit jedem Profil abgeglichen. Der Algorithmus priorisiert Fachkräfte mit höchster Wechselwahrscheinlichkeit — bei denen Ihre Stärken die Schwächen des Wettbewerbs kompensieren.' , kpi:[{l:'TOP-PRIORITÄT',v:'Top 5%'},{l:'MATCH-SCORE',v:'> 85/100'}]},
-    { n:'07', meta:'PHASE 7 · SELLCRUITING', t:'Persönlicher Erstkontakt', d:'Unsere Recruiter — unterstützt durch automatisierte Systeme ergänzend — sprechen jeden Top-Kandidaten persönlich an. Wir prüfen Motivation, Cultural Fit und sichern Ihr Vorstellungsgespräch.' , kpi:[{l:'PERSÖNLICH',v:'Recruiter + Automatisierung'},{l:'GESPRÄCHE/TAG',v:'~ 1.200'}]},
+    { n:'07', meta:'PHASE 7 · ACTIVE SOURCING', t:'Persönlicher Erstkontakt', d:'Unsere Recruiter — unterstützt durch automatisierte Systeme ergänzend — sprechen jeden Top-Kandidaten persönlich an. Wir prüfen Motivation, Cultural Fit und sichern Ihr Vorstellungsgespräch.' , kpi:[{l:'PERSÖNLICH',v:'Recruiter + Automatisierung'},{l:'GESPRÄCHE/TAG',v:'~ 1.200'}]},
     { n:'08', meta:'PHASE 8 · ÜBERGABE', t:'Vorqualifizierte Kandidaten', d:'Sie erhalten ausschließlich Kandidaten, die fachlich passen, regional verfügbar sind, Ihr Angebot akzeptiert haben und ein Vorstellungsgespräch zugesagt haben. Auf Wunsch terminieren wir direkt.' , kpi:[{l:'AKZEPTIERT',v:'100%'},{l:'BEREIT',v:'Vorstellungsgespräch'}]}
   ];
   function renderStep(i) {
@@ -337,8 +337,8 @@
           { tone:'blue',  txt:'Cultural-Fit-Prüfung',       time:'vor 5s' }
         ],
         spark: [70,72,75,78,80,82,85,88,90,92,93,94] },
-      { title: 'Sellcruiting', cloud: 'Erstkontakt läuft',
-        active: 'Sellcruiting · Erstkontakt', pct: 92,
+      { title: 'Active Sourcing', cloud: 'Erstkontakt läuft',
+        active: 'Active Sourcing · Erstkontakt', pct: 92,
         metrics: { profiles: 29121, signals: 612, score: 94 },
         events: [
           { tone:'green', txt:'12 Gespräche terminiert',    time:'jetzt' },
