@@ -337,8 +337,8 @@
           { tone:'blue',  txt:'Cultural-Fit-Prüfung',       time:'vor 5s' }
         ],
         spark: [70,72,75,78,80,82,85,88,90,92,93,94] },
-      { title: 'Active Sourcing', cloud: 'Erstkontakt läuft',
-        active: 'Active Sourcing · Erstkontakt', pct: 92,
+      { title: 'Kandidaten Voice', cloud: 'Erstkontakt läuft',
+        active: 'Kandidaten Voice · Erstkontakt', pct: 92,
         metrics: { profiles: 29121, signals: 612, score: 94 },
         events: [
           { tone:'green', txt:'12 Gespräche terminiert',    time:'jetzt' },

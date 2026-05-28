@@ -53,9 +53,9 @@
           <div class="footer-col">
             <h4>Plattform</h4>
             <ul>
-              <li><a href="index.html#pillars">Talent-Cloud</a></li>
-              <li><a href="index.html#pillars">KI-Matching</a></li>
-              <li><a href="index.html#pillars">Active Sourcing</a></li>
+              <li><a href="index.html#pillars">Kandidaten Radar</a></li>
+              <li><a href="index.html#pillars">Kandidaten Hub</a></li>
+              <li><a href="index.html#pillars">Kandidaten Voice</a></li>
               <li><a href="index.html#pillars">Karriereseiten</a></li>
               <li><a href="index.html#pillars">Employer Branding</a></li>
             </ul>
@@ -164,6 +164,23 @@
         else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
       });
     }
+    // Adaptive nav: dark/light glass based on section background
+    (function initAdaptiveNav() {
+      var nav = document.querySelector('.nav');
+      if (!nav) return;
+      function update() {
+        var mid = 44;
+        var theme = 'light';
+        document.querySelectorAll('[data-nav-theme]').forEach(function(sec) {
+          var r = sec.getBoundingClientRect();
+          if (r.top <= mid && r.bottom > mid) theme = sec.dataset.navTheme;
+        });
+        if (nav.getAttribute('data-theme') !== theme) nav.setAttribute('data-theme', theme);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+      update();
+    })();
   };
   function initReveals() {
     const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
