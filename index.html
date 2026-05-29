@@ -1187,7 +1187,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   .seo-mt-36 { margin-top: 36px; }
 </style>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-<link rel="stylesheet" href="/styles/monochrome.css?v=20260529v5" />
+<link rel="stylesheet" href="/styles/monochrome.css?v=20260529v6" />
 </head>
 <body>
 <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
@@ -3403,7 +3403,34 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
         <a href="#quellen" class="pcard-link">Mehr erfahren</a>
       </article>
 
-      <!-- Card 2: Kandidaten Hub — Blue + Network -->
+      <!-- Card 2 → CENTER: Kandidaten Voice — Dark + Voice SVG (matches Radar & Hub) -->
+      <article class="pcard pcard-voice reveal" id="sellcruiting">
+        <span class="pcard-badge pcard-badge-voice">KI + Mensch</span>
+        <div class="pcard-viz pcard-viz-voice" aria-hidden="true">
+          <svg viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Person: head -->
+            <circle cx="130" cy="68" r="34" fill="none" stroke="rgba(111,160,255,0.55)" stroke-width="1.5"/>
+            <!-- Person: shoulders arc -->
+            <path d="M74 162 Q74 118 130 118 Q186 118 186 162" fill="none" stroke="rgba(111,160,255,0.55)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Face highlight -->
+            <circle cx="130" cy="68" r="5" fill="rgba(111,160,255,0.90)"/>
+            <!-- Voice waves left (arc pairs) -->
+            <path d="M56 82 Q43 110 56 138" fill="none" stroke="rgba(200,218,240,0.50)" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M38 70 Q19 110 38 150" fill="none" stroke="rgba(200,218,240,0.28)" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M20 58 Q-4 110 20 162" fill="none" stroke="rgba(200,218,240,0.14)" stroke-width="1.6" stroke-linecap="round"/>
+            <!-- Voice waves right -->
+            <path d="M204 82 Q217 110 204 138" fill="none" stroke="rgba(200,218,240,0.50)" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M222 70 Q241 110 222 150" fill="none" stroke="rgba(200,218,240,0.28)" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M240 58 Q264 110 240 162" fill="none" stroke="rgba(200,218,240,0.14)" stroke-width="1.6" stroke-linecap="round"/>
+            <!-- Sound waveform bottom -->
+            <polyline class="voice-wave" points="18,195 40,180 56,210 72,170 90,205 108,185 130,215 152,185 170,205 188,170 204,210 220,180 242,195" fill="none" stroke="rgba(111,160,255,0.40)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Pulse dots -->
+            <circle class="voice-node" cx="90"  cy="68" r="3" fill="rgba(200,218,240,0.70)"/>
+            <circle class="voice-node" cx="170" cy="68" r="3" fill="rgba(200,218,240,0.70)"/>
+            <circle class="voice-node" cx="130" cy="34" r="3" fill="rgba(200,218,240,0.70)"/>
+          </svg>
+
+      <!-- Card 3: Kandidaten Hub — Blue + Network -->
       <article class="pcard pcard-blue reveal" id="kandidaten-hub">
         <span class="pcard-badge pcard-badge-blue">100+ Datenpunkte</span>
         <div class="pcard-viz pcard-viz-network" aria-hidden="true">
@@ -3444,15 +3471,10 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
         <a href="#kiModul" class="pcard-link">Mehr erfahren</a>
       </article>
 
-      <!-- Card 3: Kandidaten Voice — Light + Photo -->
-      <article class="pcard pcard-photo reveal" id="sellcruiting">
-        <span class="pcard-badge pcard-badge-light">KI + Mensch</span>
-        <div class="pcard-viz-photo" style="background-image: url('assets/img/photo-1556157382-97eda2d62296-800.webp');" role="img" aria-label="Recruiter mit Headset im Erstkontakt-Gespräch"></div>
-        <div class="pcard-photo-body">
-          <h3>Kandidaten Voice</h3>
-          <p>Unsere Berater:innen kontaktieren die passenden Kandidaten persönlich und prüfen Qualifikation sowie echtes Interesse — keine Kaltakquise für Sie.</p>
-          <a href="#process" class="pcard-link">Mehr erfahren</a>
-        </div>
+    </div>
+        <h3>Kandidaten Voice</h3>
+        <p>Unsere Berater:innen kontaktieren die passenden Kandidaten persönlich und prüfen Qualifikation sowie echtes Interesse — keine Kaltakquise für Sie.</p>
+        <a href="#process" class="pcard-link">Mehr erfahren</a>
       </article>
 
     </div>

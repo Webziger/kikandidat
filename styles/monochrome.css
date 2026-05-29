@@ -51,6 +51,11 @@
   /* ── Spacing (HiOffice generosity) ───────────────────────────────── */
   --section-pad: clamp(80px, 10vw, 128px);
   --content-max: 1280px;
+
+  /* ── Global spacing token reduction (sub-pages use these vars) ────── */
+  --s-8:  48px;   /* was ~80px  */
+  --s-9:  60px;   /* was  96px  */
+  --s-10: 72px;   /* was 128px  */
 }
 
 ::selection { background: #0A0F1C; color: #fff; }
@@ -805,4 +810,94 @@ section[data-screen-label="section_plattform"],
     gap: 14px !important;
   }
   .quellen-stats { gap: 20px !important; }
+}
+
+/* ============================================================
+   BRANCHEN CARDS — Hover text readability fix
+   (br-card keeps var(--fg) on hover → invisible on dark overlay)
+   ============================================================ */
+.br-card:hover .br-name {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 14px rgba(0,0,0,0.85) !important;
+}
+.br-card:hover .br-blurb {
+  color: rgba(242,244,247,0.82) !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.75) !important;
+}
+.br-card:hover .br-num {
+  color: rgba(111,160,255,0.80) !important;
+}
+.br-card:hover .br-pool {
+  color: rgba(200,218,240,0.85) !important;
+}
+.br-card:hover .br-arrow {
+  color: rgba(111,160,255,0.90) !important;
+}
+.br-card:hover .br-foot {
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+/* ── Sub-page white sections ── */
+/* Must match design-refresh.css specificity to win */
+.branch-hero ~ section[data-screen-label="Open positions"],
+section[data-screen-label="Open positions"] {
+  background: var(--bg) !important;
+}
+.branch-hero ~ section:has(.final-cta),
+.branch-hero ~ section .final-cta {
+  background: var(--bg-elev-2) !important;  /* keep CTA slightly elevated */
+}
+/* Roles and Regions sections on sub-pages */
+.branch-hero ~ section[data-screen-label="Roles"] {
+  background: var(--bg) !important;
+}
+.branch-hero ~ section[data-screen-label="Case study"] {
+  background: var(--bg) !important;
+}
+
+/* ============================================================
+   PLATFORM CARDS — Unified Voice card (dark, SVG illustration)
+   ============================================================ */
+.pcard-voice {
+  background: linear-gradient(155deg, #0E1230 0%, #0A0E22 55%, #07091A 100%);
+  color: #EDEFF3;
+}
+.pcard-voice .pcard-badge-voice {
+  background: rgba(47,107,255,0.16);
+  border: 1px solid rgba(47,107,255,0.32);
+  color: rgba(111,160,255,0.95);
+  backdrop-filter: blur(8px);
+}
+.pcard-voice p { color: rgba(237,239,243,0.78); }
+.pcard-voice h3 { color: #EDEFF3; }
+.pcard-voice .pcard-link { color: #EDEFF3; }
+.pcard-voice .pcard-link:hover { color: #6FA0FF; }
+.pcard-voice .pcard-viz { flex: 1; }
+.pcard-viz-voice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.pcard-viz-voice svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+/* Pulse animation for voice nodes */
+@keyframes voice-pulse {
+  0%,100% { opacity: .5; r: 3; }
+  50%      { opacity: 1;  r: 5; }
+}
+@keyframes wave-flow {
+  0%   { stroke-dashoffset: 60; }
+  100% { stroke-dashoffset: 0; }
+}
+.voice-node { animation: voice-pulse 2.4s ease-in-out infinite; }
+.voice-node:nth-child(2) { animation-delay: .4s; }
+.voice-node:nth-child(3) { animation-delay: .8s; }
+.voice-wave {
+  stroke-dasharray: 12 6;
+  animation: wave-flow 2s linear infinite;
 }
