@@ -98,9 +98,9 @@
   .ka-hl em{font-style:normal;background:linear-gradient(135deg,#C8CDD6 0%,#9BAAB8 50%,#6B7480 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .ka-hero-lead{font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:var(--fg-muted);margin:28px 0 0;max-width:54ch}
   .ka-hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
-  .ka-hero-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(15,22,35,0.08);max-width:560px}
-  @media(max-width:560px){.ka-hero-trust{grid-template-columns:repeat(2,1fr);gap:18px 14px}}
-  .ka-hero-trust .v{display:block;font-family:var(--font-display);font-size:clamp(22px,2vw,28px);font-weight:700;letter-spacing:-.02em;color:var(--fg);line-height:1}
+  .ka-hero-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(15,22,35,0.08);max-width:460px}
+  @media(max-width:560px){.ka-hero-trust{grid-template-columns:repeat(3,1fr);gap:18px 14px}}
+  .ka-hero-trust .v{display:block;font-family:var(--font-display);font-size:clamp(18px,1.5vw,22px);font-weight:600;letter-spacing:-.02em;color:var(--fg);line-height:1}
   .ka-hero-trust .l{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim);margin-top:8px}
   /* Glass panel right side */
   .ka-hero-panel{position:relative;border-radius:18px;border:1px solid rgba(15,22,35,0.10);background:linear-gradient(180deg,rgba(255,255,255,.04) 0%,rgba(255,255,255,.015) 100%);backdrop-filter:blur(20px) saturate(1.1);-webkit-backdrop-filter:blur(20px) saturate(1.1);box-shadow:0 30px 60px -20px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.06);overflow:hidden;padding:28px}
@@ -123,7 +123,7 @@
   .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   @media(max-width:800px){.why-grid{grid-template-columns:1fr}}
   .why{padding:32px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--bg-elev);transition:border-color .25s,transform .3s cubic-bezier(.16,1,.3,1)}
-  .why:hover{border-color:rgba(155,170,184,.25);transform:translateY(-4px)}
+  .why:hover{border-color:rgba(155,170,184,.25);transform:translateY(-2px)}
   .why .num{font-family:var(--font-mono);font-size:11px;color:var(--blue-deep);letter-spacing:.1em;margin-bottom:16px}
   .why .t{font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:-.02em;margin-bottom:12px}
   .why .d{color:var(--fg-muted);font-size:16px;line-height:1.65}
@@ -133,7 +133,8 @@
   @media(max-width:900px){.benefits{grid-template-columns:repeat(2,1fr)}}
   .benefit{background:var(--bg-elev);padding:28px;transition:background .2s}
   .benefit:hover{background:var(--bg-elev-2)}
-  .benefit .b-ico{font-size:24px;margin-bottom:16px}
+  .benefit .b-ico{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:rgba(155,170,184,.10);color:var(--fg-muted);margin-bottom:16px}
+  .benefit .b-ico svg{width:20px;height:20px;display:block}
   .benefit .b-t{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
   .benefit .b-d{color:var(--fg-muted);font-size:14px;line-height:1.55}
 
@@ -255,7 +256,7 @@
     <div class="ka-hero-grid">
       <div>
         <span class="ka-hero-live"><span class="pulse"></span>18 offene Stellen · Live</span>
-        <h1 class="ka-hl">Wir bauen das<br>beste <em>Recruiting-Team</em><br>der DACH-Region.</h1>
+        <h1 class="ka-hl">Wir bauen ein <em>Recruiting-Team</em>,<br>das den Mittelstand versteht.</h1>
         <p class="ka-hero-lead">Engineering, Recruiting, Sales und Customer-Success — hybrid oder remote, an einem von vier Standorten. Keine Anzeigen-Schalter, sondern Menschen, die Recruiting neu denken wollen.</p>
         <div class="ka-hero-ctas">
           <a href="#jobs" class="btn btn-primary btn-arrow">Stellen ansehen</a>
@@ -265,7 +266,6 @@
           <div><span class="v">18</span><span class="l">Offene Stellen</span></div>
           <div><span class="v">95</span><span class="l">Mitarbeitende</span></div>
           <div><span class="v">4</span><span class="l">Standorte</span></div>
-          <div><span class="v">+38 %</span><span class="l">Wachstum '25</span></div>
         </div>
       </div>
 
@@ -327,20 +327,20 @@
     </div>
     <div class="why-grid">
       <div class="why reveal rd-1"><div class="num">01</div><div class="t">Tech &amp; Mensch — kein Trade-off</div><div class="d">Engineers und Recruiter arbeiten Tisch an Tisch. Sie bauen Tools, die sie selbst benutzen — keine Abteilungssilos, kein Wasserfall.</div></div>
-      <div class="why reveal rd-2"><div class="num">02</div><div class="t">Echtes Mittelstands-Mandat</div><div class="d">Sie arbeiten für Unternehmer mit Gesicht — nicht für anonyme Konzern-HR. Sie sehen die Wirkung Ihrer Arbeit, täglich.</div></div>
-      <div class="why reveal rd-3"><div class="num">03</div><div class="t">Nachhaltig · Bootstrap · Profitabel</div><div class="d">Seit Jahr 2 profitabel, kein VC. Keine Hire-and-Burn-Kultur, keine fragilen Wachstumsziele. Wir bauen für die nächsten 20 Jahre.</div></div>
+      <div class="why reveal rd-2"><div class="num">02</div><div class="t">Mittelstands-Mandat mit Gesicht</div><div class="d">Sie arbeiten für Unternehmer mit Gesicht — nicht für anonyme Konzern-HR. Sie sehen die Wirkung Ihrer Arbeit, täglich.</div></div>
+      <div class="why reveal rd-3"><div class="num">03</div><div class="t">Nachhaltig · Bootstrap · Profitabel</div><div class="d">Seit Jahr 2 profitabel, kein VC. Wir investieren langfristig in Menschen statt in kurzfristige Wachstumsziele — und bauen für die nächsten 20 Jahre.</div></div>
     </div>
 
     <!-- Benefits -->
     <div class="benefits reveal">
-      <div class="benefit"><div class="b-ico">🏡</div><div class="b-t">Hybrid &amp; Remote</div><div class="b-d">Alle Stellen sind hybrid buchbar. Kernzeit 10–16 Uhr, Rest flexibel.</div></div>
-      <div class="benefit"><div class="b-ico">📈</div><div class="b-t">Echte Equity-Option</div><div class="b-d">Senior-Positionen erhalten VSOP — Beteiligung am Unternehmenswachstum.</div></div>
-      <div class="benefit"><div class="b-ico">🎓</div><div class="b-t">1.500 € / Jahr Weiterbildung</div><div class="b-d">Für Kurse, Konferenzen, Bücher — kein Genehmigungsprozess.</div></div>
-      <div class="benefit"><div class="b-ico">🍼</div><div class="b-t">6 Monate Elternzeit</div><div class="b-d">Volles Gehalt für 3 Monate, halbes für weitere 3 — für alle Elternteile.</div></div>
-      <div class="benefit"><div class="b-ico">🏃</div><div class="b-t">Urban Sports Club</div><div class="b-d">Volle Mitgliedschaft ab Probezeit — für alle Standorte.</div></div>
-      <div class="benefit"><div class="b-ico">🍽️</div><div class="b-t">Mittagessen-Budget</div><div class="b-d">€8/Tag für die Kantine oder lokale Restaurants — tax-free via Sodexo.</div></div>
-      <div class="benefit"><div class="b-ico">🖥️</div><div class="b-t">MacBook Pro + Setup</div><div class="b-d">Neuestes MacBook Pro 14" + €500 Home-Office-Budget ab Tag 1.</div></div>
-      <div class="benefit"><div class="b-ico">✈️</div><div class="b-t">Workation möglich</div><div class="b-d">Bis zu 6 Wochen/Jahr aus dem EU-Ausland — keine Bürokratie, nur anmelden.</div></div>
+      <div class="benefit"><div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></div><div class="b-t">Hybrid &amp; Remote</div><div class="b-d">Alle Stellen sind hybrid buchbar. Kernzeit 10–16 Uhr, Rest flexibel.</div></div>
+      <div class="benefit"><div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><div class="b-t">Equity-Option</div><div class="b-d">Senior-Positionen erhalten VSOP — Beteiligung am Unternehmenswachstum.</div></div>
+      <div class="benefit"><div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5L2 9l10 4 10-4-10-4z"/><path d="M6 11v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></div><div class="b-t">1.500 € / Jahr Weiterbildung</div><div class="b-d">Für Kurse, Konferenzen, Bücher — kein Genehmigungsprozess.</div></div>
+      <div class="benefit"><div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-9.5A3.5 3.5 0 0 1 12 7a3.5 3.5 0 0 1 7 3.5C19 15.5 12 20 12 20z"/></svg></div><div class="b-t">6 Monate Elternzeit</div><div class="b-d">Volles Gehalt für 3 Monate, halbes für weitere 3 — für alle Elternteile.</div></div>
+      <div class="benefit"><div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-6 5 12 2.5-6H21"/></svg></div><div class="b-t">Urban Sports Club</div><div class="b-d">Volle Mitgliedschaft ab Probezeit — für alle Standorte.</div></div>
+      <div class="benefit"><div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h11v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V8z"/><path d="M16 9h2.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3v2M11 3v2"/></svg></div><div class="b-t">Mittagessen-Budget</div><div class="b-d">€8/Tag für die Kantine oder lokale Restaurants — tax-free via Sodexo.</div></div>
+      <div class="benefit"><div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 20h20"/></svg></div><div class="b-t">MacBook Pro + Setup</div><div class="b-d">Neuestes MacBook Pro 14" + €500 Home-Office-Budget ab Tag 1.</div></div>
+      <div class="benefit"><div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><path d="M12 3.5c2.5 2.4 2.5 14.2 0 17M12 3.5c-2.5 2.4-2.5 14.2 0 17"/></svg></div><div class="b-t">Workation möglich</div><div class="b-d">Bis zu 6 Wochen/Jahr aus dem EU-Ausland — unkompliziert, einfach anmelden.</div></div>
     </div>
   </div>
 </section>
@@ -371,12 +371,12 @@
   <div class="container">
     <div class="section-head reveal">
       <div><span class="eyebrow">Unser Prozess</span><h2 class="h2 mt-16">Fünf Schritte<br>bis zum Angebot.</h2></div>
-      <p class="lead">Keine Assessment-Center, keine 6-monatigen Prozesse. Wir respektieren Ihre Zeit — und treffen schnelle, klare Entscheidungen.</p>
+      <p class="lead">Klare, schnelle Entscheidungen statt monatelanger Prozesse — wir respektieren Ihre Zeit.</p>
     </div>
     <div class="proc-stages reveal">
       <div class="ps"><div class="ps-num">01</div><div class="t">Bewerbung</div><div class="d">Online über unsere Seite oder initiativ per Mail. Wir antworten innerhalb von 48h.</div></div>
       <div class="ps"><div class="ps-num">02</div><div class="t">Screening-Call</div><div class="d">30 Min mit HR — Erwartungen, Rahmenbedingungen, erste Einschätzung gegenseitig.</div></div>
-      <div class="ps"><div class="ps-num">03</div><div class="t">Fachgespräch</div><div class="d">1h mit dem Hiring Manager — fachliche Tiefe, reale Aufgaben, keine Rätsel.</div></div>
+      <div class="ps"><div class="ps-num">03</div><div class="t">Fachgespräch</div><div class="d">1h mit dem Hiring Manager — fachliche Tiefe, reale Aufgaben statt Rätsel.</div></div>
       <div class="ps"><div class="ps-num">04</div><div class="t">Team-Kennenlernen</div><div class="d">90-min virtuelles Team-Meeting — Sie lernen Ihre künftigen Kolleg:innen kennen.</div></div>
       <div class="ps"><div class="ps-num">05</div><div class="t">Angebot</div><div class="d">Klares Angebot innerhalb von 5 Tagen. Verhandlung fair und transparent.</div></div>
     </div>
@@ -389,7 +389,7 @@
     <div class="final-cta text-center">
       <span class="eyebrow" style="justify-content:center">Nichts dabei?</span>
       <h2 class="h-display" style="font-size:clamp(32px,5vw,60px);margin-top:20px">Initiativbewerbung<br>ist immer willkommen.</h2>
-      <p class="lead" style="margin:20px auto 0;text-align:center;max-width:52ch">Wir wachsen schnell. Wenn Sie glauben, dass Sie zu uns passen — schreiben Sie uns. Wir lesen jede Bewerbung persönlich.</p>
+      <p class="lead" style="margin:20px auto 0;text-align:center;max-width:52ch">Wir wachsen stetig. Wenn Sie glauben, dass Sie zu uns passen — schreiben Sie uns. Wir lesen jede Bewerbung persönlich.</p>
       <div style="display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap">
         <a href="mailto:jobs@ki-kandidat.de" class="btn btn-primary btn-arrow">Initiativ bewerben</a>
         <a href="about.html" class="btn btn-ghost">Mehr über uns</a>
