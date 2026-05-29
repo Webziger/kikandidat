@@ -1106,3 +1106,159 @@ section[data-screen-label="Open positions"] {
 @keyframes pageEnter { from { opacity: 0; } to { opacity: 1; } }
 /* Belt-and-suspenders: never let a transform/will-change re-trap the nav. */
 body { transform: none !important; will-change: auto !important; }
+
+/* ============================================================================
+   KI-MODUL + PLATTFORM FINISH (2026-05) — vier gezielte Fixes:
+     #29  "Wir stellen vor:" Hintergrund-Effekt zurück (cool, im neuen Navy)
+     #30  KI-Section Lead solide lesbar (nie blau/grau auf blau)
+     #31  "Markus W."-Zeile: weiße .role-Fläche entfernen (Leak aus .role{#fff})
+     #32  Plattform-Slider → fortlaufende, flüssige Marquee statt Klick-zu-Öffnen
+   ============================================================================ */
+
+/* ── #31 — weiß-auf-weiß "role"-Balken beheben ──────────────────────────────
+   design-refresh.css setzt global .role{background:#FFFFFF !important} (für
+   Karten in anderem Kontext). Das leakt auf .match-cand .role → fast-weiße
+   Schrift auf weißem Balken. Hier (lädt zuletzt, höhere Spezifität) neutral. */
+.match-panel-full .role,
+.match-cand .role {
+  background: transparent !important;
+  color: rgba(228,236,247,0.72) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.match-panel-full .role:hover,
+.match-cand .role:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+/* Live-Scoring-Liste auf Mobil nicht quetschen (Name wurde auf ~73px gepresst):
+   Avatar | Name (volle Restbreite) | Prozent oben, Bar volle Breite darunter. */
+@media (max-width: 768px) {
+  .ls-row {
+    grid-template-columns: 32px 1fr auto !important;
+    grid-template-areas: "av name pct" "bar bar bar" !important;
+    gap: 4px 10px !important;
+    padding: 12px 16px !important;
+  }
+  .ls-row .ls-av       { grid-area: av; }
+  .ls-row .ls-name     { grid-area: name; font-size: 13px !important; }
+  .ls-row .ls-pct      { grid-area: pct; }
+  .ls-row .ls-bar-wrap { grid-area: bar; margin-top: 2px; }
+}
+
+/* ── #30 — KI-Section Lead solide lesbar (kein blau/grau auf blau) ─────────── */
+.ki-section .lead,
+.ki-intro-section .lead {
+  color: rgba(237,242,250,0.92) !important;
+  font-weight: 400 !important;
+}
+
+/* ── #29 — "Wir stellen vor:" — kühler, tiefer Hintergrund im neuen Navy ─────
+   Der Relaunch hatte den Hintergrund zur flachen Fläche reduziert. Hier zurück
+   zu echter Tiefe: mehrere blaue Radial-Glows + dezente Boden-Vignette; dazu
+   blaue Top-Hairline statt Silber (passend zum blauen Partikel-Flow). */
+.ki-intro-section {
+  background:
+    radial-gradient(58% 48% at 50% 16%, rgba(58,118,255,0.22) 0%, transparent 60%),
+    radial-gradient(46% 60% at 15% 72%, rgba(70,128,255,0.16) 0%, transparent 58%),
+    radial-gradient(44% 56% at 85% 26%, rgba(120,162,255,0.13) 0%, transparent 56%),
+    radial-gradient(72% 60% at 50% 120%, rgba(8,13,26,0.55) 0%, transparent 60%),
+    linear-gradient(180deg, var(--dk-3) 0%, var(--dk-2) 55%, var(--dk-1) 100%) !important;
+}
+.ki-intro-section::after {
+  background: linear-gradient(90deg, transparent, rgba(99,140,255,0.30) 25%, rgba(111,160,255,0.62) 50%, rgba(99,140,255,0.30) 75%, transparent) !important;
+}
+
+/* ── #32 — Plattform-Slider → endlose, flüssige Marquee (JS-getrieben) ────────
+   Reine Auto-Bewegung, KEINE Maus-Interaktion: kein Hover-Pause, kein
+   Cursor-Wechsel, keine Hover-Effekte. Die Position wird per rAF in JS gesetzt
+   (track.style.transform) — daher hier KEINE CSS-Animation und KEIN transform.
+   Rechts ein dezenter, geblurrter Pfeil zum manuellen Weiterklicken. */
+.section_plattform .plattform-slider-outer {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+.section_plattform .plattform-slider-wrapper {
+  height: auto !important;
+  overflow: hidden !important;
+  display: block !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+}
+.section_plattform .plattform-track.is-marquee {
+  position: static !important;
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  width: max-content !important;
+  height: auto !important;
+  cursor: default !important;
+  will-change: transform;
+  /* NB: KEINE animation und KEIN transform hier — JS setzt translateX per rAF. */
+}
+.section_plattform .plattform-track.is-marquee .plattform-slide,
+.section_plattform .plattform-track.is-marquee .plattform-slide.is-active {
+  flex: 0 0 auto !important;
+  width: 260px !important;
+  height: 372px !important;
+  margin-right: 18px !important;
+  cursor: default !important;
+  visibility: visible !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+.section_plattform .plattform-track.is-marquee .plattform-slide img {
+  filter: brightness(0.58) saturate(0.78) !important;
+}
+.section_plattform .plattform-track.is-marquee .ps-title  { font-size: 19px !important; }
+.section_plattform .plattform-track.is-marquee .ps-desc {
+  opacity: 1 !important;
+  transform: none !important;
+}
+/* Minimaler, geblurrter Pfeil rechts — manuelles Weiterklicken */
+.section_plattform .plattform-arrow {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  z-index: 6;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.42);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+          backdrop-filter: blur(14px) saturate(1.1);
+  color: #1B2433;
+  box-shadow: 0 8px 24px rgba(15,22,35,0.14);
+  cursor: pointer;
+  transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.section_plattform .plattform-arrow:hover {
+  background: rgba(255,255,255,0.62);
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 10px 28px rgba(15,22,35,0.20);
+}
+.section_plattform .plattform-arrow:active {
+  transform: translateY(-50%) scale(0.96);
+}
+.section_plattform .plattform-arrow svg { display: block; }
+@media (max-width: 768px) {
+  .section_plattform .plattform-track.is-marquee .plattform-slide,
+  .section_plattform .plattform-track.is-marquee .plattform-slide.is-active {
+    width: 216px !important;
+    height: 320px !important;
+    margin-right: 14px !important;
+  }
+  .section_plattform .plattform-arrow {
+    width: 38px !important;
+    height: 38px !important;
+    right: 10px !important;
+  }
+}
