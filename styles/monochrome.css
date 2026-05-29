@@ -421,3 +421,86 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   .footer-legal { flex-wrap: wrap; justify-content: center; }
   .footer-credit { justify-content: center; }
 }
+
+/* ============================================================
+   Orbital Radar — High-End Polish
+   ============================================================ */
+/* Blue center glow instead of grey */
+.orbital-glow-bg {
+  background: radial-gradient(circle,
+    rgba(47,107,255,0.18) 0%,
+    rgba(47,107,255,0.06) 40%,
+    transparent 70%) !important;
+}
+
+/* Blue sweep arm glow filter */
+.orbital-sweep {
+  filter: drop-shadow(0 0 4px rgba(47,107,255,0.70))
+          drop-shadow(0 0 12px rgba(47,107,255,0.35)) !important;
+}
+
+/* Recruiting-platform icons get blue hover glow */
+.orb-icon-inner[data-brand="linkedin"]:hover,
+.orb-icon-inner[data-brand="xing"]:hover,
+.orb-icon-inner[data-brand="indeed"]:hover,
+.orb-icon-inner[data-brand="stepstone"]:hover,
+.orb-icon-inner[data-brand="kununu"]:hover {
+  filter: saturate(1.2) brightness(1.15)
+          drop-shadow(0 0 10px rgba(47,107,255,0.80))
+          drop-shadow(0 0 24px rgba(47,107,255,0.35)) !important;
+}
+
+/* General icons — slightly brighter white glow on hover */
+.orb-icon-inner:hover {
+  filter: saturate(1) brightness(1.2)
+          drop-shadow(0 0 8px rgba(200,210,240,0.55)) !important;
+}
+/* YouTube keeps red */
+.orb-icon-inner[data-brand="youtube"]:hover {
+  filter: saturate(1.3) brightness(1.1)
+          drop-shadow(0 0 10px rgba(255,60,60,0.75))
+          drop-shadow(0 0 24px rgba(255,60,60,0.30)) !important;
+}
+
+/* Orbital ring dot-tip: small pulse at sweep end */
+@keyframes orbTipPulse {
+  0%,100% { opacity:.85; transform:translate(-50%,-50%) scale(1); }
+  50%      { opacity:1;   transform:translate(-50%,-50%) scale(1.4); }
+}
+.orbital-sweep::after {
+  content:'';
+  position:absolute;
+  left:0; top:0;
+  width:6px; height:6px;
+  border-radius:50%;
+  background:#6FA0FF;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 8px 3px rgba(47,107,255,.60);
+  animation: orbTipPulse 2s ease-in-out infinite;
+}
+
+/* ============================================================
+   Color accent touches — key `em` highlights across site
+   ============================================================ */
+/* Section eyebrows get a subtle blue left-border accent */
+.eyebrow { border-left: 2px solid rgba(47,107,255,0.45); padding-left: 10px; }
+
+/* Key stat numbers in hero/pillar sections — accent blue */
+.hero-stat .v,
+.hero-stat-val,
+.pillar-stat,
+.qs-number { color: var(--accent) !important; }
+
+/* Pain section em tags → blue */
+.pain-section em,
+.section-head em,
+.h2 em:not([style]) {
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* Readability: ensure fg-dim is not too faint on light bg */
+:root { --fg-dim: rgba(10,15,28,0.52); }
+
+/* Trust section sub-text readable */
+.ts-cert-v { color: rgba(10,15,28,0.60) !important; }
