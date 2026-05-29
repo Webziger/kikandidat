@@ -143,15 +143,39 @@ button.btn-ghost:hover,
 }
 .nav[data-theme="dark"] .btn-ghost,
 .hero-v2 .btn-ghost,
+.footer .btn-ghost,
 [data-nav-theme="dark"] .btn-ghost {
   color: var(--fg-on-dark) !important;
   border-color: var(--line-dark) !important;
 }
 .nav[data-theme="dark"] .btn-ghost:hover,
 .hero-v2 .btn-ghost:hover,
+.footer .btn-ghost:hover,
 [data-nav-theme="dark"] .btn-ghost:hover {
   background: rgba(255,255,255,0.08) !important;
   border-color: rgba(255,255,255,0.30) !important;
+}
+/* HELLE Hero-Sections tragen data-nav-theme="dark" (damit die Nav über dem
+   dunkleren Foto-Oberrand hell bleibt), ihr Inhaltsbereich ist aber ein heller
+   Scrim mit dunklem Text. Der generische [data-nav-theme="dark"]-Block oben hätte
+   ihre Ghost-Buttons weiß eingefärbt → unlesbar (weiß auf hell, z. B. „Live-Vakanzen
+   ansehen"). Hier zurück auf DUNKLEN, lesbaren Text. section.* = (0,2,1) > (0,2,0). */
+section.branch-hero .btn-ghost,
+section.ab-hero .btn-ghost,
+section.ka-hero .btn-ghost,
+section.ko-hero .btn-ghost,
+section.br-hero .btn-ghost {
+  color: var(--fg) !important;
+  border-color: var(--line-strong) !important;
+}
+section.branch-hero .btn-ghost:hover,
+section.ab-hero .btn-ghost:hover,
+section.ka-hero .btn-ghost:hover,
+section.ko-hero .btn-ghost:hover,
+section.br-hero .btn-ghost:hover {
+  color: var(--fg) !important;
+  border-color: rgba(10,15,28,0.45) !important;
+  background: rgba(10,15,28,0.04) !important;
 }
 
 /* ============================================================================
@@ -681,8 +705,12 @@ section[data-screen-label="section_plattform"],
               0 8px 32px -8px rgba(47,107,255,0.60) !important;
   transform: translateY(-2px) !important;
 }
-/* Dark-section ghost buttons slightly brighter */
-.nav[data-theme="dark"] ~ main .btn-ghost,
+/* Dark-section ghost buttons slightly brighter.
+   WICHTIG: KEINE globale ".nav[data-theme=\"dark\"] ~ main .btn-ghost"-Klausel —
+   die faerbte JEDEN Ghost-Button hell, sobald die Nav (durch eine dunkle
+   Sektion oben im Viewport) dunkel war, auch Buttons auf HELLEN Sektionen
+   (z. B. pm-/ind-/final-cta) → fast unsichtbar. Stattdessen nur echte
+   Dunkel-Sektionen; helle Sektionen erben das dunkle Standard-Ghost-Styling. */
 .pain-section .btn-ghost, .ki-section .btn-ghost,
 .berater-section .btn-ghost, .sc2-section .btn-ghost {
   border-color: rgba(242,244,247,0.28) !important;
@@ -1085,10 +1113,14 @@ section[data-screen-label="Open positions"] {
   background: linear-gradient(180deg, var(--dk-1) 0%, #0B1322 100%) !important;
 }
 
-/* — Text contrast on dark sections (was 0.42 / 0.55 / 0.58 — illegible) — */
-.pain-label      { color: rgba(238,242,248,0.66) !important; }
-.pain-desc       { color: rgba(233,239,247,0.82) !important; font-weight: 400 !important; }
-.pain-headline p { color: rgba(233,239,247,0.80) !important; }
+/* — Text contrast on dark sections (was 0.42 / 0.55 / 0.58 — illegible) —
+   WICHTIG: auf .pain-section gescoped. Die Branchen-Subpages nutzen .pain-card
+   auf WEISSER Section; ohne Scope leakte das Near-White hierher → unlesbar. */
+.pain-section .pain-label      { color: rgba(238,242,248,0.66) !important; }
+.pain-section .pain-desc       { color: rgba(233,239,247,0.82) !important; font-weight: 400 !important; }
+.pain-section .pain-headline p { color: rgba(233,239,247,0.80) !important; }
+/* Branchen-Subpages: Mono-Label auf weißer .pain-card → lesbares Dunkelgrau. */
+.pain-card .pain-label { color: var(--fg-muted) !important; }
 /* ki-section lead inherited #3A4250 (--fg-muted, fuer helle BGs) → auf dem
    Navy quasi unsichtbar. Auf lesbares Hell heben (ki-intro-lead war ok). */
 .ki-section .lead,
@@ -1261,4 +1293,192 @@ body { transform: none !important; will-change: auto !important; }
     height: 38px !important;
     right: 10px !important;
   }
+}
+
+/* ============================================================================
+   FIX — Hero-<em>-Highlights auf HELLEN Heroes lesbar machen (2026-05)
+   Problem: design-refresh.css + die [data-nav-theme="dark"]-Regel zwangen einen
+   nahezu weißen Silber-Verlauf (#E4E8EE/#C8CDD6) auf die <em>-Highlights der
+   HELLEN Hero-Überschriften (Karriere, Über uns, Kontakt, alle Branchen).
+   Auf hellem Grund (#F7F8FA) ~1.1:1 → Buchstabenoberkanten verschwinden →
+   wirkt "abgeschnitten" und ist unleserlich.
+   Fix: kräftiger, dunkler Schiefer-Metallic-Verlauf (hellste Stufe ~5.4:1),
+   weiterhin als Highlight erkennbar, aber klar lesbar. Höhere Spezifität
+   (Sektion + Klasse) schlägt [data-nav-theme="dark"] h1 em.
+   Clip-Schutz: box-decoration-break:clone + minimaler vertikaler Innenabstand,
+   damit -webkit-background-clip:text Ober-/Unterlängen nicht beschneidet. */
+.ka-hero .ka-hl em,
+.ab-hero h1 em,
+.ko-hero .ko-hl em,
+.br-hero .br-hl em,
+.branch-hero h1 em {
+  background: linear-gradient(135deg,#5A6678 0%,#353F4E 55%,#1E2632 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  padding: 0.06em 0 !important;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Hero-Eyebrows / Live-Badges auf den HELLEN Heroes lesbar machen.
+   Diese Heroes sind als data-nav-theme="dark" getaggt (steuert die Nav-Glas-
+   Optik), sind aber hell — dadurch erbten Eyebrows die helle Dark-Section-Farbe
+   (≈weiß auf weiß) und das Live-Badge das blasse Silber var(--accent).
+   → auf legible Graphit zwingen (höhere Spezifität schlägt die Theme-Regeln). */
+.ka-hero .ka-hero-live,
+.ka-hero [class*="eyebrow"],
+.ab-hero [class*="eyebrow"],
+.ko-hero [class*="eyebrow"],
+.br-hero [class*="eyebrow"] {
+  color: var(--fg-muted) !important;
+}
+
+/* ============================================================================
+   FIX (2026-05) — Silber-Akzent var(--accent) (#9BAAB8) als TEXT auf HELLEN
+   Flächen ist unleserlich (~2.2:1, "graue Schrift auf weißem Hintergrund").
+   Überall auf das legible System-Graphit --fg-muted (#3A4250, ~9:1) zwingen.
+   monochrome.css lädt zuletzt → !important + Spezifität schlagen components.css,
+   design-refresh.css und Inline-Styles. Klassen sind elternskopiert, damit
+   dieselben Klassennamen auf DUNKLEN Flächen (Mockups, KI-Modul, Showcase-
+   Tiles mit dunklem Text) NICHT betroffen sind. */
+
+/* (a) Meta-Eyebrows / Kicker / Mono-Labels / Zähler / Tags → Graphit */
+.section-photo-bg .eyebrow,
+.tm-eye, .ts-eye, .pm-eye,
+.br-num, .br-pool, .approach-num,
+.job-team, .ps-num, .drawer-tag,
+.role-pool, .region-count,
+.case-num .v, .case-author .av,
+.seal .big, .sc-tl, .tm-role, .ts-pill,
+.pos-status.hot, .pos-arrow {
+  color: var(--fg-muted) !important;
+}
+
+/* (b) Aktiver Filter-/Kategorie-Chip: weiße Schrift auf #9BAAB8 (~2.4:1)
+   → dunkler Fill, weiße Schrift jetzt ~9:1. */
+.chip.active, .filter-chip.active {
+  background: var(--fg-muted) !important;
+  color: #fff !important;
+}
+
+/* (c) Ghost-Buttons auf HELLEN Heroes hatten ~weiße Schrift (für DUNKLE Heroes
+   gedacht) → auf hellen Heroes praktisch unsichtbar. Dunkle Schrift + Rand. */
+.ka-hero .btn-ghost, .ab-hero .btn-ghost, .ko-hero .btn-ghost,
+.br-hero .btn-ghost, .branch-hero .btn-ghost {
+  color: var(--fg) !important;
+  border-color: var(--line-strong) !important;
+}
+
+/* (d) Breadcrumb „aktuelle Seite" (Inline color:var(--accent)) → Graphit. */
+.breadcrumb span:not(.sep),
+.crumbs span:not(.sep) {
+  color: var(--fg-muted) !important;
+}
+
+/* (e) Inline-Akzent-Link in gedämpftem Absatz (z.B. „Sprechen Sie uns an →")
+   → Graphit, lesbar. */
+p[style*="--fg-muted"] a[style*="--accent"] {
+  color: var(--fg-muted) !important;
+}
+
+/* (f) Final-CTA-Highlight-<em> (Inline color:var(--accent)) auf HELLER CTA
+   → gleicher dunkler Schiefer-Verlauf wie die Hero-Highlights. */
+section:not([data-nav-theme="dark"]) .final-cta em {
+  background: linear-gradient(135deg,#5A6678 0%,#353F4E 55%,#1E2632 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+/* (g) Sektions-Eyebrows UNTER dem Branchen-Hero (Rollen / Regionen / Case study).
+   design-refresh.css setzt `.branch-hero ~ section .eyebrow{color:var(--accent)}`
+   (Spez. 0,2,0) → hier identische Spezifität, aber spätere Quelle gewinnt. */
+.branch-hero ~ section .eyebrow {
+  color: var(--fg-muted) !important;
+}
+
+/* (h) Inline-Hex `color:#9BAAB8` Mono-Labels („01/02/03"), Kicker u. der
+   „Alle 12 Branchen →"-Pill-Link auf den 12 Branchenseiten. Site-weit
+   verifiziert: #9BAAB8-Inline kommt NUR auf hellen Branchen-Flächen vor
+   (0 auf dunklen Flächen) → pauschaler Override ist sicher. */
+[style*="9BAAB8"] {
+  color: var(--fg-muted) !important;
+}
+
+/* (i) STARTSEITE — Silber-Akzent auf HELLEN Sektionen (Showcase-Stat-Suffixe,
+   Testimonial-Zähler, FAQ-Plus-Icons). Elternskopiert auf index-eigene
+   Sektionsklassen → DUNKLE Mockups (.pm-section/.ki-section/.app-*) und die
+   dunklen Zähler (.sc-st-item .v = #0A0F1C) bleiben unangetastet. */
+.sc-st-item .v em,          /* „M+"-Suffix neben dunkler Zahl */
+.tm-metric .v,              /* Testimonial-Zähler „380" */
+.sec-cream .ico {           /* FAQ-„+"-Icons */
+  color: var(--fg-muted) !important;
+}
+/* Showcase-Stat-Labels (dunkles Navy @45% ≈ 2.9:1) leicht anheben → lesbar. */
+.showcase-section .l {
+  color: rgba(15,22,35,0.62) !important;
+}
+/* Sektion-Eyebrow „Kandidaten Voice": sc2-section ist fälschlich
+   data-nav-theme="dark" getaggt (ist aber HELL) → der Dark-Eyebrow-Override
+   (blue-bright, Spez. 0,2,0) gewinnt. Mit 0,3,0 (Klasse+Attribut+Klasse)
+   sicher auf blue-deep zwingen. */
+.sc2-section[data-nav-theme="dark"] .eyebrow,
+.sc2-section .eyebrow {
+  color: var(--blue-deep) !important;
+}
+
+/* (j) Heading-<em>-Highlights, die per Inline-`<style>` mit hoher Spezifität
+   bzw. !important auf Silber (var(--accent)) gezwungen werden, auf HELLEN
+   Sektionen → dunkler Schiefer-Verlauf wie alle anderen Highlights.
+   `.pm-section .pm-h2 em` (0,3,1) schlägt das Inline `.pm-h2 em`!important
+   (0,2,1); -webkit-text-fill-color zurück auf transparent, damit der Verlauf
+   sichtbar wird (Inline setzte fill ebenfalls auf --accent). */
+.pm-section .pm-h2 em {
+  background: linear-gradient(135deg,#3A4250 0%,#0A0F1C 90%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+/* (k) Ghost-Button im hellen Produkt-Mockup-Block (.pm-section): Text war
+   near-white (für DUNKEL gedacht) → auf hellem BG praktisch unsichtbar. */
+.pm-section .btn-ghost {
+  color: var(--fg) !important;
+  border-color: var(--line-strong) !important;
+}
+
+/* (l) Mis-getaggte HELLE Sektionen (data-nav-theme="dark", aber heller BG +
+   DUNKLE Headline → kein echtes Dunkel) bekommen über
+   `[data-nav-theme="dark"] h* em` den SILBER-Verlauf. Auf hellem Grund
+   „verschwindet" dessen heller Stop (#E4E8EE) → wirkt wie abgeschnittene
+   Buchstaben. Hier explizit auf den dunklen Schiefer-Verlauf zurück.
+   Spez. 0,2,2 schlägt die 0,2,1-Silber-Regel. Der Index-Hero (.hero-v2,
+   weiße Headline auf dunklem Mosaik) ist NICHT enthalten → bleibt korrekt silber. */
+.showcase-section[data-nav-theme="dark"] h1 em,
+.showcase-section[data-nav-theme="dark"] h2 em,
+.showcase-section[data-nav-theme="dark"] h3 em,
+.sc2-section[data-nav-theme="dark"] h1 em,
+.sc2-section[data-nav-theme="dark"] h2 em,
+.sc2-section[data-nav-theme="dark"] h3 em {
+  background: linear-gradient(135deg,#3A4250 0%,#0A0F1C 90%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+/* (m) Große Statzahlen `.stat .num` tragen via design-refresh.css einen
+   SILBER-Verlauf (Start #DDE2EA) → auf HELLEN Sektionen (z.B. .section-tight)
+   verblassen sie. Auf nicht-dunklen Sektionen auf den dunklen Verlauf zwingen
+   (dunkle Sektionen behalten den hellen, metallischen Look). 0,3,1 > 0,2,0. */
+section:not([data-nav-theme="dark"]) .stat .num {
+  background: linear-gradient(135deg,#3A4250 0%,#0A0F1C 90%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
 }
