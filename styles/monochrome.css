@@ -177,18 +177,19 @@ button.btn-ghost:hover,
   box-shadow: 0 4px 24px rgba(15,22,35,0.10), 0 1px 4px rgba(15,22,35,0.06) !important;
 }
 
-/* ── Dark mode (over dark sections) ── */
+/* ── Dark mode (over dark sections) — clearly floating glass, never blends ── */
 .nav[data-theme="dark"] {
-  background: rgba(8,12,22,0.50) !important;
-  border-color: rgba(255,255,255,0.08) !important;
-  -webkit-backdrop-filter: saturate(160%) blur(20px) !important;
-  backdrop-filter: saturate(160%) blur(20px) !important;
+  background: rgba(22,33,55,0.68) !important;
+  border-color: rgba(255,255,255,0.16) !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.10) !important;
+  -webkit-backdrop-filter: saturate(170%) blur(22px) !important;
+  backdrop-filter: saturate(170%) blur(22px) !important;
 }
-/* Scrolled: more opaque on dark */
+/* Scrolled: near-solid, prominent — always unmistakably visible */
 .nav[data-theme="dark"].nav--scrolled {
-  background: rgba(8,12,22,0.80) !important;
-  border-color: rgba(255,255,255,0.12) !important;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.28) !important;
+  background: rgba(18,27,46,0.90) !important;
+  border-color: rgba(255,255,255,0.20) !important;
+  box-shadow: 0 12px 38px rgba(0,0,0,0.46), inset 0 1px 0 rgba(255,255,255,0.12) !important;
 }
 
 /* ── Link colors ── */
@@ -1041,3 +1042,63 @@ section[data-screen-label="Open positions"] {
    width instead of collapsing to its longest word (it was being pinched
    to ~220px next to the fixed-width lead). */
 .section-head > div { flex: 1 1 auto; min-width: 0; }
+
+/* ============================================================================
+   BACKGROUND RELAUNCH (2026-05) — lift dark sections off pure-black.
+   The previous design filled content sections with #06090F / #030511 / #020510
+   (≈3-5% luminance = harsh, flat black → low legibility, cheap feel). This
+   block, loading LAST, replaces those with one cohesive, modern deep-navy
+   surface that has real depth (soft top glow + vertical gradient), and raises
+   the dimmest body text to readable contrast.
+   ============================================================================ */
+:root {
+  --dk-1: #0D1422;            /* deepest base   */
+  --dk-2: #101B2E;            /* mid base       */
+  --dk-3: #17243E;            /* lifted top     */
+  --dk-card-a: #18253F;       /* elevated card top */
+  --dk-card-b: #111B30;       /* elevated card bottom */
+  --dk-glow: rgba(47,107,255,0.11);
+}
+
+/* — One refined dark surface for every flat-black content section —
+   Scope: index.html dark content sections (the areas the user flagged as
+   "zu tief schwarz"). Sub-pages use .branch-hero + light sections, so they
+   are intentionally NOT included here. */
+.pain-section,
+.ki-section,
+.ki-intro-section {
+  background:
+    radial-gradient(140% 105% at 50% -25%, var(--dk-glow) 0%, transparent 60%),
+    linear-gradient(180deg, var(--dk-3) 0%, var(--dk-2) 56%, var(--dk-1) 100%) !important;
+}
+
+/* — Quellen showcase cards: lift off near-black, keep the elevated look — */
+.qd-card {
+  background: linear-gradient(150deg, var(--dk-card-a) 0%, #131E36 52%, var(--dk-card-b) 100%) !important;
+  border-color: rgba(99,140,230,0.30) !important;
+}
+
+/* — Footer (all 19 pages): was #060810→#040608 (pure black slab). Anchor it
+     in the same deep-navy family so it reads as the bottom of one cohesive
+     surface, not a separate black block. Slightly deeper than content. — */
+.footer {
+  background: linear-gradient(180deg, var(--dk-1) 0%, #0A1120 100%) !important;
+}
+
+/* — Text contrast on dark sections (was 0.42 / 0.55 / 0.58 — illegible) — */
+.pain-label      { color: rgba(238,242,248,0.66) !important; }
+.pain-desc       { color: rgba(233,239,247,0.82) !important; font-weight: 400 !important; }
+.pain-headline p { color: rgba(233,239,247,0.80) !important; }
+
+/* ============================================================================
+   STICKY NAV FIX — keep the fixed nav glued to the viewport while scrolling.
+   The page-enter animation (scroll-polish.css) used fill-mode:both with a
+   `transform: translateY()` keyframe, leaving a lingering transform on <body>.
+   A non-`none` transform on an ancestor makes position:fixed resolve against
+   THAT ancestor (body) instead of the viewport — so the nav scrolled away.
+   Redefining the keyframe to opacity-only (this file loads last, so it wins)
+   removes the transform entirely: clean fade-in, and the nav stays put.
+   ============================================================================ */
+@keyframes pageEnter { from { opacity: 0; } to { opacity: 1; } }
+/* Belt-and-suspenders: never let a transform/will-change re-trap the nav. */
+body { transform: none !important; will-change: auto !important; }
