@@ -420,6 +420,67 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .ki-orb-ring--2     { border-color: rgba(111,160,255,0.16) !important; }
 .ki-orb-ring--3     { border-color: rgba(111,160,255,0.08) !important; }
 .ki-orb-label       { color: rgba(242,244,247,0.86) !important; letter-spacing: .14em !important; }
+/* Mobile-only status pill (hidden on desktop, replaces redundant wordmark caption) */
+.ki-orb-status { display: none; }
+
+/* ── KI-Modul center orb · mobile redesign ──
+   Desktop keeps the big glowing square core. On mobile the square wasted
+   vertical space and the logo + "KI-KANDIDAT" caption read as "logo twice".
+   Here we collapse it into a compact, premium glass "engine" chip with a
+   live status pill, so it feels deliberate and modern instead of empty. */
+@media (max-width: 860px) {
+  .ki-flow-stage { margin-top: 36px !important; }
+  .ki-flow-center { width: 100%; }
+  .ki-center-orb {
+    width: auto !important;
+    height: auto !important;
+    max-width: 340px;
+    margin: 4px auto 0 !important;
+    padding: 22px 30px 18px !important;
+    border-radius: 22px !important;
+    background: linear-gradient(165deg, rgba(47,107,255,0.14), rgba(255,255,255,0.035)) !important;
+    border: 1px solid rgba(111,160,255,0.24) !important;
+    box-shadow: 0 18px 46px rgba(7,13,27,0.55),
+                inset 0 1px 0 rgba(255,255,255,0.08) !important;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+  /* tighten the glow so it hugs the chip instead of bleeding into whitespace */
+  .ki-center-orb::before {
+    inset: -14% !important;
+    filter: blur(22px) !important;
+    background: radial-gradient(circle, rgba(47,107,255,0.30) 0%,
+                rgba(47,107,255,0.10) 50%, transparent 72%) !important;
+  }
+  .ki-logo-frame { width: 150px !important; }
+  /* drop the duplicate wordmark caption, show the functional status pill */
+  .ki-orb-label { display: none !important; }
+  .ki-orb-status {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 7px;
+    position: relative;
+    z-index: 3;
+    margin-top: 14px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(47,107,255,0.14);
+    border: 1px solid rgba(111,160,255,0.22);
+    font-family: var(--font-mono, monospace);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(242,244,247,0.86);
+  }
+  .ki-orb-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue-bright, #6FA0FF);
+    box-shadow: 0 0 8px rgba(111,160,255,0.9);
+    animation: kiLivePulse 1.8s ease-in-out infinite;
+  }
+}
 /* Neutralise the leftover champagne em-gradient in the KI title */
 .ki-intro-title em {
   background: var(--grad-silver-text) !important;
@@ -942,7 +1003,9 @@ section[data-screen-label="section_plattform"],
   .qd-card { padding: 28px 24px; }
   .qd-card--product { flex-direction: column; align-items: stretch; gap: 24px; }
   .qd-phone { width: 100%; }
-  .qd-card--brand .orbital-stage { max-width: 280px !important; }
+  .qd-card--brand .orbital-stage { max-width: 300px !important; }
+  /* Decompress: shrink center ring so the orbiting logos gain a wider radial band */
+  .qd-card--brand .orbital-center-ring { width: 150px !important; height: 150px !important; }
   .qd-card--brand .quellen-stats { gap: 16px; }
 }
 
@@ -1305,8 +1368,11 @@ body { transform: none !important; will-change: auto !important; }
    Fix: kräftiger, dunkler Schiefer-Metallic-Verlauf (hellste Stufe ~5.4:1),
    weiterhin als Highlight erkennbar, aber klar lesbar. Höhere Spezifität
    (Sektion + Klasse) schlägt [data-nav-theme="dark"] h1 em.
-   Clip-Schutz: box-decoration-break:clone + minimaler vertikaler Innenabstand,
-   damit -webkit-background-clip:text Ober-/Unterlängen nicht beschneidet. */
+   Clip-Schutz: box-decoration-break:clone + allseitiger Innenabstand, damit
+   -webkit-background-clip:text weder Ober-/Unterlängen NOCH den rechten Italic-
+   Überhang des letzten (kursiven, 800er) Buchstabens beschneidet. Layout bleibt
+   via identischem Negativ-Margin neutral (kein Wortversatz). Früher hier nur
+   `padding:0.06em 0` (horizontal 0) → kursiver Ausläufer blieb abgeschnitten. */
 .ka-hero .ka-hl em,
 .ab-hero h1 em,
 .ko-hero .ko-hl em,
@@ -1317,7 +1383,8 @@ body { transform: none !important; will-change: auto !important; }
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   color: transparent !important;
-  padding: 0.06em 0 !important;
+  padding: 0.08em 0.18em 0.10em 0.06em !important;
+  margin: -0.08em -0.18em -0.10em -0.06em !important;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
@@ -1481,4 +1548,23 @@ section:not([data-nav-theme="dark"]) .stat .num {
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   color: transparent !important;
+}
+
+/* (n) ITALIC-EM CLIP-FIX — kursive <em>-Headline-Wörter (Bricolage Grotesque,
+   weight 800) mit `-webkit-background-clip:text` verlieren den rechten Italic-
+   Überhang des letzten Buchstabens: Der Gradient wird nur über die Hintergrund-
+   Paint-Box (Glyph-Advance-Breite) gemalt, der schräge Tinten-Ausläufer der
+   Kursiven liegt rechts/oben/unten DARÜBER hinaus → bleibt ungefüllt und wirkt
+   abgeschnitten (z.B. „…veränder[n].", „erfolgreichste[n]"). Fix: Paint-Box per
+   allseitigem Padding vergrößern, Layout per identischem Negativ-Margin neutral
+   halten (kein Versatz benachbarter Wörter). Greift für ALLE Gradient-Headlines
+   site-wide — Startseite + alle Unterseiten. */
+h1 em, h2 em, h3 em, h4 em,
+.h1 em, .h2 em, .h3 em, .h-display em,
+.hero-serif em, .hero-text-layer em, .ki-intro-title em,
+.br-hl em, .ka-hl em, .ko-hl em,
+.br-hero h1 em, .ab-hero h1 em,
+.pm-h2 em, .tm-h2 em, .ts-h2 em, .sc-h em {
+  padding: 0.08em 0.18em 0.10em 0.06em !important;
+  margin: -0.08em -0.18em -0.10em -0.06em !important;
 }
