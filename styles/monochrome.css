@@ -375,3 +375,49 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   -webkit-text-fill-color: transparent !important;
   color: transparent !important;
 }
+
+/* ============================================================
+   Footer — Webziger credit + mobile compaction
+   ============================================================ */
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.footer-credit span {
+  font-size: 12px;
+  letter-spacing: .02em;
+  color: rgba(247,248,250,.45);
+  white-space: nowrap;
+}
+.footer-credit img {
+  height: 18px;
+  width: auto;
+  opacity: .8;
+  transition: opacity .25s cubic-bezier(.16,1,.3,1);
+}
+.footer-credit:hover img { opacity: 1; }
+.footer-credit:hover span { color: rgba(247,248,250,.7); }
+
+/* Mobile: pull the whole footer together so it isn't a tall vertical stack */
+@media (max-width: 768px) {
+  .footer { padding: 48px 0 28px !important; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 26px 20px !important;
+    margin-bottom: 32px !important;
+  }
+  /* logo + claim column spans the full width above the link columns */
+  .footer-grid .footer-col:first-child { grid-column: 1 / -1 !important; }
+  .footer-bottom {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 20px !important;
+    text-align: center;
+  }
+  .footer-legal { flex-wrap: wrap; justify-content: center; }
+  .footer-credit { justify-content: center; }
+}
