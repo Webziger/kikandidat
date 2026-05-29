@@ -504,3 +504,166 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 
 /* Trust section sub-text readable */
 .ts-cert-v { color: rgba(10,15,28,0.60) !important; }
+
+/* ============================================================
+   SENIOR DESIGN PASS — Whitespace · Clipping · Branchen · Polish
+   ============================================================ */
+
+/* ── 1. TYPOGRAPHY: fix 0.91 line-height clipping on display fonts ── */
+.h-display {
+  line-height: 1.04 !important;
+  overflow: visible !important;
+}
+/* Sub-page heroes with tight line-height */
+.br-hl, .ab-hl, .ko-hl, .ka-hl {
+  line-height: 1.02 !important;
+  overflow: visible !important;
+}
+/* Prevent hero overflow:hidden from clipping tall headings */
+.br-hero, .ab-hero, .ko-hero, .ka-hero {
+  overflow: visible !important;
+}
+/* Ensure all headings are never clipped by their container */
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+  overflow: visible !important;
+}
+/* Gradient-clip text needs overflow:visible on the parent too */
+.section-head, .br-hero-grid > div:first-child {
+  overflow: visible !important;
+}
+
+/* ── 2. WHITESPACE REDUCTION: override 120px inline-style blocks ── */
+/* pm-section (Workflow Mockup) inline has padding:120px 0 */
+.pm-section {
+  padding: clamp(52px,6.5vw,72px) 0 !important;
+}
+/* ts-section (Qualität) inline has padding:120px 0 */
+.ts-section {
+  padding: clamp(48px,6vw,64px) 0 !important;
+}
+/* Testimonials — reduce white space */
+.tm-section {
+  padding: 48px 0 !important;
+}
+/* Other light-bg sections */
+.quellen-section { padding: clamp(40px,5vw,56px) 0 !important; }
+.pain-section    { padding: clamp(40px,5vw,60px) 0 !important; }
+.ind-section     { padding: clamp(36px,4.5vw,56px) 0 !important; }
+.mehr-section    { padding: clamp(36px,4.5vw,52px) 0 !important; }
+.sc2-head        { padding: 40px 0 28px !important; }
+section[data-screen-label="Guarantee"]  { padding: clamp(40px,5vw,60px) 0 !important; }
+section[data-screen-label="Final CTA"]  { padding: clamp(52px,7vw,80px) 0 !important; }
+section[data-screen-label="Stats"]      { padding: 28px 0 !important; }
+
+/* Logo wall: shrink the grey stripe */
+.logo-wall { padding: 16px 0 !important; }
+
+/* ── 3. BACKGROUND CONSISTENCY: eliminate harsh white bands ── */
+/* tm-section was bg-elev (white) between two bg (#F3F4F6) sections */
+.tm-section {
+  background: var(--bg) !important;
+}
+/* Guarantee section can be slightly elevated but not stark white */
+section[data-screen-label="Guarantee"] {
+  background: var(--bg-elev-2) !important;
+}
+/* FAQ sec-cream — keep slightly different but not too white */
+.sec-cream {
+  background: #EAECF2 !important;
+  padding: clamp(48px,6vw,68px) 0 !important;
+}
+/* Final CTA blends with FAQ */
+section[data-screen-label="Final CTA"] {
+  background: var(--bg) !important;
+}
+/* ── Remaining white sections: showcase, plattform, sc2 ── */
+#showcaseSection {
+  background: var(--bg) !important;
+  padding: clamp(52px,6.5vw,72px) 0 !important;
+}
+section[data-screen-label="section_plattform"],
+.section_plattform {
+  background: var(--bg) !important;
+  padding: clamp(52px,6.5vw,72px) 0 !important;
+}
+.sc2-section {
+  background: var(--bg) !important;
+  padding: clamp(48px,6vw,64px) 0 !important;
+}
+/* KI module: keep bg but tighten padding */
+#kiModul {
+  padding: clamp(52px,7vw,80px) 0 !important;
+}
+/* Pillars: tighten top */
+#pillars {
+  padding-top: clamp(56px,7vw,80px) !important;
+  padding-bottom: clamp(56px,7vw,80px) !important;
+}
+
+/* ── 4. BRANCHEN TILES: ensure text stays readable on hover ── */
+/* Deepen the ::after dark overlay on hover so photo doesn't wash out text */
+.br-mtile:hover::after {
+  background: linear-gradient(180deg,
+    rgba(3,9,18,.18) 0%,
+    rgba(3,9,18,.68) 48%,
+    rgba(3,9,18,.97) 100%) !important;
+}
+/* Boost text contrast on hover with strong text-shadow */
+.br-mtile .br-mname {
+  text-shadow: 0 1px 6px rgba(0,0,0,.75) !important;
+}
+.br-mtile:hover .br-mname {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 10px rgba(0,0,0,.95), 0 0 20px rgba(0,0,0,.6) !important;
+}
+.br-mtile:hover .br-mcount {
+  color: rgba(200,218,240,.88) !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,.85) !important;
+}
+
+/* ── 5. MOBILE: reduce oversized nav-clearance padding ── */
+@media (max-width: 700px) {
+  .sc-wrapper { padding-top: 72px !important; }
+}
+@media (max-width: 768px) {
+  .br-hero { padding-top: 52px !important; padding-bottom: 64px !important; }
+  .pm-section  { padding: 40px 0 !important; }
+  .ts-section  { padding: 40px 0 !important; }
+  .tm-section  { padding: 36px 0 !important; }
+  .ind-section { padding: 32px 0 !important; }
+}
+
+/* ── 6. SECTION HEAD: tighter vertical gap between eyebrow→headline→lead ── */
+.section-head {
+  margin-bottom: clamp(32px,4vw,52px) !important;
+}
+
+/* ── 7. PILL BUTTONS: sharper, more premium ── */
+.btn-primary {
+  background: linear-gradient(135deg, #1A3AFF 0%, #2F6BFF 55%, #1E4FD0 100%) !important;
+  box-shadow: 0 0 0 1px rgba(47,107,255,0.25),
+              0 4px 20px -4px rgba(47,107,255,0.50),
+              inset 0 1px 0 rgba(255,255,255,0.15) !important;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2F6BFF 0%, #1A3AFF 100%) !important;
+  box-shadow: 0 0 0 1px rgba(47,107,255,0.40),
+              0 8px 32px -8px rgba(47,107,255,0.60) !important;
+  transform: translateY(-2px) !important;
+}
+/* Dark-section ghost buttons slightly brighter */
+.nav[data-theme="dark"] ~ main .btn-ghost,
+.pain-section .btn-ghost, .ki-section .btn-ghost,
+.berater-section .btn-ghost, .sc2-section .btn-ghost {
+  border-color: rgba(242,244,247,0.28) !important;
+  color: rgba(242,244,247,0.80) !important;
+}
+/* Nav primary pill also blue */
+.nav-cta .btn-primary {
+  background: linear-gradient(135deg,#2F6BFF 0%,#1A3AFF 100%) !important;
+  box-shadow: 0 4px 18px rgba(47,107,255,0.35) !important;
+}
+.nav-cta .btn-primary:hover {
+  box-shadow: 0 6px 28px rgba(47,107,255,0.52) !important;
+}
