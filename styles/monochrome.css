@@ -155,37 +155,60 @@ button.btn-ghost:hover,
 }
 
 /* ============================================================================
-   HIOFFICE FROSTED-GLASS NAV — reinforce: fixed, hairline, no heavy shadow
+   HIOFFICE FROSTED-GLASS NAV — fixed pill, adaptive dark/light, scrolled state
    ============================================================================ */
 .nav {
-  border-bottom: 1px solid var(--line) !important;
-  box-shadow: none !important;
+  border-bottom: none !important;
+  border: 1px solid rgba(15,22,35,0.10) !important;
+  box-shadow: 0 2px 16px rgba(15,22,35,0.06) !important;
+  transition: background .35s ease, border-color .35s ease, box-shadow .35s ease !important;
 }
+
+/* ── Light mode (default, over light sections) ── */
 .nav[data-theme="light"] {
-  background: rgba(247,248,250,0.72) !important;
-  -webkit-backdrop-filter: saturate(160%) blur(18px) !important;
-  backdrop-filter: saturate(160%) blur(18px) !important;
+  background: rgba(247,248,250,0.80) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+  backdrop-filter: saturate(180%) blur(20px) !important;
 }
+/* Scrolled: more opaque, visible shadow */
+.nav[data-theme="light"].nav--scrolled {
+  background: rgba(247,248,250,0.95) !important;
+  border-color: rgba(15,22,35,0.13) !important;
+  box-shadow: 0 4px 24px rgba(15,22,35,0.10), 0 1px 4px rgba(15,22,35,0.06) !important;
+}
+
+/* ── Dark mode (over dark sections) ── */
 .nav[data-theme="dark"] {
-  background: rgba(8,12,22,0.55) !important;
-  border-bottom-color: var(--line-dark) !important;
-  -webkit-backdrop-filter: saturate(160%) blur(18px) !important;
-  backdrop-filter: saturate(160%) blur(18px) !important;
+  background: rgba(8,12,22,0.50) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  -webkit-backdrop-filter: saturate(160%) blur(20px) !important;
+  backdrop-filter: saturate(160%) blur(20px) !important;
 }
+/* Scrolled: more opaque on dark */
+.nav[data-theme="dark"].nav--scrolled {
+  background: rgba(8,12,22,0.80) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.28) !important;
+}
+
+/* ── Link colors ── */
 .nav[data-theme="light"] .nav-links a { color: var(--fg-muted) !important; }
 .nav[data-theme="light"] .nav-links a:hover,
 .nav[data-theme="light"] .nav-links a.active { color: var(--fg) !important; }
 .nav[data-theme="dark"]  .nav-links a { color: rgba(242,244,247,0.78) !important; }
 .nav[data-theme="dark"]  .nav-links a:hover,
 .nav[data-theme="dark"]  .nav-links a.active { color: #fff !important; }
-.nav-sep { background: var(--line) !important; }
-.nav[data-theme="dark"] .nav-sep { background: var(--line-dark) !important; }
+.nav-sep { background: rgba(15,22,35,0.10) !important; }
+.nav[data-theme="dark"] .nav-sep { background: rgba(255,255,255,0.14) !important; }
 
-/* Logo swap parity with nav theme */
-.nav[data-theme="light"] .kiq--silver { opacity: 0; }
-.nav[data-theme="light"] .kiq--dark   { opacity: 1; }
-.nav[data-theme="dark"]  .kiq--silver { opacity: 1; }
-.nav[data-theme="dark"]  .kiq--dark   { opacity: 0; }
+/* ── Logo swap — smooth crossfade ── */
+.nav .nav-kiq-logo {
+  transition: opacity .3s ease, filter .35s cubic-bezier(.16,1,.3,1), transform .35s cubic-bezier(.16,1,.3,1) !important;
+}
+.nav[data-theme="light"] .kiq--silver { opacity: 0 !important; }
+.nav[data-theme="light"] .kiq--dark   { opacity: 1 !important; }
+.nav[data-theme="dark"]  .kiq--silver { opacity: 1 !important; }
+.nav[data-theme="dark"]  .kiq--dark   { opacity: 0 !important; }
 
 /* ============================================================================
    DECORATIVE GRADIENT TEXT (the <em> highlights inside headlines)

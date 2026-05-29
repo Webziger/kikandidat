@@ -181,6 +181,8 @@
           if (r.top <= mid && r.bottom > mid) theme = sec.dataset.navTheme;
         });
         if (nav.getAttribute('data-theme') !== theme) nav.setAttribute('data-theme', theme);
+        // Scrolled state: more prominent backdrop once user has scrolled
+        nav.classList.toggle('nav--scrolled', window.scrollY > 40);
       }
       window.addEventListener('scroll', update, { passive: true });
       window.addEventListener('resize', update, { passive: true });
