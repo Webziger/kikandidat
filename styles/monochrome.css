@@ -667,3 +667,142 @@ section[data-screen-label="section_plattform"],
 .nav-cta .btn-primary:hover {
   box-shadow: 0 6px 28px rgba(47,107,255,0.52) !important;
 }
+
+/* ============================================================
+   QUELLEN SECTION — Dark Card Box Redesign
+   ============================================================ */
+
+/* Section container */
+.quellen-section {
+  overflow: visible !important;
+}
+
+/* Centered head above card */
+.quellen-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.quellen-head .eyebrow {
+  justify-content: center !important;
+}
+.quellen-h2 {
+  margin-top: 12px !important;
+}
+.quellen-h2 em {
+  font-style: italic;
+  background: linear-gradient(135deg,#6FA0FF 0%,#2F6BFF 55%,#1E4FD0 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* ── The dark card ── */
+.quellen-box {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  align-items: center;
+  background: linear-gradient(140deg, #060A18 0%, #09101F 50%, #0C1530 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(47,107,255,0.18);
+  box-shadow:
+    0 0 0 1px rgba(47,107,255,0.06),
+    0 32px 80px rgba(0,0,0,0.30),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  overflow: hidden;
+  min-height: 500px;
+}
+
+/* Left text panel */
+.quellen-box-left {
+  padding: 52px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Stats strip */
+.quellen-stats {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.q-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.q-stat-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: #F2F4F7;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.q-stat-label {
+  font-size: 10px;
+  color: rgba(242,244,247,0.40);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* Lead text on dark */
+.quellen-box-lead {
+  font-size: 15px !important;
+  line-height: 1.68 !important;
+  color: rgba(242,244,247,0.62) !important;
+  margin: 0 !important;
+}
+
+/* Checklist on dark bg */
+.quellen-checks-dark {
+  margin: 0 !important;
+  gap: 10px !important;
+}
+.quellen-checks-dark li {
+  color: rgba(242,244,247,0.80) !important;
+  font-size: 14px !important;
+}
+.quellen-checks-dark li::before {
+  background-color: rgba(47,107,255,0.18) !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%236FA0FF' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+}
+
+/* Orbital wrap inside card */
+.quellen-box .quellen-orbital-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 24px 28px 24px 0 !important;
+}
+.quellen-box .orbital-stage {
+  max-width: 460px !important;
+}
+/* Glow bg on dark card */
+.quellen-box .orbital-glow-bg {
+  background: rgba(47,107,255,0.10) !important;
+  filter: blur(70px) !important;
+}
+
+/* ── Mobile ── */
+@media (max-width: 860px) {
+  .quellen-box {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  .quellen-box .quellen-orbital-wrap {
+    order: -1 !important;
+    padding: 24px 16px 0 16px !important;
+  }
+  .quellen-box .orbital-stage {
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
+  .quellen-box-left {
+    padding: 28px 28px 36px !important;
+    gap: 14px !important;
+  }
+  .quellen-stats { gap: 20px !important; }
+}
