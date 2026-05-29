@@ -347,6 +347,10 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 .ki-intro-section .ki-card-icon svg { stroke: var(--blue-bright) !important; }
 .ki-intro-section .ki-card-stat { color: var(--blue-bright) !important; }
+/* Card titles were near-black (#0A0F1C) → invisible on the dark bg. Make light. */
+.ki-intro-section .ki-card-name,
+.ki-intro-section h4 { color: #F2F4F7 !important; }
+.ki-intro-section .ki-card-live { color: #C2CCDA !important; }
 /* Center orb: grey-blue halo glow + rings (the AI core) */
 .ki-center-orb::before {
   content: '' !important;
@@ -362,7 +366,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .ki-orb-ring        { border-color: rgba(111,160,255,0.30) !important; }
 .ki-orb-ring--2     { border-color: rgba(111,160,255,0.16) !important; }
 .ki-orb-ring--3     { border-color: rgba(111,160,255,0.08) !important; }
-.ki-orb-label       { color: rgba(111,160,255,0.70) !important; }
+.ki-orb-label       { color: rgba(242,244,247,0.86) !important; letter-spacing: .14em !important; }
 /* Neutralise the leftover champagne em-gradient in the KI title */
 .ki-intro-title em {
   background: var(--grad-silver-text) !important;
