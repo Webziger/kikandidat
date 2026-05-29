@@ -725,43 +725,91 @@ section[data-screen-label="section_plattform"],
   color: transparent !important;
 }
 
-/* ── The dark card ── */
-.quellen-box {
+/* ── Two-box bento: A = Brand + alle Quellen (weißes Logo), B = Produkt + USPs + Phone ── */
+.quellen-duo {
   display: grid;
-  grid-template-columns: 5fr 7fr;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.qd-card {
+  position: relative;
+  isolation: isolate;
   background: linear-gradient(140deg, #060A18 0%, #09101F 50%, #0C1530 100%);
   border-radius: 24px;
-  border: 1px solid rgba(47,107,255,0.18);
+  border: 1px solid rgba(47,107,255,0.24);
   box-shadow:
     0 0 0 1px rgba(47,107,255,0.06),
-    0 32px 80px rgba(0,0,0,0.30),
-    inset 0 1px 0 rgba(255,255,255,0.05);
+    0 32px 80px rgba(0,0,0,0.34),
+    inset 0 1px 0 rgba(255,255,255,0.06);
   overflow: hidden;
-  min-height: 500px;
-}
-
-/* Left text panel */
-.quellen-box-left {
-  padding: 52px 44px;
+  padding: 36px 36px 32px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+}
+/* Sichtbarer Akzent-Glow oben rechts → "viel sichtbarer" */
+.qd-card::before {
+  content: "";
+  position: absolute;
+  top: -30%; right: -20%;
+  width: 70%; height: 70%;
+  background: radial-gradient(circle, rgba(47,107,255,0.22), transparent 62%);
+  pointer-events: none;
+  z-index: 0;
+}
+.qd-card > * { position: relative; z-index: 1; }
+
+.qd-eyebrow {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(111,160,255,0.95);
+  background: rgba(47,107,255,0.12);
+  border: 1px solid rgba(47,107,255,0.28);
+  padding: 6px 12px;
+  border-radius: 999px;
 }
 
-/* Stats strip */
+/* ── BOX A · Brand + alle Quellen ── */
+.qd-card--brand { align-items: center; text-align: center; gap: 14px; }
+.qd-card--brand .qd-eyebrow { align-self: center; }
+.qd-card--brand .quellen-orbital-wrap {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 300px;
+  order: 0 !important; /* override components.css @900px order:-1 so eyebrow stays first */
+}
+.qd-card--brand .orbital-stage { max-width: 360px !important; }
+.qd-card--brand .orbital-center-ring { width: 188px !important; height: 188px !important; }
+.qd-card--brand .orbital-center-logo {
+  width: 100% !important;
+  filter: drop-shadow(0 0 16px rgba(111,160,255,0.55)) drop-shadow(0 0 34px rgba(47,107,255,0.32)) !important;
+}
+.qd-card--brand .orbital-glow-bg {
+  background: rgba(47,107,255,0.14) !important;
+  filter: blur(64px) !important;
+}
+
+/* Stats strip (Box A bottom) */
 .quellen-stats {
   display: flex;
-  gap: 28px;
+  gap: 24px;
   flex-wrap: wrap;
-  padding-bottom: 18px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
 }
-.q-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+.qd-card--brand .quellen-stats {
+  width: 100%;
+  justify-content: space-around;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 18px;
 }
+.q-stat { display: flex; flex-direction: column; gap: 3px; }
 .q-stat-num {
   font-size: 22px;
   font-weight: 700;
@@ -776,12 +824,16 @@ section[data-screen-label="section_plattform"],
   letter-spacing: 0.07em;
 }
 
-/* Lead text on dark */
-.quellen-box-lead {
-  font-size: 15px !important;
-  line-height: 1.68 !important;
-  color: rgba(242,244,247,0.62) !important;
-  margin: 0 !important;
+/* ── BOX B · Produkt + USPs + Phone ── */
+.qd-card--product { flex-direction: row; align-items: center; gap: 30px; }
+.qd-product-copy { flex: 1 1 56%; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.qd-h3 {
+  font-size: clamp(21px, 2vw, 27px);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #F2F4F7;
+  margin: 0;
 }
 
 /* Checklist on dark bg */
@@ -798,41 +850,71 @@ section[data-screen-label="section_plattform"],
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%236FA0FF' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
 }
 
-/* Orbital wrap inside card */
-.quellen-box .quellen-orbital-wrap {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  padding: 24px 28px 24px 0 !important;
+/* Smartphone-Mockup */
+.qd-phone { flex: 0 0 38%; display: flex; justify-content: center; align-items: center; }
+.qd-phone-frame {
+  position: relative;
+  width: 210px;
+  max-width: 100%;
+  aspect-ratio: 196 / 400;
+  border-radius: 30px;
+  background: linear-gradient(160deg, #1A2238, #0B1020);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 24px 50px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
+  padding: 10px;
 }
-.quellen-box .orbital-stage {
-  max-width: 460px !important;
+.qd-phone-notch {
+  position: absolute;
+  top: 12px; left: 50%; transform: translateX(-50%);
+  width: 52px; height: 5px; border-radius: 3px;
+  background: rgba(255,255,255,0.18);
 }
-/* Glow bg on dark card */
-.quellen-box .orbital-glow-bg {
-  background: rgba(47,107,255,0.10) !important;
-  filter: blur(70px) !important;
+.qd-phone-screen {
+  width: 100%; height: 100%;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #0A1020 0%, #0C1226 100%);
+  border: 1px solid rgba(47,107,255,0.14);
+  padding: 24px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
 }
+.qd-app-head { display: flex; align-items: center; justify-content: space-between; }
+.qd-app-title { font-size: 11px; font-weight: 700; color: #F2F4F7; letter-spacing: -0.01em; }
+.qd-app-live { display: inline-flex; align-items: center; gap: 4px; font-size: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(94,207,176,0.95); }
+.qd-dot { width: 5px; height: 5px; border-radius: 50%; background: #5ECFB0; box-shadow: 0 0 6px rgba(94,207,176,0.9); }
+.qd-match {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 8px;
+}
+.qd-match--top { border-color: rgba(47,107,255,0.45); background: rgba(47,107,255,0.10); }
+.qd-ava {
+  flex-shrink: 0;
+  width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #C8DAF0;
+  background: linear-gradient(140deg, #2F6BFF, #1E4FD0);
+}
+.qd-match-info { display: flex; flex-direction: column; gap: 1px; flex: 1; min-width: 0; }
+.qd-name { font-size: 10px; font-weight: 600; color: #EDEFF3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.qd-role { font-size: 8px; color: rgba(237,239,243,0.50); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.qd-score { flex-shrink: 0; font-size: 11px; font-weight: 700; color: #6FA0FF; }
+.qd-app-foot { margin-top: auto; display: flex; flex-direction: column; gap: 6px; padding-top: 6px; }
+.qd-bar { height: 5px; border-radius: 3px; background: linear-gradient(90deg, #2F6BFF, #6FA0FF 70%, rgba(111,160,255,0.18) 70%); }
+.qd-foot-label { font-size: 8px; color: rgba(237,239,243,0.55); text-align: center; }
 
 /* ── Mobile ── */
 @media (max-width: 860px) {
-  .quellen-box {
-    grid-template-columns: 1fr !important;
-    min-height: auto !important;
-  }
-  .quellen-box .quellen-orbital-wrap {
-    order: -1 !important;
-    padding: 24px 16px 0 16px !important;
-  }
-  .quellen-box .orbital-stage {
-    max-width: 300px !important;
-    margin: 0 auto !important;
-  }
-  .quellen-box-left {
-    padding: 28px 28px 36px !important;
-    gap: 14px !important;
-  }
-  .quellen-stats { gap: 20px !important; }
+  .quellen-duo { grid-template-columns: 1fr; gap: 18px; }
+  .qd-card { padding: 28px 24px; }
+  .qd-card--product { flex-direction: column; align-items: stretch; gap: 24px; }
+  .qd-phone { width: 100%; }
+  .qd-card--brand .orbital-stage { max-width: 280px !important; }
+  .qd-card--brand .quellen-stats { gap: 16px; }
 }
 
 /* ============================================================
@@ -924,3 +1006,38 @@ section[data-screen-label="Open positions"] {
   stroke-dasharray: 12 6;
   animation: wave-flow 2s linear infinite;
 }
+
+/* ── Hub card (pcard-blue) — harmonized dark navy + blue accent ── */
+.pcard-blue {
+  background:
+    radial-gradient(75% 55% at 80% 15%, rgba(47,107,255,0.16), transparent 60%),
+    linear-gradient(155deg, #0C1428 0%, #0A1124 55%, #0E1A3C 100%) !important;
+  color: #EDEFF3 !important;
+}
+.pcard-blue .pcard-badge-blue {
+  background: rgba(47,107,255,0.16) !important;
+  border: 1px solid rgba(47,107,255,0.32) !important;
+  color: rgba(111,160,255,0.95) !important;
+  backdrop-filter: blur(8px) !important;
+}
+.pcard-blue h3 { color: #EDEFF3 !important; }
+.pcard-blue p { color: rgba(237,239,243,0.78) !important; }
+.pcard-blue .pcard-link { color: #EDEFF3 !important; }
+.pcard-blue .pcard-link:hover { color: #6FA0FF !important; }
+/* Network viz recoloured to brand blue so it reads on the dark navy */
+.pcard-blue .net-edge { stroke: rgba(111,160,255,0.28) !important; }
+.pcard-blue .net-node { fill: rgba(200,218,240,0.92) !important; filter: drop-shadow(0 0 6px rgba(111,160,255,0.4)) !important; }
+.pcard-blue .net-node-accent { fill: #6FA0FF !important; filter: drop-shadow(0 0 12px rgba(111,160,255,0.9)) !important; }
+.pcard-blue .net-label { fill: rgba(200,218,240,0.68) !important; }
+
+/* ── FIX: word-per-line stacking in section-head headings ──
+   page-polish.js wraps every word of .section-head headings in
+   .split-parent for a reveal animation. scroll-polish.css set
+   .split-parent{display:block} → every word landed on its own line.
+   inline-block keeps the clip-reveal (overflow:hidden inherited) but
+   lets words flow inline and respect intentional <br> line breaks. */
+.split-parent { display: inline-block !important; vertical-align: top; }
+/* Two-column section heads: let the heading column fill the available
+   width instead of collapsing to its longest word (it was being pinched
+   to ~220px next to the fixed-width lead). */
+.section-head > div { flex: 1 1 auto; min-width: 0; }

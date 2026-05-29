@@ -1187,7 +1187,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   .seo-mt-36 { margin-top: 36px; }
 </style>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-<link rel="stylesheet" href="/styles/monochrome.css?v=20260529v7" />
+<link rel="stylesheet" href="/styles/monochrome.css?v=20260529v8" />
 </head>
 <body>
 <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
@@ -2316,35 +2316,14 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
     </div>
 
     <!-- ── Dark showcase card box ── -->
-    <div class="quellen-box reveal-scale">
+    <div class="quellen-duo">
 
-      <!-- LEFT: stats + copy + CTA on dark bg -->
-      <div class="quellen-box-left">
-        <div class="quellen-stats">
-          <div class="q-stat">
-            <span class="q-stat-num">1 Mio+</span>
-            <span class="q-stat-label">DACH-Talentpool</span>
-          </div>
-          <div class="q-stat">
-            <span class="q-stat-num">24+</span>
-            <span class="q-stat-label">Premium-Quellen</span>
-          </div>
-          <div class="q-stat">
-            <span class="q-stat-num">täglich</span>
-            <span class="q-stat-label">Aktualisiert</span>
-          </div>
-        </div>
-        <p class="quellen-box-lead">Wir aggregieren 24+ Premium-Quellen — von Karrierenetzwerken über Jobportale bis hin zu Branchen-Communities — in eine einzige, branchenspezifisch gefilterte Talent-Pipeline.</p>
-        <ul class="quellen-checks quellen-checks-dark">
-          <li>1.000.000+ Fachkräfte im DACH-Talentpool</li>
-          <li>Tagesaktuell angereichert &amp; verifiziert</li>
-          <li>Geprüfte, verifizierte Quellen-Auswahl</li>
-        </ul>
-        <a href="kontakt.html" class="btn btn-primary btn-arrow" style="align-self:flex-start;margin-top:8px">Pipeline füllen</a>
-      </div>
+      <!-- ── BOX A · Brand + alle Quellen (weißes Logo im Zentrum) ── -->
+      <div class="qd-card qd-card--brand reveal-scale">
+        <span class="qd-eyebrow">Eine Plattform · Alle Quellen</span>
 
-      <!-- RIGHT: orbital animation -->
-      <div class="quellen-orbital-wrap">
+        <!-- orbital animation · weißes Logo im Zentrum -->
+        <div class="quellen-orbital-wrap">
         <div class="orbital-stage" id="orbitalStage" aria-hidden="true">
 
           <!-- Background glow -->
@@ -2521,7 +2500,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
           <div class="orbital-center">
             <div class="orbital-center-ring">
               <div class="orbital-center-inner">
-                <img src="assets/kiq-logo-dark.png?v=logo2" alt="KI-Kandidat" class="orbital-center-logo"/>
+                <img src="assets/kiq-logo.png?v=logo2" alt="KI-Kandidat" class="orbital-center-logo"/>
               </div>
               <span class="orbital-ring-pulse"></span>
               <span class="orbital-ring-pulse" style="animation-delay:1.8s"></span>
@@ -2531,7 +2510,61 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
         </div><!-- /orbital-stage -->
       </div><!-- /orbital-wrap -->
 
-    </div><!-- /quellen-box -->
+        <!-- stats strip -->
+        <div class="quellen-stats">
+          <div class="q-stat"><span class="q-stat-num">1 Mio+</span><span class="q-stat-label">DACH-Talentpool</span></div>
+          <div class="q-stat"><span class="q-stat-num">24+</span><span class="q-stat-label">Premium-Quellen</span></div>
+          <div class="q-stat"><span class="q-stat-num">täglich</span><span class="q-stat-label">Aktualisiert</span></div>
+        </div>
+      </div><!-- /BOX A -->
+
+      <!-- ── BOX B · Produkt + USPs + Smartphone ── -->
+      <div class="qd-card qd-card--product reveal-scale">
+        <div class="qd-product-copy">
+          <span class="qd-eyebrow">Ihr Ergebnis</span>
+          <h3 class="qd-h3">Vorqualifizierte Kandidaten — branchengenau geliefert.</h3>
+          <ul class="quellen-checks quellen-checks-dark">
+            <li>1.000.000+ Fachkräfte im DACH-Talentpool</li>
+            <li>Tagesaktuell angereichert &amp; verifiziert</li>
+            <li>Branchenspezifisch gefilterte Pipeline</li>
+          </ul>
+          <a href="kontakt.html" class="btn btn-primary btn-arrow" style="align-self:flex-start;margin-top:4px">Pipeline füllen</a>
+        </div>
+
+        <!-- Smartphone-Mockup: Kandidaten-Matches -->
+        <div class="qd-phone" aria-hidden="true">
+          <div class="qd-phone-frame">
+            <span class="qd-phone-notch"></span>
+            <div class="qd-phone-screen">
+              <div class="qd-app-head">
+                <span class="qd-app-title">Kandidaten-Matches</span>
+                <span class="qd-app-live"><span class="qd-dot"></span>Live</span>
+              </div>
+              <div class="qd-match qd-match--top">
+                <span class="qd-ava">P</span>
+                <span class="qd-match-info"><span class="qd-name">Polier</span><span class="qd-role">München · 9 km</span></span>
+                <span class="qd-score">98%</span>
+              </div>
+              <div class="qd-match">
+                <span class="qd-ava">B</span>
+                <span class="qd-match-info"><span class="qd-name">Bauleiter:in</span><span class="qd-role">Augsburg · 14 km</span></span>
+                <span class="qd-score">95%</span>
+              </div>
+              <div class="qd-match">
+                <span class="qd-ava">P</span>
+                <span class="qd-match-info"><span class="qd-name">Projektleiter:in</span><span class="qd-role">München · 21 km</span></span>
+                <span class="qd-score">91%</span>
+              </div>
+              <div class="qd-app-foot">
+                <span class="qd-bar"></span>
+                <span class="qd-foot-label">7 Top-Profile bereit zur Übergabe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /BOX B -->
+
+    </div><!-- /quellen-duo -->
   </div><!-- /container -->
 </section><!-- /quellen -->
 
@@ -3429,6 +3462,11 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
             <circle class="voice-node" cx="170" cy="68" r="3" fill="rgba(200,218,240,0.70)"/>
             <circle class="voice-node" cx="130" cy="34" r="3" fill="rgba(200,218,240,0.70)"/>
           </svg>
+        </div>
+        <h3>Kandidaten Voice</h3>
+        <p>Unsere Berater:innen kontaktieren die passenden Kandidaten persönlich und prüfen Qualifikation sowie echtes Interesse — keine Kaltakquise für Sie.</p>
+        <a href="#process" class="pcard-link">Mehr erfahren</a>
+      </article>
 
       <!-- Card 3: Kandidaten Hub — Blue + Network -->
       <article class="pcard pcard-blue reveal" id="kandidaten-hub">
@@ -3469,12 +3507,6 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
         <h3>Kandidaten Hub</h3>
         <p>Unsere KI prüft 100+ Datenpunkte — von Wechselsignalen über Cultural-Fit bis zur Pendel­bereitschaft.</p>
         <a href="#kiModul" class="pcard-link">Mehr erfahren</a>
-      </article>
-
-    </div>
-        <h3>Kandidaten Voice</h3>
-        <p>Unsere Berater:innen kontaktieren die passenden Kandidaten persönlich und prüfen Qualifikation sowie echtes Interesse — keine Kaltakquise für Sie.</p>
-        <a href="#process" class="pcard-link">Mehr erfahren</a>
       </article>
 
     </div>
