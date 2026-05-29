@@ -91,7 +91,9 @@ button.btn-primary:hover,
 .ko-form-submit:hover {
   background: #161C2B !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 2px 4px rgba(10,15,28,0.22), 0 16px 36px -12px rgba(10,15,28,0.55) !important;
+  box-shadow: 0 2px 4px rgba(10,15,28,0.22),
+              0 14px 36px -10px rgba(47,107,255,0.55),
+              0 0 0 3px rgba(47,107,255,0.16) !important;
 }
 
 /* Bright pill on dark backgrounds (nav over dark, hero, dark sections) */
@@ -108,6 +110,9 @@ button.btn-primary:hover,
 [data-nav-theme="dark"] .btn-primary:hover {
   background: #FFFFFF !important;
   transform: translateY(-2px) !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3),
+              0 16px 42px -10px rgba(47,107,255,0.60),
+              0 0 0 3px rgba(47,107,255,0.22) !important;
 }
 
 /* Kill the legacy shimmer sweep that assumed a gradient fill */
@@ -225,20 +230,20 @@ h1 em, h2 em, h3 em,
 .container { max-width: var(--content-max); }
 
 /* ============================================================================
-   GREY-BLUE ACCENT — modern slate, tasteful second tone, distributed.
-   Silver stays the dominant accent; this grey-blue is the "versetzt" offset
-   that lands on section eyebrows, links, focus rings, AI/score signals and
-   the KI-module orb. WCAG-checked: --blue-deep 7.2:1 on light, --blue-bright
-   7.5:1 on dark.
+   ELECTRIC-BLUE ACCENT — vivid cool second tone, distributed (HiOffice-feel).
+   Silver stays the dominant base; electric blue is the lively offset that
+   lands on section eyebrows, links, focus rings, AI/score signals, buttons
+   and the KI-module orb. WCAG-checked: --blue-deep ≈6.5:1 on light,
+   --blue-bright ≈7:1 on dark.
    ============================================================================ */
 :root {
-  --blue:         #5B6F8F;   /* mid steel grey-blue (decorative)   */
-  --blue-deep:    #43546F;   /* text-safe on light (≈7.2:1)        */
-  --blue-bright:  #93A6C4;   /* text-safe on dark  (≈7.5:1)        */
-  --blue-soft:    rgba(91,111,143,0.10);
-  --blue-glow:    rgba(91,111,143,0.30);
-  --grad-blue:        linear-gradient(90deg,#43546F,#5B6F8F);
-  --grad-blue-bright: linear-gradient(90deg,#5B6F8F,#93A6C4);
+  --blue:         #2F6BFF;   /* electric blue (vivid, fills/glows)  */
+  --blue-deep:    #1E4FD0;   /* text-safe on light (≈6.5:1)         */
+  --blue-bright:  #6FA0FF;   /* text-safe on dark  (≈7:1)           */
+  --blue-soft:    rgba(47,107,255,0.10);
+  --blue-glow:    rgba(47,107,255,0.30);
+  --grad-blue:        linear-gradient(90deg,#1E4FD0,#2F6BFF);
+  --grad-blue-bright: linear-gradient(90deg,#2F6BFF,#6FA0FF);
 }
 
 /* Eyebrows / kickers → grey-blue (recurring accent across every section) */
@@ -259,7 +264,7 @@ h1 em, h2 em, h3 em,
 [data-nav-theme="dark"] .eyebrow::before,
 .ki-intro-section .eyebrow::before {
   background: var(--blue-bright) !important;
-  box-shadow: 0 0 12px rgba(91,111,143,0.45) !important;
+  box-shadow: 0 0 12px rgba(47,107,255,0.45) !important;
 }
 /* Compound-specificity eyebrow rules (beat the legacy .X .eyebrow overrides) */
 .section-head .eyebrow, .tm-section .eyebrow, .branch-hero .eyebrow,
@@ -310,7 +315,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .ki-intro-section {
   background:
     radial-gradient(ellipse 58% 52% at 50% 42%, var(--blue-glow) 0%, transparent 62%),
-    radial-gradient(ellipse 95% 60% at 50% -12%, rgba(147,166,196,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 95% 60% at 50% -12%, rgba(111,160,255,0.12) 0%, transparent 55%),
     radial-gradient(ellipse 80% 75% at 50% 118%, rgba(6,9,15,0.65) 0%, transparent 60%),
     linear-gradient(180deg, #0D1626 0%, #0A1120 50%, #0C1626 100%)
     !important;
@@ -318,26 +323,26 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 /* Keep the subtle top hairline but tint it grey-blue */
 .ki-intro-section::after {
   background: linear-gradient(90deg, transparent,
-    rgba(147,166,196,0.30) 25%, rgba(147,166,196,0.60) 50%,
-    rgba(147,166,196,0.30) 75%, transparent) !important;
+    rgba(111,160,255,0.30) 25%, rgba(111,160,255,0.60) 50%,
+    rgba(111,160,255,0.30) 75%, transparent) !important;
 }
 /* Input/output cards: lift them off the dark so they read as glass panels */
 .ki-intro-section .ki-card {
-  background: rgba(147,166,196,0.06) !important;
-  border: 1px solid rgba(147,166,196,0.16) !important;
+  background: rgba(111,160,255,0.06) !important;
+  border: 1px solid rgba(111,160,255,0.16) !important;
   box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset,
               0 14px 40px -16px rgba(0,0,0,0.7) !important;
   backdrop-filter: blur(22px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(22px) saturate(160%) !important;
 }
 .ki-intro-section .ki-card:hover {
-  border-color: rgba(147,166,196,0.34) !important;
-  box-shadow: 0 0 0 1px rgba(91,111,143,0.18),
+  border-color: rgba(111,160,255,0.34) !important;
+  box-shadow: 0 0 0 1px rgba(47,107,255,0.18),
               0 18px 50px -16px rgba(0,0,0,0.7) !important;
 }
 .ki-intro-section .ki-card-icon {
-  background: rgba(91,111,143,0.16) !important;
-  border-color: rgba(147,166,196,0.26) !important;
+  background: rgba(47,107,255,0.16) !important;
+  border-color: rgba(111,160,255,0.26) !important;
   color: var(--blue-bright) !important;
 }
 .ki-intro-section .ki-card-icon svg { stroke: var(--blue-bright) !important; }
@@ -349,15 +354,15 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   inset: -28% !important;
   border-radius: 50% !important;
   background: radial-gradient(circle, var(--blue-glow) 0%,
-              rgba(91,111,143,0.10) 45%, transparent 68%) !important;
+              rgba(47,107,255,0.10) 45%, transparent 68%) !important;
   filter: blur(10px);
   z-index: 0 !important;
   pointer-events: none !important;
 }
-.ki-orb-ring        { border-color: rgba(147,166,196,0.30) !important; }
-.ki-orb-ring--2     { border-color: rgba(147,166,196,0.16) !important; }
-.ki-orb-ring--3     { border-color: rgba(147,166,196,0.08) !important; }
-.ki-orb-label       { color: rgba(147,166,196,0.70) !important; }
+.ki-orb-ring        { border-color: rgba(111,160,255,0.30) !important; }
+.ki-orb-ring--2     { border-color: rgba(111,160,255,0.16) !important; }
+.ki-orb-ring--3     { border-color: rgba(111,160,255,0.08) !important; }
+.ki-orb-label       { color: rgba(111,160,255,0.70) !important; }
 /* Neutralise the leftover champagne em-gradient in the KI title */
 .ki-intro-title em {
   background: var(--grad-silver-text) !important;
