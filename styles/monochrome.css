@@ -1052,12 +1052,12 @@ section[data-screen-label="Open positions"] {
    the dimmest body text to readable contrast.
    ============================================================================ */
 :root {
-  --dk-1: #0D1422;            /* deepest base   */
-  --dk-2: #101B2E;            /* mid base       */
-  --dk-3: #17243E;            /* lifted top     */
-  --dk-card-a: #18253F;       /* elevated card top */
-  --dk-card-b: #111B30;       /* elevated card bottom */
-  --dk-glow: rgba(47,107,255,0.11);
+  --dk-1: #0E1626;            /* deepest base   (leicht angehoben, mehr Blau) */
+  --dk-2: #122039;            /* mid base       */
+  --dk-3: #1B2C4A;            /* lifted top     (luminanter, modern)         */
+  --dk-card-a: #1D2E4E;       /* elevated card top    */
+  --dk-card-b: #13203A;       /* elevated card bottom */
+  --dk-glow: rgba(56,118,255,0.14);   /* praesenter, aber dezent */
 }
 
 /* — One refined dark surface for every flat-black content section —
@@ -1082,13 +1082,17 @@ section[data-screen-label="Open positions"] {
      in the same deep-navy family so it reads as the bottom of one cohesive
      surface, not a separate black block. Slightly deeper than content. — */
 .footer {
-  background: linear-gradient(180deg, var(--dk-1) 0%, #0A1120 100%) !important;
+  background: linear-gradient(180deg, var(--dk-1) 0%, #0B1322 100%) !important;
 }
 
 /* — Text contrast on dark sections (was 0.42 / 0.55 / 0.58 — illegible) — */
 .pain-label      { color: rgba(238,242,248,0.66) !important; }
 .pain-desc       { color: rgba(233,239,247,0.82) !important; font-weight: 400 !important; }
 .pain-headline p { color: rgba(233,239,247,0.80) !important; }
+/* ki-section lead inherited #3A4250 (--fg-muted, fuer helle BGs) → auf dem
+   Navy quasi unsichtbar. Auf lesbares Hell heben (ki-intro-lead war ok). */
+.ki-section .lead,
+.ki-intro-section .lead { color: rgba(233,239,247,0.82) !important; }
 
 /* ============================================================================
    STICKY NAV FIX — keep the fixed nav glued to the viewport while scrolling.
