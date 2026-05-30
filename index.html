@@ -47,7 +47,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
 <link rel="stylesheet" href="styles/design-refresh.css?v=20260528logo" />
 <link rel="stylesheet" href="styles/light-sections.css?v=20260528logo" />
 <link rel="stylesheet" href="/styles/premium-polish.css?v=20260528logo" />
-<link rel="stylesheet" href="/styles/hero-v2.css?v=20260531hero" />
+<link rel="stylesheet" href="/styles/hero-v2.css?v=20260530hero2" />
 <link rel="stylesheet" href="/styles/platform-cards.css?v=20260528logo" />
 <link rel="stylesheet" href="/styles/logo.css?v=20260528logo" />
 <script type="application/ld+json">
@@ -1219,7 +1219,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
   </div>
 
   <div class="container hero-v2-grid">
-    <!-- LINKS · Text -->
+    <!-- MITTE · Text im dunklen Oval (zuerst im DOM, per CSS-order zentriert) -->
     <div class="hero-v2-headline">
       <span class="hero-eyebrow">KI-Recruiting · DACH-weit</span>
       <h1 class="hero-serif">
@@ -1233,20 +1233,10 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
       </div>
     </div>
 
-    <!-- RECHTS · Phone-Centerpiece mit umliegender UI -->
-    <div class="hero-v2-visual">
-      <div class="float-badge hero-float hero-float-badge-a" aria-hidden="true">+42.300 € · pro Hire</div>
-
-      <div class="float-card float-card-match hero-float hero-float-card-a" aria-hidden="true">
-        <div class="float-card-head">
-          <span class="dot"></span>
-          <span>Neue Match-Anfrage</span>
-        </div>
-        <h4 class="float-card-title">Bauleiter · München</h4>
-        <div class="float-card-meta">SAP + 8 J. Berufserfahrung · 50 km Umkreis</div>
-      </div>
-
+    <!-- LINKS · Phone mit Wert-Badge -->
+    <aside class="hero-side hero-side-left" aria-hidden="true">
       <div class="hero-phone-wrap">
+        <div class="float-badge hero-phone-badge">+42.300 € · pro Hire</div>
         <div class="hero-phone">
           <div class="phone-chassis">
             <div class="phone-bezel">
@@ -1306,10 +1296,20 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
           </div>
         </div>
       </div>
+    </aside>
 
-      <div class="float-badge float-badge-right hero-float hero-float-badge-b" aria-hidden="true">+45 Bewerber · diese Woche</div>
-
-      <div class="float-card float-card-pipeline hero-float hero-float-card-b" aria-hidden="true">
+    <!-- RECHTS · Infoboxen (Match-Karte · Bewerber-Badge · Pipeline-Karte) -->
+    <aside class="hero-side hero-side-right" aria-hidden="true">
+      <div class="float-card float-card-match">
+        <div class="float-card-head">
+          <span class="dot"></span>
+          <span>Neue Match-Anfrage</span>
+        </div>
+        <h4 class="float-card-title">Bauleiter · München</h4>
+        <div class="float-card-meta">SAP + 8 J. Berufserfahrung · 50 km Umkreis</div>
+      </div>
+      <div class="float-badge float-badge-right">+45 Bewerber · diese Woche</div>
+      <div class="float-card float-card-pipeline">
         <span class="float-arrow" aria-hidden="true">→</span>
         <div class="float-card-head">
           <span class="dot"></span>
@@ -1322,7 +1322,7 @@ window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};
           <li>Videolink an Team gesendet</li>
         </ul>
       </div>
-    </div>
+    </aside>
   </div>
 
 </section>
