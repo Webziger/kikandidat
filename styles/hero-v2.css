@@ -8,8 +8,11 @@
   background: #06090F;
   color: #F2F4F7;
   overflow: hidden;
-  padding: 88px 0 64px;
-  min-height: 88vh;
+  padding: 96px 0 48px;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
 }
 
 /* ── Mosaic Backdrop ────────────────────────────────────── */
@@ -101,41 +104,38 @@
 }
 @keyframes trendDraw { to { stroke-dashoffset: 0; } }
 
-/* ── Layout: Editorial-Stack (Headline oben, darunter Showcase-Bühne) ─ */
+/* ── Layout: Split-Hero (Text links · Phone-Bühne rechts) ── */
 .hero-v2-grid {
   position: relative;
   z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(36px, 5vh, 64px);
-  padding-top: 16px;
-}
-
-/* Showcase-Bühne: Card · Phone · Card */
-.hero-v2-showcase {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
   align-items: center;
-  gap: clamp(16px, 3vw, 44px);
+  gap: clamp(28px, 4vw, 60px);
   width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
 }
 
-/* ── Floating Cards / Badges ────────────────────────────── */
-.hero-floats {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
+/* Rechte Bühne · Phone mittig, Cards/Badges umliegend */
+.hero-v2-visual {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
 }
-.hero-floats-left  { align-items: flex-end; text-align: left; }
-.hero-floats-right { align-items: flex-start; text-align: left; }
 .hero-phone-wrap {
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
+
+/* ── Floating Cards / Badges (um das Phone) ─────────────── */
+.hero-v2-visual .hero-float { position: absolute; z-index: 5; }
+.hero-v2-visual .hero-float-card-a  { top: 6%;   left: -6%; }
+.hero-v2-visual .hero-float-card-b  { bottom: 5%; right: -2%; }
+.hero-v2-visual .hero-float-badge-a { top: -1%;  right: 6%; }
+.hero-v2-visual .hero-float-badge-b { bottom: 14%; left: -2%; }
 
 .float-badge {
   display: inline-flex;
@@ -176,7 +176,8 @@
   color: #F2F4F7;
   font-family: var(--font-sans);
   font-size: 13.5px;
-  min-width: 250px;
+  min-width: 228px;
+  max-width: 240px;
   box-shadow: 0 18px 40px -16px rgba(0,0,0,0.6),
               0 1px 0 rgba(255,255,255,0.06) inset;
   position: relative;
@@ -255,11 +256,11 @@
   50%     { transform: translateY(-6px); }
 }
 
-/* ── Headline-Block (volle Breite, oben) ────────────────── */
+/* ── Headline-Block (links) ─────────────────────────────── */
 .hero-v2-headline {
-  text-align: center;
-  max-width: 1120px;
-  margin: 0 auto;
+  text-align: left;
+  max-width: 680px;
+  margin: 0;
 }
 .hero-eyebrow {
   display: inline-flex;
@@ -270,7 +271,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #C8CDD6;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 .hero-eyebrow::before {
   content: '';
@@ -281,11 +282,11 @@
 h1.hero-serif {
   font-family: "Playfair Display", "Times New Roman", Georgia, serif !important;
   font-weight: 700;
-  font-size: clamp(40px, 4.9vw, 66px);
-  line-height: 1.07;
+  font-size: clamp(36px, 3.3vw, 48px);
+  line-height: 1.09;
   letter-spacing: -0.018em;
   color: #F2F4F7;
-  margin: 0 auto;
+  margin: 0;
   text-wrap: balance;
 }
 .hero-serif em {
@@ -298,18 +299,18 @@ h1.hero-serif {
   box-decoration-break: clone;
 }
 .hero-lead {
-  margin: 28px auto 0;
-  max-width: 62ch;
+  margin: 22px 0 0;
+  max-width: 50ch;
   color: rgba(242,244,247,0.78);
-  font-size: clamp(15px, 1.3vw, 18px);
-  line-height: 1.7;
+  font-size: clamp(15px, 1.3vw, 17.5px);
+  line-height: 1.65;
 }
 .hero-lead strong {
   color: #F2F4F7;
   font-weight: 700;
 }
 .hero-v2-cta {
-  margin-top: 36px;
+  margin-top: 30px;
   display: inline-flex;
   align-items: center;
 }
@@ -317,7 +318,7 @@ h1.hero-serif {
 /* ── Phone-Mockup · Centerpiece ──────────────────────────── */
 .hero-phone {
   position: relative;
-  width: 288px;
+  width: 266px;
   max-width: 100%;
   margin: 0 auto;
   filter: drop-shadow(0 34px 60px rgba(0,0,0,0.62))
@@ -373,7 +374,7 @@ h1.hero-serif {
   background: linear-gradient(180deg, #0c0d11 0%, #0a0a0c 100%);
   border-radius: 32px;
   overflow: hidden;
-  min-height: 498px;
+  min-height: 462px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -510,31 +511,48 @@ h1.hero-serif {
 /* ── Logo-Wall unten in der Hero ─────────────────────────── */
 
 /* ── Responsive ─────────────────────────────────────────── */
-@media (max-width: 1100px) {
-  .hero-v2-grid { gap: 40px; }
-  .hero-v2-showcase {
+@media (max-width: 1000px) {
+  .hero-v2 {
+    min-height: 0;
+    display: block;
+    padding: 116px 0 64px;
+  }
+  .hero-v2-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
-    max-width: 520px;
+    gap: 44px;
+    justify-items: center;
   }
-  .hero-floats-left, .hero-floats-right {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  .hero-v2-headline {
+    text-align: center;
+    max-width: 660px;
+    margin: 0 auto;
   }
-  .hero-phone-wrap   { order: 1; }
-  .hero-floats-left  { order: 2; }
-  .hero-floats-right { order: 3; }
-  .float-card { max-width: 280px; }
+  .hero-serif { font-size: clamp(34px, 6vw, 54px); }
+  .hero-lead { margin-left: auto; margin-right: auto; max-width: 56ch; }
+  .hero-v2-cta { display: flex; justify-content: center; }
+  /* Visual stapelt: Badge · Phone · Cards · Badge */
+  .hero-v2-visual {
+    min-height: 0;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    max-width: 360px;
+  }
+  .hero-v2-visual .hero-float { position: static; inset: auto; }
+  .hero-float-badge-a { order: 1; }
+  .hero-phone-wrap    { order: 2; }
+  .hero-float-card-a  { order: 3; }
+  .hero-float-card-b  { order: 4; }
+  .hero-float-badge-b { order: 5; }
+  .float-card { max-width: 320px; width: 100%; }
   .hero-phone { margin: 0 auto; }
 }
 @media (max-width: 700px) {
-  .hero-v2 { padding: 64px 0 48px; }
-  .hero-serif { font-size: clamp(32px, 8vw, 48px); }
+  .hero-v2 { padding: 92px 0 48px; }
+  .hero-serif { font-size: clamp(32px, 8vw, 46px); }
   .float-card { min-width: 0; width: 100%; max-width: 320px; }
   .float-badge { font-size: 12px; padding: 8px 14px; }
-  .hero-phone { width: 190px; }
+  .hero-phone { width: 200px; }
   .phone-screen { max-height: 380px; min-height: unset; overflow: hidden; }
   /* compact phone card layout */
   .phone-app-head { font-size: 14px; padding: 10px 12px 6px; }
