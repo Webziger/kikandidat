@@ -44,7 +44,7 @@
               <img src="assets/kiq-logo.png?v=logo2" class="footer-kiq-logo" alt="KI-Kandidat" width="180" height="35" style="height:36px;width:auto;object-fit:contain;display:block" />
             </a>
             <p style="color:rgba(250,248,244,0.70);font-size:14px;max-width:36ch;margin:0 0 24px 0">
-              Die digitale Recruiting-Agentur für den Mittelstand. Talent-Cloud, eigene Matching-KI, persönliche Beratung — in einer Plattform.
+              Die digitale Recruiting-Agentur für den Mittelstand. Talent-Cloud, eigene Matching-KI und persönliche Beratung in einer Plattform.
             </p>
             <div style="display:flex;gap:8px;flex-wrap:wrap">
               <a href="kontakt.html" class="btn btn-ghost" style="padding:8px 12px;font-size:12px">Demo anfragen</a>

@@ -79,7 +79,7 @@
 .sc-wrapper{padding:60px 24px 24px !important}
 
 /* ══════════════════════════════════════════════════════════════
-   SILVER-MODERN-KI — Complete color redesign
+   SILVER-MODERN-KI - Complete color redesign
    Replaces warm amber (#9BAAB8/#C8CDD6) with steel-silver
    Cool dark navy backgrounds throughout
    CTA buttons: champagne gold (refined warm, not orange)
@@ -210,7 +210,7 @@ h1 em,.h-display em,.br-hl em,.ab-hero h1 em,.ko-hl em,.ka-hl em{background:line
 .ls-pct{color:#9BAAB8 !important}
 
 /* ══════════════════════════════════════════════════════════════
-   HIOFFICE-STYLE NAV — final override (max specificity)
+   HIOFFICE-STYLE NAV - final override (max specificity)
    Supersedes all earlier nav rules
 ══════════════════════════════════════════════════════════════ */
 

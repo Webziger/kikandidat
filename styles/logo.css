@@ -23,7 +23,7 @@
   transform: scale(1.02);
 }
 
-/* Shimmer-Sweep beim ersten Laden — nur Nav-Logo, Startseite */
+/* Shimmer-Sweep beim ersten Laden - nur Nav-Logo, Startseite */
 @keyframes kiqLogoShimmer {
   0%   { mask-position: -100% 0; -webkit-mask-position: -100% 0; }
   100% { mask-position:  200% 0; -webkit-mask-position:  200% 0; }

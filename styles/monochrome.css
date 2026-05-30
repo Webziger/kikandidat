@@ -1,5 +1,5 @@
 /* ============================================================================
-   monochrome.css — Single source of truth for the Silver-Only design system.
+   monochrome.css - Single source of truth for the Silver-Only design system.
    Loads LAST in every page. Canonical tokens + premium monochrome pill buttons
    + HiOffice frosted-glass nav + generous spacing. No amber, no gold, no blue.
    Semantic colours (green = live/success, red = hot/danger) survive.
@@ -179,7 +179,7 @@ section.br-hero .btn-ghost:hover {
 }
 
 /* ============================================================================
-   HIOFFICE FROSTED-GLASS NAV — fixed pill, adaptive dark/light, scrolled state
+   HIOFFICE FROSTED-GLASS NAV - fixed pill, adaptive dark/light, scrolled state
    ============================================================================ */
 .nav {
   border-bottom: none !important;
@@ -201,7 +201,7 @@ section.br-hero .btn-ghost:hover {
   box-shadow: 0 4px 24px rgba(15,22,35,0.10), 0 1px 4px rgba(15,22,35,0.06) !important;
 }
 
-/* ── Dark mode (over dark sections) — clearly floating glass, never blends ── */
+/* ── Dark mode (over dark sections) - clearly floating glass, never blends ── */
 .nav[data-theme="dark"] {
   background: rgba(22,33,55,0.68) !important;
   border-color: rgba(255,255,255,0.16) !important;
@@ -209,7 +209,7 @@ section.br-hero .btn-ghost:hover {
   -webkit-backdrop-filter: saturate(170%) blur(22px) !important;
   backdrop-filter: saturate(170%) blur(22px) !important;
 }
-/* Scrolled: near-solid, prominent — always unmistakably visible */
+/* Scrolled: near-solid, prominent - always unmistakably visible */
 .nav[data-theme="dark"].nav--scrolled {
   background: rgba(18,27,46,0.90) !important;
   border-color: rgba(255,255,255,0.20) !important;
@@ -226,7 +226,7 @@ section.br-hero .btn-ghost:hover {
 .nav-sep { background: rgba(15,22,35,0.10) !important; }
 .nav[data-theme="dark"] .nav-sep { background: rgba(255,255,255,0.14) !important; }
 
-/* ── Logo swap — smooth crossfade ── */
+/* ── Logo swap - smooth crossfade ── */
 .nav .nav-kiq-logo {
   transition: opacity .3s ease, filter .35s cubic-bezier(.16,1,.3,1), transform .35s cubic-bezier(.16,1,.3,1) !important;
 }
@@ -278,12 +278,12 @@ h1 em, h2 em, h3 em,
 }
 
 /* ============================================================================
-   SPACING / CONTENT WIDTH — HiOffice generosity
+   SPACING / CONTENT WIDTH - HiOffice generosity
    ============================================================================ */
 .container { max-width: var(--content-max); }
 
 /* ============================================================================
-   ELECTRIC-BLUE ACCENT — vivid cool second tone, distributed (HiOffice-feel).
+   ELECTRIC-BLUE ACCENT - vivid cool second tone, distributed (HiOffice-feel).
    Silver stays the dominant base; electric blue is the lively offset that
    lands on section eyebrows, links, focus rings, AI/score signals, buttons
    and the KI-module orb. WCAG-checked: --blue-deep ≈6.5:1 on light,
@@ -361,7 +361,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 
 /* ============================================================================
-   KI-MODUL SECTION ("Wir stellen vor:") — kill the flat black void.
+   KI-MODUL SECTION ("Wir stellen vor:") - kill the flat black void.
    Layered dark base + grey-blue core glow gives depth and a modern AI feel.
    monochrome.css loads last → these win over the near-black design-refresh bg.
    ============================================================================ */
@@ -491,7 +491,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 
 /* ============================================================
-   Footer — Webziger credit + mobile compaction
+   Footer - Webziger credit + mobile compaction
    ============================================================ */
 .footer-credit {
   display: inline-flex;
@@ -537,7 +537,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 
 /* ============================================================
-   Orbital Radar — High-End Polish
+   Orbital Radar - High-End Polish
    ============================================================ */
 /* Blue center glow instead of grey */
 .orbital-glow-bg {
@@ -564,7 +564,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
           drop-shadow(0 0 24px rgba(47,107,255,0.35)) !important;
 }
 
-/* General icons — slightly brighter white glow on hover */
+/* General icons - slightly brighter white glow on hover */
 .orb-icon-inner:hover {
   filter: saturate(1) brightness(1.2)
           drop-shadow(0 0 8px rgba(200,210,240,0.55)) !important;
@@ -594,12 +594,12 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 
 /* ============================================================
-   Color accent touches — key `em` highlights across site
+   Color accent touches - key `em` highlights across site
    ============================================================ */
 /* Section eyebrows get a subtle blue left-border accent */
 .eyebrow { border-left: 2px solid rgba(47,107,255,0.45); padding-left: 10px; }
 
-/* Key stat numbers in hero/pillar sections — accent blue */
+/* Key stat numbers in hero/pillar sections - accent blue */
 .hero-stat .v,
 .hero-stat-val,
 .pillar-stat,
@@ -620,7 +620,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .ts-cert-v { color: rgba(10,15,28,0.60) !important; }
 
 /* ============================================================
-   SENIOR DESIGN PASS — Whitespace · Clipping · Branchen · Polish
+   SENIOR DESIGN PASS - Whitespace · Clipping · Branchen · Polish
    ============================================================ */
 
 /* ── 1. TYPOGRAPHY: fix 0.91 line-height clipping on display fonts ── */
@@ -655,7 +655,7 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
 .ts-section {
   padding: clamp(48px,6vw,64px) 0 !important;
 }
-/* Testimonials — reduce white space */
+/* Testimonials - reduce white space */
 .tm-section {
   padding: 48px 0 !important;
 }
@@ -681,7 +681,7 @@ section[data-screen-label="Stats"]      { padding: 28px 0 !important; }
 section[data-screen-label="Guarantee"] {
   background: var(--bg-elev-2) !important;
 }
-/* FAQ sec-cream — keep slightly different but not too white */
+/* FAQ sec-cream - keep slightly different but not too white */
 .sec-cream {
   background: #EAECF2 !important;
   padding: clamp(48px,6vw,68px) 0 !important;
@@ -767,7 +767,7 @@ section[data-screen-label="section_plattform"],
   transform: translateY(-2px) !important;
 }
 /* Dark-section ghost buttons slightly brighter.
-   WICHTIG: KEINE globale ".nav[data-theme=\"dark\"] ~ main .btn-ghost"-Klausel —
+   WICHTIG: KEINE globale ".nav[data-theme=\"dark\"] ~ main .btn-ghost"-Klausel -
    die faerbte JEDEN Ghost-Button hell, sobald die Nav (durch eine dunkle
    Sektion oben im Viewport) dunkel war, auch Buttons auf HELLEN Sektionen
    (z. B. pm-/ind-/final-cta) → fast unsichtbar. Stattdessen nur echte
@@ -787,7 +787,7 @@ section[data-screen-label="section_plattform"],
 }
 
 /* ============================================================
-   QUELLEN SECTION — Dark Card Box Redesign
+   QUELLEN SECTION - Dark Card Box Redesign
    ============================================================ */
 
 /* Section container */
@@ -1010,7 +1010,7 @@ section[data-screen-label="section_plattform"],
 }
 
 /* ============================================================
-   BRANCHEN CARDS — Hover text readability fix
+   BRANCHEN CARDS - Hover text readability fix
    (br-card keeps var(--fg) on hover → invisible on dark overlay)
    ============================================================ */
 .br-card:hover .br-name {
@@ -1053,7 +1053,7 @@ section[data-screen-label="Open positions"] {
 }
 
 /* ============================================================
-   PLATFORM CARDS — Unified Voice card (dark, SVG illustration)
+   PLATFORM CARDS - Unified Voice card (dark, SVG illustration)
    ============================================================ */
 .pcard-voice {
   background: linear-gradient(155deg, #0E1230 0%, #0A0E22 55%, #07091A 100%);
@@ -1099,7 +1099,7 @@ section[data-screen-label="Open positions"] {
   animation: wave-flow 2s linear infinite;
 }
 
-/* ── Hub card (pcard-blue) — harmonized dark navy + blue accent ── */
+/* ── Hub card (pcard-blue) - harmonized dark navy + blue accent ── */
 .pcard-blue {
   background:
     radial-gradient(75% 55% at 80% 15%, rgba(47,107,255,0.16), transparent 60%),
@@ -1135,7 +1135,7 @@ section[data-screen-label="Open positions"] {
 .section-head > div { flex: 1 1 auto; min-width: 0; }
 
 /* ============================================================================
-   BACKGROUND RELAUNCH (2026-05) — lift dark sections off pure-black.
+   BACKGROUND RELAUNCH (2026-05) - lift dark sections off pure-black.
    The previous design filled content sections with #06090F / #030511 / #020510
    (≈3-5% luminance = harsh, flat black → low legibility, cheap feel). This
    block, loading LAST, replaces those with one cohesive, modern deep-navy
@@ -1151,7 +1151,7 @@ section[data-screen-label="Open positions"] {
   --dk-glow: rgba(56,118,255,0.14);   /* praesenter, aber dezent */
 }
 
-/* — One refined dark surface for every flat-black content section —
+/* - One refined dark surface for every flat-black content section -
    Scope: index.html dark content sections (the areas the user flagged as
    "zu tief schwarz"). Sub-pages use .branch-hero + light sections, so they
    are intentionally NOT included here. */
@@ -1163,20 +1163,20 @@ section[data-screen-label="Open positions"] {
     linear-gradient(180deg, var(--dk-3) 0%, var(--dk-2) 56%, var(--dk-1) 100%) !important;
 }
 
-/* — Quellen showcase cards: lift off near-black, keep the elevated look — */
+/* - Quellen showcase cards: lift off near-black, keep the elevated look - */
 .qd-card {
   background: linear-gradient(150deg, var(--dk-card-a) 0%, #131E36 52%, var(--dk-card-b) 100%) !important;
   border-color: rgba(99,140,230,0.30) !important;
 }
 
-/* — Footer (all 19 pages): was #060810→#040608 (pure black slab). Anchor it
+/* - Footer (all 19 pages): was #060810→#040608 (pure black slab). Anchor it
      in the same deep-navy family so it reads as the bottom of one cohesive
-     surface, not a separate black block. Slightly deeper than content. — */
+     surface, not a separate black block. Slightly deeper than content. - */
 .footer {
   background: linear-gradient(180deg, var(--dk-1) 0%, #0B1322 100%) !important;
 }
 
-/* — Text contrast on dark sections (was 0.42 / 0.55 / 0.58 — illegible) —
+/* - Text contrast on dark sections (was 0.42 / 0.55 / 0.58 - illegible) -
    WICHTIG: auf .pain-section gescoped. Die Branchen-Subpages nutzen .pain-card
    auf WEISSER Section; ohne Scope leakte das Near-White hierher → unlesbar. */
 .pain-section .pain-label      { color: rgba(238,242,248,0.66) !important; }
@@ -1190,11 +1190,11 @@ section[data-screen-label="Open positions"] {
 .ki-intro-section .lead { color: rgba(233,239,247,0.82) !important; }
 
 /* ============================================================================
-   STICKY NAV FIX — keep the fixed nav glued to the viewport while scrolling.
+   STICKY NAV FIX - keep the fixed nav glued to the viewport while scrolling.
    The page-enter animation (scroll-polish.css) used fill-mode:both with a
    `transform: translateY()` keyframe, leaving a lingering transform on <body>.
    A non-`none` transform on an ancestor makes position:fixed resolve against
-   THAT ancestor (body) instead of the viewport — so the nav scrolled away.
+   THAT ancestor (body) instead of the viewport - so the nav scrolled away.
    Redefining the keyframe to opacity-only (this file loads last, so it wins)
    removes the transform entirely: clean fade-in, and the nav stays put.
    ============================================================================ */
@@ -1203,14 +1203,14 @@ section[data-screen-label="Open positions"] {
 body { transform: none !important; will-change: auto !important; }
 
 /* ============================================================================
-   KI-MODUL + PLATTFORM FINISH (2026-05) — vier gezielte Fixes:
+   KI-MODUL + PLATTFORM FINISH (2026-05) - vier gezielte Fixes:
      #29  "Wir stellen vor:" Hintergrund-Effekt zurück (cool, im neuen Navy)
      #30  KI-Section Lead solide lesbar (nie blau/grau auf blau)
      #31  "Markus W."-Zeile: weiße .role-Fläche entfernen (Leak aus .role{#fff})
      #32  Plattform-Slider → fortlaufende, flüssige Marquee statt Klick-zu-Öffnen
    ============================================================================ */
 
-/* ── #31 — weiß-auf-weiß "role"-Balken beheben ──────────────────────────────
+/* ── #31 - weiß-auf-weiß "role"-Balken beheben ──────────────────────────────
    design-refresh.css setzt global .role{background:#FFFFFF !important} (für
    Karten in anderem Kontext). Das leakt auf .match-cand .role → fast-weiße
    Schrift auf weißem Balken. Hier (lädt zuletzt, höhere Spezifität) neutral. */
@@ -1242,14 +1242,14 @@ body { transform: none !important; will-change: auto !important; }
   .ls-row .ls-bar-wrap { grid-area: bar; margin-top: 2px; }
 }
 
-/* ── #30 — KI-Section Lead solide lesbar (kein blau/grau auf blau) ─────────── */
+/* ── #30 - KI-Section Lead solide lesbar (kein blau/grau auf blau) ─────────── */
 .ki-section .lead,
 .ki-intro-section .lead {
   color: rgba(237,242,250,0.92) !important;
   font-weight: 400 !important;
 }
 
-/* ── #29 — "Wir stellen vor:" — kühler, tiefer Hintergrund im neuen Navy ─────
+/* ── #29 - "Wir stellen vor:" - kühler, tiefer Hintergrund im neuen Navy ─────
    Der Relaunch hatte den Hintergrund zur flachen Fläche reduziert. Hier zurück
    zu echter Tiefe: mehrere blaue Radial-Glows + dezente Boden-Vignette; dazu
    blaue Top-Hairline statt Silber (passend zum blauen Partikel-Flow). */
@@ -1265,10 +1265,10 @@ body { transform: none !important; will-change: auto !important; }
   background: linear-gradient(90deg, transparent, rgba(99,140,255,0.30) 25%, rgba(111,160,255,0.62) 50%, rgba(99,140,255,0.30) 75%, transparent) !important;
 }
 
-/* ── #32 — Plattform-Slider → endlose, flüssige Marquee (JS-getrieben) ────────
+/* ── #32 - Plattform-Slider → endlose, flüssige Marquee (JS-getrieben) ────────
    Reine Auto-Bewegung, KEINE Maus-Interaktion: kein Hover-Pause, kein
    Cursor-Wechsel, keine Hover-Effekte. Die Position wird per rAF in JS gesetzt
-   (track.style.transform) — daher hier KEINE CSS-Animation und KEIN transform.
+   (track.style.transform) - daher hier KEINE CSS-Animation und KEIN transform.
    Rechts ein dezenter, geblurrter Pfeil zum manuellen Weiterklicken. */
 .section_plattform .plattform-slider-outer {
   position: relative;
@@ -1291,7 +1291,7 @@ body { transform: none !important; will-change: auto !important; }
   height: auto !important;
   cursor: default !important;
   will-change: transform;
-  /* NB: KEINE animation und KEIN transform hier — JS setzt translateX per rAF. */
+  /* NB: KEINE animation und KEIN transform hier - JS setzt translateX per rAF. */
 }
 .section_plattform .plattform-track.is-marquee .plattform-slide,
 .section_plattform .plattform-track.is-marquee .plattform-slide.is-active {
@@ -1312,7 +1312,7 @@ body { transform: none !important; will-change: auto !important; }
   opacity: 1 !important;
   transform: none !important;
 }
-/* Minimaler, geblurrter Pfeil rechts — manuelles Weiterklicken */
+/* Minimaler, geblurrter Pfeil rechts - manuelles Weiterklicken */
 .section_plattform .plattform-arrow {
   position: absolute;
   top: 50%;
@@ -1359,7 +1359,7 @@ body { transform: none !important; will-change: auto !important; }
 }
 
 /* ============================================================================
-   FIX — Hero-<em>-Highlights auf HELLEN Heroes lesbar machen (2026-05)
+   FIX - Hero-<em>-Highlights auf HELLEN Heroes lesbar machen (2026-05)
    Problem: design-refresh.css + die [data-nav-theme="dark"]-Regel zwangen einen
    nahezu weißen Silber-Verlauf (#E4E8EE/#C8CDD6) auf die <em>-Highlights der
    HELLEN Hero-Überschriften (Karriere, Über uns, Kontakt, alle Branchen).
@@ -1391,7 +1391,7 @@ body { transform: none !important; will-change: auto !important; }
 
 /* Hero-Eyebrows / Live-Badges auf den HELLEN Heroes lesbar machen.
    Diese Heroes sind als data-nav-theme="dark" getaggt (steuert die Nav-Glas-
-   Optik), sind aber hell — dadurch erbten Eyebrows die helle Dark-Section-Farbe
+   Optik), sind aber hell - dadurch erbten Eyebrows die helle Dark-Section-Farbe
    (≈weiß auf weiß) und das Live-Badge das blasse Silber var(--accent).
    → auf legible Graphit zwingen (höhere Spezifität schlägt die Theme-Regeln). */
 .ka-hero .ka-hero-live,
@@ -1403,7 +1403,7 @@ body { transform: none !important; will-change: auto !important; }
 }
 
 /* ============================================================================
-   FIX (2026-05) — Silber-Akzent var(--accent) (#9BAAB8) als TEXT auf HELLEN
+   FIX (2026-05) - Silber-Akzent var(--accent) (#9BAAB8) als TEXT auf HELLEN
    Flächen ist unleserlich (~2.2:1, "graue Schrift auf weißem Hintergrund").
    Überall auf das legible System-Graphit --fg-muted (#3A4250, ~9:1) zwingen.
    monochrome.css lädt zuletzt → !important + Spezifität schlagen components.css,
@@ -1475,7 +1475,7 @@ section:not([data-nav-theme="dark"]) .final-cta em {
   color: var(--fg-muted) !important;
 }
 
-/* (i) STARTSEITE — Silber-Akzent auf HELLEN Sektionen (Showcase-Stat-Suffixe,
+/* (i) STARTSEITE - Silber-Akzent auf HELLEN Sektionen (Showcase-Stat-Suffixe,
    Testimonial-Zähler, FAQ-Plus-Icons). Elternskopiert auf index-eigene
    Sektionsklassen → DUNKLE Mockups (.pm-section/.ki-section/.app-*) und die
    dunklen Zähler (.sc-st-item .v = #0A0F1C) bleiben unangetastet. */
@@ -1550,7 +1550,7 @@ section:not([data-nav-theme="dark"]) .stat .num {
   color: transparent !important;
 }
 
-/* (n) ITALIC-EM CLIP-FIX — kursive <em>-Headline-Wörter (Bricolage Grotesque,
+/* (n) ITALIC-EM CLIP-FIX - kursive <em>-Headline-Wörter (Bricolage Grotesque,
    weight 800) mit `-webkit-background-clip:text` verlieren den rechten Italic-
    Überhang des letzten Buchstabens: Der Gradient wird nur über die Hintergrund-
    Paint-Box (Glyph-Advance-Breite) gemalt, der schräge Tinten-Ausläufer der
@@ -1558,7 +1558,7 @@ section:not([data-nav-theme="dark"]) .stat .num {
    abgeschnitten (z.B. „…veränder[n].", „erfolgreichste[n]"). Fix: Paint-Box per
    allseitigem Padding vergrößern, Layout per identischem Negativ-Margin neutral
    halten (kein Versatz benachbarter Wörter). Greift für ALLE Gradient-Headlines
-   site-wide — Startseite + alle Unterseiten. */
+   site-wide - Startseite + alle Unterseiten. */
 h1 em, h2 em, h3 em, h4 em,
 .h1 em, .h2 em, .h3 em, .h-display em,
 .hero-serif em, .hero-text-layer em, .ki-intro-title em,
