@@ -4,7 +4,7 @@
     <nav class="nav">
       <div class="nav-inner">
         <a href="/" class="logo" aria-label="KI-Kandidat Home">
-          <img src="assets/kiq-logo.png?v=logo2"      class="nav-kiq-logo kiq--silver shimmer-on-load" alt="KI-Kandidat" width="180" height="35" />
+          <img src="assets/kiq-logo.png?v=logo2"      class="nav-kiq-logo kiq--silver" alt="KI-Kandidat" width="180" height="35" />
           <img src="assets/kiq-logo-dark.png?v=logo2" class="nav-kiq-logo kiq--dark"                   alt=""            width="180" height="35" aria-hidden="true" />
         </a>
         <div class="nav-sep"></div>
@@ -113,11 +113,6 @@
     const footMount = document.getElementById('footer-mount');
     if (navMount) {
       navMount.outerHTML = buildNav(activeKey);
-      // Logo shimmer cleanup: nach Animation Mask zurücknehmen, damit Hover-Glow korrekt greift
-      var navLogo = document.querySelector('.kiq--silver.shimmer-on-load');
-      if (navLogo) {
-        navLogo.addEventListener('animationend', function(){ navLogo.classList.add('shimmer-done'); }, { once: true });
-      }
     }
     if (footMount) {
       footMount.outerHTML = buildFooter();

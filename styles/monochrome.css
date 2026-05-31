@@ -33,10 +33,10 @@
   --line-dark:   rgba(255,255,255,0.10);
 
   /* ── Buttons ─────────────────────────────────────────────────────── */
-  --btn-primary-bg:  #0A0F1C;   /* near-black pill on light */
+  --btn-primary-bg:  #0A7A6B;   /* teal-deep CTA on light (white text ~5.4:1) */
   --btn-primary-fg:  #FFFFFF;
-  --btn-on-dark-bg:  #EEF1F5;   /* bright-silver pill on dark */
-  --btn-on-dark-fg:  #0A0F1C;
+  --btn-on-dark-bg:  #0A7A6B;   /* same teal CTA on dark — vibrant integrated accent */
+  --btn-on-dark-fg:  #FFFFFF;
   --r-pill: 999px;
 
   /* ── Gradients (one ramp, not six copies) ────────────────────────── */
@@ -74,13 +74,14 @@ button.btn-primary,
 .ab-hero-ctas .btn-primary,
 .ka-hero-ctas .btn-primary,
 .mosaic-section .btn-primary,
+.berater-section .btn-primary,
 .ko-form-submit {
   background: var(--btn-primary-bg) !important;
   background-image: none !important;
   color: var(--btn-primary-fg) !important;
   border: 0 !important;
   border-radius: var(--r-pill) !important;
-  box-shadow: 0 1px 2px rgba(10,15,28,0.18), 0 8px 24px -10px rgba(10,15,28,0.45) !important;
+  box-shadow: 0 1px 2px rgba(10,122,107,0.20), 0 8px 24px -10px rgba(10,122,107,0.45) !important;
   transition: transform .18s ease, box-shadow .25s ease, background-color .2s ease !important;
 }
 
@@ -93,12 +94,13 @@ button.btn-primary:hover,
 .ab-hero-ctas .btn-primary:hover,
 .ka-hero-ctas .btn-primary:hover,
 .mosaic-section .btn-primary:hover,
+.berater-section .btn-primary:hover,
 .ko-form-submit:hover {
-  background: #161C2B !important;
+  background: #0E8C77 !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 2px 4px rgba(10,15,28,0.22),
-              0 14px 36px -10px rgba(47,107,255,0.55),
-              0 0 0 3px rgba(47,107,255,0.16) !important;
+              0 14px 36px -10px rgba(15,179,154,0.55),
+              0 0 0 3px rgba(15,179,154,0.16) !important;
 }
 
 /* Bright pill on dark backgrounds (nav over dark, hero, dark sections) */
@@ -113,11 +115,11 @@ button.btn-primary:hover,
 .nav[data-theme="dark"] .btn-primary:hover,
 .hero-v2 .btn-primary:hover,
 [data-nav-theme="dark"] .btn-primary:hover {
-  background: #FFFFFF !important;
+  background: #0E8C77 !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3),
-              0 16px 42px -10px rgba(47,107,255,0.60),
-              0 0 0 3px rgba(47,107,255,0.22) !important;
+              0 16px 42px -10px rgba(15,179,154,0.60),
+              0 0 0 3px rgba(15,179,154,0.22) !important;
 }
 
 /* Kill the legacy shimmer sweep that assumed a gradient fill */
@@ -290,13 +292,13 @@ h1 em, h2 em, h3 em,
    --blue-bright ≈7:1 on dark.
    ============================================================================ */
 :root {
-  --blue:         #2F6BFF;   /* electric blue (vivid, fills/glows)  */
-  --blue-deep:    #1E4FD0;   /* text-safe on light (≈6.5:1)         */
-  --blue-bright:  #6FA0FF;   /* text-safe on dark  (≈7:1)           */
-  --blue-soft:    rgba(47,107,255,0.10);
-  --blue-glow:    rgba(47,107,255,0.30);
-  --grad-blue:        linear-gradient(90deg,#1E4FD0,#2F6BFF);
-  --grad-blue-bright: linear-gradient(90deg,#2F6BFF,#6FA0FF);
+  --blue:         #0FB39A;   /* electric blue (vivid, fills/glows)  */
+  --blue-deep:    #0A7A6B;   /* text-safe on light (≈6.5:1)         */
+  --blue-bright:  #4FE3CC;   /* text-safe on dark  (≈7:1)           */
+  --blue-soft:    rgba(15,179,154,0.10);
+  --blue-glow:    rgba(15,179,154,0.30);
+  --grad-blue:        linear-gradient(90deg,#0A7A6B,#0FB39A);
+  --grad-blue-bright: linear-gradient(90deg,#0FB39A,#4FE3CC);
 }
 
 /* Eyebrows / kickers → grey-blue (recurring accent across every section) */
@@ -317,7 +319,7 @@ h1 em, h2 em, h3 em,
 [data-nav-theme="dark"] .eyebrow::before,
 .ki-intro-section .eyebrow::before {
   background: var(--blue-bright) !important;
-  box-shadow: 0 0 12px rgba(47,107,255,0.45) !important;
+  box-shadow: 0 0 12px rgba(15,179,154,0.45) !important;
 }
 /* Compound-specificity eyebrow rules (beat the legacy .X .eyebrow overrides) */
 .section-head .eyebrow, .tm-section .eyebrow, .branch-hero .eyebrow,
@@ -368,7 +370,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .ki-intro-section {
   background:
     radial-gradient(ellipse 58% 52% at 50% 42%, var(--blue-glow) 0%, transparent 62%),
-    radial-gradient(ellipse 95% 60% at 50% -12%, rgba(111,160,255,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 95% 60% at 50% -12%, rgba(79,227,204,0.12) 0%, transparent 55%),
     radial-gradient(ellipse 80% 75% at 50% 118%, rgba(6,9,15,0.65) 0%, transparent 60%),
     linear-gradient(180deg, #0D1626 0%, #0A1120 50%, #0C1626 100%)
     !important;
@@ -376,26 +378,26 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 /* Keep the subtle top hairline but tint it grey-blue */
 .ki-intro-section::after {
   background: linear-gradient(90deg, transparent,
-    rgba(111,160,255,0.30) 25%, rgba(111,160,255,0.60) 50%,
-    rgba(111,160,255,0.30) 75%, transparent) !important;
+    rgba(79,227,204,0.30) 25%, rgba(79,227,204,0.60) 50%,
+    rgba(79,227,204,0.30) 75%, transparent) !important;
 }
 /* Input/output cards: lift them off the dark so they read as glass panels */
 .ki-intro-section .ki-card {
-  background: rgba(111,160,255,0.06) !important;
-  border: 1px solid rgba(111,160,255,0.16) !important;
+  background: rgba(79,227,204,0.06) !important;
+  border: 1px solid rgba(79,227,204,0.16) !important;
   box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset,
               0 14px 40px -16px rgba(0,0,0,0.7) !important;
   backdrop-filter: blur(22px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(22px) saturate(160%) !important;
 }
 .ki-intro-section .ki-card:hover {
-  border-color: rgba(111,160,255,0.34) !important;
-  box-shadow: 0 0 0 1px rgba(47,107,255,0.18),
+  border-color: rgba(79,227,204,0.34) !important;
+  box-shadow: 0 0 0 1px rgba(15,179,154,0.18),
               0 18px 50px -16px rgba(0,0,0,0.7) !important;
 }
 .ki-intro-section .ki-card-icon {
-  background: rgba(47,107,255,0.16) !important;
-  border-color: rgba(111,160,255,0.26) !important;
+  background: rgba(15,179,154,0.16) !important;
+  border-color: rgba(79,227,204,0.26) !important;
   color: var(--blue-bright) !important;
 }
 .ki-intro-section .ki-card-icon svg { stroke: var(--blue-bright) !important; }
@@ -411,14 +413,14 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   inset: -28% !important;
   border-radius: 50% !important;
   background: radial-gradient(circle, var(--blue-glow) 0%,
-              rgba(47,107,255,0.10) 45%, transparent 68%) !important;
+              rgba(15,179,154,0.10) 45%, transparent 68%) !important;
   filter: blur(10px);
   z-index: 0 !important;
   pointer-events: none !important;
 }
-.ki-orb-ring        { border-color: rgba(111,160,255,0.30) !important; }
-.ki-orb-ring--2     { border-color: rgba(111,160,255,0.16) !important; }
-.ki-orb-ring--3     { border-color: rgba(111,160,255,0.08) !important; }
+.ki-orb-ring        { border-color: rgba(79,227,204,0.30) !important; }
+.ki-orb-ring--2     { border-color: rgba(79,227,204,0.16) !important; }
+.ki-orb-ring--3     { border-color: rgba(79,227,204,0.08) !important; }
 .ki-orb-label       { color: rgba(242,244,247,0.86) !important; letter-spacing: .14em !important; }
 /* Mobile-only status pill (hidden on desktop, replaces redundant wordmark caption) */
 .ki-orb-status { display: none; }
@@ -438,8 +440,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     margin: 4px auto 0 !important;
     padding: 22px 30px 18px !important;
     border-radius: 22px !important;
-    background: linear-gradient(165deg, rgba(47,107,255,0.14), rgba(255,255,255,0.035)) !important;
-    border: 1px solid rgba(111,160,255,0.24) !important;
+    background: linear-gradient(165deg, rgba(15,179,154,0.14), rgba(255,255,255,0.035)) !important;
+    border: 1px solid rgba(79,227,204,0.24) !important;
     box-shadow: 0 18px 46px rgba(7,13,27,0.55),
                 inset 0 1px 0 rgba(255,255,255,0.08) !important;
     -webkit-backdrop-filter: blur(2px);
@@ -449,8 +451,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   .ki-center-orb::before {
     inset: -14% !important;
     filter: blur(22px) !important;
-    background: radial-gradient(circle, rgba(47,107,255,0.30) 0%,
-                rgba(47,107,255,0.10) 50%, transparent 72%) !important;
+    background: radial-gradient(circle, rgba(15,179,154,0.30) 0%,
+                rgba(15,179,154,0.10) 50%, transparent 72%) !important;
   }
   .ki-logo-frame { width: 150px !important; }
   /* drop the duplicate wordmark caption, show the functional status pill */
@@ -464,8 +466,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     margin-top: 14px;
     padding: 5px 12px;
     border-radius: 999px;
-    background: rgba(47,107,255,0.14);
-    border: 1px solid rgba(111,160,255,0.22);
+    background: rgba(15,179,154,0.14);
+    border: 1px solid rgba(79,227,204,0.22);
     font-family: var(--font-mono, monospace);
     font-size: 10px;
     letter-spacing: 0.08em;
@@ -476,8 +478,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--blue-bright, #6FA0FF);
-    box-shadow: 0 0 8px rgba(111,160,255,0.9);
+    background: var(--blue-bright, #4FE3CC);
+    box-shadow: 0 0 8px rgba(79,227,204,0.9);
     animation: kiLivePulse 1.8s ease-in-out infinite;
   }
 }
@@ -542,15 +544,15 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 /* Blue center glow instead of grey */
 .orbital-glow-bg {
   background: radial-gradient(circle,
-    rgba(47,107,255,0.18) 0%,
-    rgba(47,107,255,0.06) 40%,
+    rgba(15,179,154,0.18) 0%,
+    rgba(15,179,154,0.06) 40%,
     transparent 70%) !important;
 }
 
 /* Blue sweep arm glow filter */
 .orbital-sweep {
-  filter: drop-shadow(0 0 4px rgba(47,107,255,0.70))
-          drop-shadow(0 0 12px rgba(47,107,255,0.35)) !important;
+  filter: drop-shadow(0 0 4px rgba(15,179,154,0.70))
+          drop-shadow(0 0 12px rgba(15,179,154,0.35)) !important;
 }
 
 /* Recruiting-platform icons get blue hover glow */
@@ -560,8 +562,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .orb-icon-inner[data-brand="stepstone"]:hover,
 .orb-icon-inner[data-brand="kununu"]:hover {
   filter: saturate(1.2) brightness(1.15)
-          drop-shadow(0 0 10px rgba(47,107,255,0.80))
-          drop-shadow(0 0 24px rgba(47,107,255,0.35)) !important;
+          drop-shadow(0 0 10px rgba(15,179,154,0.80))
+          drop-shadow(0 0 24px rgba(15,179,154,0.35)) !important;
 }
 
 /* General icons - slightly brighter white glow on hover */
@@ -587,9 +589,9 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   left:0; top:0;
   width:6px; height:6px;
   border-radius:50%;
-  background:#6FA0FF;
+  background:#4FE3CC;
   transform:translate(-50%,-50%);
-  box-shadow:0 0 8px 3px rgba(47,107,255,.60);
+  box-shadow:0 0 8px 3px rgba(15,179,154,.60);
   animation: orbTipPulse 2s ease-in-out infinite;
 }
 
@@ -597,7 +599,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
    Color accent touches - key `em` highlights across site
    ============================================================ */
 /* Section eyebrows get a subtle blue left-border accent */
-.eyebrow { border-left: 2px solid rgba(47,107,255,0.45); padding-left: 10px; }
+.eyebrow { border-left: 2px solid rgba(15,179,154,0.45); padding-left: 10px; }
 
 /* Key stat numbers in hero/pillar sections - accent blue */
 .hero-stat .v,
@@ -753,17 +755,19 @@ section[data-screen-label="section_plattform"],
   margin-bottom: clamp(32px,4vw,52px) !important;
 }
 
-/* ── 7. PILL BUTTONS: sharper, more premium ── */
+/* ── 7. PILL BUTTONS: flat solid teal (modern), with teal glow ── */
 .btn-primary {
-  background: linear-gradient(135deg, #1A3AFF 0%, #2F6BFF 55%, #1E4FD0 100%) !important;
-  box-shadow: 0 0 0 1px rgba(47,107,255,0.25),
-              0 4px 20px -4px rgba(47,107,255,0.50),
-              inset 0 1px 0 rgba(255,255,255,0.15) !important;
+  background: var(--btn-primary-bg) !important;
+  background-image: none !important;
+  box-shadow: 0 0 0 1px rgba(15,179,154,0.22),
+              0 4px 20px -4px rgba(15,179,154,0.45),
+              inset 0 1px 0 rgba(255,255,255,0.12) !important;
 }
 .btn-primary:hover {
-  background: linear-gradient(135deg, #2F6BFF 0%, #1A3AFF 100%) !important;
-  box-shadow: 0 0 0 1px rgba(47,107,255,0.40),
-              0 8px 32px -8px rgba(47,107,255,0.60) !important;
+  background: #0E8C77 !important;
+  background-image: none !important;
+  box-shadow: 0 0 0 1px rgba(15,179,154,0.40),
+              0 8px 32px -8px rgba(15,179,154,0.60) !important;
   transform: translateY(-2px) !important;
 }
 /* Dark-section ghost buttons slightly brighter.
@@ -777,13 +781,14 @@ section[data-screen-label="section_plattform"],
   border-color: rgba(242,244,247,0.28) !important;
   color: rgba(242,244,247,0.80) !important;
 }
-/* Nav primary pill also blue */
+/* Nav primary pill also teal (flat solid) */
 .nav-cta .btn-primary {
-  background: linear-gradient(135deg,#2F6BFF 0%,#1A3AFF 100%) !important;
-  box-shadow: 0 4px 18px rgba(47,107,255,0.35) !important;
+  background: var(--btn-primary-bg) !important;
+  background-image: none !important;
+  box-shadow: 0 4px 18px rgba(15,179,154,0.35) !important;
 }
 .nav-cta .btn-primary:hover {
-  box-shadow: 0 6px 28px rgba(47,107,255,0.52) !important;
+  box-shadow: 0 6px 28px rgba(15,179,154,0.52) !important;
 }
 
 /* ============================================================
@@ -808,7 +813,7 @@ section[data-screen-label="section_plattform"],
 }
 .quellen-h2 em {
   font-style: italic;
-  background: linear-gradient(135deg,#6FA0FF 0%,#2F6BFF 55%,#1E4FD0 100%) !important;
+  background: linear-gradient(135deg,#4FE3CC 0%,#0FB39A 55%,#0A7A6B 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -827,9 +832,9 @@ section[data-screen-label="section_plattform"],
   isolation: isolate;
   background: linear-gradient(140deg, #060A18 0%, #09101F 50%, #0C1530 100%);
   border-radius: 24px;
-  border: 1px solid rgba(47,107,255,0.24);
+  border: 1px solid rgba(15,179,154,0.24);
   box-shadow:
-    0 0 0 1px rgba(47,107,255,0.06),
+    0 0 0 1px rgba(15,179,154,0.06),
     0 32px 80px rgba(0,0,0,0.34),
     inset 0 1px 0 rgba(255,255,255,0.06);
   overflow: hidden;
@@ -843,7 +848,7 @@ section[data-screen-label="section_plattform"],
   position: absolute;
   top: -30%; right: -20%;
   width: 70%; height: 70%;
-  background: radial-gradient(circle, rgba(47,107,255,0.22), transparent 62%);
+  background: radial-gradient(circle, rgba(15,179,154,0.22), transparent 62%);
   pointer-events: none;
   z-index: 0;
 }
@@ -857,9 +862,9 @@ section[data-screen-label="section_plattform"],
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(111,160,255,0.95);
-  background: rgba(47,107,255,0.12);
-  border: 1px solid rgba(47,107,255,0.28);
+  color: rgba(79,227,204,0.95);
+  background: rgba(15,179,154,0.12);
+  border: 1px solid rgba(15,179,154,0.28);
   padding: 6px 12px;
   border-radius: 999px;
 }
@@ -880,10 +885,10 @@ section[data-screen-label="section_plattform"],
 .qd-card--brand .orbital-center-ring { width: 188px !important; height: 188px !important; }
 .qd-card--brand .orbital-center-logo {
   width: 100% !important;
-  filter: drop-shadow(0 0 16px rgba(111,160,255,0.55)) drop-shadow(0 0 34px rgba(47,107,255,0.32)) !important;
+  filter: drop-shadow(0 0 16px rgba(79,227,204,0.55)) drop-shadow(0 0 34px rgba(15,179,154,0.32)) !important;
 }
 .qd-card--brand .orbital-glow-bg {
-  background: rgba(47,107,255,0.14) !important;
+  background: rgba(15,179,154,0.14) !important;
   filter: blur(64px) !important;
 }
 
@@ -936,8 +941,8 @@ section[data-screen-label="section_plattform"],
   font-size: 14px !important;
 }
 .quellen-checks-dark li::before {
-  background-color: rgba(47,107,255,0.18) !important;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%236FA0FF' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-color: rgba(15,179,154,0.18) !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%234FE3CC' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
 }
 
 /* Smartphone-Mockup */
@@ -963,7 +968,7 @@ section[data-screen-label="section_plattform"],
   width: 100%; height: 100%;
   border-radius: 22px;
   background: linear-gradient(180deg, #0A1020 0%, #0C1226 100%);
-  border: 1px solid rgba(47,107,255,0.14);
+  border: 1px solid rgba(15,179,154,0.14);
   padding: 24px 12px 14px;
   display: flex;
   flex-direction: column;
@@ -981,20 +986,20 @@ section[data-screen-label="section_plattform"],
   border-radius: 12px;
   padding: 8px;
 }
-.qd-match--top { border-color: rgba(47,107,255,0.45); background: rgba(47,107,255,0.10); }
+.qd-match--top { border-color: rgba(15,179,154,0.45); background: rgba(15,179,154,0.10); }
 .qd-ava {
   flex-shrink: 0;
   width: 26px; height: 26px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; font-weight: 700; color: #C8DAF0;
-  background: linear-gradient(140deg, #2F6BFF, #1E4FD0);
+  background: linear-gradient(140deg, #0FB39A, #0A7A6B);
 }
 .qd-match-info { display: flex; flex-direction: column; gap: 1px; flex: 1; min-width: 0; }
 .qd-name { font-size: 10px; font-weight: 600; color: #EDEFF3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .qd-role { font-size: 8px; color: rgba(237,239,243,0.50); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.qd-score { flex-shrink: 0; font-size: 11px; font-weight: 700; color: #6FA0FF; }
+.qd-score { flex-shrink: 0; font-size: 11px; font-weight: 700; color: #4FE3CC; }
 .qd-app-foot { margin-top: auto; display: flex; flex-direction: column; gap: 6px; padding-top: 6px; }
-.qd-bar { height: 5px; border-radius: 3px; background: linear-gradient(90deg, #2F6BFF, #6FA0FF 70%, rgba(111,160,255,0.18) 70%); }
+.qd-bar { height: 5px; border-radius: 3px; background: linear-gradient(90deg, #0FB39A, #4FE3CC 70%, rgba(79,227,204,0.18) 70%); }
 .qd-foot-label { font-size: 8px; color: rgba(237,239,243,0.55); text-align: center; }
 
 /* ── Mobile ── */
@@ -1022,13 +1027,13 @@ section[data-screen-label="section_plattform"],
   text-shadow: 0 1px 8px rgba(0,0,0,0.75) !important;
 }
 .br-card:hover .br-num {
-  color: rgba(111,160,255,0.80) !important;
+  color: rgba(79,227,204,0.80) !important;
 }
 .br-card:hover .br-pool {
   color: rgba(200,218,240,0.85) !important;
 }
 .br-card:hover .br-arrow {
-  color: rgba(111,160,255,0.90) !important;
+  color: rgba(79,227,204,0.90) !important;
 }
 .br-card:hover .br-foot {
   border-color: rgba(255,255,255,0.12) !important;
@@ -1060,15 +1065,15 @@ section[data-screen-label="Open positions"] {
   color: #EDEFF3;
 }
 .pcard-voice .pcard-badge-voice {
-  background: rgba(47,107,255,0.16);
-  border: 1px solid rgba(47,107,255,0.32);
-  color: rgba(111,160,255,0.95);
+  background: rgba(15,179,154,0.16);
+  border: 1px solid rgba(15,179,154,0.32);
+  color: rgba(79,227,204,0.95);
   backdrop-filter: blur(8px);
 }
 .pcard-voice p { color: rgba(237,239,243,0.78); }
 .pcard-voice h3 { color: #EDEFF3; }
 .pcard-voice .pcard-link { color: #EDEFF3; }
-.pcard-voice .pcard-link:hover { color: #6FA0FF; }
+.pcard-voice .pcard-link:hover { color: #4FE3CC; }
 .pcard-voice .pcard-viz { flex: 1; }
 .pcard-viz-voice {
   display: flex;
@@ -1102,24 +1107,24 @@ section[data-screen-label="Open positions"] {
 /* ── Hub card (pcard-blue) - harmonized dark navy + blue accent ── */
 .pcard-blue {
   background:
-    radial-gradient(75% 55% at 80% 15%, rgba(47,107,255,0.16), transparent 60%),
+    radial-gradient(75% 55% at 80% 15%, rgba(15,179,154,0.16), transparent 60%),
     linear-gradient(155deg, #0C1428 0%, #0A1124 55%, #0E1A3C 100%) !important;
   color: #EDEFF3 !important;
 }
 .pcard-blue .pcard-badge-blue {
-  background: rgba(47,107,255,0.16) !important;
-  border: 1px solid rgba(47,107,255,0.32) !important;
-  color: rgba(111,160,255,0.95) !important;
+  background: rgba(15,179,154,0.16) !important;
+  border: 1px solid rgba(15,179,154,0.32) !important;
+  color: rgba(79,227,204,0.95) !important;
   backdrop-filter: blur(8px) !important;
 }
 .pcard-blue h3 { color: #EDEFF3 !important; }
 .pcard-blue p { color: rgba(237,239,243,0.78) !important; }
 .pcard-blue .pcard-link { color: #EDEFF3 !important; }
-.pcard-blue .pcard-link:hover { color: #6FA0FF !important; }
+.pcard-blue .pcard-link:hover { color: #4FE3CC !important; }
 /* Network viz recoloured to brand blue so it reads on the dark navy */
-.pcard-blue .net-edge { stroke: rgba(111,160,255,0.28) !important; }
-.pcard-blue .net-node { fill: rgba(200,218,240,0.92) !important; filter: drop-shadow(0 0 6px rgba(111,160,255,0.4)) !important; }
-.pcard-blue .net-node-accent { fill: #6FA0FF !important; filter: drop-shadow(0 0 12px rgba(111,160,255,0.9)) !important; }
+.pcard-blue .net-edge { stroke: rgba(79,227,204,0.28) !important; }
+.pcard-blue .net-node { fill: rgba(200,218,240,0.92) !important; filter: drop-shadow(0 0 6px rgba(79,227,204,0.4)) !important; }
+.pcard-blue .net-node-accent { fill: #4FE3CC !important; filter: drop-shadow(0 0 12px rgba(79,227,204,0.9)) !important; }
 .pcard-blue .net-label { fill: rgba(200,218,240,0.68) !important; }
 
 /* ── FIX: word-per-line stacking in section-head headings ──
@@ -1262,7 +1267,7 @@ body { transform: none !important; will-change: auto !important; }
     linear-gradient(180deg, var(--dk-3) 0%, var(--dk-2) 55%, var(--dk-1) 100%) !important;
 }
 .ki-intro-section::after {
-  background: linear-gradient(90deg, transparent, rgba(99,140,255,0.30) 25%, rgba(111,160,255,0.62) 50%, rgba(99,140,255,0.30) 75%, transparent) !important;
+  background: linear-gradient(90deg, transparent, rgba(99,140,255,0.30) 25%, rgba(79,227,204,0.62) 50%, rgba(99,140,255,0.30) 75%, transparent) !important;
 }
 
 /* ── #32 - Plattform-Slider → endlose, flüssige Marquee (JS-getrieben) ────────
@@ -1568,3 +1573,30 @@ h1 em, h2 em, h3 em, h4 em,
   padding: 0.08em 0.18em 0.10em 0.06em !important;
   margin: -0.08em -0.18em -0.10em -0.06em !important;
 }
+
+
+/* ============================================================
+   PHASE 1 — Teal/Modern Polish  (appended; loads last -> wins)
+   ============================================================ */
+
+/* (c) Buttons: teal CTA is now driven by the --btn-* tokens above (light + dark contexts).
+   Here we only add the teal keyboard-focus ring that the token block doesn't define. */
+.btn-primary:focus-visible,a.btn-primary:focus-visible,button.btn-primary:focus-visible,.ko-form-submit:focus-visible{outline:none !important;box-shadow:0 0 0 4px rgba(15,179,154,.34) !important}
+
+/* (b) Typography: sharper hierarchy — bolder section headlines, tighter tracking.
+   !important needed to beat design-refresh.css (.h2{font-weight:700!important}). Hero uses .hero-serif (untouched).
+   Line-heights left alone to avoid descender clipping under the Playfair <em> accents. */
+.h2{font-weight:800 !important;letter-spacing:-0.022em !important}
+.h3{font-weight:700 !important;letter-spacing:-0.012em !important}
+.lead{line-height:1.7 !important}
+
+/* (e) Motion: snappier reveals. js/scroll-polish.js sets the transition inline (~0.65s);
+   author !important beats inline-normal declarations, so we shorten ONLY duration/easing and let JS keep
+   driving opacity/transform (no fighting over positions, no risk of content failing to appear). */
+.reveal,.reveal-left,.reveal-right,.reveal-scale{transition-duration:.5s !important;transition-timing-function:cubic-bezier(.22,1,.36,1) !important}
+@media (prefers-reduced-motion:reduce){.reveal,.reveal-left,.reveal-right,.reveal-scale{transition-duration:.01ms !important}}
+
+/* (d) Duotone ENTFERNT auf Wunsch: Fotos bleiben realistisch, echte Menschen, volle Qualität.
+   Die Stock-Fotos werden NICHT entfärbt/getauscht. Die Foto-Backdrops hinter Text (.sc-bg-slide,
+   .branch-hero-photo-bg) behalten ihre ursprüngliche, dezente Abdunkelung aus design-refresh.css
+   (brightness/saturate) nur für Textlesbarkeit — kein Graustufen-Look, kein Teal-Scrim. */
