@@ -1608,3 +1608,142 @@ h1 em, h2 em, h3 em, h4 em,
    Spezifitaet (.qd-card .qd-eyebrow) auf das helle Petrol fuer dunkle Flaechen gezwungen
    (#37CEDE auf Navy ~10:1). */
 .qd-card .qd-eyebrow{color:#37CEDE !important;background:rgba(14,141,161,.14) !important;border-color:rgba(55,206,222,.34) !important}
+
+/* ============================================================================
+   KI-MODUL "Wir stellen vor:" — DESKTOP-REFRESH (2026-06)
+   Wunsch: hochgradig modern + platzsparend; redundantes "KI-Kandidat"-Caption
+   raus (das Logo IST der Schriftzug); zentrales Logo deutlich groesser.
+   Strategie: nur Desktop (>=861px), strikt unter .ki-intro-section gescoped,
+   damit das Mobile-Redesign (<=860px) unberuehrt bleibt. Die Canvas-
+   Verbindungslinien rechnen pro Frame via getBoundingClientRect — passen sich
+   den neuen Karten-/Orb-Positionen automatisch an, KEIN JS-Edit noetig.
+   ============================================================================ */
+@media (min-width: 861px) {
+  /* --- Vertikalen Rhythmus straffen (platzsparend) ---
+     #kiModul (ID, Spez. 1,0,0) setzt oben L710 das Padding mit !important —
+     muss daher ebenfalls per ID ueberschrieben werden, sonst gewinnt L710. */
+  #kiModul { padding-top: 64px !important; padding-bottom: 64px !important; }
+  /* Buehne auf volle Site-Breite (Container = 1280px) ziehen, damit die
+     Sektion nicht mehr halbleer wirkt. Horizontal-Padding = Container-Gutter
+     (24px) -> Karten fluchten exakt mit Headline & Lead-Text darueber/darunter. */
+  .ki-intro-section .ki-flow-stage {
+    margin-top: 44px !important;
+    min-height: 340px !important;
+    max-width: 1280px !important;
+    column-gap: clamp(20px, 2.5vw, 44px) !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  /* Karten nach AUSSEN spreizen: Inputs an die linke, Outputs an die rechte
+     Kante -> fuellt den vorher leeren Rand, Orbital-Linien werden zu langen,
+     markanten Daten-Stroemen quer durch die Sektion. */
+  .ki-intro-section .ki-flow-inputs  { align-items: flex-start !important; }
+  .ki-intro-section .ki-flow-outputs { align-items: flex-end !important; }
+
+  /* --- Zentrales Logo: groesserer Schriftzug, breite statt Quadrat ---
+     Orb als kraeftiger Mittel-Anker fuer das breitere Layout; der horizontale
+     Wortmark-Logo bekommt deutlich mehr Breite (~360px statt 238px). Hoehe
+     content-basiert -> kein verschwendeter vertikaler Leerraum. */
+  .ki-intro-section .ki-center-orb {
+    width: clamp(280px, 27vw, 400px) !important;
+    height: auto !important;
+    min-height: 220px;
+    padding: 18px 0 !important;
+    gap: 14px !important;
+  }
+  .ki-intro-section .ki-logo-frame { width: 100% !important; max-width: 360px !important; }
+
+  /* --- Redundantes Wortmark-Caption entfernen (Logo = Schriftzug) --- */
+  .ki-intro-section .ki-orb-label { display: none !important; }
+
+  /* --- Moderner, funktionaler Ersatz: dezente Live-Status-Pille --- */
+  .ki-intro-section .ki-orb-status {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 7px;
+    position: relative;
+    z-index: 3;
+    margin-top: 2px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(14,141,161,0.14);
+    border: 1px solid rgba(55,206,222,0.24);
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,244,247,0.88);
+  }
+  .ki-intro-section .ki-orb-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue-bright, #37CEDE);
+    box-shadow: 0 0 8px rgba(55,206,222,0.9);
+    animation: kiLivePulse 1.8s ease-in-out infinite;
+  }
+
+  /* --- Glas-Karten mit Praesenz: breiter, damit die Aussen-Stapel die
+     Sektionskanten ankern (kein leerer Rand mehr). --- */
+  .ki-intro-section .ki-card {
+    width: clamp(220px, 22vw, 290px) !important;
+    padding: 16px 18px !important;
+    gap: 12px !important;
+    border-radius: 15px !important;
+  }
+  .ki-intro-section .ki-flow-col { gap: 16px !important; }
+  .ki-intro-section .ki-card-icon { width: 40px !important; height: 40px !important; }
+
+  /* --- Lead-/CTA-Block naeher an die Stage (weniger Leerraum) --- */
+  .ki-intro-section .container[style*="margin-top:56px"] { margin-top: 36px !important; }
+}
+
+/* ============================================================================
+   KI-MODUL - getoente Foto-Tiefe (Desktop, >=861px)
+   ----------------------------------------------------------------------------
+   Zwei kuratierte Brand-Stock-Fotos (echte, freundliche Fachkraefte aus
+   verschiedenen Branchen - dieselben Bilder wie auf der Startseite) als SEHR
+   dezenter Tiefen-Layer in den unteren Ecken, genau dort wo zuvor leeres Navy
+   stand. Stark geblurrt + entsaettigt + abgedunkelt + petrol-getoent + radial
+   ausgefadet -> KEINE erkennbaren Gesichter, nur warme menschliche Tiefe.
+   Headline (oben), Logo/Orb (Mitte) und die Orbital-Linien bleiben Koenig:
+   die Maske haelt die Foto-Praesenz strikt unten-aussen.
+
+   Schichtung: #kiModul bekommt eine eigene Stacking-Context (isolation),
+   damit das ::before mit z-index:-1 sauber UEBER dem Navy-Gradient-Background
+   und UNTER allem Content (Text, Karten, Canvas-Linien) liegt.
+   Nur Desktop -> das finalisierte Mobile-Redesign (<=860px) bleibt unberuehrt.
+   ============================================================================ */
+@media (min-width: 861px) {
+  #kiModul { isolation: isolate; }
+  #kiModul::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(180deg, rgba(12,22,38,0) 30%, rgba(11,94,110,0.20) 78%, rgba(12,22,38,0.42) 100%),
+      url('../assets/img/photo-1600880292089-90a7e086ee0c-800.webp'),
+      url('../assets/img/photo-1573496359142-b8d87734a5a2-800.webp');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center, left bottom, right bottom;
+    background-size: 100% 100%, 44% auto, 44% auto;
+    /* Compositing explizit (nicht vom durchschlagenden .ki-intro-section::before
+       aus design-refresh.css abhaengen): screen haelt den Premium-Dark-Look,
+       dunkelt das Navy nie zu Matsch ab und gibt eine warme, luftige Tiefe
+       in den Ecken statt harter Foto-Bloecke. Bewusste Design-Sprache der
+       Section (das bestehende 0.07-Foto nutzte ebenfalls screen). */
+    mix-blend-mode: screen;
+    filter: blur(30px) saturate(0.78) brightness(0.7) contrast(1.05);
+    opacity: 0.7;
+    -webkit-mask-image:
+      radial-gradient(66% 90% at -4% 106%, #000 0%, rgba(0,0,0,0.6) 44%, transparent 76%),
+      radial-gradient(66% 90% at 104% 106%, #000 0%, rgba(0,0,0,0.6) 44%, transparent 76%);
+            mask-image:
+      radial-gradient(66% 90% at -4% 106%, #000 0%, rgba(0,0,0,0.6) 44%, transparent 76%),
+      radial-gradient(66% 90% at 104% 106%, #000 0%, rgba(0,0,0,0.6) 44%, transparent 76%);
+  }
+  /* Reduced-Motion / sonstige Faelle: Layer ist rein dekorativ, keine Animation
+     -> kein zusaetzlicher Handling-Bedarf. */
+}
