@@ -1153,7 +1153,7 @@ section[data-screen-label="Open positions"] {
   --dk-3: #1B2C4A;            /* lifted top     (luminanter, modern)         */
   --dk-card-a: #1D2E4E;       /* elevated card top    */
   --dk-card-b: #13203A;       /* elevated card bottom */
-  --dk-glow: rgba(56,118,255,0.14);   /* praesenter, aber dezent */
+  --dk-glow: rgba(55,206,222,0.13);   /* Teal-Glow (on-brand, dezent) */
 }
 
 /* - One refined dark surface for every flat-black content section -
@@ -1260,14 +1260,14 @@ body { transform: none !important; will-change: auto !important; }
    blaue Top-Hairline statt Silber (passend zum blauen Partikel-Flow). */
 .ki-intro-section {
   background:
-    radial-gradient(58% 48% at 50% 16%, rgba(58,118,255,0.22) 0%, transparent 60%),
-    radial-gradient(46% 60% at 15% 72%, rgba(70,128,255,0.16) 0%, transparent 58%),
-    radial-gradient(44% 56% at 85% 26%, rgba(120,162,255,0.13) 0%, transparent 56%),
+    radial-gradient(58% 48% at 50% 16%, rgba(55,206,222,0.20) 0%, transparent 60%),
+    radial-gradient(46% 60% at 15% 72%, rgba(14,141,161,0.20) 0%, transparent 58%),
+    radial-gradient(44% 56% at 85% 26%, rgba(79,227,204,0.13) 0%, transparent 56%),
     radial-gradient(72% 60% at 50% 120%, rgba(8,13,26,0.55) 0%, transparent 60%),
     linear-gradient(180deg, var(--dk-3) 0%, var(--dk-2) 55%, var(--dk-1) 100%) !important;
 }
 .ki-intro-section::after {
-  background: linear-gradient(90deg, transparent, rgba(99,140,255,0.30) 25%, rgba(55,206,222,0.62) 50%, rgba(99,140,255,0.30) 75%, transparent) !important;
+  background: linear-gradient(90deg, transparent, rgba(55,206,222,0.30) 25%, rgba(55,206,222,0.62) 50%, rgba(55,206,222,0.30) 75%, transparent) !important;
 }
 
 /* ── #32 - Plattform-Slider → endlose, flüssige Marquee (JS-getrieben) ────────
