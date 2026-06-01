@@ -98,8 +98,8 @@
   .ka-hl em{font-style:normal;background:linear-gradient(135deg,#C8CDD6 0%,#9BAAB8 50%,#6B7480 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .ka-hero-lead{font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:var(--fg-muted);margin:28px 0 0;max-width:54ch}
   .ka-hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
-  .ka-hero-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(15,22,35,0.08);max-width:460px}
-  @media(max-width:560px){.ka-hero-trust{grid-template-columns:repeat(3,1fr);gap:18px 14px}}
+  .ka-hero-trust{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(15,22,35,0.08);max-width:340px}
+  @media(max-width:560px){.ka-hero-trust{grid-template-columns:repeat(2,1fr);gap:18px 14px}}
   .ka-hero-trust .v{display:block;font-family:var(--font-display);font-size:clamp(18px,1.5vw,22px);font-weight:600;letter-spacing:-.02em;color:var(--fg);line-height:1}
   .ka-hero-trust .l{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim);margin-top:8px}
   /* Glass panel right side */
@@ -240,10 +240,6 @@
 <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
 <div id="nav-mount"></div>
 
-<div class="container">
-  <div class="breadcrumb"><a href="/">HOME</a><span class="sep">/</span><span style="color:var(--accent)">KARRIERE</span></div>
-</div>
-
 <!-- Premium Hero -->
 <section class="ka-hero" id="main" role="main" data-nav-theme="dark">
   <div class="ka-hero-bg" aria-hidden="true">
@@ -264,7 +260,6 @@
         </div>
         <div class="ka-hero-trust">
           <div><span class="v">18</span><span class="l">Offene Stellen</span></div>
-          <div><span class="v">95</span><span class="l">Mitarbeitende</span></div>
           <div><span class="v">4</span><span class="l">Standorte</span></div>
         </div>
       </div>
@@ -377,7 +372,7 @@
       <div class="ps"><div class="ps-num">01</div><div class="t">Bewerbung</div><div class="d">Online über unsere Seite oder initiativ per Mail. Wir antworten innerhalb von 48h.</div></div>
       <div class="ps"><div class="ps-num">02</div><div class="t">Screening-Call</div><div class="d">30 Min mit HR: Erwartungen, Rahmenbedingungen, erste Einschätzung gegenseitig.</div></div>
       <div class="ps"><div class="ps-num">03</div><div class="t">Fachgespräch</div><div class="d">1h mit dem Hiring Manager: fachliche Tiefe, reale Aufgaben statt Rätsel.</div></div>
-      <div class="ps"><div class="ps-num">04</div><div class="t">Team-Kennenlernen</div><div class="d">90-min virtuelles Team-Meeting: Sie lernen Ihre künftigen Kolleg:innen kennen.</div></div>
+      <div class="ps"><div class="ps-num">04</div><div class="t">Team-Kennenlernen</div><div class="d">90-min virtuelles Team-Meeting: Sie lernen Ihre künftigen Kollegen kennen.</div></div>
       <div class="ps"><div class="ps-num">05</div><div class="t">Angebot</div><div class="d">Klares Angebot innerhalb von 5 Tagen. Verhandlung fair und transparent.</div></div>
     </div>
   </div>
@@ -473,7 +468,7 @@
   </div>
 </div>
 
-window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};</script>
+<script>window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};</script>
 <script src="js/chrome.js?v=nav3" defer></script>
 <script src="js/page-polish.js" defer></script>
 <script>
@@ -587,7 +582,7 @@ var JOBS = [
     nice:['Kenntnisse gängiger HR- und Bewerbermanagement-Systeme','Scrum/Agile-Zertifizierung'] },
 
   { id:'CS-003', team:'cs', title:'Working Student · Customer Success', location:'Berlin / Remote', type:'20 h/Woche', salary:'18 €/h',
-    desc:'Dein Einstieg in HR-Tech. Du unterstützt das CS-Team bei Datenanalysen, Reportings und Kunden-Recherchen. Ideal für Studierende der BWL, Psychologie oder Informatik.',
+    desc:'Dein Einstieg in HR-Tech. Du unterstützt das CS-Team bei Datenanalysen, Reportings und Kunden-Recherchen. Ideal für Studenten der BWL, Psychologie oder Informatik.',
     resp:['Datenanalyse und Reporting im CRM und in Tabellenkalkulationen','Recherche und Vorbereitung von QBR-Präsentationen','Bearbeitung von Support-Anfragen Tier 1','Mitarbeit an CS-Prozessoptimierungen'],
     must:['Laufendes Studium (mind. 4. Semester)','Sicherer Umgang mit Tabellenkalkulationen','Sehr gutes Deutsch, gutes Englisch'],
     nice:['Erste Erfahrung im Customer-Success oder Support','Interesse an HR-Tech und KI-Anwendungen'] },
