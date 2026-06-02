@@ -279,20 +279,20 @@
               <div class="field-grid">
                 <div class="field-wrap">
                   <label class="field-label" for="ko-fname">Vorname *</label>
-                  <input class="field-input" type="text" id="ko-fname" name="fname" required autocomplete="given-name" />
+                  <input class="field-input" type="text" id="ko-fname" name="Vorname" required autocomplete="given-name" />
                   <span class="field-check">✓</span>
                   <span class="field-error">Pflichtfeld</span>
                 </div>
                 <div class="field-wrap">
                   <label class="field-label" for="ko-lname">Nachname *</label>
-                  <input class="field-input" type="text" id="ko-lname" name="lname" required autocomplete="family-name" />
+                  <input class="field-input" type="text" id="ko-lname" name="Nachname" required autocomplete="family-name" />
                   <span class="field-check">✓</span>
                   <span class="field-error">Pflichtfeld</span>
                 </div>
               </div>
               <div class="field-wrap">
                 <label class="field-label" for="ko-company">Unternehmen *</label>
-                <input class="field-input" type="text" id="ko-company" name="company" required autocomplete="organization" />
+                <input class="field-input" type="text" id="ko-company" name="Unternehmen" required autocomplete="organization" />
                 <span class="field-check">✓</span>
                 <span class="field-error">Pflichtfeld</span>
               </div>
@@ -300,7 +300,7 @@
                 <div class="field-wrap" style="margin-bottom:0">
                   <label class="field-label" for="ko-size" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Mitarbeiterzahl</label>
                   <div style="position:relative">
-                    <select class="field-select" id="ko-size" name="size" style="padding:14px 40px 14px 16px">
+                    <select class="field-select" id="ko-size" name="Mitarbeiterzahl" style="padding:14px 40px 14px 16px">
                       <option>1–10</option><option>11–50</option><option selected>51–250</option><option>251–1.000</option><option>1.000+</option>
                     </select>
                     <span class="field-select-arrow">↓</span>
@@ -309,7 +309,7 @@
                 <div class="field-wrap" style="margin-bottom:0">
                   <label class="field-label" for="ko-industry" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Branche</label>
                   <div style="position:relative">
-                    <select class="field-select" id="ko-industry" name="industry" style="padding:14px 40px 14px 16px">
+                    <select class="field-select" id="ko-industry" name="Branche" style="padding:14px 40px 14px 16px">
                       <option value="">Bitte wählen</option>
                       <option>Bau</option><option>Handwerk</option><option>Industrie</option><option>IT &amp; Tech</option>
                       <option>Pflege</option><option>Logistik</option><option>Handel</option><option>Finanzen</option>
@@ -320,7 +320,7 @@
                 </div>
               </div>
               <div class="form-nav">
-                <span class="form-gdpr">DSGVO ✓ · Keine Weitergabe</span>
+                <span class="form-gdpr">DSGVO-konform · SSL-verschlüsselt</span>
                 <button type="button" class="btn btn-primary btn-arrow" onclick="nextStep(1)">Weiter</button>
               </div>
             </div>
@@ -330,19 +330,19 @@
               <div class="field-grid">
                 <div class="field-wrap">
                   <label class="field-label" for="ko-position">Stelle(n) *</label>
-                  <input class="field-input" type="text" id="ko-position" name="position" required placeholder="" />
+                  <input class="field-input" type="text" id="ko-position" name="Position" required placeholder="" />
                   <span class="field-check">✓</span>
                   <span class="field-error">Pflichtfeld</span>
                 </div>
                 <div class="field-wrap">
                   <label class="field-label" for="ko-region">Region</label>
-                  <input class="field-input" type="text" id="ko-region" name="region" placeholder="" />
+                  <input class="field-input" type="text" id="ko-region" name="Region" placeholder="" />
                 </div>
               </div>
               <div class="field-wrap" style="margin-bottom:20px">
                 <label class="field-label" for="ko-duration" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Wie lange ist die Stelle vakant?</label>
                 <div style="position:relative">
-                  <select class="field-select" id="ko-duration" name="duration" style="padding:14px 40px 14px 16px">
+                  <select class="field-select" id="ko-duration" name="Vakanzdauer" style="padding:14px 40px 14px 16px">
                     <option value="">Bitte wählen</option>
                     <option>Neue Stelle (noch nicht ausgeschrieben)</option>
                     <option>Unter 4 Wochen</option><option>1–3 Monate</option>
@@ -353,7 +353,7 @@
               </div>
               <div class="field-wrap textarea-wrap">
                 <label class="field-label" for="ko-challenge">Ihre größte Recruiting-Herausforderung</label>
-                <textarea class="field-textarea" id="ko-challenge" name="challenge" placeholder="Was funktioniert bei Ihnen gerade nicht im Recruiting?"></textarea>
+                <textarea class="field-textarea" id="ko-challenge" name="Herausforderung" placeholder="Was funktioniert bei Ihnen gerade nicht im Recruiting?"></textarea>
               </div>
               <div class="form-nav">
                 <button class="form-back" type="button" onclick="prevStep(2)">
@@ -375,13 +375,13 @@
                 </div>
                 <div class="field-wrap">
                   <label class="field-label" for="ko-phone">Telefon</label>
-                  <input class="field-input" type="tel" id="ko-phone" name="phone" autocomplete="tel" />
+                  <input class="field-input" type="tel" id="ko-phone" name="Telefon" autocomplete="tel" />
                 </div>
               </div>
               <div class="field-wrap" style="margin-bottom:24px">
                 <label class="field-label" for="ko-calltime" style="position:relative;top:auto;left:auto;margin-bottom:6px;display:block;">Bevorzugte Kontaktzeit</label>
                 <div style="position:relative">
-                  <select class="field-select" id="ko-calltime" name="calltime" style="padding:14px 40px 14px 16px">
+                  <select class="field-select" id="ko-calltime" name="Kontaktzeit" style="padding:14px 40px 14px 16px">
                     <option>Egal / Flexibel</option>
                     <option>Vormittags (9–12 Uhr)</option>
                     <option>Mittags (12–14 Uhr)</option>
@@ -395,6 +395,7 @@
                 <span style="color:var(--accent);font-size:18px;flex-shrink:0;margin-top:1px;">●</span>
                 <p style="font-size:14px;color:var(--fg-muted);line-height:1.65;margin:0;">Vor Ihrem Erstgespräch prüft unsere KI das Matching-Potenzial in der Talent-Cloud: kostenlos, unverbindlich, in unter 24 Stunden.</p>
               </div>
+              <div id="formStatus" class="form-status" role="alert" aria-live="polite"></div>
               <div class="form-nav">
                 <button class="form-back" type="button" onclick="prevStep(3)">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 2L4 7l5 5"/></svg>
@@ -407,6 +408,12 @@
               </div>
             </div>
 
+            <!-- FormSubmit-Konfiguration (Zustellung an info@ki-kandidat.de) -->
+            <input type="hidden" name="_subject" value="Neue Kontaktanfrage über ki-kandidat.de">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <!-- Spam-Honeypot: für Menschen unsichtbar, Bots füllen es aus und werden verworfen -->
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           </form>
         </div>
       </div>
@@ -465,6 +472,10 @@
   .ko-spark span:nth-child(6){height:90%}
   .ko-spark span:nth-child(7){height:62%}
   .ko-spark span:nth-child(8){height:100%;background:linear-gradient(180deg,#C8CDD6,rgba(155,170,184,.3))}
+  /* Kontaktformular: ehrlicher Fehlerstatus, falls der Versand scheitert */
+  .form-status{display:none;margin:0 0 18px;padding:13px 16px;border-radius:12px;background:rgba(248,113,113,.09);border:1px solid rgba(248,113,113,.34);color:#b42318;font-size:14px;line-height:1.55}
+  .form-status.visible{display:block}
+  .form-status a{color:inherit;font-weight:600;text-decoration:underline}
 </style>
 <section class="ko-info-sec">
   <div class="container">
@@ -619,17 +630,50 @@ window.prevStep = function (from) { setStep(from - 1); };
 document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
   if (!validatePane(3)) return;
-  var btn = document.getElementById('submitBtn');
+
+  var form     = e.target;
+  var btn      = document.getElementById('submitBtn');
+  var statusEl = document.getElementById('formStatus');
+  if (statusEl) { statusEl.classList.remove('visible'); statusEl.innerHTML = ''; }
   btn.classList.add('loading');
-  /* Simulate API call */
-  setTimeout(function () {
+  btn.disabled = true;
+
+  function showError() {
     btn.classList.remove('loading');
+    btn.disabled = false;
+    if (statusEl) {
+      statusEl.innerHTML = 'Das Senden hat gerade nicht geklappt. Bitte schreiben Sie uns direkt an ' +
+        '<a href="mailto:info@ki-kandidat.de">info@ki-kandidat.de</a> oder rufen Sie an: ' +
+        '<a href="tel:+4915563008600">+49 155 63 00 86 00</a>.';
+      statusEl.classList.add('visible');
+    }
+  }
+  function showSuccess() {
+    btn.classList.remove('loading');
+    btn.disabled = false;
     spawnConfetti();
     setTimeout(function () {
       document.getElementById('successRef').textContent = 'KIQ-' + Date.now().toString(36).toUpperCase().slice(-6);
       document.getElementById('successOverlay').classList.add('visible');
     }, 300);
-  }, 1800);
+  }
+
+  /* Echter Versand an info@ki-kandidat.de über FormSubmit (AJAX, JSON-Antwort) */
+  fetch('https://formsubmit.co/ajax/info@ki-kandidat.de', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: new FormData(form)
+  })
+  .then(function (r) {
+    return r.json().then(function (j) { return { ok: r.ok, body: j }; })
+                   .catch(function () { return { ok: r.ok, body: {} }; });
+  })
+  .then(function (res) {
+    var s = res.body && res.body.success;
+    if (res.ok && (s === true || s === 'true')) { showSuccess(); }
+    else { showError(); }
+  })
+  .catch(function () { showError(); });
 });
 
 /* ── Confetti ─────────────────────────────────────────────── */
