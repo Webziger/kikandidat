@@ -901,9 +901,10 @@ section[data-screen-label="section_plattform"],
 .qd-card--brand .quellen-stats {
   width: 100%;
   justify-content: space-around;
-  border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 18px;
 }
+/* Section-Label-Indikator (scroll-polish.js, „FINAL CTA"-Pille unten) ausblenden — vom Kunden gewünscht */
+#section-label { display: none !important; }
 .q-stat { display: flex; flex-direction: column; gap: 3px; }
 .q-stat-num {
   font-size: 22px;

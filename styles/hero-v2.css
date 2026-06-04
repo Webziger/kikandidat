@@ -552,6 +552,8 @@ h1.hero-serif {
   }
   .float-card { max-width: 300px; width: 100%; }
   .hero-phone { margin: 0 auto; }
+  /* Badge stapelt zentriert ÜBER dem Phone (kein Phone-rechts / Leerraum-links mehr) */
+  .hero-phone-wrap { flex-direction: column; align-items: center; gap: 14px; }
 }
 @media (max-width: 700px) {
   .hero-v2 { padding: 92px 0 48px; }
@@ -559,6 +561,9 @@ h1.hero-serif {
   .float-card { min-width: 0; width: 100%; max-width: 320px; }
   .float-badge { font-size: 12px; padding: 8px 14px; }
   .hero-phone { width: 200px; }
+  /* Hintergrund-Kacheln raus → cleanes, ruhiges dunkles Hero auf Mobile */
+  .hero-mosaic-cols { display: none; }
+  .hero-mosaic-bg { background: linear-gradient(180deg, #0B1422 0%, #0F2032 52%, #0B1422 100%); }
   .phone-screen { max-height: 380px; min-height: unset; overflow: hidden; }
   /* compact phone card layout */
   .phone-app-head { font-size: 14px; padding: 10px 12px 6px; }
