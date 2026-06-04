@@ -1748,3 +1748,23 @@ h1 em, h2 em, h3 em, h4 em,
   /* Reduced-Motion / sonstige Faelle: Layer ist rein dekorativ, keine Animation
      -> kein zusaetzlicher Handling-Bedarf. */
 }
+
+/* ==========================================================================
+   (j) GLYPH-CLIPPING-FIX — Display-Zahlen mit zu engem Linienkasten
+   --------------------------------------------------------------------------
+   Bricolage Grotesque (700/800) hat eine Glyphenbox, die ueber 1em
+   hinausragt. Die grossen Stat-/Kennzahlen setzten line-height:1 — dadurch
+   liefen Ziffern ~0.1em unten aus dem Linienkasten und wurden in Karten mit
+   overflow:hidden abgeschnitten (z. B. "72 h" Case-Num). 1.2 ist der per
+   Messung ermittelte Minimalwert, ab dem die Box die Glyphe vollstaendig
+   umschliesst (dH 4px -> 0). Gilt site-weit. Suffix-<em> erbt mit.
+   ====================================================================== */
+.stat .num,
+.case-num .v,
+.fp-num,
+.q-stat-num,
+.match-score-badge .v,
+.pm-stats .v,
+.tm-metric .v {
+  line-height: 1.2 !important;
+}
