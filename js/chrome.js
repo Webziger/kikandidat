@@ -88,7 +88,7 @@
             <ul>
               <li><a href="https://ki-kandidat.de/kontakt.html">Kontakt</a></li>
               <li><a href="mailto:info@ki-kandidat.de">info@ki-kandidat.de</a></li>
-              <li><a href="https://calendly.com/d-koch-ki-kandidat/30min" target="_blank" rel="noopener noreferrer">Termin vereinbaren</a></li>
+              <li><a href="https://calendly.com/t-werner-ki-kandidat/30min?back=1" target="_blank" rel="noopener noreferrer">Termin vereinbaren</a></li>
             </ul>
           </div>
         </div>
@@ -216,7 +216,34 @@
     }
   }
   window.RG.applyTweaks = applyTweaks;
+
+  /* Floating Calendly-Termin-Button (unten rechts). Calendly-Code wird ERST
+     beim Klick geladen (datenschutzfreundlich), Fallback: Link im neuen Tab. */
+  function mountCalendly() {
+    if (document.querySelector('.cal-fab')) return;
+    var URL = 'https://calendly.com/t-werner-ki-kandidat/30min?back=1';
+    var st = document.createElement('style');
+    st.textContent = '.cal-fab{position:fixed;right:18px;bottom:18px;z-index:120;display:inline-flex;align-items:center;gap:11px;padding:12px 18px;border-radius:999px;border:1px solid rgba(55,206,222,.4);background:linear-gradient(135deg,#0B5E6E 0%,#0E8DA1 100%);color:#fff;font-family:var(--font-display,system-ui,sans-serif);text-decoration:none;box-shadow:0 12px 34px -10px rgba(8,60,72,.6),inset 0 1px 0 rgba(255,255,255,.12);cursor:pointer;transition:transform .25s ease,box-shadow .25s ease}.cal-fab:hover{transform:translateY(-2px);box-shadow:0 18px 44px -10px rgba(8,60,72,.7)}.cal-fab .cal-ic{display:grid;place-items:center;width:24px;height:24px;flex:none}.cal-fab .cal-ic svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.cal-fab-txt{display:flex;flex-direction:column;line-height:1}.cal-fab .cal-sub{font-family:var(--font-mono,monospace);font-size:9px;letter-spacing:.13em;text-transform:uppercase;opacity:.82;font-weight:500;margin-bottom:3px}.cal-fab .cal-main{font-size:14px;font-weight:600}@media(max-width:560px){.cal-fab{right:12px;bottom:12px;padding:11px 14px}.cal-fab .cal-sub{display:none}.cal-fab .cal-main{font-size:13px}}@media(prefers-reduced-motion:reduce){.cal-fab{transition:none}}';
+    document.head.appendChild(st);
+    var a = document.createElement('a');
+    a.className = 'cal-fab';
+    a.href = URL; a.target = '_blank'; a.rel = 'noopener';
+    a.setAttribute('aria-label', 'Kostenloses Erstgespräch vereinbaren');
+    a.innerHTML = '<span class="cal-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="M8.4 14.6l2.2 2.2 4.4-4.4"/></svg></span><span class="cal-fab-txt"><span class="cal-sub">Diese Woche</span><span class="cal-main">Erstgespräch vereinbaren</span></span>';
+    a.addEventListener('click', function (e) { e.preventDefault(); openCalendly(URL); });
+    document.body.appendChild(a);
+    function openCalendly(url) {
+      if (window.Calendly && window.Calendly.initPopupWidget) { window.Calendly.initPopupWidget({ url: url }); return; }
+      if (!document.getElementById('cal-css')) { var c = document.createElement('link'); c.id = 'cal-css'; c.rel = 'stylesheet'; c.href = 'https://assets.calendly.com/assets/external/widget.css'; document.head.appendChild(c); }
+      var s = document.createElement('script'); s.src = 'https://assets.calendly.com/assets/external/widget.js'; s.async = true;
+      s.onload = function () { if (window.Calendly && window.Calendly.initPopupWidget) window.Calendly.initPopupWidget({ url: url }); else window.open(url, '_blank', 'noopener'); };
+      s.onerror = function () { window.open(url, '_blank', 'noopener'); };
+      document.head.appendChild(s);
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initReveals();
+    mountCalendly();
   });
 })();
