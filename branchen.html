@@ -71,7 +71,7 @@
 <link rel="stylesheet" href="styles/scroll-polish.css?v=20260528logo" />
 <link rel="stylesheet" href="styles/design-refresh.css?v=20260528logo" />
 <link rel="stylesheet" href="/styles/premium-polish.css?v=20260528logo" />
-<link rel="stylesheet" href="/styles/hero-v2.css?v=20260530hero2" />
+<link rel="stylesheet" href="/styles/hero-v2.css?v=20260604herobig" />
 <link rel="stylesheet" href="/styles/platform-cards.css?v=20260528logo" />
 <link rel="stylesheet" href="/styles/logo.css?v=20260528logo" />
 <style>
@@ -148,14 +148,14 @@
   .br-card::before {
     content:'';
     position:absolute; inset:0;
-    background-size:cover; background-position:center; filter:saturate(0.55);
+    background-size:cover; background-position:center; filter:saturate(0.55) brightness(0.5) blur(3px);
     opacity:0; transition:opacity .5s ease, transform .6s cubic-bezier(.16,1,.3,1);
     transform:scale(1.08);
   }
   .br-card::after {
     content:'';
     position:absolute; inset:0;
-    background:linear-gradient(155deg,rgba(0,14,30,.93) 0%,rgba(0,14,30,.72) 60%,rgba(0,14,30,.85) 100%);
+    background:linear-gradient(155deg,rgba(6,15,28,.95) 0%,rgba(6,15,28,.87) 50%,rgba(6,15,28,.94) 100%);
     opacity:0; transition:opacity .5s ease; z-index:0;
   }
   .br-card:hover::before { opacity:1; transform:scale(1); }
@@ -459,7 +459,7 @@
 
 <div id="footer-mount"></div>
 <script>window.onerror=function(m,s){if(m==='Script error.'&&!s)return true;};</script>
-<script src="js/chrome.js?v=nav3" defer></script>
+<script src="js/chrome.js?v=nav4" defer></script>
 <script src="js/page-polish.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {

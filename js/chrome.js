@@ -88,7 +88,7 @@
             <ul>
               <li><a href="https://ki-kandidat.de/kontakt.html">Kontakt</a></li>
               <li><a href="mailto:info@ki-kandidat.de">info@ki-kandidat.de</a></li>
-              <li><a href="https://calendly.com/d-koch-ki-kandidat/30min" target="_blank" rel="noopener noreferrer">Termin buchen</a></li>
+              <li><a href="https://calendly.com/d-koch-ki-kandidat/30min" target="_blank" rel="noopener noreferrer">Termin vereinbaren</a></li>
             </ul>
           </div>
         </div>

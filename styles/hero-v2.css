@@ -285,12 +285,15 @@
 h1.hero-serif {
   font-family: "Playfair Display", "Times New Roman", Georgia, serif !important;
   font-weight: 700;
-  font-size: clamp(30px, 3vw, 44px);
-  line-height: 1.12;
-  letter-spacing: -0.018em;
+  font-size: clamp(31px, 3.4vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: #F2F4F7;
   margin: 0 auto;
-  text-wrap: balance;
+  max-width: 100%;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .hero-serif em {
   font-style: italic;
