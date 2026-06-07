@@ -1768,3 +1768,20 @@ h1 em, h2 em, h3 em, h4 em,
 .tm-metric .v {
   line-height: 1.2 !important;
 }
+
+/* ==========================================================================
+   (k) KI-MODUL ZENTRAL-LOGO - "height:auto" kollabierte auf 0
+   --------------------------------------------------------------------------
+   Das Wortmark-Logo <img.ki-logo-clean> (width:100% height:auto) liegt in
+   einem flex-direction:column-Orb. In WebKit (Safari) UND headless Chromium
+   rechnet sich die intrinsische Seitenverhaeltnis-Hoehe eines Block-Bildes
+   mit Prozent-Breite in diesem Flex-Kontext zu 0 -> der Rahmen (overflow:hidden)
+   kollabierte und das Logo war komplett unsichtbar; nur die Status-Pille blieb.
+   Fix: das natuerliche Seitenverhaeltnis (1170x229) explizit setzen, dann
+   leitet jede Engine die Hoehe zuverlaessig aus der Breite ab. Greift Desktop
+   + Mobile, da beide dieselbe .ki-logo-clean nutzen.
+   ====================================================================== */
+.ki-logo-clean {
+  aspect-ratio: 1170 / 229;
+  height: auto !important;
+}
